@@ -3,28 +3,38 @@
 import { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
+import { Menu } from 'lucide-react'
 
 type Links = 'home' | 'expertise' | 'work' | 'experience' | 'contact'
 
 const Navbar = () => {
   const [hovered, setHovered] = useState<Links | null>(null)
   return (
-    <nav className='absolute top-0 left-0 w-full h-[12vh] z-20 px-[4vh]'>
-      <div className='w-full h-full flex justify-start items-center gap-8 xl:gap-12'>
+    <nav className='absolute top-0 left-0 w-full h-[12vh] z-30 px-[4vh]'>
+      <div className='w-full h-full flex justify-start items-center gap-4 lg:gap-8 xl:gap-12'>
+        <button
+          className='w-14 h-14 flex lg:hidden justify-center items-center rounded-full bg-slate-400/5 hover:bg-slate-400/10 group transition-colors duration-200'
+          onClick={() => console.log('clicked')}
+        >
+          <Menu
+            size={24}
+            className='group-hover:text-blue-400 transition-colors duration-200'
+          />
+        </button>
         <Link
           href='/'
           className='hover:opacity-50 transition-opacity duration-300'
         >
           <Image
             src='/logo.png'
-            className='lg:hidden xl:block'
+            className='hidden sm:block lg:hidden xl:block'
             alt='logo'
             width={220}
             height={60}
           />
           <Image
             src='/cropped-logo.png'
-            className='hidden lg:block xl:hidden'
+            className='block sm:hidden lg:block xl:hidden'
             alt='logo'
             width={100}
             height={100}

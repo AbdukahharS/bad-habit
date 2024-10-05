@@ -19,16 +19,16 @@ const Hero = () => {
       ></div>
       <div className='circle absolute w-14 h-14 rounded-full top-[20%] left-[55%] animate-[horizontal_3s_infinite_ease-in-out]'></div>
       <div className='circle absolute w-10 h-10 rounded-full top-[47%] left-[36%] animate-[vertical_3s_infinite_ease-in-out]'></div>
-      <div className='w-full h-[90vh] z-20 flex justify-center items-center flex-col gap-8'>
+      <div className='w-full h-[90vh] z-20 flex justify-center items-center flex-col gap-4 lg:gap-8'>
         <h1
           className={
-            '[text-shadow:_0_0_16px_rgb(0_0_0_/_50%)] text-9xl text-center ' +
+            '[text-shadow:_0_0_16px_rgb(0_0_0_/_50%)] text-4xl text-center md:text-6xl lg:text-7xl xl:text-9xl ' +
             poppins.className
           }
         >
-          SHAHZOD <br /> ABDUKAHHAR
+          SHAHZOD <br className='hidden lg:inline' /> ABDUKAHHAR
         </h1>
-        <h2 className='text-3xl text-center font-semibold tracking-widest'>
+        <h2 className='[text-shadow:_0_0_16px_rgb(0_0_0_/_50%)] text-xl md:text-2xl xl:text-3xl text-center font-semibold tracking-widest'>
           SOFTWARE ENGINEER, WEB DEVELOPER
         </h2>
       </div>
