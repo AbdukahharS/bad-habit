@@ -3,6 +3,7 @@ import { Roboto_Mono } from 'next/font/google'
 
 import Navbar from '@/components/layout/Navbar'
 import './globals.css'
+import CursorFollower from '@/components/CursorFollower'
 
 const robotoMono = Roboto_Mono({ subsets: ['latin'] })
 
@@ -19,6 +20,7 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <body className={`${robotoMono.className} antialiased bg-background`}>
+        <CursorFollower />
         <Navbar />
         <main>{children}</main>
       </body>
