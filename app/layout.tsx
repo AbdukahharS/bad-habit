@@ -19,10 +19,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
-      <body className={`${robotoMono.className} antialiased bg-background`}>
+      <body
+        className={`${robotoMono.className} antialiased bg-background overflow-x-hidden`}
+      >
         <CursorFollower />
         <Navbar />
-        <main>{children}</main>
+        {children}
       </body>
     </html>
   )
