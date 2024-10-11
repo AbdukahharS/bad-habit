@@ -78,6 +78,14 @@ const Expertise = () => {
           </blockquote>
         </div>
       </div>
+      <div className='w-full -mt-10 sm:-mt-12 z-[-1] opacity-20 flex justify-center px-4'>
+        <Image
+          src='/hello-world-html-code.png'
+          alt='hello-world-code'
+          width={582}
+          height={291}
+        />
+      </div>
     </section>
   )
 }
