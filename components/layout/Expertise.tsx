@@ -8,7 +8,7 @@ const Expertise = () => {
         My Expertise
       </h2>
       <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 max-w-[1100px] mx-auto gap-4 md:gap-0'>
-        <div className='flex flex-col border py-10 px-8'>
+        <div className='flex flex-col border-4 border-slate-300 md:border-r-transparent py-10 px-8'>
           <div className='flex items-center gap-5 mb-2'>
             <Image
               src='/icons/desktop.svg'
@@ -29,7 +29,7 @@ const Expertise = () => {
             </p>
           </div>
         </div>
-        <div className='flex flex-col border py-10 px-8'>
+        <div className='flex flex-col border-4 border-slate-300 lg:border-r-transparent py-10 px-8'>
           <div className='flex items-center gap-5 mb-2'>
             <Image
               src='/icons/react.svg'
@@ -51,7 +51,7 @@ const Expertise = () => {
             </p>
           </div>
         </div>
-        <div className='flex flex-col border py-10 px-8'>
+        <div className='flex flex-col border-4 border-slate-300 md:border-t-transparent lg:border-t-slate-300 py-10 px-8'>
           <div className='flex items-center gap-5 mb-2'>
             <Image src='/icons/node.svg' width={50} height={50} alt='Desktop' />
             <h5 className='text-2xl font-semibold'>
