@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import { Roboto_Mono } from 'next/font/google'
 
 import Navbar from '@/components/layout/Navbar'
-import './globals.css'
 import CursorFollower from '@/components/CursorFollower'
+import './globals.css'
 
 const robotoMono = Roboto_Mono({ subsets: ['latin'] })
 
