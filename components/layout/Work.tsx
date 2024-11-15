@@ -188,7 +188,7 @@ const Work = () => {
   }, [projects])
 
   return (
-    <section className='w-full px-6 md:px-12 xl:px-24 mb-96' id='work'>
+    <section className='w-full px-6 md:px-12 xl:px-24 mb-28' id='work'>
       <h2 className='text-5xl sm:text-8xl font-bold mb-12 tracking-wide font-poppins px-20'>
         My Work
       </h2>
