@@ -69,8 +69,8 @@ const Experience = () => {
             </div>
 
             <div
-              className={`bg-blue-900/40 rounded-lg px-4 transition-all duration-300 overflow-y-hidden ease-in-out ${
-                opens.includes(experience.id) ? 'h-auto py-4 mt-3' : 'h-0 py-0'
+              className={`bg-blue-900/40 rounded-lg px-4 transition-all duration-500 overflow-y-hidden linear ${
+                opens.includes(experience.id) ? 'h-fit py-4 mt-3' : 'h-0 py-0'
               }`}
             >
               <div className='flex items-center mb-2 gap-2'>

@@ -88,7 +88,7 @@ const Masonry: React.FC<MasonryProps> = ({ items, setCurrent, current }) => {
             <p className='text-foreground opacity-70 text-sm'>
               {item.description}
             </p>
-            <div className='flex gap-5 items-center justify-end mt-2'>
+            <div className='flex gap-5 items-center justify-end mt-4'>
               <Link
                 href={item.live}
                 className='hover:opacity-70 text-blue-300  underline'

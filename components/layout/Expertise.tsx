@@ -3,7 +3,7 @@ import React from 'react'
 
 const Expertise = () => {
   return (
-    <section className='px-8 py-10 md:px-12 md:py-20 xl:py-24'>
+    <section className='px-8 py-10 md:px-12 md:py-20 xl:py-24' id='expertise'>
       <h2 className='text-5xl sm:text-7xl font-bold text-center mb-12'>
         My Expertise
       </h2>
