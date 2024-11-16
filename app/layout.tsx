@@ -10,14 +10,14 @@ const robotoMono = Roboto_Mono({ subsets: ['latin'] })
 export const metadata: Metadata = {
   title: 'Shahzod Abdukahhar',
   description:
-    'Developer devoted to creating great web experiences focused on React, NextJS and Node JS, meet Shahzod Abdukahhar',
+    'Developer devoted to creating great web experiences focused on React, NextJS and Node JS',
   robots: 'index, follow',
   openGraph: {
     title: 'Shahzod Abdukahhar',
     description:
-      'Developer devoted to creating great web experiences focused on React, NextJS and Node JS, meet Shahzod Abdukahhar',
+      'Developer devoted to creating great web experiences focused on React, NextJS and Node JS',
     siteName: 'Shahzod Abdukahhar personal websie',
-    images: ['https://blog.abdukahhar.uz/link-preview.jpg'],
+    images: ['https://abdukahhar.uz/link-preview.jpg'],
   },
 }
 
