@@ -107,9 +107,6 @@ const Navbar = () => {
           onMouseLeave={() => setHovered(null)}
         >
           {'// blog'}
-          <small className='absolute top-1 right-4 xl:right-5 -translate-y-full text-xs opacity-70'>
-            05
-          </small>
         </Link>
       </div>
     </>
