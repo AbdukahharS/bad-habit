@@ -12,13 +12,6 @@ type MasonryProps = {
     tags: string[]
     category: string
   }[]
-  setCurrent: (
-    category:
-      | 'All'
-      | 'Frontend Only Website'
-      | 'Full Stack Website'
-      | 'Figma Design'
-  ) => void
   current:
     | 'All'
     | 'Frontend Only Website'
@@ -26,13 +19,13 @@ type MasonryProps = {
     | 'Figma Design'
 }
 
-const Masonry: React.FC<MasonryProps> = ({ items, setCurrent, current }) => {
+const Masonry: React.FC<MasonryProps> = ({ items, current }) => {
   const containerRef = React.useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     const divs = containerRef.current?.children
     if (divs) {
-      for (let i in divs) {
+      for (const i in divs) {
         const div = divs[i]
 
         if (!!div && typeof div === 'object') {

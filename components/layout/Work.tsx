@@ -201,7 +201,7 @@ const Work = () => {
         }
       })
     })
-  }, [projects])
+  }, [])
 
   return (
     <section className='w-full px-6 md:px-12 xl:px-24 mb-28' id='work'>
@@ -234,7 +234,7 @@ const Work = () => {
           </button>
         ))}
       </div>
-      <Masonry setCurrent={setCurrent} items={projects} current={current} />
+      <Masonry items={projects} current={current} />
     </section>
   )
 }

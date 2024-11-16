@@ -75,8 +75,8 @@ const Footer = () => {
               applications. In addition to being impressed by his unfailing
               attention and excellent degree of technical skills, I have been
               pleased with our working relationship. As a client, I was
-              astounded by his one specific character as he was a "show, don't
-              just tell" type of partner.
+              astounded by his one specific character as he was a &quot;show,
+              don&apos;t just tell&quot; type of partner.
             </p>
             <p className='text-xl font-semibold'>- Sabrina Narzullaeva</p>
             <span className='font-semibold opacity-80'>
@@ -95,9 +95,9 @@ const Footer = () => {
                 />
               </div>
               <p className='my-3'>
-                Shahzod built my personal website, and I’m thrilled with the
-                result. He understood my needs, delivered a beautiful site, and
-                made the process easy. Highly recommend!
+                Shahzod built my personal website, and I&apos;m thrilled with
+                the result. He understood my needs, delivered a beautiful site,
+                and made the process easy. Highly recommend!
               </p>
               <p className='text-xl font-semibold'>- Abdulaziz Abdumutalibov</p>
               <span className='font-semibold opacity-80'>

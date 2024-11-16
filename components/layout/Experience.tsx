@@ -34,7 +34,7 @@ const experiences = [
 ]
 
 const Experience = () => {
-  const [opens, setOpens] = useState<Number[]>([])
+  const [opens, setOpens] = useState<number[]>([])
 
   const handleClick = (id: number) => {
     if (opens.includes(id)) {
