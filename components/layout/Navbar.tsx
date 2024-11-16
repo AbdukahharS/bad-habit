@@ -54,7 +54,7 @@ const Navbar = () => {
                 onMouseEnter={() => setHovered(v as Links)}
                 onMouseLeave={() => setHovered(null)}
               >
-                {`// v`}
+                {`// ${v}`}
                 <small className='absolute top-1 right-4 xl:right-5 -translate-y-full text-xs opacity-70'>
                   {`0${i + 1}`}
                 </small>
@@ -88,16 +88,29 @@ const Navbar = () => {
         >
           <X size={30} />
         </button>
-        {['home', 'expertise', 'work', 'experience', 'contact'].map((v, i) => (
+        {['expertise', 'work', 'experience', 'contact'].map((v, i) => (
           <Link
             href={`/#${v}`}
             className='font-bold relative transition-opacity duration-300 px-4 xl:px-5'
             onClick={() => setActive(false)}
             key={i}
           >
-            {`// v`}
+            {`// ${v}`}
           </Link>
         ))}
+        <Link
+          href='https://blog.abdukahhar.uz'
+          className={`font-bold relative transition-opacity duration-300 px-4 xl:px-5 ${
+            hovered && hovered !== 'blog' && 'opacity-50'
+          }`}
+          onMouseEnter={() => setHovered('blog' as Links)}
+          onMouseLeave={() => setHovered(null)}
+        >
+          {'// blog'}
+          <small className='absolute top-1 right-4 xl:right-5 -translate-y-full text-xs opacity-70'>
+            05
+          </small>
+        </Link>
       </div>
     </>
   )
