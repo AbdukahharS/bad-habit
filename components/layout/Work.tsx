@@ -41,6 +41,22 @@ const projects: Project[] = [
     category: 'Full Stack Website',
   },
   {
+    name: "Shahzod's Blog",
+    description: 'My own blog website about application development',
+    image: 'blog.png',
+    live: 'https://blog.abdukahhar.uz',
+    source: 'https://github.com/AbdukahharS/blog',
+    tags: [
+      'NextJS',
+      'ShadCn UI',
+      'Firebase',
+      'TypeScript',
+      'Clerk',
+      'Blocknote',
+    ],
+    category: 'Full Stack Website',
+  },
+  {
     name: 'Agricultural statistics',
     description: '',
     image: 'agricultural.png',
