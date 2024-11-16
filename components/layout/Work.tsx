@@ -7,7 +7,7 @@ type Project = {
   name: string
   description: string
   image: string
-  live: string
+  live: string | null
   source: string | null
   tags: string[]
   category: string
@@ -58,12 +58,21 @@ const projects: Project[] = [
   },
   {
     name: 'Agricultural statistics',
-    description: '',
+    description: 'Code snippet for presenting statistics',
     image: 'agricultural.png',
     live: 'https://agricultural-statistics.netlify.app/',
     source: 'https://github.com/AbdukahharS/agricultural-statistics',
     tags: ['ApexCharts.js'],
     category: 'Frontend Only Website',
+  },
+  {
+    name: 'InMan',
+    description: 'Inventory Management Desktop Application',
+    image: 'inman.png',
+    source: 'https://github.com/AbdukahharS/InMan',
+    live: null,
+    tags: ['Nextron', 'NextJS', 'ElectronJS', 'TypeScript', 'Shadcn UI'],
+    category: 'Desktop App',
   },
   {
     name: 'AS-Company',
@@ -171,6 +180,7 @@ type Category = {
   'Frontend Only Website': number
   'Full Stack Website': number
   'Figma Design': number
+  'Desktop App': number
 }
 
 const Work = () => {
@@ -179,6 +189,7 @@ const Work = () => {
     'Frontend Only Website': 0,
     'Full Stack Website': 0,
     'Figma Design': 0,
+    'Desktop App': 0,
   })
   const [current, setCurrent] = useState<
     'All' | 'Frontend Only Website' | 'Full Stack Website' | 'Figma Design'
@@ -190,6 +201,7 @@ const Work = () => {
       'Frontend Only Website': 0,
       'Full Stack Website': 0,
       'Figma Design': 0,
+      'Desktop App': 0,
     })
     projects.forEach((project) => {
       setCategories((prev: Category) => {

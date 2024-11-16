@@ -7,7 +7,7 @@ type MasonryProps = {
     name: string
     description: string
     image: string
-    live: string
+    live: string | null
     source: string | null
     tags: string[]
     category: string
@@ -82,12 +82,14 @@ const Masonry: React.FC<MasonryProps> = ({ items, current }) => {
               {item.description}
             </p>
             <div className='flex gap-5 items-center justify-end mt-3'>
-              <Link
-                href={item.live}
-                className='hover:opacity-70 text-blue-300  underline'
-              >
-                Visit
-              </Link>
+              {item.live && (
+                <Link
+                  href={item.live}
+                  className='hover:opacity-70 text-blue-300  underline'
+                >
+                  Visit
+                </Link>
+              )}
               {item.source && (
                 <Link
                   href={item.source}
