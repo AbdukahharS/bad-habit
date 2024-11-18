@@ -5,6 +5,7 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  interpolate-size: allow-keywords;
 }
 
 @media (prefers-color-scheme: dark) {
