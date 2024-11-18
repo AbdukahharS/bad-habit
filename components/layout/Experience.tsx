@@ -51,12 +51,11 @@ const Experience = () => {
       </h2>
       <div className='flex flex-col gap-6 max-w-[750px] w-full mx-auto'>
         {experiences.map((experience, index) => (
-          <button
-            className='w-full'
-            key={index}
-            onClick={() => handleClick(experience.id)}
-          >
-            <div className='w-full flex justify-between items-center py-4 px-8 bg-blue-700/50 rounded-lg'>
+          <div className='w-full' key={index}>
+            <button
+              className='w-full flex justify-between items-center py-4 px-8 bg-blue-700/50 rounded-lg'
+              onClick={() => handleClick(experience.id)}
+            >
               <h3 className='text-xl font-semibold'>{experience.title}</h3>
               <div className='flex items-center gap-6'>
                 <span className='font-semibold hidden sm:block'>
@@ -66,7 +65,7 @@ const Experience = () => {
                   {opens.includes(experience.id) ? <Minus /> : <Plus />}
                 </div>
               </div>
-            </div>
+            </button>
 
             <div
               className={`bg-blue-900/40 rounded-lg px-4 transition-all duration-500 overflow-y-hidden linear ${
@@ -89,7 +88,7 @@ const Experience = () => {
                 ))}
               </div>
             </div>
-          </button>
+          </div>
         ))}
       </div>
     </section>
