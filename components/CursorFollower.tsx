@@ -65,7 +65,7 @@ export default function CursorFollower() {
         opacity: opacity.value,
         scale: scale.value,
       }}
-      className='absolute bg-blue-400 z-[9999] pointer-events-none transition-all duration-[50ms]'
+      className='absolute bg-blue-400 z-[9999] pointer-events-none transition-all duration-[50ms] hidden lg:block'
     />
   )
 }

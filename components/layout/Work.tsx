@@ -217,15 +217,15 @@ const Work = () => {
 
   return (
     <section className='w-full px-6 md:px-12 xl:px-24 mb-28' id='work'>
-      <h2 className='text-5xl sm:text-8xl font-bold mb-12 tracking-wide font-poppins px-20'>
+      <h2 className='text-5xl sm:text-8xl font-bold mb-12 tracking-wide font-poppins px-8 sm:px-20'>
         My Work
       </h2>
-      <div className='filter flex-wrap flex flex-row gap-8 items-center text-slate-200 font-semibold max-w-full'>
-        <p className='text-lg'>Filter by:</p>
+      <div className='filter py-2 flex flex-row gap-6 sm:gap-8 items-center text-slate-200 font-semibold max-w-full overflow-x-auto'>
+        <p className='text-lg hidden sm:block'>Filter by:</p>
         {Object.keys(categories).map((cat, i) => (
           <button
             className={
-              'transition-colors duration-200 relative group hover:text-blue-400 text-lg ' +
+              'transition-colors duration-200 relative group hover:text-blue-400 text-lg whitespace-nowrap ' +
               (current === cat ? 'text-blue-500' : '')
             }
             onClick={() =>
