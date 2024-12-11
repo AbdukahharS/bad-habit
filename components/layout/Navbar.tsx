@@ -5,7 +5,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { Menu, X } from 'lucide-react'
 
-type Links = 'expertise' | 'work' | 'experience' | 'contact' | 'blog'
+type Links = 'expertise' | 'projects' | 'experience' | 'contact' | 'blog'
 
 const Navbar = () => {
   const [hovered, setHovered] = useState<Links | null>(null)
@@ -44,7 +44,7 @@ const Navbar = () => {
             />
           </Link>
           <div className='text-md lg:text-xl flex-1 lg:flex items-center justify-center hidden ml-[-100px] xl:ml-[-220px]'>
-            {['expertise', 'work', 'experience', 'contact'].map((v, i) => (
+            {['expertise', 'projects', 'experience', 'contact'].map((v, i) => (
               <Link
                 href={`/#${v}`}
                 className={`font-bold relative transition-opacity duration-300 px-4 xl:px-5 ${

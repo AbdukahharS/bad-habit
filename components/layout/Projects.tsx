@@ -15,6 +15,15 @@ type Project = {
 
 const projects: Project[] = [
   {
+    name: 'Al-Dar Rehabilitation Clinic',
+    description: "I developed Frontend of Al-Dar clinic's website",
+    image: 'al-dar.png',
+    live: 'https://al-dar-clinic.vercel.app',
+    source: 'https://github.com/AbdukahharS/al-dar-clinic',
+    tags: ['Next.JS', 'Tailwind', 'Framer-motion'],
+    category: 'Full Stack Website',
+  },
+  {
     name: 'Luminink',
     description: 'Illuminate Your Ideas, Capture Your Creativity.',
     image: 'luminink.png',
@@ -183,7 +192,7 @@ type Category = {
   'Desktop App': number
 }
 
-const Work = () => {
+const Projects = () => {
   const [categories, setCategories] = useState<Category>({
     All: 0,
     'Frontend Only Website': 0,
@@ -216,9 +225,9 @@ const Work = () => {
   }, [])
 
   return (
-    <section className='w-full px-6 md:px-12 xl:px-24 mb-28' id='work'>
+    <section className='w-full px-6 md:px-12 xl:px-24 mb-28' id='projects'>
       <h2 className='text-5xl sm:text-8xl font-bold mb-12 tracking-wide font-poppins px-8 sm:px-20'>
-        My Work
+        My Projects
       </h2>
       <div className='filter py-2 flex flex-row gap-6 sm:gap-8 items-center text-slate-200 font-semibold max-w-full overflow-x-auto'>
         <p className='text-lg hidden sm:block'>Filter by:</p>
@@ -251,4 +260,4 @@ const Work = () => {
   )
 }
 
-export default Work
+export default Projects
