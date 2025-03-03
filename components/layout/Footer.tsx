@@ -20,12 +20,12 @@ const Footer = () => {
           <div className='w-full h-20 hidden md:block'></div>
           <div className='text-lg sm:text-2xl font-semibold' id='contact'>
             <Link
-              href='mailto:shakhzodbekkakhkhorov04@gmail.com'
+              href='mailto:shahzod@abdukahhar.uz'
               className='relative after:absolute after:w-[105%] after:h-2 after:bg-purple-400/70 after:bottom-[10%] after:left-0 after:translate-x-[-2.5%] z-10 after:z-[-1] after:block after:transition-all hover:after:h-full'
             >
               <span className='sm:hidden'>Email</span>
               <span className='hidden sm:inline'>
-                shakhzodbekkakhkhorov04@gmail.com
+                shahzod@abdukahhar.uz
               </span>
             </Link>
             <br />
