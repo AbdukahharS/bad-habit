@@ -38,7 +38,7 @@ const Footer = () => {
             </Link>
             <br />
             <Link
-              href='https://www.linkedin.com/in/shakhzodbek-kakhkhorov-217ab9265/'
+              href='https://www.linkedin.com/in/shahzod-kahhorov/'
               className='transition-colors duration-300 hover:text-blue-400'
             >
               LinkedIn
