@@ -18,7 +18,7 @@ const projects: Project[] = [
     name: 'Al-Dar Rehabilitation Clinic',
     description: "I developed Frontend of Al-Dar clinic's website",
     image: 'al-dar.png',
-    live: 'https://al-dar-clinic.vercel.app',
+    live: 'https://www.aldarrehabclinic.com/',
     source: 'https://github.com/AbdukahharS/al-dar-clinic',
     tags: ['Next.JS', 'Tailwind', 'Framer-motion'],
     category: 'Full Stack Website',
