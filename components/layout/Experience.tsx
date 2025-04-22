@@ -22,15 +22,15 @@ const experiences = [
     ],
     id: 1,
   },
-  {
-    id: 2,
-    title: 'Frontend Developer',
-    description:
-      'Creating and maintaining user interfaces. This involved translating designs into code, ensuring responsiveness, compatibility, and performance optimization. I collaborated with back-end developers and tested/debugged code for seamless integration and functionality.',
-    employer: 'GeoInfo',
-    duration: '2024 Jan - April',
-    tags: ['JavaScript', 'HTML', 'CSS', 'API'],
-  },
+  // {
+  //   id: 2,
+  //   title: 'Frontend Developer',
+  //   description:
+  //     'Creating and maintaining user interfaces. This involved translating designs into code, ensuring responsiveness, compatibility, and performance optimization. I collaborated with back-end developers and tested/debugged code for seamless integration and functionality.',
+  //   employer: 'GeoInfo',
+  //   duration: '2024 Jan - April',
+  //   tags: ['JavaScript', 'HTML', 'CSS', 'API'],
+  // },
 ]
 
 const Experience = () => {
