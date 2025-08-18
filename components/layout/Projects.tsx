@@ -176,7 +176,7 @@ const projects: Project[] = [
   {
     name: 'SunnySide',
     description: 'Landing page design',
-    image: 'sunnyside.png',
+    image: 'Sunnyside.png',
     live: 'https://www.figma.com/proto/x5tmzrPqSXztS9tLIpFfJu/Sunnyside-Landing?node-id=3-4&mode=design&t=8o00bhdd9cVoXCkv-1',
     tags: ['Figma'],
     category: 'Figma Design',
