@@ -1,13 +1,12 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { useMouseMove, useValue, animate, useScroll } from 'react-ui-animate'
+import { useMouseMove, useValue, animate } from 'react-ui-animate'
 
 const CURSOR_SIZE = 15
 
 export default function CursorFollower() {
   const [pointer, setPointer] = useState(false)
-  const [scroll, setScroll] = useState(0)
   const x = useValue(-CURSOR_SIZE)
   const y = useValue(0)
   const opacity = useValue(1)
@@ -47,12 +46,9 @@ export default function CursorFollower() {
 
   useMouseMove(({ mouseX, mouseY }) => {
     x.value = mouseX - CURSOR_SIZE / 2
-    y.value = mouseY + scroll - CURSOR_SIZE / 2
+    y.value = mouseY - CURSOR_SIZE / 2
   })
 
-  useScroll(({ scrollY }) => {
-    setScroll(scrollY)
-  })
 
   return (
     <animate.div
@@ -65,7 +61,7 @@ export default function CursorFollower() {
         opacity: opacity.value,
         scale: scale.value,
       }}
-      className='absolute bg-blue-400 z-[9999] pointer-events-none transition-all duration-[50ms] hidden lg:block'
+      className='fixed bg-blue-400 z-[9999] pointer-events-none transition-all duration-[50ms] hidden lg:block'
     />
   )
 }
