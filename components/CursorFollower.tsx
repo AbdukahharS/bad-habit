@@ -28,8 +28,8 @@ export default function CursorFollower() {
 
   useEffect(() => {
     if (pointer) {
-      opacity.value = 0.9
-      scale.value = 2.2
+      opacity.value = 0.6
+      scale.value = 2
       rotation.value = 180
     } else {
       opacity.value = 0.8
@@ -114,7 +114,7 @@ export default function CursorFollower() {
             left: segment.x - (CURSOR_SIZE * segment.scale) / 2,
             top: segment.y - (CURSOR_SIZE * segment.scale) / 2,
             opacity: segment.opacity,
-            background: `radial-gradient(circle, rgba(255, 255, 255, 0.9) 20%, hsl(220, 90%, 70%) 60%, hsl(280, 90%, 70%) 100%)`,
+            background: `hsl(220, 90%, 70%)`,
             transition: 'opacity 0.1s ease-out',
             filter: 'blur(0.5px)',
             border: '1px solid rgba(255, 255, 255, 0.3)',
@@ -134,12 +134,12 @@ export default function CursorFollower() {
           scale: scale.value,
           rotate: rotation.value,
           background: pointer 
-            ? `radial-gradient(circle, rgba(255, 255, 255, 1) 25%, hsl(340, 100%, 70%) 65%, hsl(280, 100%, 70%) 100%)`
-            : `radial-gradient(circle, rgba(255, 255, 255, 0.95) 25%, hsl(220, 100%, 70%) 65%, hsl(280, 100%, 70%) 100%)`,
+            ? `white`
+            : `white`,
           boxShadow: pointer 
-            ? `0 0 25px hsl(340, 80%, 60%), 0 0 50px hsl(280, 60%, 50%), 0 0 75px hsl(340, 40%, 40%)`
-            : `0 0 15px hsl(220, 80%, 60%), 0 0 30px hsl(280, 60%, 50%)`,
-          border: '2px solid rgba(255, 255, 255, 0.4)',
+            ? `0 0 20px hsl(340, 100%, 80%), 0 0 40px hsl(340, 90%, 70%), 0 0 80px hsl(280, 80%, 60%), 0 0 120px hsl(340, 60%, 50%)`
+            : `0 0 15px hsl(220, 100%, 80%), 0 0 30px hsl(220, 90%, 70%), 0 0 60px hsl(220, 70%, 60%)`,
+          border: '2.5px solid hsl(220, 90%, 70%)',
         }}
         className='fixed z-[9999] pointer-events-none hidden lg:block'
       />
