@@ -31,7 +31,7 @@ const Footer = () => {
             <br />
             <br />
             <Link
-              href='https://wa.me/601131578589'
+              href='https://wa.me/998881630804'
               className='transition-colors duration-300 hover:text-blue-400'
             >
               WhatsApp
