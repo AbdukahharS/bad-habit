@@ -3,8 +3,8 @@
 import { useEffect, useState, useRef, useCallback } from 'react'
 import { useMouseMove, useValue, animate } from 'react-ui-animate'
 
-const CURSOR_SIZE = 15
-const TRAIL_LENGTH = 5
+const CURSOR_SIZE = 20
+const TRAIL_LENGTH = 8
 
 interface TrailSegment {
   x: number
@@ -28,11 +28,11 @@ export default function CursorFollower() {
 
   useEffect(() => {
     if (pointer) {
-      opacity.value = 0.7
-      scale.value = 1.8
-      rotation.value = 45
+      opacity.value = 0.9
+      scale.value = 2.2
+      rotation.value = 180
     } else {
-      opacity.value = 1
+      opacity.value = 0.8
       scale.value = 1
       rotation.value = 0
     }
@@ -45,16 +45,16 @@ export default function CursorFollower() {
         const newSegment: TrailSegment = {
           x: mousePos.current.x,
           y: mousePos.current.y,
-          scale: 0.8,
-          opacity: 0.6,
+          scale: 0.9,
+          opacity: 0.7,
           id: now
         }
         
         const newTrail = [newSegment, ...prevTrail.slice(0, TRAIL_LENGTH - 1)]
         return newTrail.map((segment, index) => ({
           ...segment,
-          scale: Math.max(0.3, 0.8 - index * 0.15),
-          opacity: Math.max(0.1, 0.6 - index * 0.15)
+          scale: Math.max(0.4, 0.9 - index * 0.1),
+          opacity: Math.max(0.2, 0.7 - index * 0.08)
         }))
       })
       lastUpdate.current = now
@@ -114,9 +114,10 @@ export default function CursorFollower() {
             left: segment.x - (CURSOR_SIZE * segment.scale) / 2,
             top: segment.y - (CURSOR_SIZE * segment.scale) / 2,
             opacity: segment.opacity,
-            background: `linear-gradient(45deg, hsl(220, 70%, 60%), hsl(280, 70%, 60%))`,
+            background: `radial-gradient(circle, rgba(255, 255, 255, 0.9) 20%, hsl(220, 90%, 70%) 60%, hsl(280, 90%, 70%) 100%)`,
             transition: 'opacity 0.1s ease-out',
-            filter: 'blur(1px)',
+            filter: 'blur(0.5px)',
+            border: '1px solid rgba(255, 255, 255, 0.3)',
           }}
         />
       ))}
@@ -133,11 +134,12 @@ export default function CursorFollower() {
           scale: scale.value,
           rotate: rotation.value,
           background: pointer 
-            ? `linear-gradient(45deg, hsl(340, 80%, 65%), hsl(280, 80%, 65%))`
-            : `linear-gradient(45deg, hsl(220, 80%, 65%), hsl(280, 80%, 65%))`,
+            ? `radial-gradient(circle, rgba(255, 255, 255, 1) 25%, hsl(340, 100%, 70%) 65%, hsl(280, 100%, 70%) 100%)`
+            : `radial-gradient(circle, rgba(255, 255, 255, 0.95) 25%, hsl(220, 100%, 70%) 65%, hsl(280, 100%, 70%) 100%)`,
           boxShadow: pointer 
-            ? `0 0 20px hsl(340, 60%, 50%), 0 0 40px hsl(280, 40%, 40%)`
-            : `0 0 10px hsl(220, 60%, 50%)`,
+            ? `0 0 25px hsl(340, 80%, 60%), 0 0 50px hsl(280, 60%, 50%), 0 0 75px hsl(340, 40%, 40%)`
+            : `0 0 15px hsl(220, 80%, 60%), 0 0 30px hsl(280, 60%, 50%)`,
+          border: '2px solid rgba(255, 255, 255, 0.4)',
         }}
         className='fixed z-[9999] pointer-events-none hidden lg:block'
       />
