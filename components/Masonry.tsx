@@ -70,28 +70,38 @@ const Masonry: React.FC<MasonryProps> = ({ items, current }) => {
           }
           
           .masonry-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 1.5rem;
+            columns: 1;
+            column-gap: 1.5rem;
             width: 100%;
           }
           
           @media (min-width: 768px) {
             .masonry-grid {
-              grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-              gap: 2rem;
+              columns: 2;
+              column-gap: 2rem;
             }
           }
           
           @media (min-width: 1024px) {
             .masonry-grid {
-              grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+              columns: 3;
             }
           }
           
           @media (min-width: 1280px) {
             .masonry-grid {
-              grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+              columns: 4;
+            }
+          }
+          
+          .project-card {
+            break-inside: avoid;
+            margin-bottom: 1.5rem;
+          }
+          
+          @media (min-width: 768px) {
+            .project-card {
+              margin-bottom: 2rem;
             }
           }
         `
