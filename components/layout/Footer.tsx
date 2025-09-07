@@ -14,7 +14,7 @@ const Footer = () => {
         <div className='w-full xl:w-[45%] flex justify-center p-10 flex-col relative'>
           <div className='space-y-6'>
             <h3 className='text-2xl sm:text-4xl font-bold text-white font-poppins leading-tight'>
-              Let's build something amazing together
+              Let&apos;s build something amazing together
             </h3>
             <p className='sm:text-xl font-medium text-gray-300 leading-relaxed'>
               Have an exciting project you need help with? Send me an email or contact me via instant message!

@@ -166,7 +166,7 @@ const Expertise = () => {
               </div>
               <blockquote className='flex-1'>
                 <p className='text-xl sm:text-2xl font-semibold text-white mb-4 font-poppins leading-relaxed group-hover:text-blue-300 transition-colors duration-300'>
-                  "No two things have been combined better than knowledge and patience."
+                  &ldquo;No two things have been combined better than knowledge and patience.&rdquo;
                 </p>
                 <cite className='text-purple-300 font-medium'>- Prophet Muhammad (peace be upon him)</cite>
               </blockquote>

@@ -113,7 +113,7 @@ const Masonry: React.FC<MasonryProps> = ({ items, current }) => {
       />
       <div className='masonry-container py-16' ref={containerRef}>
         <div className='masonry-grid'>
-          {filteredItems.map((item, index) => (
+          {filteredItems.map((item) => (
             <div
               key={`${item.name}-${current}`}
               className='project-card rounded-xl overflow-hidden group cursor-pointer'
