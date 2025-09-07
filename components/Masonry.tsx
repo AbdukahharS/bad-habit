@@ -67,6 +67,9 @@ const Masonry: React.FC<MasonryProps> = ({ items, current }) => {
           
           .project-card:hover {
             transform: scale(1.02) translateY(-8px);
+            box-shadow: 0 25px 50px -12px rgba(59, 130, 246, 0.25), 
+                        0 0 0 1px rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
           }
           
           .masonry-container {
@@ -135,12 +138,12 @@ const Masonry: React.FC<MasonryProps> = ({ items, current }) => {
                 <div className='absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300' />
               </div>
 
-              <div className='p-6 space-y-4'>
+              <div className='p-6 space-y-4 transition-all duration-300 group-hover:translate-y-[-2px]'>
                 <div className='space-y-3'>
-                  <h3 className='text-xl font-bold text-white group-hover:text-blue-300 transition-colors duration-300 font-poppins'>
+                  <h3 className='text-xl font-bold text-white group-hover:text-blue-300 transition-all duration-300 font-poppins'>
                     {item.name}
                   </h3>
-                  <p className='text-gray-300 text-sm leading-relaxed line-clamp-3'>
+                  <p className='text-gray-300 text-sm leading-relaxed line-clamp-3 group-hover:text-gray-200 transition-colors duration-300'>
                     {item.description}
                   </p>
                 </div>
@@ -150,7 +153,7 @@ const Masonry: React.FC<MasonryProps> = ({ items, current }) => {
                     {item.tags.slice(0, 3).map((tag, tagIndex) => (
                       <span
                         key={tagIndex}
-                        className='px-2 py-1 text-xs font-medium rounded-full bg-blue-500/20 text-blue-300 border border-blue-500/30 backdrop-blur-sm'
+                        className='px-2 py-1 text-xs font-medium rounded-full bg-blue-500/20 text-blue-300 border border-blue-500/30 backdrop-blur-sm transition-all duration-300 group-hover:bg-blue-500/30 group-hover:border-blue-400/50'
                       >
                         {tag}
                       </span>
@@ -163,7 +166,7 @@ const Masonry: React.FC<MasonryProps> = ({ items, current }) => {
                   </div>
                 )}
 
-                <div className='flex items-center justify-between pt-4 border-t border-white/10'>
+                <div className='flex items-center justify-between pt-4 border-t border-white/10 group-hover:border-white/20 transition-colors duration-300'>
                   <div className='flex gap-3'>
                     {item.live && (
                       <Link
@@ -208,15 +211,15 @@ const Masonry: React.FC<MasonryProps> = ({ items, current }) => {
                   </div>
 
                   <div
-                    className={`flex items-center gap-2 px-3 py-2 rounded-lg backdrop-blur-sm border transition-all duration-300 ${
+                    className={`flex items-center gap-2 px-3 py-2 rounded-lg backdrop-blur-sm border transition-all duration-300 group-hover:scale-105 ${
                       item.category === 'Frontend Only Website'
-                        ? 'bg-blue-500/10 border-blue-500/30'
+                        ? 'bg-blue-500/10 border-blue-500/30 group-hover:bg-blue-500/20 group-hover:border-blue-400/50'
                         : item.category === 'Full Stack Website'
-                        ? ' bg-yellow-500/10 border-yellow-500/30'
+                        ? ' bg-yellow-500/10 border-yellow-500/30 group-hover:bg-yellow-500/20 group-hover:border-yellow-400/50'
                         : item.category === 'Figma Design'
-                        ? 'bg-pink-500/10 border-pink-500/30'
+                        ? 'bg-pink-500/10 border-pink-500/30 group-hover:bg-pink-500/20 group-hover:border-pink-400/50'
                         : item.category === 'Desktop App'
-                        ? 'bg-purple-500/10 border-purple-500/30'
+                        ? 'bg-purple-500/10 border-purple-500/30 group-hover:bg-purple-500/20 group-hover:border-purple-400/50'
                         : ''
                     }`}
                   >
