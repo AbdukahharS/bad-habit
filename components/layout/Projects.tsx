@@ -229,31 +229,58 @@ const Projects = () => {
       <h2 className='text-5xl sm:text-8xl font-bold mb-12 tracking-wide font-poppins px-8 sm:px-20'>
         My Projects
       </h2>
-      <div className='filter py-2 flex flex-row gap-6 sm:gap-8 items-center text-slate-200 font-semibold max-w-full overflow-x-auto'>
-        <p className='text-lg hidden sm:block'>Filter by:</p>
-        {Object.keys(categories).map((cat, i) => (
-          <button
-            className={
-              'transition-colors duration-200 relative group hover:text-blue-400 text-lg whitespace-nowrap ' +
-              (current === cat ? 'text-blue-500' : '')
-            }
-            onClick={() =>
-              setCurrent(
-                cat as
-                  | 'All'
-                  | 'Frontend Only Website'
-                  | 'Full Stack Website'
-                  | 'Figma Design'
-              )
-            }
-            key={i}
-          >
-            {cat}
-            <small className='absolute group-hover:text-blue-400 transition-colors duration-200 top-0 right-0 translate-x-full -translate-y-[40%] font-normal'>
-              {categories[cat as keyof Category]}
-            </small>
-          </button>
-        ))}
+      <div className='filter py-8 flex flex-col sm:flex-row gap-6 sm:gap-4 items-start sm:items-center'>
+        <div className='flex items-center gap-3'>
+          <div className='w-8 h-8 rounded-lg bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center'>
+            <svg className='w-4 h-4 text-white' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
+              <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z' />
+            </svg>
+          </div>
+          <p className='text-lg font-semibold text-white font-poppins'>Filter Projects</p>
+        </div>
+        
+        <div className='flex flex-wrap gap-3 sm:gap-4 max-w-full overflow-visible'>
+          {Object.keys(categories).map((cat, i) => (
+            <button
+              className={`relative group px-4 py-2 rounded-xl font-medium text-sm transition-all duration-300 whitespace-nowrap backdrop-blur-sm border ${
+                current === cat 
+                  ? 'bg-gradient-to-r from-blue-600/80 to-purple-600/80 text-white border-blue-400/50 shadow-lg shadow-blue-500/25 scale-105' 
+                  : 'bg-gray-800/30 text-gray-300 border-gray-700/50 hover:bg-gray-700/50 hover:text-white hover:border-gray-500/50 hover:scale-105'
+              }`}
+              onClick={() =>
+                setCurrent(
+                  cat as
+                    | 'All'
+                    | 'Frontend Only Website'
+                    | 'Full Stack Website'
+                    | 'Figma Design'
+                )
+              }
+              key={i}
+            >
+              <span className='relative z-10 flex items-center gap-2'>
+                {cat === 'All' && <span className='text-xs'>🎯</span>}
+                {cat === 'Frontend Only Website' && <span className='text-xs'>🌐</span>}
+                {cat === 'Full Stack Website' && <span className='text-xs'>⚡</span>}
+                {cat === 'Figma Design' && <span className='text-xs'>🎨</span>}
+                {cat === 'Desktop App' && <span className='text-xs'>💻</span>}
+                {cat}
+              </span>
+              
+              <div className={`absolute -top-1 -right-1 w-5 h-5 rounded-full text-[10px] font-bold flex items-center justify-center transition-all duration-300 ${
+                current === cat 
+                  ? 'bg-white text-blue-600 scale-100' 
+                  : 'bg-blue-500/80 text-white scale-90 group-hover:scale-100'
+              }`}>
+                {categories[cat as keyof Category]}
+              </div>
+              
+              {current !== cat && (
+                <div className='absolute inset-0 rounded-xl bg-gradient-to-r from-blue-600/20 to-purple-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300' />
+              )}
+            </button>
+          ))}
+        </div>
       </div>
       <Masonry items={projects} current={current} />
     </section>
