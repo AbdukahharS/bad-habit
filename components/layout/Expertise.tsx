@@ -1,92 +1,190 @@
+'use client'
+
 import Image from 'next/image'
-import React from 'react'
+import React, { useEffect } from 'react'
+import { Code, Zap, Server, Quote } from 'lucide-react'
 
 const Expertise = () => {
+  // Add staggered animation on mount
+  useEffect(() => {
+    const cards = document.querySelectorAll('.expertise-card')
+    cards.forEach((card, index) => {
+      const element = card as HTMLElement
+      element.style.animationDelay = `${index * 0.15}s`
+    })
+  }, [])
+
+  const expertiseAreas = [
+    {
+      icon: <Code className='w-8 h-8' />,
+      title: 'Software Development',
+      highlight: 'Software',
+      description: 'Experienced in both functional and OOP: JavaScript, TypeScript.',
+      gradient: 'from-pink-500 to-rose-500',
+      bgGradient: 'linear-gradient(135deg, rgba(236, 72, 153, 0.1) 0%, rgba(244, 63, 94, 0.1) 100%)'
+    },
+    {
+      icon: <Zap className='w-8 h-8' />,
+      title: 'Frontend Development',
+      highlight: 'Frontend Dev',
+      subtitle: 'React, NextJS',
+      description: 'Passionate about complex designs. Over 2 years of development experience in HTML, CSS, JS, React and NextJS frameworks.',
+      gradient: 'from-blue-500 to-cyan-500',
+      bgGradient: 'linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(6, 182, 212, 0.1) 100%)'
+    },
+    {
+      icon: <Server className='w-8 h-8' />,
+      title: 'Backend Development',
+      highlight: 'NodeJS Dev',
+      description: 'Skilled in Backend development with Node.js and building cross-platform desktop apps using Electron.js, optimizing automation for small businesses.',
+      gradient: 'from-green-500 to-emerald-500',
+      bgGradient: 'linear-gradient(135deg, rgba(34, 197, 94, 0.1) 0%, rgba(16, 185, 129, 0.1) 100%)'
+    }
+  ]
+
   return (
-    <section className='px-8 py-10 md:px-12 md:py-20 xl:py-24' id='expertise'>
-      <h2 className='text-5xl sm:text-7xl font-bold text-center mb-12'>
-        My Expertise
-      </h2>
-      <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 max-w-[1100px] mx-auto gap-4 md:gap-0'>
-        <div className='flex flex-col border-4 border-slate-300 md:border-r-transparent py-10 px-8'>
-          <div className='flex items-center gap-5 mb-2'>
-            <Image
-              src='/icons/desktop.svg'
-              width={50}
-              height={50}
-              alt='Desktop'
-            />
-            <h5 className='text-2xl font-semibold'>
-              <span className='after:block after:absolute after:w-[calc(100%+4px)] after:bg-pink-500/80 after:h-2 after:bottom-1 relative z-[1] after:z-[-1] after:left-[-2px]'>
-                Software
-              </span>{' '}
-              Development
-            </h5>
+    <>
+      <style dangerouslySetInnerHTML={{
+        __html: `
+          @keyframes expertiseEnter {
+            0% {
+              opacity: 0;
+              transform: translateY(50px) scale(0.9);
+              filter: blur(10px);
+            }
+            100% {
+              opacity: 1;
+              transform: translateY(0) scale(1);
+              filter: blur(0px);
+            }
+          }
+          
+          .expertise-card {
+            animation: expertiseEnter 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+          }
+          
+          .code-tag {
+            opacity: 0.4;
+            font-family: 'Courier New', monospace;
+            font-size: 0.75rem;
+            color: #64748b;
+          }
+        `
+      }} />
+      
+      <section className='px-6 md:px-12 xl:px-24 py-16 md:py-24' id='expertise'>
+        <div className='text-center mb-16'>
+          <div className='flex items-center justify-center gap-6 mb-6'>
+            <div className='w-20 h-20 rounded-xl bg-gradient-to-br from-purple-500 to-pink-600 flex items-center justify-center'>
+              <Code className='size-12 text-white' />
+            </div>
+            <h2 className='text-5xl sm:text-8xl font-bold text-white font-poppins tracking-wide'>
+              Expertise
+            </h2>
           </div>
-          <div className='pl-9 after:h-[65%] after:opacity-[0.3] after:absolute after:top-[17%] after:left-4 after:border relative'>
-            <p className="before:content-['<h3>'] before:mb-1 before:block before:opacity-30 before:ml-[-35px] after:content-['<h3>'] after:mt-1 after:block after:opacity-30 after:ml-[-35px]">
-              Experienced in both functional and OOP: JavaScript, TypeScript.
-            </p>
+          <p className='text-xl text-gray-300 max-w-2xl mx-auto'>
+            Crafting exceptional web experiences with modern technologies
+          </p>
+        </div>
+
+        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto gap-6 lg:gap-0'>
+          {expertiseAreas.map((area, index) => (
+            <div 
+              key={index}
+              className='expertise-card group relative'
+            >
+              <div
+                className={`relative p-8 backdrop-blur-sm transition-all duration-500 hover:scale-[1.02] border-4 h-full ${
+                  index === 0 ? 'border-slate-300 md:border-r-transparent' :
+                  index === 1 ? 'border-slate-300 lg:border-r-transparent' :
+                  'border-slate-300 md:border-t-transparent lg:border-t-slate-300'
+                }`}
+                style={{ 
+                  background: area.bgGradient,
+                  borderColor: 'rgba(203, 213, 225, 0.3)'
+                }}
+              >
+                {/* Icon and Title with original styling */}
+                <div className='flex items-center gap-5 mb-4'>
+                  <div className={`p-3 rounded-xl bg-gradient-to-r ${area.gradient} bg-opacity-20 border border-white/20 backdrop-blur-sm group-hover:scale-110 transition-transform duration-300`}>
+                    <div className='text-white'>
+                      {area.icon}
+                    </div>
+                  </div>
+                  <h3 className='text-2xl font-bold text-white font-poppins group-hover:text-blue-300 transition-colors duration-300'>
+                    <span className={`relative inline-block after:block after:absolute after:w-[calc(100%+4px)] after:h-2 after:bottom-1 after:left-[-2px] after:z-[-1] after:transition-all after:bg-gradient-to-r ${area.gradient} after:opacity-80 hover:after:opacity-100`}>
+                      {area.highlight}
+                    </span>
+                    {area.title !== area.highlight && (
+                      <span className='text-gray-300'> {area.title.replace(area.highlight, '')}</span>
+                    )}
+                    {area.subtitle && (
+                      <div className='text-gray-400 font-medium text-base mt-1'>{area.subtitle}</div>
+                    )}
+                  </h3>
+                </div>
+
+                {/* Original HTML-style description with glassmorphism */}
+                <div className='pl-9 relative'>
+                  {/* Vertical line */}
+                  <div className='absolute left-4 top-[24px] h-[calc(100%-48px)] border-l border-white/30 opacity-60'></div>
+
+                  <div className="before:content-['<h3>'] before:mb-1 before:block before:opacity-40 before:ml-[-35px] before:text-sm before:font-mono before:text-slate-400 after:content-['</h3>'] after:mt-1 after:block after:opacity-40 after:ml-[-35px] after:text-sm after:font-mono after:text-slate-400">
+                    <p className='text-gray-300 leading-relaxed group-hover:text-white transition-colors duration-300'>
+                      {area.description}
+                    </p>
+                  </div>
+                </div>
+
+                {/* Glassmorphism hover overlay */}
+                <div className={`absolute inset-0 bg-gradient-to-r ${area.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-300 pointer-events-none`}></div>
+              </div>
+            </div>
+          ))}
+          
+          {/* Original Quote Box - Hidden on certain screens */}
+          <div className='p-6 justify-center items-center hidden md:flex lg:hidden relative'>
+            <div className='relative p-6 rounded-2xl border border-white/10 backdrop-blur-sm group hover:border-purple-400/30 transition-all duration-500'
+                 style={{ background: 'linear-gradient(135deg, rgba(147, 51, 234, 0.1) 0%, rgba(79, 70, 229, 0.1) 100%)' }}>
+              <blockquote className='border-l-8 border-violet-600 pl-5'>
+                <p className='text-2xl font-semibold mb-4 text-white group-hover:text-blue-300 transition-colors duration-300'>
+                  &quot;No two things have been combined better than knowledge and patience.&quot;
+                </p>
+                <cite className='text-purple-300 font-medium'>- Prophet Muhammad (peace be upon him)</cite>
+              </blockquote>
+            </div>
           </div>
         </div>
-        <div className='flex flex-col border-4 border-slate-300 lg:border-r-transparent py-10 px-8'>
-          <div className='flex items-center gap-5 mb-2'>
-            <Image
-              src='/icons/react.svg'
-              width={50}
-              height={50}
-              alt='Desktop'
-            />
-            <h5 className='text-2xl font-semibold'>
-              <span className='after:block after:absolute after:w-[calc(100%+4px)] after:bg-blue-500/80 after:h-2 after:bottom-1 relative z-[1] after:z-[-1] after:left-[-2px]'>
-                Frontend Dev
-              </span>{' '}
-              React, NextJS
-            </h5>
-          </div>
-          <div className='pl-9 after:h-[65%] after:opacity-[0.3] after:absolute after:top-[17%] after:left-4 after:border relative'>
-            <p className="before:content-['<h3>'] before:mb-1 before:block before:opacity-30 before:ml-[-35px] after:content-['<h3>'] after:mt-1 after:block after:opacity-30 after:ml-[-35px]">
-              Passionate about complex designs. Over 2 years of development
-              experience in HTML, CSS, JS, React and NextJS frameworks.
-            </p>
+
+        {/* Inspirational Quote */}
+        <div className='mt-16 max-w-4xl mx-auto hidden'>
+          <div className='relative p-8 rounded-2xl border border-white/10 backdrop-blur-sm group hover:border-purple-400/30 transition-all duration-500'
+               style={{ background: 'linear-gradient(135deg, rgba(147, 51, 234, 0.1) 0%, rgba(79, 70, 229, 0.1) 100%)' }}>
+            <div className='flex items-start gap-6'>
+              <div className='p-3 rounded-xl bg-purple-500/20 border border-purple-400/30 backdrop-blur-sm group-hover:scale-110 transition-transform duration-300'>
+                <Quote className='w-6 h-6 text-purple-400' />
+              </div>
+              <blockquote className='flex-1'>
+                <p className='text-xl sm:text-2xl font-semibold text-white mb-4 font-poppins leading-relaxed group-hover:text-blue-300 transition-colors duration-300'>
+                  "No two things have been combined better than knowledge and patience."
+                </p>
+                <cite className='text-purple-300 font-medium'>- Prophet Muhammad (peace be upon him)</cite>
+              </blockquote>
+            </div>
           </div>
         </div>
-        <div className='flex flex-col border-4 border-slate-300 md:border-t-transparent lg:border-t-slate-300 py-10 px-8'>
-          <div className='flex items-center gap-5 mb-2'>
-            <Image src='/icons/node.svg' width={50} height={50} alt='Desktop' />
-            <h5 className='text-2xl font-semibold'>
-              <span className='after:block after:absolute after:w-[calc(100%+4px)] after:bg-green-500/80 after:h-2 after:bottom-1 relative z-[1] after:z-[-1] after:left-[-2px]'>
-                NodeJS Dev
-              </span>{' '}
-            </h5>
-          </div>
-          <div className='pl-9 after:h-[65%] after:opacity-[0.3] after:absolute after:top-[17%] after:left-4 after:border relative'>
-            <p className="before:content-['<h3>'] before:mb-1 before:block before:opacity-30 before:ml-[-35px] after:content-['<h3>'] after:mt-1 after:block after:opacity-30 after:ml-[-35px]">
-              Skilled in Backend development with Node.js and building
-              cross-platform desktop apps using Electron.js, optimizing
-              automation for small businesses.
-            </p>
-          </div>
+
+        {/* Background code image */}
+        <div className='w-full -mt-10 flex justify-center opacity-20 pointer-events-none'>
+          <Image
+            src='/hello-world-html-code.png'
+            alt='hello-world-code'
+            width={582}
+            height={291}
+          />
         </div>
-        <div className='p-6 justify-center items-center hidden md:flex lg:hidden'>
-          <blockquote className='border-l-8 border-violet-600 pl-5'>
-            <p className='text-2xl font-semibold mb-4'>
-              “No two things have been combined better than knowledge and
-              patience.”
-            </p>
-            <cite>- Prophet Muhammad (peace be upon him)</cite>
-          </blockquote>
-        </div>
-      </div>
-      <div className='w-full -mt-10 sm:-mt-12 z-[-1] opacity-20 flex justify-center px-4'>
-        <Image
-          src='/hello-world-html-code.png'
-          alt='hello-world-code'
-          width={582}
-          height={291}
-        />
-      </div>
-    </section>
+      </section>
+    </>
   )
 }
 
