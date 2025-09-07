@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import { Target, Globe, Zap, Palette, Monitor } from 'lucide-react'
 import Masonry from '../Masonry'
 
 type Project = {
@@ -259,11 +260,11 @@ const Projects = () => {
               key={i}
             >
               <span className='relative z-10 flex items-center gap-2'>
-                {cat === 'All' && <span className='text-xs'>🎯</span>}
-                {cat === 'Frontend Only Website' && <span className='text-xs'>🌐</span>}
-                {cat === 'Full Stack Website' && <span className='text-xs'>⚡</span>}
-                {cat === 'Figma Design' && <span className='text-xs'>🎨</span>}
-                {cat === 'Desktop App' && <span className='text-xs'>💻</span>}
+                {cat === 'All' && <Target className='size-5' />}
+                {cat === 'Frontend Only Website' && <Globe className='size-5' />}
+                {cat === 'Full Stack Website' && <Zap className='size-5' />}
+                {cat === 'Figma Design' && <Palette className='size-5' />}
+                {cat === 'Desktop App' && <Monitor className='size-5' />}
                 {cat}
               </span>
               
