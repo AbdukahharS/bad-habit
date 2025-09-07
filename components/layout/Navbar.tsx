@@ -38,7 +38,7 @@ const Navbar = () => {
               ? 'bg-black/40 border-white/20 shadow-lg shadow-black/20' 
               : 'bg-white/5 border-white/10'
           }`}>
-            <div className='px-6 py-4 flex justify-between items-center'>
+            <div className='px-6 py-3 flex justify-between items-center'>
               
               {/* Mobile Menu Button */}
               <button
