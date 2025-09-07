@@ -116,7 +116,7 @@ const Masonry: React.FC<MasonryProps> = ({ items, current }) => {
           {filteredItems.map((item) => (
             <div
               key={`${item.name}-${current}`}
-              className='project-card rounded-xl overflow-hidden group cursor-pointer'
+              className='project-card rounded-xl overflow-hidden group'
               style={{
                 background:
                   'linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(147, 51, 234, 0.1) 50%, rgba(236, 72, 153, 0.1) 100%)',
