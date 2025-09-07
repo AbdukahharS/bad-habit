@@ -21,53 +21,93 @@ type MasonryProps = {
 
 const Masonry: React.FC<MasonryProps> = ({ items, current }) => {
   const containerRef = React.useRef<HTMLDivElement>(null)
+  
+  // Get filtered items
+  const filteredItems = React.useMemo(() => {
+    return items.filter(item => current === 'All' || item.category === current)
+  }, [items, current])
 
   useEffect(() => {
-    const divs = containerRef.current?.children
-    if (divs) {
-      for (const i in divs) {
-        const div = divs[i]
+    const container = containerRef.current
+    if (!container) return
 
-        if (!!div && typeof div === 'object') {
-          const category = div.querySelector('span')
-          if (current === 'All' || current === category?.textContent) {
-            if (div.classList.contains('hidden')) {
-              div.classList.remove('hidden')
-              setTimeout(() => {
-                div.classList.remove('scale-0')
-                div.classList.add('scale-100')
-              }, 300) // wait for 300ms before adding the scale-100 class
-            }
-          } else {
-            if (!div.classList.contains('hidden')) {
-              div.classList.remove('scale-100')
-              div.classList.add('scale-0')
-              setTimeout(() => {
-                div.classList.add('hidden')
-              }, 300)
-            }
-          }
-        }
-      }
-    }
-  }, [current])
+    // Add staggered animation delay for entrance
+    const cards = container.querySelectorAll('.project-card')
+    cards.forEach((card, index) => {
+      const element = card as HTMLElement
+      element.style.animationDelay = `${index * 0.1}s`
+    })
+  }, [filteredItems])
 
   return (
-    <div
-      className='columns-1 md:columns-2 lg:columns-3 xl:columns-4 gap-4 lg:gap-8 space-y-4 lg:space-y-8 py-16'
-      ref={containerRef}
-    >
-      {items.map((item, index) => (
-        <div
-          key={index}
-          className='break-inside-avoid rounded-xl overflow-hidden group cursor-pointer transition-all duration-500 hover:scale-[1.02] hover:-translate-y-2'
-          style={{
-            background: 'linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(147, 51, 234, 0.1) 50%, rgba(236, 72, 153, 0.1) 100%)',
-            border: '1px solid rgba(255, 255, 255, 0.1)',
-            backdropFilter: 'blur(10px)',
-            transition: 'all 0.5s cubic-bezier(0.4, 0, 0.2, 1)',
-          }}
-        >
+    <>
+      <style dangerouslySetInnerHTML={{
+        __html: `
+          @keyframes cardEnter {
+            0% {
+              opacity: 0;
+              transform: scale(0.8) translateY(30px);
+              filter: blur(8px);
+            }
+            100% {
+              opacity: 1;
+              transform: scale(1) translateY(0);
+              filter: blur(0px);
+            }
+          }
+          
+          .project-card {
+            animation: cardEnter 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+          }
+          
+          .project-card:hover {
+            transform: scale(1.02) translateY(-8px);
+          }
+          
+          .masonry-container {
+            transition: all 0.3s ease-out;
+          }
+          
+          .masonry-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+            width: 100%;
+          }
+          
+          @media (min-width: 768px) {
+            .masonry-grid {
+              grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+              gap: 2rem;
+            }
+          }
+          
+          @media (min-width: 1024px) {
+            .masonry-grid {
+              grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            }
+          }
+          
+          @media (min-width: 1280px) {
+            .masonry-grid {
+              grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            }
+          }
+        `
+      }} />
+      <div className='masonry-container py-16' ref={containerRef}>
+        <div className='masonry-grid'>
+          {filteredItems.map((item, index) => (
+            <div
+              key={`${item.name}-${current}`}
+              className='project-card rounded-xl overflow-hidden group cursor-pointer'
+              style={{
+                background: 'linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(147, 51, 234, 0.1) 50%, rgba(236, 72, 153, 0.1) 100%)',
+                border: '1px solid rgba(255, 255, 255, 0.1)',
+                backdropFilter: 'blur(10px)',
+              }}
+            >
           <div className='relative overflow-hidden rounded-t-xl'>
             <Image
               src={`/projects/${item.image}`}
@@ -80,8 +120,6 @@ const Masonry: React.FC<MasonryProps> = ({ items, current }) => {
           </div>
           
           <div className='p-6 space-y-4'>
-            <span className='hidden'>{item.category}</span>
-            
             <div className='space-y-3'>
               <h3 className='text-xl font-bold text-white group-hover:text-blue-300 transition-colors duration-300 font-poppins'>
                 {item.name}
@@ -147,9 +185,11 @@ const Masonry: React.FC<MasonryProps> = ({ items, current }) => {
               </div>
             </div>
           </div>
+          </div>
+          ))}
         </div>
-      ))}
-    </div>
+      </div>
+    </>
   )
 }
 
