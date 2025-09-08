@@ -151,7 +151,7 @@ const Experience = () => {
                     </div>
                   </div>
                   
-                  <div className='ml-4'>
+                  <div className='sm:ml-4'>
                     <div className={`flex items-center justify-center rounded-full w-12 h-12 border transition-all duration-300 ${
                       opens.includes(experience.id) 
                         ? 'bg-purple-500/20 border-purple-400/50 text-purple-300 rotate-180' 
@@ -165,7 +165,7 @@ const Experience = () => {
                 {/* Expandable Content */}
                 <div
                   className={`transition-all duration-500 overflow-hidden ${
-                    opens.includes(experience.id) ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+                    opens.includes(experience.id) ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'
                   }`}
                 >
                   <div className='px-6 sm:px-8 pb-6 sm:pb-8 border-t border-white/10'>

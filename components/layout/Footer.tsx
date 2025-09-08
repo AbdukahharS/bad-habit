@@ -36,7 +36,7 @@ const Footer = () => {
               <div className='absolute inset-0 bg-gradient-to-r from-purple-500/10 to-blue-500/10 rounded-lg transform scale-0 group-hover:scale-100 transition-transform duration-300'></div>
             </Link>
             
-            <div className='grid grid-cols-2 gap-4 pt-4'>
+            <div className='grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4'>
               {[
                 { 
                   href: 'https://wa.me/998881630804', 
