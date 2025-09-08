@@ -165,7 +165,7 @@ const Experience = () => {
                 {/* Expandable Content */}
                 <div
                   className={`transition-all duration-500 overflow-hidden ${
-                    opens.includes(experience.id) ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'
+                    opens.includes(experience.id) ? 'max-h-[600px] opacity-100' : 'max-h-0 opacity-0'
                   }`}
                 >
                   <div className='px-6 sm:px-8 pb-6 sm:pb-8 border-t border-white/10'>
