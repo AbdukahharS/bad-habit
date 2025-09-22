@@ -16,6 +16,15 @@ type Project = {
 
 const projects: Project[] = [
   {
+    name: 'Yarrow Map Web SDK Documentation',
+    description: 'I made the documentation website for the Yarrow Map Web SDK.',
+    image: 'yarrow-web-sdk-docs.png',
+    live: 'https://yarrow-web-sdk-docs.netlify.app/',
+    source: 'https://github.com/AbdukahharS/yarrow-web-sdk-docs',
+    tags: ['Vue', 'I18n', 'TypeScript'],
+    category: 'Frontend Only Website',
+  },
+  {
     name: 'Al-Dar Rehabilitation Clinic',
     description: "I developed Frontend of Al-Dar clinic's website",
     image: 'al-dar.png',
@@ -49,6 +58,15 @@ const projects: Project[] = [
     source: 'https://github.com/AbdukahharS/founders-mui',
     tags: ['React.js', 'Material UI', 'Firebse'],
     category: 'Full Stack Website',
+  },
+  {
+    name: 'Yarrow Map Web',
+    description: 'I co-developed frontend of the Yarrow Map Web application.',
+    image: 'yarrow-map-web.png',
+    live: 'https://map.yarrow.uz/',
+    source: null,
+    tags: ['Vue', 'Yarrow Map Web SDK', 'I18n', 'Pinia'],
+    category: 'Frontend Only Website',
   },
   {
     name: "Shahzod's Blog",
@@ -233,19 +251,31 @@ const Projects = () => {
       <div className='filter py-8 flex flex-col sm:flex-row gap-6 sm:gap-4 items-start sm:items-center'>
         <div className='flex items-center gap-3'>
           <div className='w-8 h-8 rounded-lg bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center'>
-            <svg className='w-4 h-4 text-white' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
-              <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z' />
+            <svg
+              className='w-4 h-4 text-white'
+              fill='none'
+              stroke='currentColor'
+              viewBox='0 0 24 24'
+            >
+              <path
+                strokeLinecap='round'
+                strokeLinejoin='round'
+                strokeWidth={2}
+                d='M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z'
+              />
             </svg>
           </div>
-          <p className='text-lg font-semibold text-white font-poppins'>Filter Projects</p>
+          <p className='text-lg font-semibold text-white font-poppins'>
+            Filter Projects
+          </p>
         </div>
-        
+
         <div className='flex flex-wrap gap-3 sm:gap-4 max-w-full overflow-visible'>
           {Object.keys(categories).map((cat, i) => (
             <button
               className={`relative group px-4 py-2 rounded-xl font-medium text-sm transition-all duration-300 whitespace-nowrap backdrop-blur-sm border ${
-                current === cat 
-                  ? 'bg-gradient-to-r from-blue-600/80 to-purple-600/80 text-white border-blue-400/50 shadow-lg shadow-blue-500/25 scale-105' 
+                current === cat
+                  ? 'bg-gradient-to-r from-blue-600/80 to-purple-600/80 text-white border-blue-400/50 shadow-lg shadow-blue-500/25 scale-105'
                   : 'bg-gray-800/30 text-gray-300 border-gray-700/50 hover:bg-gray-700/50 hover:text-white hover:border-gray-500/50 hover:scale-105'
               }`}
               onClick={() =>
@@ -261,21 +291,25 @@ const Projects = () => {
             >
               <span className='relative z-10 flex items-center gap-2'>
                 {cat === 'All' && <Target className='size-5' />}
-                {cat === 'Frontend Only Website' && <Globe className='size-5' />}
+                {cat === 'Frontend Only Website' && (
+                  <Globe className='size-5' />
+                )}
                 {cat === 'Full Stack Website' && <Zap className='size-5' />}
                 {cat === 'Figma Design' && <Palette className='size-5' />}
                 {cat === 'Desktop App' && <Monitor className='size-5' />}
                 {cat}
               </span>
-              
-              <div className={`absolute -top-1 -right-1 w-5 h-5 rounded-full text-[10px] font-bold flex items-center justify-center transition-all duration-300 ${
-                current === cat 
-                  ? 'bg-white text-blue-600 scale-100' 
-                  : 'bg-blue-500/80 text-white scale-90 group-hover:scale-100'
-              }`}>
+
+              <div
+                className={`absolute -top-1 -right-1 w-5 h-5 rounded-full text-[10px] font-bold flex items-center justify-center transition-all duration-300 ${
+                  current === cat
+                    ? 'bg-white text-blue-600 scale-100'
+                    : 'bg-blue-500/80 text-white scale-90 group-hover:scale-100'
+                }`}
+              >
                 {categories[cat as keyof Category]}
               </div>
-              
+
               {current !== cat && (
                 <div className='absolute inset-0 rounded-xl bg-gradient-to-r from-blue-600/20 to-purple-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300' />
               )}
