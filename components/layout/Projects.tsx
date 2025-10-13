@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { Target, Globe, Zap, Palette, Monitor } from 'lucide-react'
+import { Target, Globe, Zap, Palette, Monitor, Layers, Smartphone, ChevronDown } from 'lucide-react'
 import Masonry from '../Masonry'
 
 type Project = {
@@ -15,6 +15,42 @@ type Project = {
 }
 
 const projects: Project[] = [
+  {
+    name: 'Ravon Taxi - Admin Dashboard',
+    description: 'Comprehensive fleet management system with real-time trip monitoring, driver oversight, and analytics dashboard for local taxi company.',
+    image: 'ravon-admin.png',
+    live: null,
+    source: null,
+    tags: ['React', 'TypeScript', 'Zustand', 'ShadCN UI', 'React Hook Form', 'Zod', 'Axios'],
+    category: 'Web Application',
+  },
+  {
+    name: 'Ravon Taxi - Driver Mobile App',
+    description: 'Cross-platform Android driver application with geolocation tracking, ride assignments, and real-time updates built with Tauri.',
+    image: 'ravon-driver.jpg',
+    live: null,
+    source: null,
+    tags: ['React', 'TypeScript', 'Tauri', 'Zustand', 'Geolocation', 'Framer Motion'],
+    category: 'Mobile App',
+  },
+  {
+    name: 'Chorvoq Tourism Zone - Government Geoportal',
+    description: 'Government tourism management platform with advanced GIS capabilities, interactive maps, and multilingual support for Chorvoq recreation zone.',
+    image: 'chorvoq.png',
+    live: null,
+    source: null,
+    tags: ['React', 'TypeScript', 'Maplibre GL JS', 'Leaflet', 'OpenLayers', 'Zustand', 'Recharts', 'i18n'],
+    category: 'Web Application',
+  },
+  {
+    name: 'Global Crop - Farmer Monitoring Platform',
+    description: 'Banking sector agricultural monitoring platform with GIS-based field mapping, data analytics, and loan tracking for rural farmers.',
+    image: 'globalcrop.png',
+    live: null,
+    source: null,
+    tags: ['React', 'TypeScript', 'Maplibre GL JS', 'Leaflet', 'Zustand', 'Recharts', 'i18n'],
+    category: 'Web Application',
+  },
   {
     name: 'Yarrow Map Web SDK Documentation',
     description: 'I made the documentation website for the Yarrow Map Web SDK.',
@@ -205,31 +241,38 @@ const projects: Project[] = [
 
 type Category = {
   All: number
-  'Frontend Only Website': number
+  'Web Application': number
+  'Mobile App': number
   'Full Stack Website': number
-  'Figma Design': number
+  'Frontend Only Website': number
   'Desktop App': number
+  'Figma Design': number
 }
 
 const Projects = () => {
   const [categories, setCategories] = useState<Category>({
     All: 0,
-    'Frontend Only Website': 0,
+    'Web Application': 0,
+    'Mobile App': 0,
     'Full Stack Website': 0,
-    'Figma Design': 0,
+    'Frontend Only Website': 0,
     'Desktop App': 0,
+    'Figma Design': 0,
   })
   const [current, setCurrent] = useState<
-    'All' | 'Frontend Only Website' | 'Full Stack Website' | 'Figma Design'
+    'All' | 'Web Application' | 'Mobile App' | 'Full Stack Website' | 'Frontend Only Website' | 'Desktop App' | 'Figma Design'
   >('All')
+  const [isFilterOpen, setIsFilterOpen] = useState(false)
 
   useEffect(() => {
     setCategories({
       All: 0,
-      'Frontend Only Website': 0,
+      'Web Application': 0,
+      'Mobile App': 0,
       'Full Stack Website': 0,
-      'Figma Design': 0,
+      'Frontend Only Website': 0,
       'Desktop App': 0,
+      'Figma Design': 0,
     })
     projects.forEach((project) => {
       setCategories((prev: Category) => {
@@ -245,11 +288,42 @@ const Projects = () => {
 
   return (
     <section className='w-full px-6 md:px-12 xl:px-24 mb-28' id='projects'>
-      <h2 className='text-5xl sm:text-8xl font-bold mb-12 tracking-wide font-poppins px-8 sm:px-20'>
+      <h2 className='text-5xl sm:text-8xl font-bold mb-12 tracking-wide font-poppins px-2 sm:px-20'>
         My Projects
       </h2>
-      <div className='filter py-8 flex flex-col sm:flex-row gap-6 sm:gap-4 items-start sm:items-center'>
-        <div className='flex items-center gap-3'>
+      <div className='filter flex flex-col gap-2'>
+        <button
+          className='flex items-center justify-between gap-3 sm:hidden w-full px-4 py-3 rounded-xl bg-gradient-to-r from-blue-600/20 to-purple-600/20 border border-blue-500/30 backdrop-blur-sm hover:border-blue-400/50 transition-all duration-300'
+          onClick={() => setIsFilterOpen(!isFilterOpen)}
+        >
+          <div className='flex items-center gap-3'>
+            <div className='w-8 h-8 rounded-lg bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center'>
+              <svg
+                className='w-4 h-4 text-white'
+                fill='none'
+                stroke='currentColor'
+                viewBox='0 0 24 24'
+              >
+                <path
+                  strokeLinecap='round'
+                  strokeLinejoin='round'
+                  strokeWidth={2}
+                  d='M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z'
+                />
+              </svg>
+            </div>
+            <p className='text-lg font-semibold text-white font-poppins'>
+              Filter Projects
+            </p>
+          </div>
+          <ChevronDown
+            className={`w-5 h-5 text-white transition-transform duration-300 ${
+              isFilterOpen ? 'rotate-180' : ''
+            }`}
+          />
+        </button>
+
+        <div className='hidden sm:flex items-center gap-3 mb-2'>
           <div className='w-8 h-8 rounded-lg bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center'>
             <svg
               className='w-4 h-4 text-white'
@@ -270,7 +344,9 @@ const Projects = () => {
           </p>
         </div>
 
-        <div className='flex flex-wrap gap-3 sm:gap-4 max-w-full overflow-visible'>
+        <div className={`flex flex-wrap gap-3 p-1 sm:gap-4 max-w-full overflow-hidden transition-all duration-500 ease-in-out ${
+          isFilterOpen ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0 sm:max-h-none sm:opacity-100'
+        }`}>
           {Object.keys(categories).map((cat, i) => (
             <button
               className={`relative group px-4 py-2 rounded-xl font-medium text-sm transition-all duration-300 whitespace-nowrap backdrop-blur-sm border ${
@@ -282,8 +358,11 @@ const Projects = () => {
                 setCurrent(
                   cat as
                     | 'All'
-                    | 'Frontend Only Website'
+                    | 'Web Application'
+                    | 'Mobile App'
                     | 'Full Stack Website'
+                    | 'Frontend Only Website'
+                    | 'Desktop App'
                     | 'Figma Design'
                 )
               }
@@ -291,6 +370,8 @@ const Projects = () => {
             >
               <span className='relative z-10 flex items-center gap-2'>
                 {cat === 'All' && <Target className='size-5' />}
+                {cat === 'Web Application' && <Layers className='size-5' />}
+                {cat === 'Mobile App' && <Smartphone className='size-5' />}
                 {cat === 'Frontend Only Website' && (
                   <Globe className='size-5' />
                 )}

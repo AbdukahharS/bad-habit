@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import React, { useEffect } from 'react'
-import { Globe, Zap, Palette, Monitor } from 'lucide-react'
+import { Globe, Zap, Palette, Monitor, Layers, Smartphone } from 'lucide-react'
 
 type MasonryProps = {
   items: {
@@ -15,8 +15,11 @@ type MasonryProps = {
   }[]
   current:
     | 'All'
-    | 'Frontend Only Website'
+    | 'Web Application'
+    | 'Mobile App'
     | 'Full Stack Website'
+    | 'Frontend Only Website'
+    | 'Desktop App'
     | 'Figma Design'
 }
 
@@ -212,10 +215,14 @@ const Masonry: React.FC<MasonryProps> = ({ items, current }) => {
 
                   <div
                     className={`flex items-center gap-2 px-3 py-2 rounded-lg backdrop-blur-sm border transition-all duration-300 group-hover:scale-105 ${
-                      item.category === 'Frontend Only Website'
+                      item.category === 'Web Application'
+                        ? 'bg-cyan-500/10 border-cyan-500/30 group-hover:bg-cyan-500/20 group-hover:border-cyan-400/50'
+                        : item.category === 'Mobile App'
+                        ? 'bg-green-500/10 border-green-500/30 group-hover:bg-green-500/20 group-hover:border-green-400/50'
+                        : item.category === 'Frontend Only Website'
                         ? 'bg-blue-500/10 border-blue-500/30 group-hover:bg-blue-500/20 group-hover:border-blue-400/50'
                         : item.category === 'Full Stack Website'
-                        ? ' bg-yellow-500/10 border-yellow-500/30 group-hover:bg-yellow-500/20 group-hover:border-yellow-400/50'
+                        ? 'bg-yellow-500/10 border-yellow-500/30 group-hover:bg-yellow-500/20 group-hover:border-yellow-400/50'
                         : item.category === 'Figma Design'
                         ? 'bg-pink-500/10 border-pink-500/30 group-hover:bg-pink-500/20 group-hover:border-pink-400/50'
                         : item.category === 'Desktop App'
@@ -223,6 +230,16 @@ const Masonry: React.FC<MasonryProps> = ({ items, current }) => {
                         : ''
                     }`}
                   >
+                    {item.category === 'Web Application' && (
+                      <div className='flex items-center gap-1.5 text-cyan-400'>
+                        <Layers className='w-4 h-4' />
+                      </div>
+                    )}
+                    {item.category === 'Mobile App' && (
+                      <div className='flex items-center gap-1.5 text-green-400'>
+                        <Smartphone className='w-4 h-4' />
+                      </div>
+                    )}
                     {item.category === 'Frontend Only Website' && (
                       <div className='flex items-center gap-1.5 text-blue-400'>
                         <Globe className='w-4 h-4' />

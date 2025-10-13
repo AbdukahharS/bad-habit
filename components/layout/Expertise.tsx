@@ -28,7 +28,7 @@ const Expertise = () => {
       title: 'Frontend Development',
       highlight: 'Frontend Dev',
       subtitle: 'React, NextJS',
-      description: 'Passionate about complex designs. Over 2 years of development experience in HTML, CSS, JS, React and NextJS frameworks.',
+      description: 'Specialized in translating intricate designs into responsive interfaces. 3+ years crafting production-ready applications with HTML, CSS, JS, React, NextJS and Vue.',
       gradient: 'from-blue-500 to-cyan-500',
       bgGradient: 'linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(6, 182, 212, 0.1) 100%)'
     },
@@ -36,7 +36,7 @@ const Expertise = () => {
       icon: <Server className='w-8 h-8' />,
       title: 'Backend Development',
       highlight: 'NodeJS Dev',
-      description: 'Skilled in Backend development with Node.js and building cross-platform desktop apps using Electron.js, optimizing automation for small businesses.',
+      description: 'Skilled in Backend development with Node.js and building cross-platform desktop apps using Electron.js and Tauri',
       gradient: 'from-green-500 to-emerald-500',
       bgGradient: 'linear-gradient(135deg, rgba(34, 197, 94, 0.1) 0%, rgba(16, 185, 129, 0.1) 100%)'
     }
