@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import React, { useEffect } from 'react'
-import { Globe, Zap, Palette, Monitor, Layers, Smartphone } from 'lucide-react'
+import { Globe, Palette, Monitor, Layers, Smartphone, Building2, FileText } from 'lucide-react'
 
 type MasonryProps = {
   items: {
@@ -15,12 +15,13 @@ type MasonryProps = {
   }[]
   current:
     | 'All'
-    | 'Web Application'
-    | 'Mobile App'
-    | 'Full Stack Website'
-    | 'Frontend Only Website'
-    | 'Desktop App'
-    | 'Figma Design'
+    | 'Enterprise Applications'
+    | 'Mobile Apps'
+    | 'Desktop Apps'
+    | 'Full-Stack Web Apps'
+    | 'Landing Pages'
+    | 'Documentation'
+    | 'Design Work'
 }
 
 const Masonry: React.FC<MasonryProps> = ({ items, current }) => {
@@ -215,49 +216,56 @@ const Masonry: React.FC<MasonryProps> = ({ items, current }) => {
 
                   <div
                     className={`flex items-center gap-2 px-3 py-2 rounded-lg backdrop-blur-sm border transition-all duration-300 group-hover:scale-105 ${
-                      item.category === 'Web Application'
+                      item.category === 'Enterprise Applications'
                         ? 'bg-cyan-500/10 border-cyan-500/30 group-hover:bg-cyan-500/20 group-hover:border-cyan-400/50'
-                        : item.category === 'Mobile App'
+                        : item.category === 'Mobile Apps'
                         ? 'bg-green-500/10 border-green-500/30 group-hover:bg-green-500/20 group-hover:border-green-400/50'
-                        : item.category === 'Frontend Only Website'
-                        ? 'bg-blue-500/10 border-blue-500/30 group-hover:bg-blue-500/20 group-hover:border-blue-400/50'
-                        : item.category === 'Full Stack Website'
-                        ? 'bg-yellow-500/10 border-yellow-500/30 group-hover:bg-yellow-500/20 group-hover:border-yellow-400/50'
-                        : item.category === 'Figma Design'
-                        ? 'bg-pink-500/10 border-pink-500/30 group-hover:bg-pink-500/20 group-hover:border-pink-400/50'
-                        : item.category === 'Desktop App'
+                        : item.category === 'Desktop Apps'
                         ? 'bg-purple-500/10 border-purple-500/30 group-hover:bg-purple-500/20 group-hover:border-purple-400/50'
+                        : item.category === 'Full-Stack Web Apps'
+                        ? 'bg-indigo-500/10 border-indigo-500/30 group-hover:bg-indigo-500/20 group-hover:border-indigo-400/50'
+                        : item.category === 'Landing Pages'
+                        ? 'bg-blue-500/10 border-blue-500/30 group-hover:bg-blue-500/20 group-hover:border-blue-400/50'
+                        : item.category === 'Documentation'
+                        ? 'bg-emerald-500/10 border-emerald-500/30 group-hover:bg-emerald-500/20 group-hover:border-emerald-400/50'
+                        : item.category === 'Design Work'
+                        ? 'bg-pink-500/10 border-pink-500/30 group-hover:bg-pink-500/20 group-hover:border-pink-400/50'
                         : ''
                     }`}
                   >
-                    {item.category === 'Web Application' && (
+                    {item.category === 'Enterprise Applications' && (
                       <div className='flex items-center gap-1.5 text-cyan-400'>
-                        <Layers className='w-4 h-4' />
+                        <Building2 className='w-4 h-4' />
                       </div>
                     )}
-                    {item.category === 'Mobile App' && (
+                    {item.category === 'Mobile Apps' && (
                       <div className='flex items-center gap-1.5 text-green-400'>
                         <Smartphone className='w-4 h-4' />
                       </div>
                     )}
-                    {item.category === 'Frontend Only Website' && (
+                    {item.category === 'Desktop Apps' && (
+                      <div className='flex items-center gap-1.5 text-purple-400'>
+                        <Monitor className='w-4 h-4' />
+                      </div>
+                    )}
+                    {item.category === 'Full-Stack Web Apps' && (
+                      <div className='flex items-center gap-1.5 text-indigo-400'>
+                        <Layers className='w-4 h-4' />
+                      </div>
+                    )}
+                    {item.category === 'Landing Pages' && (
                       <div className='flex items-center gap-1.5 text-blue-400'>
                         <Globe className='w-4 h-4' />
                       </div>
                     )}
-                    {item.category === 'Full Stack Website' && (
-                      <div className='flex items-center gap-1.5 text-yellow-400'>
-                        <Zap className='w-4 h-4' />
+                    {item.category === 'Documentation' && (
+                      <div className='flex items-center gap-1.5 text-emerald-400'>
+                        <FileText className='w-4 h-4' />
                       </div>
                     )}
-                    {item.category === 'Figma Design' && (
+                    {item.category === 'Design Work' && (
                       <div className='flex items-center gap-1.5 text-pink-400'>
                         <Palette className='w-4 h-4' />
-                      </div>
-                    )}
-                    {item.category === 'Desktop App' && (
-                      <div className='flex items-center gap-1.5 text-purple-400'>
-                        <Monitor className='w-4 h-4' />
                       </div>
                     )}
                   </div>

@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { Target, Globe, Zap, Palette, Monitor, Layers, Smartphone, ChevronDown } from 'lucide-react'
+import { Target, Globe, Palette, Monitor, Layers, Smartphone, ChevronDown, Building2, FileText } from 'lucide-react'
 import Masonry from '../Masonry'
 
 type Project = {
@@ -22,7 +22,7 @@ const projects: Project[] = [
     live: null,
     source: null,
     tags: ['React', 'TypeScript', 'Zustand', 'ShadCN UI', 'React Hook Form', 'Zod', 'Axios'],
-    category: 'Web Application',
+    category: 'Enterprise Applications',
   },
   {
     name: 'Ravon Taxi - Driver Mobile App',
@@ -31,7 +31,7 @@ const projects: Project[] = [
     live: null,
     source: null,
     tags: ['React', 'TypeScript', 'Tauri', 'Zustand', 'Geolocation', 'Framer Motion'],
-    category: 'Mobile App',
+    category: 'Mobile Apps',
   },
   {
     name: 'Chorvoq Tourism Zone - Government Geoportal',
@@ -40,7 +40,7 @@ const projects: Project[] = [
     live: null,
     source: null,
     tags: ['React', 'TypeScript', 'Maplibre GL JS', 'Leaflet', 'OpenLayers', 'Zustand', 'Recharts', 'i18n'],
-    category: 'Web Application',
+    category: 'Enterprise Applications',
   },
   {
     name: 'Global Crop - Farmer Monitoring Platform',
@@ -49,7 +49,16 @@ const projects: Project[] = [
     live: null,
     source: null,
     tags: ['React', 'TypeScript', 'Maplibre GL JS', 'Leaflet', 'Zustand', 'Recharts', 'i18n'],
-    category: 'Web Application',
+    category: 'Enterprise Applications',
+  },
+  {
+    name: 'Global Crop - Landing Page',
+    description: 'Landing page for Global Crop agricultural monitoring platform built with React and Vite.',
+    image: 'global-crop-landing.png',
+    live: 'https://global-crop-landing.vercel.app/',
+    source: 'https://github.com/AbdukahharS/global-crop-landing',
+    tags: ['React', 'TypeScript', 'Vite', 'Tailwind'],
+    category: 'Landing Pages',
   },
   {
     name: 'Yarrow Map Web SDK Documentation',
@@ -58,7 +67,7 @@ const projects: Project[] = [
     live: 'https://yarrow-web-sdk-docs.netlify.app/',
     source: 'https://github.com/AbdukahharS/yarrow-web-sdk-docs',
     tags: ['Vue', 'I18n', 'TypeScript'],
-    category: 'Frontend Only Website',
+    category: 'Documentation',
   },
   {
     name: 'Al-Dar Rehabilitation Clinic',
@@ -67,7 +76,7 @@ const projects: Project[] = [
     live: 'https://www.aldarrehabclinic.com/',
     source: 'https://github.com/AbdukahharS/al-dar-clinic',
     tags: ['Next.JS', 'Tailwind', 'Framer-motion'],
-    category: 'Full Stack Website',
+    category: 'Enterprise Applications',
   },
   {
     name: 'Luminink',
@@ -84,7 +93,7 @@ const projects: Project[] = [
       'Blocknote',
       'TypeScript',
     ],
-    category: 'Full Stack Website',
+    category: 'Full-Stack Web Apps',
   },
   {
     name: 'Founders Language School',
@@ -93,7 +102,7 @@ const projects: Project[] = [
     live: 'https://founderslc.netlify.app/',
     source: 'https://github.com/AbdukahharS/founders-mui',
     tags: ['React.js', 'Material UI', 'Firebse'],
-    category: 'Full Stack Website',
+    category: 'Full-Stack Web Apps',
   },
   {
     name: 'Yarrow Map Web',
@@ -102,7 +111,7 @@ const projects: Project[] = [
     live: 'https://map.yarrow.uz/',
     source: null,
     tags: ['Vue', 'Yarrow Map Web SDK', 'I18n', 'Pinia'],
-    category: 'Frontend Only Website',
+    category: 'Enterprise Applications',
   },
   {
     name: "Shahzod's Blog",
@@ -118,7 +127,7 @@ const projects: Project[] = [
       'Clerk',
       'Blocknote',
     ],
-    category: 'Full Stack Website',
+    category: 'Full-Stack Web Apps',
   },
   {
     name: 'Agricultural statistics',
@@ -127,7 +136,7 @@ const projects: Project[] = [
     live: 'https://agricultural-statistics.netlify.app/',
     source: 'https://github.com/AbdukahharS/agricultural-statistics',
     tags: ['ApexCharts.js'],
-    category: 'Frontend Only Website',
+    category: 'Landing Pages',
   },
   {
     name: 'InMan',
@@ -136,7 +145,7 @@ const projects: Project[] = [
     source: 'https://github.com/AbdukahharS/InMan',
     live: null,
     tags: ['Nextron', 'NextJS', 'ElectronJS', 'TypeScript', 'Shadcn UI'],
-    category: 'Desktop App',
+    category: 'Desktop Apps',
   },
   {
     name: 'AS-Company',
@@ -145,7 +154,7 @@ const projects: Project[] = [
     live: 'https://company-as.netlify.app/',
     source: 'https://github.com/AbdukahharS/ascompany',
     tags: ['Bootstrap', 'Ajax', 'Jquery'],
-    category: 'Frontend Only Website',
+    category: 'Landing Pages',
   },
   {
     name: 'BilalIbnTuygun',
@@ -154,7 +163,7 @@ const projects: Project[] = [
     live: 'https://bilalibntuygun.uz/',
     source: 'https://github.com/AbdukahharS/bilalibntuygun',
     tags: ['React.js', 'Styled Components'],
-    category: 'Frontend Only Website',
+    category: 'Landing Pages',
   },
   {
     name: 'ArcGis Desktop',
@@ -162,7 +171,7 @@ const projects: Project[] = [
     image: 'arcgis.png',
     live: 'https://arcgisdesktop.uz/',
     tags: ['FontAwesome'],
-    category: 'Frontend Only Website',
+    category: 'Landing Pages',
     source: null,
   },
   {
@@ -172,7 +181,7 @@ const projects: Project[] = [
     live: 'https://freshgoods-shop.netlify.app/',
     source: 'https://github.com/AbdukahharS/freshgoods',
     tags: [],
-    category: 'Frontend Only Website',
+    category: 'Landing Pages',
   },
   {
     name: 'Hotel BT',
@@ -181,7 +190,7 @@ const projects: Project[] = [
     live: 'https://h-bt.netlify.app/',
     source: 'https://github.com/AbdukahharS/hbt',
     tags: ['FontAwesome'],
-    category: 'Frontend Only Website',
+    category: 'Landing Pages',
   },
   {
     name: 'NS Tour',
@@ -190,7 +199,7 @@ const projects: Project[] = [
     live: 'https://ns-tour.netlify.app',
     source: 'https://github.com/AbdukahharS/tour',
     tags: ['React.js', 'SASS', 'Firebase', 'Payme'],
-    category: 'Full Stack Website',
+    category: 'Full-Stack Web Apps',
   },
   {
     name: 'Personal Portfolio',
@@ -199,7 +208,7 @@ const projects: Project[] = [
     live: 'https://portfolio-doe.netlify.app/',
     source: 'https://github.com/AbdukahharS/john-doe-portfolio',
     tags: [],
-    category: 'Frontend Only Website',
+    category: 'Landing Pages',
   },
   {
     name: 'Quotopia',
@@ -208,7 +217,7 @@ const projects: Project[] = [
     live: 'https://quotopiaa.vercel.app/',
     source: 'https://github.com/AbdukahharS/quotopia',
     tags: ['Next.js', 'MongoDB', 'Mongoose', 'Tailwind'],
-    category: 'Full Stack Website',
+    category: 'Full-Stack Web Apps',
   },
   {
     name: 'Ali Abdulaziz',
@@ -217,7 +226,7 @@ const projects: Project[] = [
     live: 'https://ali-abdulaziz.uz/',
     source: 'https://github.com/AbdukahharS/personal-website',
     tags: ['Bootstrap'],
-    category: 'Frontend Only Website',
+    category: 'Landing Pages',
   },
   {
     name: 'CrashCourse',
@@ -225,7 +234,7 @@ const projects: Project[] = [
     image: 'crashcourse.png',
     live: 'https://www.figma.com/proto/wq2AKKCyGZbYWENEz4U1Pp/CrashCourse-2021?node-id=2-2&starting-point-node-id=2%3A2&mode=design&t=5snVJamAbCiZCx5W-1',
     tags: ['Figma'],
-    category: 'Figma Design',
+    category: 'Design Work',
     source: null,
   },
   {
@@ -234,45 +243,48 @@ const projects: Project[] = [
     image: 'Sunnyside.png',
     live: 'https://www.figma.com/proto/x5tmzrPqSXztS9tLIpFfJu/Sunnyside-Landing?node-id=3-4&mode=design&t=8o00bhdd9cVoXCkv-1',
     tags: ['Figma'],
-    category: 'Figma Design',
+    category: 'Design Work',
     source: null,
   },
 ]
 
 type Category = {
   All: number
-  'Web Application': number
-  'Mobile App': number
-  'Full Stack Website': number
-  'Frontend Only Website': number
-  'Desktop App': number
-  'Figma Design': number
+  'Enterprise Applications': number
+  'Mobile Apps': number
+  'Desktop Apps': number
+  'Full-Stack Web Apps': number
+  'Landing Pages': number
+  'Documentation': number
+  'Design Work': number
 }
 
 const Projects = () => {
   const [categories, setCategories] = useState<Category>({
     All: 0,
-    'Web Application': 0,
-    'Mobile App': 0,
-    'Full Stack Website': 0,
-    'Frontend Only Website': 0,
-    'Desktop App': 0,
-    'Figma Design': 0,
+    'Enterprise Applications': 0,
+    'Mobile Apps': 0,
+    'Desktop Apps': 0,
+    'Full-Stack Web Apps': 0,
+    'Landing Pages': 0,
+    'Documentation': 0,
+    'Design Work': 0,
   })
   const [current, setCurrent] = useState<
-    'All' | 'Web Application' | 'Mobile App' | 'Full Stack Website' | 'Frontend Only Website' | 'Desktop App' | 'Figma Design'
+    'All' | 'Enterprise Applications' | 'Mobile Apps' | 'Desktop Apps' | 'Full-Stack Web Apps' | 'Landing Pages' | 'Documentation' | 'Design Work'
   >('All')
   const [isFilterOpen, setIsFilterOpen] = useState(false)
 
   useEffect(() => {
     setCategories({
       All: 0,
-      'Web Application': 0,
-      'Mobile App': 0,
-      'Full Stack Website': 0,
-      'Frontend Only Website': 0,
-      'Desktop App': 0,
-      'Figma Design': 0,
+      'Enterprise Applications': 0,
+      'Mobile Apps': 0,
+      'Desktop Apps': 0,
+      'Full-Stack Web Apps': 0,
+      'Landing Pages': 0,
+      'Documentation': 0,
+      'Design Work': 0,
     })
     projects.forEach((project) => {
       setCategories((prev: Category) => {
@@ -358,26 +370,26 @@ const Projects = () => {
                 setCurrent(
                   cat as
                     | 'All'
-                    | 'Web Application'
-                    | 'Mobile App'
-                    | 'Full Stack Website'
-                    | 'Frontend Only Website'
-                    | 'Desktop App'
-                    | 'Figma Design'
+                    | 'Enterprise Applications'
+                    | 'Mobile Apps'
+                    | 'Desktop Apps'
+                    | 'Full-Stack Web Apps'
+                    | 'Landing Pages'
+                    | 'Documentation'
+                    | 'Design Work'
                 )
               }
               key={i}
             >
               <span className='relative z-10 flex items-center gap-2'>
                 {cat === 'All' && <Target className='size-5' />}
-                {cat === 'Web Application' && <Layers className='size-5' />}
-                {cat === 'Mobile App' && <Smartphone className='size-5' />}
-                {cat === 'Frontend Only Website' && (
-                  <Globe className='size-5' />
-                )}
-                {cat === 'Full Stack Website' && <Zap className='size-5' />}
-                {cat === 'Figma Design' && <Palette className='size-5' />}
-                {cat === 'Desktop App' && <Monitor className='size-5' />}
+                {cat === 'Enterprise Applications' && <Building2 className='size-5' />}
+                {cat === 'Mobile Apps' && <Smartphone className='size-5' />}
+                {cat === 'Desktop Apps' && <Monitor className='size-5' />}
+                {cat === 'Full-Stack Web Apps' && <Layers className='size-5' />}
+                {cat === 'Landing Pages' && <Globe className='size-5' />}
+                {cat === 'Documentation' && <FileText className='size-5' />}
+                {cat === 'Design Work' && <Palette className='size-5' />}
                 {cat}
               </span>
 
