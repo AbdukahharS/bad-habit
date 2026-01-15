@@ -1,20 +1,7 @@
-'use client'
-
 import Image from 'next/image'
-import React, { useEffect } from 'react'
 import { Code, Zap, Server, Quote } from 'lucide-react'
 
-const Expertise = () => {
-  // Add staggered animation on mount
-  useEffect(() => {
-    const cards = document.querySelectorAll('.expertise-card')
-    cards.forEach((card, index) => {
-      const element = card as HTMLElement
-      element.style.animationDelay = `${index * 0.15}s`
-    })
-  }, [])
-
-  const expertiseAreas = [
+const expertiseAreas = [
     {
       icon: <Code className='w-8 h-8' />,
       title: 'Software Development',
@@ -28,7 +15,7 @@ const Expertise = () => {
       title: 'Frontend Development',
       highlight: 'Frontend Dev',
       subtitle: 'React, NextJS',
-      description: 'Specialized in translating intricate designs into responsive interfaces. 3+ years crafting production-ready applications with HTML, CSS, JS, React, NextJS and Vue.',
+      description: 'Specialized in translating intricate designs into responsive interfaces. 4 years crafting production-ready applications with HTML, CSS, JS, React, NextJS and Vue.',
       gradient: 'from-blue-500 to-cyan-500',
       bgGradient: 'linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(6, 182, 212, 0.1) 100%)'
     },
@@ -36,12 +23,13 @@ const Expertise = () => {
       icon: <Server className='w-8 h-8' />,
       title: 'Backend Development',
       highlight: 'NodeJS Dev',
-      description: 'Skilled in Backend development with Node.js and building cross-platform desktop apps using Electron.js and Tauri',
+      description: 'Skilled in Backend development with Node.js and Bun, and building cross-platform desktop apps using Electron.js and Tauri',
       gradient: 'from-green-500 to-emerald-500',
       bgGradient: 'linear-gradient(135deg, rgba(34, 197, 94, 0.1) 0%, rgba(16, 185, 129, 0.1) 100%)'
     }
   ]
 
+const Expertise = () => {
   return (
     <>
       <style dangerouslySetInnerHTML={{
@@ -89,9 +77,10 @@ const Expertise = () => {
 
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto gap-6 lg:gap-0'>
           {expertiseAreas.map((area, index) => (
-            <div 
+            <div
               key={index}
               className='expertise-card group relative'
+              style={{ animationDelay: `${index * 0.15}s` }}
             >
               <div
                 className={`relative p-8 backdrop-blur-sm transition-all duration-500 hover:scale-[1.02] border-4 h-full ${

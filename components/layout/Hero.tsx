@@ -1,5 +1,4 @@
 import { Poppins } from 'next/font/google'
-
 import '@/styles/circle.css'
 
 const poppins = Poppins({ subsets: ['latin'], weight: '600' })

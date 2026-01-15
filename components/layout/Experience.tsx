@@ -1,19 +1,19 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { MapPin, Minus, Plus, ExternalLink, Calendar, Briefcase } from 'lucide-react'
 import Link from 'next/link'
 import Image from 'next/image'
 
 const experiences = [
   {
-    title: 'Web Developer @ Cell Power',
+    title: 'Web Developer @ Yarrow',
     description:
       'Developing frontend of Yarrow Map and commercial Web SDK for using Yarrow Map.',
     location: 'Tashkent, Uzbekistan',
     link: {
-      label: 'cellpower.uz',
-      url: 'https://cellpower.uz',
+      label: 'yarrow.uz',
+      url: 'https://map.yarrow.uz',
     },
     logo: 'cell-power.svg',
     duration: '2025 - Present',
@@ -48,7 +48,7 @@ const experiences = [
 ]
 
 const Experience = () => {
-  const [opens, setOpens] = useState<number[]>([1])
+  const [opens, setOpens] = useState<number[]>([1, 2])
 
   const handleClick = (id: number) => {
     if (opens.includes(id)) {
@@ -57,15 +57,6 @@ const Experience = () => {
       setOpens((prev) => [...prev, id])
     }
   }
-
-  // Add staggered animation on mount
-  useEffect(() => {
-    const cards = document.querySelectorAll('.experience-card')
-    cards.forEach((card, index) => {
-      const element = card as HTMLElement
-      element.style.animationDelay = `${index * 0.2}s`
-    })
-  }, [])
 
   return (
     <>
@@ -107,7 +98,11 @@ const Experience = () => {
         
         <div className='flex flex-col gap-8 max-w-4xl w-full mx-auto'>
           {experiences.map((experience, index) => (
-            <div className='experience-card w-full group' key={index}>
+            <div
+              className='experience-card w-full group'
+              key={index}
+              style={{ animationDelay: `${index * 0.2}s` }}
+            >
               <div
                 className='relative rounded-2xl border border-white/10 backdrop-blur-sm overflow-hidden transition-all duration-500 hover:scale-[1.02] hover:border-purple-400/30'
                 style={{

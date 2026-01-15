@@ -1,7 +1,18 @@
 'use client'
 
-import { useEffect, useState } from 'react'
-import { Target, Globe, Palette, Monitor, Layers, Smartphone, ChevronDown, Building2, FileText } from 'lucide-react'
+import { useState } from 'react'
+import {
+  Target,
+  Globe,
+  Palette,
+  Monitor,
+  Layers,
+  Smartphone,
+  ChevronDown,
+  Building2,
+  FileText,
+  Package,
+} from 'lucide-react'
 import Masonry from '../Masonry'
 
 type Project = {
@@ -12,48 +23,105 @@ type Project = {
   source: string | null
   tags: string[]
   category: string
+  highlighted?: boolean
 }
 
 const projects: Project[] = [
   {
+    name: 'Cirth',
+    description:
+      'Modern documentation hosting platform with rich text editing, version management, custom domains, and GitHub import. Built with Next.js 16 and Supabase.',
+    image: 'cirth.png',
+    live: 'https://cirth.uz/',
+    source: null,
+    tags: [
+      'Next.js',
+      'TypeScript',
+      'Supabase',
+      'TipTap',
+      'Tailwind CSS',
+      'shadcn/ui',
+      'Zustand',
+    ],
+    category: 'Full-Stack Web Apps',
+    highlighted: true,
+  },
+  {
     name: 'Ravon Taxi - Admin Dashboard',
-    description: 'Comprehensive fleet management system with real-time trip monitoring, driver oversight, and analytics dashboard for local taxi company.',
+    description:
+      'Comprehensive fleet management system with real-time trip monitoring, driver oversight, and analytics dashboard for local taxi company.',
     image: 'ravon-admin.png',
     live: null,
     source: null,
-    tags: ['React', 'TypeScript', 'Zustand', 'ShadCN UI', 'React Hook Form', 'Zod', 'Axios'],
+    tags: [
+      'React',
+      'TypeScript',
+      'Zustand',
+      'ShadCN UI',
+      'React Hook Form',
+      'Zod',
+      'Axios',
+    ],
     category: 'Enterprise Applications',
   },
   {
     name: 'Ravon Taxi - Driver Mobile App',
-    description: 'Cross-platform Android driver application with geolocation tracking, ride assignments, and real-time updates built with Tauri.',
+    description:
+      'Cross-platform Android driver application with geolocation tracking, ride assignments, and real-time updates built with Tauri.',
     image: 'ravon-driver.jpg',
     live: null,
     source: null,
-    tags: ['React', 'TypeScript', 'Tauri', 'Zustand', 'Geolocation', 'Framer Motion'],
+    tags: [
+      'React',
+      'TypeScript',
+      'Tauri',
+      'Zustand',
+      'Geolocation',
+      'Framer Motion',
+    ],
     category: 'Mobile Apps',
   },
   {
     name: 'Chorvoq Tourism Zone - Government Geoportal',
-    description: 'Government tourism management platform with advanced GIS capabilities, interactive maps, and multilingual support for Chorvoq recreation zone.',
+    description:
+      'Government tourism management platform with advanced GIS capabilities, interactive maps, and multilingual support for Chorvoq recreation zone.',
     image: 'chorvoq.png',
     live: null,
     source: null,
-    tags: ['React', 'TypeScript', 'Maplibre GL JS', 'Leaflet', 'OpenLayers', 'Zustand', 'Recharts', 'i18n'],
+    tags: [
+      'React',
+      'TypeScript',
+      'Maplibre GL JS',
+      'Leaflet',
+      'OpenLayers',
+      'Zustand',
+      'Recharts',
+      'i18n',
+    ],
     category: 'Enterprise Applications',
   },
   {
     name: 'Global Crop - Farmer Monitoring Platform',
-    description: 'Banking sector agricultural monitoring platform with GIS-based field mapping, data analytics, and loan tracking for rural farmers.',
+    description:
+      'Banking sector agricultural monitoring platform with GIS-based field mapping, data analytics, and loan tracking for rural farmers.',
     image: 'globalcrop.png',
     live: null,
     source: null,
-    tags: ['React', 'TypeScript', 'Maplibre GL JS', 'Leaflet', 'Zustand', 'Recharts', 'i18n'],
+    tags: [
+      'React',
+      'TypeScript',
+      'Maplibre GL JS',
+      'Leaflet',
+      'Zustand',
+      'Recharts',
+      'i18n',
+    ],
     category: 'Enterprise Applications',
   },
   {
     name: 'Global Crop - Landing Page',
-    description: 'Landing page for Global Crop agricultural monitoring platform built with React and Vite.',
+    description:
+      'Landing page for Global Crop agricultural monitoring platform built with React and Vite.',
     image: 'global-crop-landing.png',
     live: 'https://global-crop-landing.vercel.app/',
     source: 'https://github.com/AbdukahharS/global-crop-landing',
@@ -68,6 +136,34 @@ const projects: Project[] = [
     source: 'https://github.com/AbdukahharS/yarrow-web-sdk-docs',
     tags: ['Vue', 'I18n', 'TypeScript'],
     category: 'Documentation',
+  },
+  {
+    name: 'Yarrow Map Web SDK',
+    description:
+      'TypeScript-based mapping library built on top of MapLibre GL. Provides high-level API for interactive maps with routing, search, public transport tracking, and custom layer management.',
+    image: 'yarrow-sdk.png',
+    live: null,
+    source: 'https://git.yarrow.uz/yarrow-sdk/frontend/yarrow-map-web-sdk',
+    tags: ['TypeScript', 'MapLibre GL', 'Rollup', 'Axios'],
+    category: 'Libraries',
+  },
+  {
+    name: 'BSOK CRM',
+    description:
+      'Enterprise ERP and CRM application for mesh wire/net manufacturing. Features production tracking, inventory management, sales, financial tracking, and customer/worker management.',
+    image: 'bsok-crm.png',
+    live: 'https://bsok-frontend.vercel.app/',
+    source: 'https://github.com/AbdukahharS/bsok-frontend',
+    tags: [
+      'React',
+      'TypeScript',
+      'Bun',
+      'Tailwind CSS',
+      'shadcn/ui',
+      'Zustand',
+      'i18n',
+    ],
+    category: 'Enterprise Applications',
   },
   {
     name: 'Al-Dar Rehabilitation Clinic',
@@ -106,11 +202,20 @@ const projects: Project[] = [
   },
   {
     name: 'Yarrow Map Web',
-    description: 'I co-developed frontend of the Yarrow Map Web application.',
+    description:
+      'A Nuxt 3 progressive web application providing interactive mapping with search, routing, and user profile features. Integrates with Yarrow Map Web SDK for map rendering.',
     image: 'yarrow-map-web.png',
     live: 'https://map.yarrow.uz/',
     source: null,
-    tags: ['Vue', 'Yarrow Map Web SDK', 'I18n', 'Pinia'],
+    tags: [
+      'Nuxt 3',
+      'Vue 3',
+      'Pinia',
+      'i18n',
+      'Axios',
+      'Yarrow Map Web SDK',
+      'TypeScript',
+    ],
     category: 'Enterprise Applications',
   },
   {
@@ -248,55 +353,46 @@ const projects: Project[] = [
   },
 ]
 
-type Category = {
+// Pre-compute category counts on module load (server-side compatible)
+const categoryCounts = projects.reduce((acc, project) => {
+  acc.All = (acc.All || 0) + 1
+  acc[project.category as keyof Omit<typeof acc, 'All'>] = (acc[project.category as keyof Omit<typeof acc, 'All'>] || 0) + 1
+  return acc
+}, {
+  All: 0,
+  'Enterprise Applications': 0,
+  'Mobile Apps': 0,
+  'Desktop Apps': 0,
+  'Full-Stack Web Apps': 0,
+  'Landing Pages': 0,
+  Documentation: 0,
+  'Design Work': 0,
+  Libraries: 0,
+} as {
   All: number
   'Enterprise Applications': number
   'Mobile Apps': number
   'Desktop Apps': number
   'Full-Stack Web Apps': number
   'Landing Pages': number
-  'Documentation': number
+  Documentation: number
   'Design Work': number
-}
+  Libraries: number
+})
 
 const Projects = () => {
-  const [categories, setCategories] = useState<Category>({
-    All: 0,
-    'Enterprise Applications': 0,
-    'Mobile Apps': 0,
-    'Desktop Apps': 0,
-    'Full-Stack Web Apps': 0,
-    'Landing Pages': 0,
-    'Documentation': 0,
-    'Design Work': 0,
-  })
   const [current, setCurrent] = useState<
-    'All' | 'Enterprise Applications' | 'Mobile Apps' | 'Desktop Apps' | 'Full-Stack Web Apps' | 'Landing Pages' | 'Documentation' | 'Design Work'
+    | 'All'
+    | 'Enterprise Applications'
+    | 'Mobile Apps'
+    | 'Desktop Apps'
+    | 'Full-Stack Web Apps'
+    | 'Landing Pages'
+    | 'Documentation'
+    | 'Design Work'
+    | 'Libraries'
   >('All')
   const [isFilterOpen, setIsFilterOpen] = useState(false)
-
-  useEffect(() => {
-    setCategories({
-      All: 0,
-      'Enterprise Applications': 0,
-      'Mobile Apps': 0,
-      'Desktop Apps': 0,
-      'Full-Stack Web Apps': 0,
-      'Landing Pages': 0,
-      'Documentation': 0,
-      'Design Work': 0,
-    })
-    projects.forEach((project) => {
-      setCategories((prev: Category) => {
-        return {
-          ...prev,
-          All: prev.All + 1,
-          [project.category as keyof Category]:
-            prev[project.category as keyof Category] + 1,
-        }
-      })
-    })
-  }, [])
 
   return (
     <section className='w-full px-6 md:px-12 xl:px-24 mb-28' id='projects'>
@@ -356,10 +452,14 @@ const Projects = () => {
           </p>
         </div>
 
-        <div className={`flex flex-wrap gap-3 p-1 sm:gap-4 max-w-full overflow-hidden transition-all duration-500 ease-in-out ${
-          isFilterOpen ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0 sm:max-h-none sm:opacity-100'
-        }`}>
-          {Object.keys(categories).map((cat, i) => (
+        <div
+          className={`flex flex-wrap gap-3 p-1 sm:gap-4 max-w-full overflow-hidden transition-all duration-500 ease-in-out ${
+            isFilterOpen
+              ? 'max-h-[500px] opacity-100'
+              : 'max-h-0 opacity-0 sm:max-h-none sm:opacity-100'
+          }`}
+        >
+          {Object.keys(categoryCounts).map((cat, i) => (
             <button
               className={`relative group px-4 py-2 rounded-xl font-medium text-sm transition-all duration-300 whitespace-nowrap backdrop-blur-sm border ${
                 current === cat
@@ -377,19 +477,23 @@ const Projects = () => {
                     | 'Landing Pages'
                     | 'Documentation'
                     | 'Design Work'
+                    | 'Libraries'
                 )
               }
               key={i}
             >
               <span className='relative z-10 flex items-center gap-2'>
                 {cat === 'All' && <Target className='size-5' />}
-                {cat === 'Enterprise Applications' && <Building2 className='size-5' />}
+                {cat === 'Enterprise Applications' && (
+                  <Building2 className='size-5' />
+                )}
                 {cat === 'Mobile Apps' && <Smartphone className='size-5' />}
                 {cat === 'Desktop Apps' && <Monitor className='size-5' />}
                 {cat === 'Full-Stack Web Apps' && <Layers className='size-5' />}
                 {cat === 'Landing Pages' && <Globe className='size-5' />}
                 {cat === 'Documentation' && <FileText className='size-5' />}
                 {cat === 'Design Work' && <Palette className='size-5' />}
+                {cat === 'Libraries' && <Package className='size-5' />}
                 {cat}
               </span>
 
@@ -400,7 +504,7 @@ const Projects = () => {
                     : 'bg-blue-500/80 text-white scale-90 group-hover:scale-100'
                 }`}
               >
-                {categories[cat as keyof Category]}
+                {categoryCounts[cat as keyof typeof categoryCounts]}
               </div>
 
               {current !== cat && (

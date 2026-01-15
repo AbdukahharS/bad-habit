@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import React, { useEffect } from 'react'
-import { Globe, Palette, Monitor, Layers, Smartphone, Building2, FileText } from 'lucide-react'
+import React, { useMemo } from 'react'
+import { Globe, Palette, Monitor, Layers, Smartphone, Building2, FileText, Package, Star } from 'lucide-react'
 
 type MasonryProps = {
   items: {
@@ -12,6 +12,7 @@ type MasonryProps = {
     source: string | null
     tags: string[]
     category: string
+    highlighted?: boolean
   }[]
   current:
     | 'All'
@@ -22,29 +23,16 @@ type MasonryProps = {
     | 'Landing Pages'
     | 'Documentation'
     | 'Design Work'
+    | 'Libraries'
 }
 
 const Masonry: React.FC<MasonryProps> = ({ items, current }) => {
-  const containerRef = React.useRef<HTMLDivElement>(null)
-
   // Get filtered items
-  const filteredItems = React.useMemo(() => {
+  const filteredItems = useMemo(() => {
     return items.filter(
       (item) => current === 'All' || item.category === current
     )
   }, [items, current])
-
-  useEffect(() => {
-    const container = containerRef.current
-    if (!container) return
-
-    // Add staggered animation delay for entrance
-    const cards = container.querySelectorAll('.project-card')
-    cards.forEach((card, index) => {
-      const element = card as HTMLElement
-      element.style.animationDelay = `${index * 0.1}s`
-    })
-  }, [filteredItems])
 
   return (
     <>
@@ -109,26 +97,76 @@ const Masonry: React.FC<MasonryProps> = ({ items, current }) => {
             break-inside: avoid;
             margin-bottom: 1.5rem;
           }
-          
+
+          .project-card.highlighted {
+            break-inside: avoid;
+            margin-bottom: 2rem;
+            position: relative;
+          }
+
+          .project-card.highlighted::before {
+            content: '';
+            position: absolute;
+            inset: -2px;
+            border-radius: calc(0.75rem + 2px);
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6, #ec4899, #3b82f6);
+            background-size: 400% 400%;
+            animation: gradient-shift 4s ease infinite;
+            z-index: -1;
+            opacity: 0.8;
+          }
+
+          .project-card.highlighted::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: calc(0.75rem + 2px);
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.15) 0%, rgba(147, 51, 234, 0.15) 50%, rgba(236, 72, 153, 0.15) 100%);
+            z-index: -1;
+          }
+
+          @keyframes gradient-shift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+          }
+
           @media (min-width: 768px) {
             .project-card {
               margin-bottom: 2rem;
+            }
+
+            .project-card.highlighted {
+              grid-column: span 2;
+            }
+          }
+
+          @media (min-width: 1024px) {
+            .project-card.highlighted {
+              grid-column: span 2;
+            }
+          }
+
+          @media (min-width: 1280px) {
+            .project-card.highlighted {
+              grid-column: span 2;
             }
           }
         `,
         }}
       />
-      <div className='masonry-container py-16' ref={containerRef}>
+      <div className='masonry-container py-16'>
         <div className='masonry-grid'>
-          {filteredItems.map((item) => (
+          {filteredItems.map((item, index) => (
             <div
               key={`${item.name}-${current}`}
-              className='project-card rounded-xl overflow-hidden group'
+              className={`project-card rounded-xl overflow-hidden group${item.highlighted ? ' highlighted' : ''}`}
               style={{
                 background:
                   'linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(147, 51, 234, 0.1) 50%, rgba(236, 72, 153, 0.1) 100%)',
                 border: '1px solid rgba(255, 255, 255, 0.1)',
                 backdropFilter: 'blur(10px)',
+                animationDelay: `${index * 0.1}s`,
               }}
             >
               <div className='relative overflow-hidden rounded-t-xl'>
@@ -140,11 +178,17 @@ const Masonry: React.FC<MasonryProps> = ({ items, current }) => {
                   className='w-full h-auto transition-all duration-700 ease-out group-hover:scale-110 group-hover:brightness-110'
                 />
                 <div className='absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300' />
+                {item.highlighted && (
+                  <div className='absolute top-3 right-3 flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-gradient-to-br from-amber-400/20 via-white/10 to-amber-400/20 backdrop-blur-sm border border-amber-400/30'>
+                    <Star className='w-3.5 h-3.5 text-amber-400 fill-amber-400 drop-shadow-lg' />
+                    <span className='text-xs font-semibold text-amber-300 drop-shadow-md'>SaaS</span>
+                  </div>
+                )}
               </div>
 
               <div className='p-6 space-y-4 transition-all duration-300 group-hover:translate-y-[-2px]'>
                 <div className='space-y-3'>
-                  <h3 className='text-xl font-bold text-white group-hover:text-blue-300 transition-all duration-300 font-poppins'>
+                  <h3 className='text-xl font-bold text-white transition-all duration-300 font-poppins group-hover:text-blue-300'>
                     {item.name}
                   </h3>
                   <p className='text-gray-300 text-sm leading-relaxed line-clamp-3 group-hover:text-gray-200 transition-colors duration-300'>
@@ -157,13 +201,13 @@ const Masonry: React.FC<MasonryProps> = ({ items, current }) => {
                     {item.tags.slice(0, 3).map((tag, tagIndex) => (
                       <span
                         key={tagIndex}
-                        className='px-2 py-1 text-xs font-medium rounded-full bg-blue-500/20 text-blue-300 border border-blue-500/30 backdrop-blur-sm transition-all duration-300 group-hover:bg-blue-500/30 group-hover:border-blue-400/50'
+                        className='px-2 py-1 text-xs font-medium rounded-full bg-white/10 text-white/80 border border-white/20 backdrop-blur-sm transition-all duration-300'
                       >
                         {tag}
                       </span>
                     ))}
                     {item.tags.length > 3 && (
-                      <span className='px-2 py-1 text-xs font-medium rounded-full bg-gray-500/20 text-gray-400 border border-gray-500/30'>
+                      <span className='px-2 py-1 text-xs font-medium rounded-full bg-white/10 text-white/60 border border-white/20'>
                         +{item.tags.length - 3}
                       </span>
                     )}
@@ -177,7 +221,7 @@ const Masonry: React.FC<MasonryProps> = ({ items, current }) => {
                         href={item.live}
                         target='_blank'
                         rel='noopener noreferrer'
-                        className='inline-flex items-center px-3 py-2 text-xs font-semibold text-white bg-blue-600/80 hover:bg-blue-600 rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-blue-500/25'
+                        className='inline-flex items-center px-3 py-2 text-xs font-semibold text-white bg-white/10 hover:bg-white/20 rounded-lg transition-all duration-300 hover:scale-105 border border-white/20'
                       >
                         <svg
                           className='w-3 h-3 mr-1'
@@ -215,7 +259,7 @@ const Masonry: React.FC<MasonryProps> = ({ items, current }) => {
                   </div>
 
                   <div
-                    className={`flex items-center gap-2 px-3 py-2 rounded-lg backdrop-blur-sm border transition-all duration-300 group-hover:scale-105 ${
+                    className={`flex items-center gap-2 px-3 py-2 rounded-lg backdrop-blur-sm border transition-all duration-300 group-hover:scale-105 ${item.highlighted ? 'bg-white/10 border-white/20' :
                       item.category === 'Enterprise Applications'
                         ? 'bg-cyan-500/10 border-cyan-500/30 group-hover:bg-cyan-500/20 group-hover:border-cyan-400/50'
                         : item.category === 'Mobile Apps'
@@ -230,42 +274,49 @@ const Masonry: React.FC<MasonryProps> = ({ items, current }) => {
                         ? 'bg-emerald-500/10 border-emerald-500/30 group-hover:bg-emerald-500/20 group-hover:border-emerald-400/50'
                         : item.category === 'Design Work'
                         ? 'bg-pink-500/10 border-pink-500/30 group-hover:bg-pink-500/20 group-hover:border-pink-400/50'
+                        : item.category === 'Libraries'
+                        ? 'bg-rose-500/10 border-rose-500/30 group-hover:bg-rose-500/20 group-hover:border-rose-400/50'
                         : ''
                     }`}
                   >
                     {item.category === 'Enterprise Applications' && (
-                      <div className='flex items-center gap-1.5 text-cyan-400'>
+                      <div className={`flex items-center gap-1.5 ${item.highlighted ? 'text-white/80' : 'text-cyan-400'}`}>
                         <Building2 className='w-4 h-4' />
                       </div>
                     )}
                     {item.category === 'Mobile Apps' && (
-                      <div className='flex items-center gap-1.5 text-green-400'>
+                      <div className={`flex items-center gap-1.5 ${item.highlighted ? 'text-white/80' : 'text-green-400'}`}>
                         <Smartphone className='w-4 h-4' />
                       </div>
                     )}
                     {item.category === 'Desktop Apps' && (
-                      <div className='flex items-center gap-1.5 text-purple-400'>
+                      <div className={`flex items-center gap-1.5 ${item.highlighted ? 'text-white/80' : 'text-purple-400'}`}>
                         <Monitor className='w-4 h-4' />
                       </div>
                     )}
                     {item.category === 'Full-Stack Web Apps' && (
-                      <div className='flex items-center gap-1.5 text-indigo-400'>
+                      <div className={`flex items-center gap-1.5 ${item.highlighted ? 'text-white/80' : 'text-indigo-400'}`}>
                         <Layers className='w-4 h-4' />
                       </div>
                     )}
                     {item.category === 'Landing Pages' && (
-                      <div className='flex items-center gap-1.5 text-blue-400'>
+                      <div className={`flex items-center gap-1.5 ${item.highlighted ? 'text-white/80' : 'text-blue-400'}`}>
                         <Globe className='w-4 h-4' />
                       </div>
                     )}
                     {item.category === 'Documentation' && (
-                      <div className='flex items-center gap-1.5 text-emerald-400'>
+                      <div className={`flex items-center gap-1.5 ${item.highlighted ? 'text-white/80' : 'text-emerald-400'}`}>
                         <FileText className='w-4 h-4' />
                       </div>
                     )}
                     {item.category === 'Design Work' && (
-                      <div className='flex items-center gap-1.5 text-pink-400'>
+                      <div className={`flex items-center gap-1.5 ${item.highlighted ? 'text-white/80' : 'text-pink-400'}`}>
                         <Palette className='w-4 h-4' />
+                      </div>
+                    )}
+                    {item.category === 'Libraries' && (
+                      <div className={`flex items-center gap-1.5 ${item.highlighted ? 'text-white/80' : 'text-rose-400'}`}>
+                        <Package className='w-4 h-4' />
                       </div>
                     )}
                   </div>
