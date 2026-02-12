@@ -3,7 +3,11 @@ import '@/styles/circle.css'
 
 const poppins = Poppins({ subsets: ['latin'], weight: '600' })
 
-const Hero = () => {
+type HeroProps = {
+  subtitle: string
+}
+
+const Hero = ({ subtitle }: HeroProps) => {
   return (
     <section
       className='w-full h-screen flex justify-center items-center px-14 relative bg-[url("/home-cover.jpg")] bg-cover bg-center'
@@ -28,7 +32,7 @@ const Hero = () => {
           SHAHZOD <br className='hidden lg:inline' /> ABDUKAHHAR
         </h1>
         <h2 className='[text-shadow:_0_0_16px_rgb(0_0_0_/_50%)] text-xl md:text-2xl xl:text-3xl text-center font-semibold tracking-widest'>
-          SOFTWARE ENGINEER, WEB DEVELOPER
+          {subtitle}
         </h2>
       </div>
     </section>

@@ -1,7 +1,20 @@
 import Image from 'next/image'
 import { Code, Zap, Server, Quote } from 'lucide-react'
+import type { Locale } from '@/lib/i18n'
+import type { ReactNode } from 'react'
 
-const expertiseAreas = [
+type ExpertiseArea = {
+  icon: ReactNode
+  title: string
+  highlight: string
+  subtitle?: string
+  description: string
+  gradient: string
+  bgGradient: string
+}
+
+const expertiseAreasByLocale: Record<Locale, ExpertiseArea[]> = {
+  en: [
     {
       icon: <Code className='w-8 h-8' />,
       title: 'Software Development',
@@ -28,8 +41,57 @@ const expertiseAreas = [
       bgGradient: 'linear-gradient(135deg, rgba(34, 197, 94, 0.1) 0%, rgba(16, 185, 129, 0.1) 100%)'
     }
   ]
+  ,
+  uz: [
+    {
+      icon: <Code className='w-8 h-8' />,
+      title: 'Dasturiy ta`minot ishlab chiqish',
+      highlight: 'Dasturiy',
+      description: 'Funksional va OOP yondashuvlarida tajriba: JavaScript, TypeScript.',
+      gradient: 'from-pink-500 to-rose-500',
+      bgGradient: 'linear-gradient(135deg, rgba(236, 72, 153, 0.1) 0%, rgba(244, 63, 94, 0.1) 100%)'
+    },
+    {
+      icon: <Zap className='w-8 h-8' />,
+      title: 'Frontend Dasturlash',
+      highlight: 'Frontend',
+      subtitle: 'React, NextJS',
+      description: 'Murakkab dizaynlarni moslashuvchan interfeyslarga aylantirishga ixtisoslashganman. HTML, CSS, JS, React, NextJS va Vue bilan 4 yillik amaliy tajriba.',
+      gradient: 'from-blue-500 to-cyan-500',
+      bgGradient: 'linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(6, 182, 212, 0.1) 100%)'
+    },
+    {
+      icon: <Server className='w-8 h-8' />,
+      title: 'Backend Dasturlash',
+      highlight: 'NodeJS',
+      description: 'Node.js va Bun bilan backend ishlab chiqishda, Electron.js va Tauri yordamida kross-platforma desktop ilovalar yaratishda tajribali.',
+      gradient: 'from-green-500 to-emerald-500',
+      bgGradient: 'linear-gradient(135deg, rgba(34, 197, 94, 0.1) 0%, rgba(16, 185, 129, 0.1) 100%)'
+    }
+  ],
+}
 
-const Expertise = () => {
+const quoteByLocale: Record<Locale, { text: string; author: string }> = {
+  en: {
+    text: '"No two things have been combined better than knowledge and patience."',
+    author: '- Prophet Muhammad (peace be upon him)',
+  },
+  uz: {
+    text: '"Ilm va sabrdan afzalroq uyg`unlik yo`q."',
+    author: '- Muhammad (s.a.v.)',
+  },
+}
+
+type ExpertiseProps = {
+  title: string
+  subtitle: string
+  locale: Locale
+}
+
+const Expertise = ({ title, subtitle, locale }: ExpertiseProps) => {
+  const expertiseAreas = expertiseAreasByLocale[locale]
+  const quote = quoteByLocale[locale]
+
   return (
     <>
       <style dangerouslySetInnerHTML={{
@@ -63,15 +125,15 @@ const Expertise = () => {
       <section className='px-6 md:px-12 xl:px-24 py-16 md:py-24' id='expertise'>
         <div className='text-center mb-16'>
           <div className='flex items-center justify-center gap-6 mb-6'>
-            <div className='w-20 h-20 rounded-xl bg-gradient-to-br from-purple-500 to-pink-600 flex items-center justify-center'>
+            <div className='w-20 h-20 rounded-xl bg-linear-to-br from-purple-500 to-pink-600 flex items-center justify-center'>
               <Code className='size-12 text-white' />
             </div>
             <h2 className='text-5xl sm:text-8xl font-bold text-white font-poppins tracking-wide'>
-              Expertise
+              {title}
             </h2>
           </div>
           <p className='text-xl text-gray-300 max-w-2xl mx-auto'>
-            Crafting exceptional web experiences with modern technologies
+            {subtitle}
           </p>
         </div>
 
@@ -83,7 +145,7 @@ const Expertise = () => {
               style={{ animationDelay: `${index * 0.15}s` }}
             >
               <div
-                className={`relative p-8 backdrop-blur-sm transition-all duration-500 hover:scale-[1.02] border-4 h-full ${
+                className={`relative px-6 py-8 backdrop-blur-sm transition-all duration-500 hover:scale-[1.02] border-4 h-full ${
                   index === 0 ? 'border-slate-300 md:border-r-transparent' :
                   index === 1 ? 'border-slate-300 lg:border-r-transparent' :
                   'border-slate-300 md:border-t-transparent lg:border-t-slate-300'
@@ -95,7 +157,7 @@ const Expertise = () => {
               >
                 {/* Icon and Title with original styling */}
                 <div className='flex items-center gap-5 mb-4'>
-                  <div className={`p-3 rounded-xl bg-gradient-to-r ${area.gradient} bg-opacity-20 border border-white/20 backdrop-blur-sm group-hover:scale-110 transition-transform duration-300`}>
+                  <div className={`p-3 rounded-xl bg-linear-to-r ${area.gradient} bg-opacity-20 border border-white/20 backdrop-blur-sm group-hover:scale-110 transition-transform duration-300`}>
                     <div className='text-white'>
                       {area.icon}
                     </div>
@@ -137,9 +199,9 @@ const Expertise = () => {
                  style={{ background: 'linear-gradient(135deg, rgba(147, 51, 234, 0.1) 0%, rgba(79, 70, 229, 0.1) 100%)' }}>
               <blockquote className='border-l-8 border-violet-600 pl-5'>
                 <p className='text-2xl font-semibold mb-4 text-white group-hover:text-blue-300 transition-colors duration-300'>
-                  &quot;No two things have been combined better than knowledge and patience.&quot;
+                  {quote.text}
                 </p>
-                <cite className='text-purple-300 font-medium'>- Prophet Muhammad (peace be upon him)</cite>
+                <cite className='text-purple-300 font-medium'>{quote.author}</cite>
               </blockquote>
             </div>
           </div>
@@ -155,9 +217,9 @@ const Expertise = () => {
               </div>
               <blockquote className='flex-1'>
                 <p className='text-xl sm:text-2xl font-semibold text-white mb-4 font-poppins leading-relaxed group-hover:text-blue-300 transition-colors duration-300'>
-                  &ldquo;No two things have been combined better than knowledge and patience.&rdquo;
+                  {quote.text}
                 </p>
-                <cite className='text-purple-300 font-medium'>- Prophet Muhammad (peace be upon him)</cite>
+                <cite className='text-purple-300 font-medium'>{quote.author}</cite>
               </blockquote>
             </div>
           </div>

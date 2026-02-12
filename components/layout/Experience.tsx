@@ -4,50 +4,116 @@ import { useState } from 'react'
 import { MapPin, Minus, Plus, ExternalLink, Calendar, Briefcase } from 'lucide-react'
 import Link from 'next/link'
 import Image from 'next/image'
+import type { Locale } from '@/lib/i18n'
 
-const experiences = [
-  {
-    title: 'Web Developer @ Yarrow',
-    description:
-      'Developing frontend of Yarrow Map and commercial Web SDK for using Yarrow Map.',
-    location: 'Tashkent, Uzbekistan',
-    link: {
-      label: 'yarrow.uz',
-      url: 'https://map.yarrow.uz',
+type ExperienceItem = {
+  title: string
+  description: string
+  location: string
+  link?: {
+    label: string
+    url: string
+  }
+  logo?: string
+  duration: string
+  tags: string[]
+  id: number
+}
+
+const experiencesByLocale: Record<Locale, ExperienceItem[]> = {
+  en: [
+    {
+      title: 'Web Developer @ Yarrow',
+      description:
+        'Developing frontend of Yarrow Map and commercial Web SDK for using Yarrow Map.',
+      location: 'Tashkent, Uzbekistan',
+      link: {
+        label: 'yarrow.uz',
+        url: 'https://map.yarrow.uz',
+      },
+      logo: 'cell-power.svg',
+      duration: '2025 - Present',
+      tags: [
+        'Vue 3',
+        'SDK development',
+        'Maplibre GL JS',
+        'JavaScript',
+        'TypeScript',
+        'React',
+      ],
+      id: 1,
     },
-    logo: 'cell-power.svg',
-    duration: '2025 - Present',
-    tags: [
-      'Vue 3',
-      'SDK development',
-      'Maplibre GL JS',
-      'JavaScript',
-      'TypeScript',
-      'React',
-    ],
-    id: 1,
-  },
-  {
-    title: 'Freelancer',
-    description:
-      'Developing dynamic and static websites and designing templates based on orders from around the world.',
-    location: 'Remote',
-    duration: '2021 - Present',
-    tags: [
-      'JavaScript',
-      'TypeScript',
-      'React',
-      'Next.js',
-      'Tailwind CSS',
-      'NodeJS',
-      'Figma',
-      'Wordpress',
-    ],
-    id: 2,
-  },
-]
+    {
+      title: 'Freelancer',
+      description:
+        'Developing dynamic and static websites and designing templates based on orders from around the world.',
+      location: 'Remote',
+      duration: '2021 - Present',
+      tags: [
+        'JavaScript',
+        'TypeScript',
+        'React',
+        'Next.js',
+        'Tailwind CSS',
+        'NodeJS',
+        'Figma',
+        'Wordpress',
+      ],
+      id: 2,
+    },
+  ],
+  uz: [
+    {
+      title: 'Web Dasturchi @ Yarrow',
+      description:
+        'Yarrow Map va Yarrow Map uchun tijoriy Web SDK loyihalarining frontend qismini ishlab chiqish.',
+      location: 'Toshkent, O`zbekiston',
+      link: {
+        label: 'yarrow.uz',
+        url: 'https://map.yarrow.uz',
+      },
+      logo: 'cell-power.svg',
+      duration: '2025 - Hozir',
+      tags: [
+        'Vue 3',
+        'SDK development',
+        'Maplibre GL JS',
+        'JavaScript',
+        'TypeScript',
+        'React',
+      ],
+      id: 1,
+    },
+    {
+      title: 'Frilanser',
+      description:
+        'Dunyoning turli joylaridan kelgan buyurtmalar asosida dinamik va statik veb-saytlar hamda dizayn shablonlarini ishlab chiqish.',
+      location: 'Masofaviy',
+      duration: '2021 - Hozir',
+      tags: [
+        'JavaScript',
+        'TypeScript',
+        'React',
+        'Next.js',
+        'Tailwind CSS',
+        'NodeJS',
+        'Figma',
+        'Wordpress',
+      ],
+      id: 2,
+    },
+  ],
+}
 
-const Experience = () => {
+type ExperienceProps = {
+  title: string
+  subtitle: string
+  technologiesLabel: string
+  locale: Locale
+}
+
+const Experience = ({ title, subtitle, technologiesLabel, locale }: ExperienceProps) => {
+  const experiences = experiencesByLocale[locale]
   const [opens, setOpens] = useState<number[]>([1, 2])
 
   const handleClick = (id: number) => {
@@ -88,11 +154,11 @@ const Experience = () => {
               <Briefcase className='w-6 h-6 text-white' />
             </div>
             <h2 className='text-4xl sm:text-7xl font-bold text-white font-poppins tracking-wide'>
-              Experience
+              {title}
             </h2>
           </div>
           <p className='text-xl text-gray-300 max-w-2xl mx-auto'>
-            My professional journey building innovative web solutions
+            {subtitle}
           </p>
         </div>
         
@@ -171,7 +237,7 @@ const Experience = () => {
                         </p>
                         
                         <div className='space-y-3'>
-                          <h4 className='text-sm font-semibold text-white uppercase tracking-wide'>Technologies & Tools</h4>
+                          <h4 className='text-sm font-semibold text-white uppercase tracking-wide'>{technologiesLabel}</h4>
                           <div className='flex flex-wrap gap-2'>
                             {experience.tags.map((tag, tagIndex) => (
                               <span

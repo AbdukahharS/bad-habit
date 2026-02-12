@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useMemo, useState } from 'react'
 import {
   Target,
   Globe,
@@ -14,6 +14,7 @@ import {
   Package,
 } from 'lucide-react'
 import Masonry from '../Masonry'
+import type { Locale, ProjectCategory } from '@/lib/i18n'
 
 type Project = {
   name: string
@@ -22,15 +23,23 @@ type Project = {
   live: string | null
   source: string | null
   tags: string[]
-  category: string
+  category: ProjectCategory
   highlighted?: boolean
 }
 
-const projects: Project[] = [
+type LocalizedText = Record<Locale, string>
+
+type LocalizedProject = Omit<Project, 'description'> & {
+  description: LocalizedText
+}
+
+const projectCatalog: LocalizedProject[] = [
   {
     name: 'Cirth',
-    description:
-      'Modern documentation hosting platform with rich text editing, version management, custom domains, and GitHub import. Built with Next.js 16 and Supabase.',
+    description: {
+      en: 'Modern documentation hosting platform with rich text editing, version management, custom domains, and GitHub import. Built with Next.js 16 and Supabase.',
+      uz: 'Boy matn tahriri, versiya boshqaruvi, maxsus domenlar va GitHub importiga ega zamonaviy hujjat joylash platformasi. Next.js 16 va Supabase asosida qurilgan.',
+    },
     image: 'cirth.png',
     live: 'https://cirth.uz/',
     source: null,
@@ -48,8 +57,10 @@ const projects: Project[] = [
   },
   {
     name: 'Ravon Taxi - Admin Dashboard',
-    description:
-      'Comprehensive fleet management system with real-time trip monitoring, driver oversight, and analytics dashboard for local taxi company.',
+    description: {
+      en: 'Comprehensive fleet management system with real-time trip monitoring, driver oversight, and analytics dashboard for local taxi company.',
+      uz: 'Mahalliy taksi kompaniyasi uchun real vaqt safar kuzatuvi, haydovchilar nazorati va analitika paneliga ega kompleks avtopark boshqaruv tizimi.',
+    },
     image: 'ravon-admin.png',
     live: null,
     source: null,
@@ -66,8 +77,10 @@ const projects: Project[] = [
   },
   {
     name: 'Ravon Taxi - Driver Mobile App',
-    description:
-      'Cross-platform Android driver application with geolocation tracking, ride assignments, and real-time updates built with Tauri.',
+    description: {
+      en: 'Cross-platform Android driver application with geolocation tracking, ride assignments, and real-time updates built with Tauri.',
+      uz: 'Tauri yordamida yaratilgan, geolokatsiya kuzatuvi, buyurtma biriktirish va real vaqt yangilanishlarini qo\'llovchi kross-platforma Android haydovchi ilovasi.',
+    },
     image: 'ravon-driver.jpg',
     live: null,
     source: null,
@@ -83,8 +96,10 @@ const projects: Project[] = [
   },
   {
     name: 'Chorvoq Tourism Zone - Government Geoportal',
-    description:
-      'Government tourism management platform with advanced GIS capabilities, interactive maps, and multilingual support for Chorvoq recreation zone.',
+    description: {
+      en: 'Government tourism management platform with advanced GIS capabilities, interactive maps, and multilingual support for Chorvoq recreation zone.',
+      uz: 'Chorvoq dam olish hududi uchun ilg\'or GIS imkoniyatlari, interaktiv xaritalar va ko\'p tilli qo\'llab-quvvatlashga ega davlat turizm boshqaruv platformasi.',
+    },
     image: 'chorvoq.png',
     live: null,
     source: null,
@@ -102,8 +117,10 @@ const projects: Project[] = [
   },
   {
     name: 'Global Crop - Farmer Monitoring Platform',
-    description:
-      'Banking sector agricultural monitoring platform with GIS-based field mapping, data analytics, and loan tracking for rural farmers.',
+    description: {
+      en: 'Banking sector agricultural monitoring platform with GIS-based field mapping, data analytics, and loan tracking for rural farmers.',
+      uz: 'Bank sohasi uchun GIS asosidagi dala xaritalash, ma\'lumotlar analitikasi va kredit kuzatuviga ega qishloq xo\'jaligi monitoring platformasi.',
+    },
     image: 'globalcrop.png',
     live: null,
     source: null,
@@ -120,8 +137,10 @@ const projects: Project[] = [
   },
   {
     name: 'Global Crop - Landing Page',
-    description:
-      'Landing page for Global Crop agricultural monitoring platform built with React and Vite.',
+    description: {
+      en: 'Landing page for Global Crop agricultural monitoring platform built with React and Vite.',
+      uz: 'React va Vite asosida yaratilgan Global Crop qishloq xo\'jaligi monitoring platformasi uchun landing sahifa.',
+    },
     image: 'global-crop-landing.png',
     live: 'https://global-crop-landing.vercel.app/',
     source: 'https://github.com/AbdukahharS/global-crop-landing',
@@ -130,7 +149,10 @@ const projects: Project[] = [
   },
   {
     name: 'Yarrow Map Web SDK Documentation',
-    description: 'I made the documentation website for the Yarrow Map Web SDK.',
+    description: {
+      en: 'I made the documentation website for the Yarrow Map Web SDK.',
+      uz: 'Yarrow Map Web SDK uchun hujjatlar saytini ishlab chiqdim.',
+    },
     image: 'yarrow-web-sdk-docs.png',
     live: 'https://yarrow-web-sdk-docs.netlify.app/',
     source: 'https://github.com/AbdukahharS/yarrow-web-sdk-docs',
@@ -139,8 +161,10 @@ const projects: Project[] = [
   },
   {
     name: 'Yarrow Map Web SDK',
-    description:
-      'TypeScript-based mapping library built on top of MapLibre GL. Provides high-level API for interactive maps with routing, search, public transport tracking, and custom layer management.',
+    description: {
+      en: 'TypeScript-based mapping library built on top of MapLibre GL. Provides high-level API for interactive maps with routing, search, public transport tracking, and custom layer management.',
+      uz: 'MapLibre GL ustiga qurilgan TypeScript xaritalash kutubxonasi. Marshrutlash, qidiruv, jamoat transporti kuzatuvi va maxsus layer boshqaruvi bilan yuqori darajadagi API taqdim etadi.',
+    },
     image: 'yarrow-sdk.png',
     live: null,
     source: 'https://git.yarrow.uz/yarrow-sdk/frontend/yarrow-map-web-sdk',
@@ -149,8 +173,10 @@ const projects: Project[] = [
   },
   {
     name: 'BSOK CRM',
-    description:
-      'Enterprise ERP and CRM application for mesh wire/net manufacturing. Features production tracking, inventory management, sales, financial tracking, and customer/worker management.',
+    description: {
+      en: 'Enterprise ERP and CRM application for mesh wire/net manufacturing. Features production tracking, inventory management, sales, financial tracking, and customer/worker management.',
+      uz: 'To\'r va sim ishlab chiqarish uchun korporativ ERP/CRM ilovasi. Ishlab chiqarish, ombor, savdo, moliya hamda mijoz/xodim boshqaruvini qamrab oladi.',
+    },
     image: 'bsok-crm.png',
     live: 'https://bsok-frontend.vercel.app/',
     source: 'https://github.com/AbdukahharS/bsok-frontend',
@@ -167,7 +193,10 @@ const projects: Project[] = [
   },
   {
     name: 'Al-Dar Rehabilitation Clinic',
-    description: "I developed Frontend of Al-Dar clinic's website",
+    description: {
+      en: "I developed Frontend of Al-Dar clinic's website",
+      uz: 'Al-Dar klinikasi sayti uchun frontend qismini ishlab chiqdim.',
+    },
     image: 'al-dar.png',
     live: 'https://www.aldarrehabclinic.com/',
     source: 'https://github.com/AbdukahharS/al-dar-clinic',
@@ -176,7 +205,10 @@ const projects: Project[] = [
   },
   {
     name: 'Luminink',
-    description: 'Illuminate Your Ideas, Capture Your Creativity.',
+    description: {
+      en: 'Illuminate Your Ideas, Capture Your Creativity.',
+      uz: 'G\'oyalaringizni yoritib, ijodingizni namoyon eting.',
+    },
     image: 'luminink.png',
     live: 'https://luminink.vercel.app/',
     source: 'https://github.com/AbdukahharS/luminink',
@@ -193,7 +225,10 @@ const projects: Project[] = [
   },
   {
     name: 'Founders Language School',
-    description: 'Business website for Founders Language School.',
+    description: {
+      en: 'Business website for Founders Language School.',
+      uz: 'Founders Language School uchun biznes veb-sayt.',
+    },
     image: 'founders.png',
     live: 'https://founderslc.netlify.app/',
     source: 'https://github.com/AbdukahharS/founders-mui',
@@ -202,8 +237,10 @@ const projects: Project[] = [
   },
   {
     name: 'Yarrow Map Web',
-    description:
-      'A Nuxt 3 progressive web application providing interactive mapping with search, routing, and user profile features. Integrates with Yarrow Map Web SDK for map rendering.',
+    description: {
+      en: 'A Nuxt 3 progressive web application providing interactive mapping with search, routing, and user profile features. Integrates with Yarrow Map Web SDK for map rendering.',
+      uz: 'Qidiruv, marshrutlash va foydalanuvchi profili funksiyalari bo\'lgan Nuxt 3 progressiv veb-ilova. Xarita chizish uchun Yarrow Map Web SDK bilan integratsiyalashgan.',
+    },
     image: 'yarrow-map-web.png',
     live: 'https://map.yarrow.uz/',
     source: null,
@@ -220,7 +257,10 @@ const projects: Project[] = [
   },
   {
     name: "Shahzod's Blog",
-    description: 'My own blog website about application development',
+    description: {
+      en: 'My own blog website about application development',
+      uz: 'Dastur ishlab chiqish haqida shaxsiy blog saytim.',
+    },
     image: 'blog.png',
     live: 'https://blog.abdukahhar.uz',
     source: 'https://github.com/AbdukahharS/blog',
@@ -236,7 +276,10 @@ const projects: Project[] = [
   },
   {
     name: 'Agricultural statistics',
-    description: 'Code snippet for presenting statistics',
+    description: {
+      en: 'Code snippet for presenting statistics',
+      uz: 'Statistikani taqdim etish uchun kod namunasi.',
+    },
     image: 'agricultural.png',
     live: 'https://agricultural-statistics.netlify.app/',
     source: 'https://github.com/AbdukahharS/agricultural-statistics',
@@ -245,7 +288,10 @@ const projects: Project[] = [
   },
   {
     name: 'InMan',
-    description: 'Inventory Management Desktop Application',
+    description: {
+      en: 'Inventory Management Desktop Application',
+      uz: 'Ombor boshqaruvi uchun desktop ilova.',
+    },
     image: 'inman.png',
     source: 'https://github.com/AbdukahharS/InMan',
     live: null,
@@ -254,7 +300,10 @@ const projects: Project[] = [
   },
   {
     name: 'AS-Company',
-    description: 'Business website for AS-Company.',
+    description: {
+      en: 'Business website for AS-Company.',
+      uz: 'AS-Company uchun biznes veb-sayt.',
+    },
     image: 'as-company.png',
     live: 'https://company-as.netlify.app/',
     source: 'https://github.com/AbdukahharS/ascompany',
@@ -263,16 +312,22 @@ const projects: Project[] = [
   },
   {
     name: 'BilalIbnTuygun',
-    description: 'Personal website for Bilal ibn Tuygun.',
+    description: {
+      en: 'Personal website for Bilal ibn Tuygun.',
+      uz: 'Bilal ibn Tuygun uchun shaxsiy veb-sayt.',
+    },
     image: 'bilalibntuygun.png',
-    live: 'https://bilalibntuygun.uz/',
+    live: 'bilalibntuygun.netlify.app/',
     source: 'https://github.com/AbdukahharS/bilalibntuygun',
     tags: ['React.js', 'Styled Components'],
     category: 'Landing Pages',
   },
   {
     name: 'ArcGis Desktop',
-    description: 'Online course preview page for ArcGis Desktop.',
+    description: {
+      en: 'Online course preview page for ArcGis Desktop.',
+      uz: 'ArcGis Desktop uchun onlayn kurs preview sahifasi.',
+    },
     image: 'arcgis.png',
     live: 'https://arcgisdesktop.uz/',
     tags: ['FontAwesome'],
@@ -281,7 +336,10 @@ const projects: Project[] = [
   },
   {
     name: 'FreshGoods',
-    description: 'Landing page for a business.',
+    description: {
+      en: 'Landing page for a business.',
+      uz: 'Biznes uchun landing sahifa.',
+    },
     image: 'freshgoods.png',
     live: 'https://freshgoods-shop.netlify.app/',
     source: 'https://github.com/AbdukahharS/freshgoods',
@@ -290,7 +348,10 @@ const projects: Project[] = [
   },
   {
     name: 'Hotel BT',
-    description: 'Landing page for a hotel.',
+    description: {
+      en: 'Landing page for a hotel.',
+      uz: 'Mehmonxona uchun landing sahifa.',
+    },
     image: 'hbt.png',
     live: 'https://h-bt.netlify.app/',
     source: 'https://github.com/AbdukahharS/hbt',
@@ -299,7 +360,10 @@ const projects: Project[] = [
   },
   {
     name: 'NS Tour',
-    description: 'Business website for Nodirah-Sultan Travel Agency.',
+    description: {
+      en: 'Business website for Nodirah-Sultan Travel Agency.',
+      uz: 'Nodirah-Sultan sayyohlik agentligi uchun biznes veb-sayt.',
+    },
     image: 'nstour.png',
     live: 'https://ns-tour.netlify.app',
     source: 'https://github.com/AbdukahharS/tour',
@@ -308,7 +372,10 @@ const projects: Project[] = [
   },
   {
     name: 'Personal Portfolio',
-    description: 'Personal portfolio website tepmplate.',
+    description: {
+      en: 'Personal portfolio website tepmplate.',
+      uz: 'Shaxsiy portfolio sayt shabloni.',
+    },
     image: 'portfolio-doe.png',
     live: 'https://portfolio-doe.netlify.app/',
     source: 'https://github.com/AbdukahharS/john-doe-portfolio',
@@ -317,7 +384,10 @@ const projects: Project[] = [
   },
   {
     name: 'Quotopia',
-    description: 'Discover & Share Quotes',
+    description: {
+      en: 'Discover & Share Quotes',
+      uz: 'Iqtiboslarni kashf eting va ulashing.',
+    },
     image: 'quotopia.png',
     live: 'https://quotopiaa.vercel.app/',
     source: 'https://github.com/AbdukahharS/quotopia',
@@ -326,7 +396,10 @@ const projects: Project[] = [
   },
   {
     name: 'Ali Abdulaziz',
-    description: 'Personal website for Ali Abdulaziz.',
+    description: {
+      en: 'Personal website for Ali Abdulaziz.',
+      uz: 'Ali Abdulaziz uchun shaxsiy veb-sayt.',
+    },
     image: 'ali-abdulaziz.png',
     live: 'https://ali-abdulaziz.uz/',
     source: 'https://github.com/AbdukahharS/personal-website',
@@ -335,7 +408,10 @@ const projects: Project[] = [
   },
   {
     name: 'CrashCourse',
-    description: 'Design for business website',
+    description: {
+      en: 'Design for business website',
+      uz: 'Biznes veb-sayt dizayni.',
+    },
     image: 'crashcourse.png',
     live: 'https://www.figma.com/proto/wq2AKKCyGZbYWENEz4U1Pp/CrashCourse-2021?node-id=2-2&starting-point-node-id=2%3A2&mode=design&t=5snVJamAbCiZCx5W-1',
     tags: ['Figma'],
@@ -344,7 +420,10 @@ const projects: Project[] = [
   },
   {
     name: 'SunnySide',
-    description: 'Landing page design',
+    description: {
+      en: 'Landing page design',
+      uz: 'Landing sahifa dizayni.',
+    },
     image: 'Sunnyside.png',
     live: 'https://www.figma.com/proto/x5tmzrPqSXztS9tLIpFfJu/Sunnyside-Landing?node-id=3-4&mode=design&t=8o00bhdd9cVoXCkv-1',
     tags: ['Figma'],
@@ -353,51 +432,46 @@ const projects: Project[] = [
   },
 ]
 
-// Pre-compute category counts on module load (server-side compatible)
-const categoryCounts = projects.reduce((acc, project) => {
+const categoryCounts = projectCatalog.reduce((acc, project) => {
   acc.All = (acc.All || 0) + 1
-  acc[project.category as keyof Omit<typeof acc, 'All'>] = (acc[project.category as keyof Omit<typeof acc, 'All'>] || 0) + 1
+  acc[project.category as keyof Omit<typeof acc, 'All'>] =
+    (acc[project.category as keyof Omit<typeof acc, 'All'>] || 0) + 1
   return acc
-}, {
-  All: 0,
-  'Enterprise Applications': 0,
-  'Mobile Apps': 0,
-  'Desktop Apps': 0,
-  'Full-Stack Web Apps': 0,
-  'Landing Pages': 0,
-  Documentation: 0,
-  'Design Work': 0,
-  Libraries: 0,
-} as {
-  All: number
-  'Enterprise Applications': number
-  'Mobile Apps': number
-  'Desktop Apps': number
-  'Full-Stack Web Apps': number
-  'Landing Pages': number
-  Documentation: number
-  'Design Work': number
-  Libraries: number
-})
+}, {} as Record<ProjectCategory, number>)
 
-const Projects = () => {
-  const [current, setCurrent] = useState<
-    | 'All'
-    | 'Enterprise Applications'
-    | 'Mobile Apps'
-    | 'Desktop Apps'
-    | 'Full-Stack Web Apps'
-    | 'Landing Pages'
-    | 'Documentation'
-    | 'Design Work'
-    | 'Libraries'
-  >('All')
+type ProjectsProps = {
+  title: string
+  filterLabel: string
+  liveLabel: string
+  codeLabel: string
+  categoryLabels: Record<ProjectCategory, string>
+  locale: Locale
+}
+
+const Projects = ({
+  title,
+  filterLabel,
+  liveLabel,
+  codeLabel,
+  categoryLabels,
+  locale,
+}: ProjectsProps) => {
+  const [current, setCurrent] = useState<ProjectCategory>('All')
   const [isFilterOpen, setIsFilterOpen] = useState(false)
+
+  const projects = useMemo(
+    () =>
+      projectCatalog.map((project) => ({
+        ...project,
+        description: project.description[locale],
+      })),
+    [locale]
+  )
 
   return (
     <section className='w-full px-6 md:px-12 xl:px-24 mb-28' id='projects'>
       <h2 className='text-5xl sm:text-8xl font-bold mb-12 tracking-wide font-poppins px-2 sm:px-20'>
-        My Projects
+        {title}
       </h2>
       <div className='filter flex flex-col gap-2'>
         <button
@@ -421,7 +495,7 @@ const Projects = () => {
               </svg>
             </div>
             <p className='text-lg font-semibold text-white font-poppins'>
-              Filter Projects
+              {filterLabel}
             </p>
           </div>
           <ChevronDown
@@ -448,7 +522,7 @@ const Projects = () => {
             </svg>
           </div>
           <p className='text-lg font-semibold text-white font-poppins'>
-            Filter Projects
+            {filterLabel}
           </p>
         </div>
 
@@ -466,20 +540,7 @@ const Projects = () => {
                   ? 'bg-gradient-to-r from-blue-600/80 to-purple-600/80 text-white border-blue-400/50 shadow-lg shadow-blue-500/25 scale-105'
                   : 'bg-gray-800/30 text-gray-300 border-gray-700/50 hover:bg-gray-700/50 hover:text-white hover:border-gray-500/50 hover:scale-105'
               }`}
-              onClick={() =>
-                setCurrent(
-                  cat as
-                    | 'All'
-                    | 'Enterprise Applications'
-                    | 'Mobile Apps'
-                    | 'Desktop Apps'
-                    | 'Full-Stack Web Apps'
-                    | 'Landing Pages'
-                    | 'Documentation'
-                    | 'Design Work'
-                    | 'Libraries'
-                )
-              }
+              onClick={() => setCurrent(cat as ProjectCategory)}
               key={i}
             >
               <span className='relative z-10 flex items-center gap-2'>
@@ -494,7 +555,7 @@ const Projects = () => {
                 {cat === 'Documentation' && <FileText className='size-5' />}
                 {cat === 'Design Work' && <Palette className='size-5' />}
                 {cat === 'Libraries' && <Package className='size-5' />}
-                {cat}
+                {categoryLabels[cat as ProjectCategory]}
               </span>
 
               <div
@@ -514,7 +575,12 @@ const Projects = () => {
           ))}
         </div>
       </div>
-      <Masonry items={projects} current={current} />
+      <Masonry
+        items={projects}
+        current={current}
+        liveLabel={liveLabel}
+        codeLabel={codeLabel}
+      />
     </section>
   )
 }
