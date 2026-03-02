@@ -35,6 +35,12 @@ npm run start
 
 # Run linting
 npm run lint
+
+# Run linting and apply fixes
+npm run lint:fix
+
+# Format files
+npm run format
 ```
 
 ## Project Structure
