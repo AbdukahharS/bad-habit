@@ -46,6 +46,7 @@ type Dictionary = {
     filter: string
     live: string
     code: string
+    package: string
   }
   experience: {
     title: string
@@ -102,6 +103,7 @@ const dictionaries: Record<Locale, Dictionary> = {
       filter: 'Filter Projects',
       live: 'Live',
       code: 'Code',
+      package: 'Package',
     },
     experience: {
       title: 'Experience',
@@ -145,6 +147,7 @@ const dictionaries: Record<Locale, Dictionary> = {
       filter: 'Loyihalarni saralash',
       live: 'Sayt',
       code: 'Kod',
+      package: 'Paket',
     },
     experience: {
       title: 'Tajriba',

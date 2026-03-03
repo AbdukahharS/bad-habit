@@ -182,7 +182,7 @@ const Navbar = ({ locale, basePath, englishHref = '/en', navLabels }: NavbarProp
                   <div className='relative'>
                     <button
                       onClick={() => setLangOpen(!langOpen)}
-                      className='group flex items-center gap-2 px-3 py-2 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 hover:border-cyan-400/50 transition-all duration-300'
+                      className='group cursor-pointer flex items-center gap-2 px-3 py-2 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 hover:border-cyan-400/50 transition-all duration-300'
                     >
                       <Globe className='w-4 h-4 text-cyan-400' />
                       <span className='text-sm font-bold text-white group-hover:text-cyan-300 transition-colors'>

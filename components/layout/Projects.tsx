@@ -25,6 +25,7 @@ type Project = {
   tags: string[]
   category: ProjectCategory
   highlighted?: boolean
+  packageRegistry?: string | null
 }
 
 type LocalizedText = Record<Locale, string>
@@ -154,7 +155,7 @@ const projectCatalog: LocalizedProject[] = [
       uz: 'Yarrow Map Web SDK uchun hujjatlar saytini ishlab chiqdim.',
     },
     image: 'yarrow-web-sdk-docs.png',
-    live: 'https://yarrow-web-sdk-docs.netlify.app/',
+    live: 'https://sdk.yarrow.uz/',
     source: 'https://github.com/AbdukahharS/yarrow-web-sdk-docs',
     tags: ['Vue', 'I18n', 'TypeScript'],
     category: 'Documentation',
@@ -167,9 +168,35 @@ const projectCatalog: LocalizedProject[] = [
     },
     image: 'yarrow-sdk.png',
     live: null,
-    source: 'https://git.yarrow.uz/yarrow-sdk/frontend/yarrow-map-web-sdk',
-    tags: ['TypeScript', 'MapLibre GL', 'Rollup', 'Axios'],
+    source: null,
+    packageRegistry: 'https://www.npmjs.com/package/@yarrow-uz/yarrow-map-web-sdk',
+    tags: ['Vitest', 'MapLibre GL', 'Rollup', 'TypeScript', 'Axios'],
     category: 'Libraries',
+  },
+  {
+    name: 'Yarrow Map Flutter SDK',
+    description: {
+      en: 'Flutter mobile SDK for integrating Yarrow Maps in mobile applications. Provides API parity with the Yarrow Web SDK for map rendering, routing, search, and public transport tracking.',
+      uz: 'Mobil ilovalarda Yarrow Xaritalarini integratsiya qilish uchun Flutter mobil SDK. Xarita chizish, marshrutlash, qidiruv va jamoat transporti kuzatuvi uchun Yarrow Web SDK bilan API parityni taqdim etadi.',
+    },
+    image: 'yarrow-flutter-sdk.png',
+    live: null,
+    source: null,
+    packageRegistry: 'https://pub.dev/packages/yarrow_map_flutter_sdk',
+    tags: ['Flutter', 'Dart', 'MapLibre GL', 'Dio'],
+    category: 'Libraries',
+  },
+  {
+    name: 'Yarrow API Dashboard',
+    description: {
+      en: 'Modern API management dashboard built with Vue 3, TypeScript, and Vite. Provides comprehensive interface for managing API keys, viewing analytics, handling billing, and user authentication with theme switching. Includes interactive map with GeoJSON drawer using Yarrow Map Web SDK.',
+      uz: 'Vue 3, TypeScript va Vite bilan qurilgan zamonaviy API boshqaruv paneli. API kalitlarni boshqarish, analitikani ko\'rish, billing va foydalanuvchi autentifikatsiyasi uchun keng qamrovli interfeysni taqdim etadi. Yarrow Map Web SDK yordamida GeoJSON chizg\'ich bilan interaktiv xarita qo\'shilgan.',
+    },
+    image: 'yarrow-api-dashboard.png',
+    live: 'https://dashboard.yarrow.uz/',
+    source: null,
+    tags: ['Vue 3', 'TypeScript', 'Vite', 'Pinia', 'Chart.js', 'Yarrow Map Web SDK'],
+    category: 'Enterprise Applications',
   },
   {
     name: 'BSOK CRM',
@@ -317,7 +344,7 @@ const projectCatalog: LocalizedProject[] = [
       uz: 'Bilal ibn Tuygun uchun shaxsiy veb-sayt.',
     },
     image: 'bilalibntuygun.png',
-    live: 'bilalibntuygun.netlify.app/',
+    live: 'https://bilalibntuygun.netlify.app/',
     source: 'https://github.com/AbdukahharS/bilalibntuygun',
     tags: ['React.js', 'Styled Components'],
     category: 'Landing Pages',
@@ -329,7 +356,8 @@ const projectCatalog: LocalizedProject[] = [
       uz: 'ArcGis Desktop uchun onlayn kurs preview sahifasi.',
     },
     image: 'arcgis.png',
-    live: 'https://arcgisdesktop.uz/',
+    // live: 'https://arcgisdesktop.uz/',
+    live: null,
     tags: ['FontAwesome'],
     category: 'Landing Pages',
     source: null,
@@ -401,7 +429,7 @@ const projectCatalog: LocalizedProject[] = [
       uz: 'Ali Abdulaziz uchun shaxsiy veb-sayt.',
     },
     image: 'ali-abdulaziz.png',
-    live: 'https://ali-abdulaziz.uz/',
+    live: 'https://ali-abdulaziz.netlify.app',
     source: 'https://github.com/AbdukahharS/personal-website',
     tags: ['Bootstrap'],
     category: 'Landing Pages',
@@ -444,6 +472,7 @@ type ProjectsProps = {
   filterLabel: string
   liveLabel: string
   codeLabel: string
+  packageLabel: string
   categoryLabels: Record<ProjectCategory, string>
   locale: Locale
 }
@@ -453,6 +482,7 @@ const Projects = ({
   filterLabel,
   liveLabel,
   codeLabel,
+  packageLabel,
   categoryLabels,
   locale,
 }: ProjectsProps) => {
@@ -475,11 +505,11 @@ const Projects = ({
       </h2>
       <div className='filter flex flex-col gap-2'>
         <button
-          className='flex items-center justify-between gap-3 sm:hidden w-full px-4 py-3 rounded-xl bg-gradient-to-r from-blue-600/20 to-purple-600/20 border border-blue-500/30 backdrop-blur-sm hover:border-blue-400/50 transition-all duration-300'
+          className='flex items-center justify-between gap-3 sm:hidden w-full px-4 py-3 rounded-xl bg-linear-to-r from-blue-600/20 to-purple-600/20 border border-blue-500/30 backdrop-blur-sm hover:border-blue-400/50 transition-all duration-300'
           onClick={() => setIsFilterOpen(!isFilterOpen)}
         >
           <div className='flex items-center gap-3'>
-            <div className='w-8 h-8 rounded-lg bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center'>
+            <div className='w-8 h-8 rounded-lg bg-linear-to-br from-blue-500 to-purple-600 flex items-center justify-center'>
               <svg
                 className='w-4 h-4 text-white'
                 fill='none'
@@ -506,7 +536,7 @@ const Projects = ({
         </button>
 
         <div className='hidden sm:flex items-center gap-3 mb-2'>
-          <div className='w-8 h-8 rounded-lg bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center'>
+          <div className='w-8 h-8 rounded-lg bg-linear-to-br from-blue-500 to-purple-600 flex items-center justify-center'>
             <svg
               className='w-4 h-4 text-white'
               fill='none'
@@ -529,7 +559,7 @@ const Projects = ({
         <div
           className={`flex flex-wrap gap-3 p-1 sm:gap-4 max-w-full overflow-hidden transition-all duration-500 ease-in-out ${
             isFilterOpen
-              ? 'max-h-[500px] opacity-100'
+              ? 'max-h-125 opacity-100'
               : 'max-h-0 opacity-0 sm:max-h-none sm:opacity-100'
           }`}
         >
@@ -537,7 +567,7 @@ const Projects = ({
             <button
               className={`relative group px-4 py-2 rounded-xl font-medium text-sm transition-all duration-300 whitespace-nowrap backdrop-blur-sm border ${
                 current === cat
-                  ? 'bg-gradient-to-r from-blue-600/80 to-purple-600/80 text-white border-blue-400/50 shadow-lg shadow-blue-500/25 scale-105'
+                  ? 'bg-linear-to-r from-blue-600/80 to-purple-600/80 text-white border-blue-400/50 shadow-lg shadow-blue-500/25 scale-105'
                   : 'bg-gray-800/30 text-gray-300 border-gray-700/50 hover:bg-gray-700/50 hover:text-white hover:border-gray-500/50 hover:scale-105'
               }`}
               onClick={() => setCurrent(cat as ProjectCategory)}
@@ -569,7 +599,7 @@ const Projects = ({
               </div>
 
               {current !== cat && (
-                <div className='absolute inset-0 rounded-xl bg-gradient-to-r from-blue-600/20 to-purple-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300' />
+                <div className='absolute inset-0 rounded-xl bg-linear-to-r from-blue-600/20 to-purple-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300' />
               )}
             </button>
           ))}
@@ -580,6 +610,7 @@ const Projects = ({
         current={current}
         liveLabel={liveLabel}
         codeLabel={codeLabel}
+        packageLabel={packageLabel}
       />
     </section>
   )

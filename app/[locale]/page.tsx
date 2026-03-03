@@ -39,6 +39,7 @@ export default async function Home({ params }: Props) {
         filterLabel={dict.projects.filter}
         liveLabel={dict.projects.live}
         codeLabel={dict.projects.code}
+        packageLabel={dict.projects.package}
         categoryLabels={dict.categories}
         locale={locale}
       />
