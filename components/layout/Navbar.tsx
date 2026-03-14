@@ -1,12 +1,27 @@
 'use client'
 
-import { useState, useEffect, useRef } from 'react'
+import type { Locale } from '@/lib/i18n'
+import {
+  Briefcase,
+  ChevronDown,
+  Code,
+  Globe,
+  Home,
+  Mail,
+  Menu,
+  X,
+} from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { Menu, X, Home, Code, Briefcase, Mail, Globe, ChevronDown } from 'lucide-react'
-import type { Locale } from '@/lib/i18n'
+import { useEffect, useRef, useState } from 'react'
 
-type Links = 'expertise' | 'projects' | 'experience' | 'contact' | 'blog' | 'cirth'
+type Links =
+  | 'expertise'
+  | 'projects'
+  | 'experience'
+  | 'contact'
+  | 'blog'
+  | 'cirth'
 
 type NavbarProps = {
   locale: Locale
@@ -20,10 +35,17 @@ type NavbarProps = {
     blog: string
     cirth: string
     language: string
+    openMenu: string
+    closeMenu: string
   }
 }
 
-const Navbar = ({ locale, basePath, englishHref = '/en', navLabels }: NavbarProps) => {
+const Navbar = ({
+  locale,
+  basePath,
+  englishHref = '/en',
+  navLabels,
+}: NavbarProps) => {
   const [hovered, setHovered] = useState<Links | null>(null)
   const [active, setActive] = useState(false)
   const [scrolled, setScrolled] = useState(false)
@@ -55,14 +77,26 @@ const Navbar = ({ locale, basePath, englishHref = '/en', navLabels }: NavbarProp
   }, [])
 
   const navItems = [
-    { id: 'expertise', label: navLabels.expertise, icon: <Code className='w-4 h-4' /> },
-    { id: 'projects', label: navLabels.projects, icon: <Home className='w-4 h-4' /> },
+    {
+      id: 'expertise',
+      label: navLabels.expertise,
+      icon: <Code className='w-4 h-4' />,
+    },
+    {
+      id: 'projects',
+      label: navLabels.projects,
+      icon: <Home className='w-4 h-4' />,
+    },
     {
       id: 'experience',
       label: navLabels.experience,
       icon: <Briefcase className='w-4 h-4' />,
     },
-    { id: 'contact', label: navLabels.contact, icon: <Mail className='w-4 h-4' /> },
+    {
+      id: 'contact',
+      label: navLabels.contact,
+      icon: <Mail className='w-4 h-4' />,
+    },
   ]
   const localizedRoot = basePath ?? `/${locale}`
   const sectionHref = (sectionId: string) => `${localizedRoot}#${sectionId}`
@@ -86,6 +120,7 @@ const Navbar = ({ locale, basePath, englishHref = '/en', navLabels }: NavbarProp
             <div className='px-6 py-3 flex justify-between items-center'>
               {/* Mobile Menu Button */}
               <button
+                aria-label={navLabels.openMenu}
                 className='flex lg:hidden justify-center items-center w-12 h-12 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 hover:border-purple-400/50 group transition-all duration-300 hover:scale-110'
                 onClick={() => setActive(true)}
               >
@@ -164,7 +199,9 @@ const Navbar = ({ locale, basePath, englishHref = '/en', navLabels }: NavbarProp
                   target='_blank'
                   rel='noopener noreferrer'
                   className={`group relative px-3 xl:px-4 py-2 font-bold transition-all duration-300 hover:scale-105 ${
-                    hovered && hovered !== 'cirth' ? 'opacity-50' : 'opacity-100'
+                    hovered && hovered !== 'cirth'
+                      ? 'opacity-50'
+                      : 'opacity-100'
                   }`}
                   onMouseEnter={() => setHovered('cirth')}
                   onMouseLeave={() => setHovered(null)}
@@ -178,7 +215,10 @@ const Navbar = ({ locale, basePath, englishHref = '/en', navLabels }: NavbarProp
                 </Link>
 
                 {/* Language Switcher - Code Style Dropdown */}
-                <div className='lg:flex items-center pl-3 border-l border-white/15 ml-2' ref={langRef}>
+                <div
+                  className='lg:flex items-center pl-3 border-l border-white/15 ml-2'
+                  ref={langRef}
+                >
                   <div className='relative'>
                     <button
                       onClick={() => setLangOpen(!langOpen)}
@@ -210,7 +250,9 @@ const Navbar = ({ locale, basePath, englishHref = '/en', navLabels }: NavbarProp
                         {languages.map((lang, i) => (
                           <Link
                             key={lang.code}
-                            href={lang.code === 'en' ? englishHref : `/${lang.code}`}
+                            href={
+                              lang.code === 'en' ? englishHref : `/${lang.code}`
+                            }
                             className={`group flex items-center gap-3 px-3 py-2.5 rounded-lg transition-all duration-200 ${
                               locale === lang.code
                                 ? 'bg-cyan-500/20 border border-cyan-400/30'
@@ -222,7 +264,9 @@ const Navbar = ({ locale, basePath, englishHref = '/en', navLabels }: NavbarProp
                             <div className='flex-1'>
                               <span
                                 className={`text-sm font-bold transition-colors ${
-                                  locale === lang.code ? 'text-cyan-300' : 'text-white/80 group-hover:text-white'
+                                  locale === lang.code
+                                    ? 'text-cyan-300'
+                                    : 'text-white/80 group-hover:text-white'
                                 }`}
                               >
                                 {lang.name}
@@ -271,6 +315,7 @@ const Navbar = ({ locale, basePath, englishHref = '/en', navLabels }: NavbarProp
           <div className='px-6 py-4 space-y-8'>
             {/* Close Button */}
             <button
+              aria-label={navLabels.closeMenu}
               className='absolute top-6 right-6 w-12 h-12 flex justify-center items-center rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 hover:border-red-400/50 group transition-all duration-300 hover:scale-110'
               onClick={() => setActive(false)}
             >
@@ -356,7 +401,9 @@ const Navbar = ({ locale, basePath, englishHref = '/en', navLabels }: NavbarProp
                       <div className='flex-1 text-left'>
                         <span
                           className={`block text-sm font-bold ${
-                            locale === lang.code ? 'text-cyan-300' : 'text-white/80 group-hover:text-white'
+                            locale === lang.code
+                              ? 'text-cyan-300'
+                              : 'text-white/80 group-hover:text-white'
                           }`}
                         >
                           {lang.name}

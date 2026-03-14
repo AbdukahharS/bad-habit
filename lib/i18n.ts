@@ -33,6 +33,8 @@ type Dictionary = {
     blog: string
     cirth: string
     language: string
+    openMenu: string
+    closeMenu: string
   }
   hero: {
     subtitle: string
@@ -90,6 +92,8 @@ const dictionaries: Record<Locale, Dictionary> = {
       blog: 'blog',
       cirth: 'cirth',
       language: 'language',
+      openMenu: 'Open menu',
+      closeMenu: 'Close menu',
     },
     hero: {
       subtitle: 'SOFTWARE ENGINEER, WEB DEVELOPER',
@@ -134,13 +138,16 @@ const dictionaries: Record<Locale, Dictionary> = {
       blog: 'blog',
       cirth: 'cirth',
       language: 'til',
+      openMenu: 'Menyuni ochish',
+      closeMenu: 'Menyuni yopish',
     },
     hero: {
       subtitle: 'DASTURIY MUHANDIS, VEB DASTURCHI',
     },
     expertise: {
       title: 'Ko`nikmalar',
-      subtitle: 'Zamonaviy texnologiyalar bilan samarali veb-yechimlar yarataman',
+      subtitle:
+        'Zamonaviy texnologiyalar bilan samarali veb-yechimlar yarataman',
     },
     projects: {
       title: 'Loyihalarim',
