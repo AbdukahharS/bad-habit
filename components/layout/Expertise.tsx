@@ -128,7 +128,7 @@ const Expertise = ({ title, subtitle, locale }: ExpertiseProps) => {
             <div className='w-20 h-20 rounded-xl bg-linear-to-br from-purple-500 to-pink-600 flex items-center justify-center'>
               <Code className='size-12 text-white' />
             </div>
-            <h2 className='text-5xl sm:text-8xl font-bold text-white font-poppins tracking-wide'>
+            <h2 className='text-4xl sm:text-8xl font-bold text-white font-poppins tracking-wide'>
               {title}
             </h2>
           </div>
@@ -163,7 +163,7 @@ const Expertise = ({ title, subtitle, locale }: ExpertiseProps) => {
                     </div>
                   </div>
                   <h3 className='text-2xl font-bold text-white font-poppins group-hover:text-blue-300 transition-colors duration-300'>
-                    <span className={`relative inline-block after:block after:absolute after:w-[calc(100%+4px)] after:h-2 after:bottom-1 after:left-[-2px] after:z-[-1] after:transition-all after:bg-gradient-to-r ${area.gradient} after:opacity-80 hover:after:opacity-100`}>
+                    <span className={`relative inline-block after:block after:absolute after:w-[calc(100%+4px)] after:h-2 after:bottom-1 after:-left-0.5 after:z-[-1] after:transition-all after:bg-linear-to-r ${area.gradient} after:opacity-80 hover:after:opacity-100`}>
                       {area.highlight}
                     </span>
                     {area.title !== area.highlight && (
@@ -178,9 +178,9 @@ const Expertise = ({ title, subtitle, locale }: ExpertiseProps) => {
                 {/* Original HTML-style description with glassmorphism */}
                 <div className='pl-9 relative'>
                   {/* Vertical line */}
-                  <div className='absolute left-4 top-[24px] h-[calc(100%-48px)] border-l border-white/30 opacity-60'></div>
+                  <div className='absolute left-4 top-6 h-[calc(100%-48px)] border-l border-white/30 opacity-60'></div>
 
-                  <div className="before:content-['<h3>'] before:mb-1 before:block before:opacity-40 before:ml-[-35px] before:text-sm before:font-mono before:text-slate-400 after:content-['</h3>'] after:mt-1 after:block after:opacity-40 after:ml-[-35px] after:text-sm after:font-mono after:text-slate-400">
+                  <div className="before:content-['<h3>'] before:mb-1 before:block before:opacity-40 before:-ml-8.75 before:text-sm before:font-mono before:text-slate-400 after:content-['</h3>'] after:mt-1 after:block after:opacity-40 after:-ml-8.75 after:text-sm after:font-mono after:text-slate-400">
                     <p className='text-gray-300 leading-relaxed group-hover:text-white transition-colors duration-300'>
                       {area.description}
                     </p>
@@ -188,7 +188,7 @@ const Expertise = ({ title, subtitle, locale }: ExpertiseProps) => {
                 </div>
 
                 {/* Glassmorphism hover overlay */}
-                <div className={`absolute inset-0 bg-gradient-to-r ${area.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-300 pointer-events-none`}></div>
+                <div className={`absolute inset-0 bg-linear-to-r ${area.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-300 pointer-events-none`}></div>
               </div>
             </div>
           ))}

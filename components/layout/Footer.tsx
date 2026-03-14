@@ -79,7 +79,7 @@ const Footer = ({ title, description, emailLabel, locale }: FooterProps) => {
 
   return (
     <footer className='mt-32 md:mt-36 relative overflow-hidden'>
-      <div className='absolute inset-0 bg-gradient-to-b from-background via-[#0f0f0f] to-black opacity-80'></div>
+      <div className='absolute inset-0 bg-linear-to-b from-background via-[#0f0f0f] to-black opacity-80'></div>
 
       <div className='relative w-full mx-auto flex flex-col-reverse xl:flex-row items-stretch'>
         <div className='w-full xl:w-[45%] flex justify-center p-10 flex-col relative'>
@@ -103,8 +103,8 @@ const Footer = ({ title, description, emailLabel, locale }: FooterProps) => {
               <span className='relative z-10 hidden sm:inline'>
                 shahzod@abdukahhar.uz
               </span>
-              <div className='absolute inset-x-0 bottom-1 h-2 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left opacity-70'></div>
-              <div className='absolute inset-0 bg-gradient-to-r from-purple-500/10 to-blue-500/10 rounded-lg transform scale-0 group-hover:scale-100 transition-transform duration-300'></div>
+              <div className='absolute inset-x-0 bottom-1 h-2 bg-linear-to-r from-purple-500 to-blue-500 rounded-full transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left opacity-70'></div>
+              <div className='absolute inset-0 bg-linear-to-r from-purple-500/10 to-blue-500/10 rounded-lg transform scale-0 group-hover:scale-100 transition-transform duration-300'></div>
             </Link>
 
             <div className='grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4'>

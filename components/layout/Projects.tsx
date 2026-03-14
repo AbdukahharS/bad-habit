@@ -565,7 +565,7 @@ const Projects = ({
         >
           {Object.keys(categoryCounts).map((cat, i) => (
             <button
-              className={`relative group px-4 py-2 rounded-xl font-medium text-sm transition-all duration-300 whitespace-nowrap backdrop-blur-sm border ${
+              className={`relative group pl-2 md:pl-3 pr-3 md:pr-4 py-1 md:py-2 rounded-xl font-medium text-sm transition-all duration-300 whitespace-nowrap backdrop-blur-sm border ${
                 current === cat
                   ? 'bg-linear-to-r from-blue-600/80 to-purple-600/80 text-white border-blue-400/50 shadow-lg shadow-blue-500/25 scale-105'
                   : 'bg-gray-800/30 text-gray-300 border-gray-700/50 hover:bg-gray-700/50 hover:text-white hover:border-gray-500/50 hover:scale-105'
@@ -589,7 +589,7 @@ const Projects = ({
               </span>
 
               <div
-                className={`absolute -top-1 -right-1 w-5 h-5 rounded-full text-[10px] font-bold flex items-center justify-center transition-all duration-300 ${
+                className={`absolute -top-1.5 -right-2 w-4 h-4 md:w-5 md:h-6 rounded-full text-[10px] font-bold flex items-center justify-center transition-all duration-300 ${
                   current === cat
                     ? 'bg-white text-blue-600 scale-100'
                     : 'bg-blue-500/80 text-white scale-90 group-hover:scale-100'

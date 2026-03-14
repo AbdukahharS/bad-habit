@@ -117,7 +117,7 @@ const Navbar = ({ locale, basePath, englishHref = '/en', navLabels }: NavbarProp
               </Link>
 
               {/* Desktop Navigation - Code Style */}
-              <div className='hidden lg:flex items-center justify-center flex-1 gap-1 xl:gap-2 ml-[-100px] xl:ml-[-220px]'>
+              <div className='hidden lg:flex items-center justify-center flex-1 gap-1 xl:gap-2 -ml-25 xl:-ml-55'>
                 {navItems.map((item, i) => (
                   <Link
                     key={item.id}
@@ -268,7 +268,7 @@ const Navbar = ({ locale, basePath, englishHref = '/en', navLabels }: NavbarProp
               'linear-gradient(135deg, rgba(0, 0, 0, 0.9) 0%, rgba(30, 30, 30, 0.9) 100%)',
           }}
         >
-          <div className='p-8 space-y-8'>
+          <div className='px-6 py-4 space-y-8'>
             {/* Close Button */}
             <button
               className='absolute top-6 right-6 w-12 h-12 flex justify-center items-center rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 hover:border-red-400/50 group transition-all duration-300 hover:scale-110'
@@ -291,7 +291,7 @@ const Navbar = ({ locale, basePath, englishHref = '/en', navLabels }: NavbarProp
                 <Link
                   key={item.id}
                   href={sectionHref(item.id)}
-                  className='group relative p-4 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 hover:border-blue-400/50 transition-all duration-300 hover:scale-105 block'
+                  className='group relative px-4 py-3 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 hover:border-blue-400/50 transition-all duration-300 hover:scale-105 block'
                   onClick={() => setActive(false)}
                 >
                   <div className='font-bold text-white group-hover:text-blue-400 transition-colors duration-300 text-lg'>
