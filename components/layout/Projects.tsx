@@ -161,6 +161,18 @@ const projectCatalog: LocalizedProject[] = [
     category: 'Documentation',
   },
   {
+    name: 'Yarrow Interactive Map Embed',
+    description: {
+      en: 'Nuxt 4 landing page and iframe embed endpoint for Yarrow Maps. Features one-line iframe embed with URL parameters for location, zoom, markers, and theme. Includes multi-language support (EN/RU/UZ), live demo, and copy-to-clipboard functionality.',
+      uz: 'Yarrow Xaritalar uchun Nuxt 4 landing sahifa va iframe embed endpoint. Joylashuv, zoom, marker va theme uchun URL parametrlari bilan bir qatorli iframe embed imkoniyati. Ko\'p tilli qo\'llab-quvvatlash (EN/RU/UZ), live demo va copy-to-clipboard funksionalligini o\'z ichiga oladi.',
+    },
+    image: 'yarrow-interactive-map-embed.png',
+    live: null,
+    source: null,
+    tags: ['Nuxt 4', 'Vue 3', 'TypeScript', '@nuxt/ui', 'Tailwind CSS 4', 'i18n', 'Docker'],
+    category: 'Documentation',
+  },
+  {
     name: 'Yarrow Map Web SDK',
     description: {
       en: 'TypeScript-based mapping library built on top of MapLibre GL. Provides high-level API for interactive maps with routing, search, public transport tracking, and custom layer management.',
