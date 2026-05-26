@@ -22,6 +22,37 @@
     "highlighted": true
   },
   {
+    "name": "ERP Renovation",
+    "description": {
+      "en": "SaaS-ready ERP system for apartment renovation built with schema-per-tenant multi-tenancy. Features a strictly-sequenced pipeline across ~8 stages with checklist-gated acceptance, automated wage credits, real-time notifications, and financial tracking.",
+      "uz": "Schema-per-tenant ko'p o'quvchilik bilan qurilgan, kvartira ta'miri uchun SaaS-ga tayyor ERP tizimi. ~8 bosqichdan iborat qat'iy ketma-ketlikdagi pipeline, checklist asosidagi qabul, avtomatik ish haqi kreditlari, real vaqt bildirishnomalari va moliyaviy kuzatuvni qamrab oladi.",
+      "llm": "ERP Renovation is an assembly-line ERP system for standardized apartment renovation, engineered as a B2B SaaS product from day one with schema-per-tenant multi-tenancy. The platform enforces a strictly-sequenced, checklist-gated pipeline where properties move through ~8 stages. Each stage is completed by a Master, accepted by an Inspector against a digital checklist, and upon acceptance the system automatically credits wages, unlocks the next stage, and dispatches notifications. The Owner sees consolidated unit economics and authors the templates that drive the entire pipeline. Built as a Turborepo monorepo over Bun workspaces: Elysia backend with Eden Treaty end-to-end types, React + Vite + TanStack Router frontend with PWA support, Drizzle ORM with PostgreSQL, BullMQ + Redis for background jobs, Better Auth for authentication, and Cloudflare R2 for media storage. Includes Web Push notifications, in-app notification center, real-time pub/sub, role-based access control, master ratings, finance dashboards with Plan-vs-Actual tracking, and unit closing with PDF report generation."
+    },
+    "image": "erp.png",
+    "live": null,
+    "source": null,
+    "tags": [
+      "React",
+      "TypeScript",
+      "Bun",
+      "Elysia",
+      "Drizzle ORM",
+      "PostgreSQL",
+      "BullMQ",
+      "Redis",
+      "TanStack Router",
+      "Tailwind CSS",
+      "shadcn/ui",
+      "Better Auth",
+      "PWA",
+      "Eden Treaty",
+      "Vite",
+      "Bun Test",
+      "React PDF"
+    ],
+    "category": "Enterprise Applications"
+  },
+  {
     "name": "Ravon Taxi - Admin Dashboard",
     "description": {
       "en": "Comprehensive fleet management system with real-time trip monitoring, driver oversight, and analytics dashboard for local taxi company.",
