@@ -23,6 +23,9 @@ export const metadata: Metadata = {
       'x-default': SITE_URL,
     },
   },
+  other: {
+    'llms-txt': 'https://abdukahhar.uz/projects.json',
+  },
 }
 
 export default function Home() {
