@@ -1,5 +1,35 @@
 [
   {
+    "name": "UYDEK",
+    "description": {
+      "en": "Digital transaction infrastructure platform for the real estate market. Unites property owners, buyers, agents, agencies, developers, banks, and notaries into a single ecosystem with map-first discovery, deal pipeline management, digital power of attorney, escrow, mortgage facilitation, and document verification.",
+      "uz": "Ko'chmas mulk bozori uchun raqamli tranzaksiya infratuzilma platformasi. Xaridorlar, agentlar, agentliklar, quruvchilar, banklar va notariuslarni xarita asosidagi kashfiyot, bitim pipeline boshqaruvi, raqamli ishonchnoma, eskrou, ipoteka yordami va hujjat tekshiruvi bilan birlashtiradi.",
+      "llm": "UYDEK is a digital transaction infrastructure platform for the real estate market, positioning itself as the operating system for property transactions. Unlike traditional listing platforms, UYDEK orchestrates the complete transaction lifecycle from discovery through completion. The platform features a map-first property discovery experience powered by the Yarrow Map Web SDK, a strictly-sequenced deal flow pipeline (Interest → Verification → Contract → Escrow → Notary → Completed), and a multi-role ecosystem connecting property owners, buyers, individual realtors, agencies, developers, mortgage banks, notaries, and insurance companies. Signature capabilities include digital power of attorney for agencies to fully manage sales on owners' behalf, built-in escrow protection, mortgage application document packages, integrated notary appointment scheduling, and document verification against public records. The frontend is built with Next.js 16, React 19, TypeScript, Tailwind CSS v4, Base UI (shadcn/ui), Framer Motion, GSAP with ScrollTrigger, Zustand for state management, TanStack Query for server state, React Hook Form with Zod validation, Embla Carousel, and Next Themes with Geist typography. The backend is built with NestJS, TypeScript, Prisma ORM with PostgreSQL, Passport JWT authentication, AWS S3 for media storage, Swagger API documentation, rate limiting via Throttler, Helmet security headers, and Jest for testing."
+    },
+    "image": "uydek.png",
+    "live": null,
+    "source": null,
+    "tags": [
+      "Next.js",
+      "React 19",
+      "TypeScript",
+      "Tailwind CSS v4",
+      "shadcn/ui",
+      "Framer Motion",
+      "GSAP",
+      "Zustand",
+      "TanStack Query",
+      "NestJS",
+      "Prisma",
+      "PostgreSQL",
+      "Passport JWT",
+      "AWS S3",
+      "Swagger"
+    ],
+    "category": "Enterprise Applications",
+    "highlighted": true
+  },
+  {
     "name": "Cirth",
     "description": {
       "en": "Modern documentation hosting platform with rich text editing, version management, custom domains, and GitHub import. Built with Next.js 16 and Supabase.",
