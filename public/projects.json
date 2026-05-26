@@ -15,8 +15,7 @@
       "Zustand"
     ],
     "category": "Full-Stack Web Apps",
-    "highlighted": true,
-    "llmDetails": {}
+    "highlighted": true
   },
   {
     "name": "Ravon Taxi - Admin Dashboard",
@@ -33,8 +32,7 @@
       "Zod",
       "Axios"
     ],
-    "category": "Enterprise Applications",
-    "llmDetails": {}
+    "category": "Enterprise Applications"
   },
   {
     "name": "Ravon Taxi - Driver Mobile App",
@@ -50,8 +48,7 @@
       "Geolocation",
       "Framer Motion"
     ],
-    "category": "Mobile Apps",
-    "llmDetails": {}
+    "category": "Mobile Apps"
   },
   {
     "name": "Chorvoq Tourism Zone - Government Geoportal",
@@ -69,8 +66,7 @@
       "Recharts",
       "i18n"
     ],
-    "category": "Enterprise Applications",
-    "llmDetails": {}
+    "category": "Enterprise Applications"
   },
   {
     "name": "Global Crop - Farmer Monitoring Platform",
@@ -87,8 +83,7 @@
       "Recharts",
       "i18n"
     ],
-    "category": "Enterprise Applications",
-    "llmDetails": {}
+    "category": "Enterprise Applications"
   },
   {
     "name": "Global Crop - Landing Page",
@@ -102,8 +97,7 @@
       "Vite",
       "Tailwind"
     ],
-    "category": "Landing Pages",
-    "llmDetails": {}
+    "category": "Landing Pages"
   },
   {
     "name": "Yarrow Map Web SDK Documentation",
@@ -116,8 +110,7 @@
       "I18n",
       "TypeScript"
     ],
-    "category": "Documentation",
-    "llmDetails": {}
+    "category": "Documentation"
   },
   {
     "name": "Yarrow Interactive Map Embed",
@@ -134,8 +127,7 @@
       "i18n",
       "Docker"
     ],
-    "category": "Documentation",
-    "llmDetails": {}
+    "category": "Documentation"
   },
   {
     "name": "Yarrow Map Web SDK",
@@ -151,8 +143,7 @@
       "TypeScript",
       "Axios"
     ],
-    "category": "Libraries",
-    "llmDetails": {}
+    "category": "Libraries"
   },
   {
     "name": "Yarrow Map Flutter SDK",
@@ -167,8 +158,7 @@
       "MapLibre GL",
       "Dio"
     ],
-    "category": "Libraries",
-    "llmDetails": {}
+    "category": "Libraries"
   },
   {
     "name": "Yarrow API Dashboard",
@@ -184,8 +174,7 @@
       "Chart.js",
       "Yarrow Map Web SDK"
     ],
-    "category": "Enterprise Applications",
-    "llmDetails": {}
+    "category": "Enterprise Applications"
   },
   {
     "name": "BSOK CRM",
@@ -202,8 +191,7 @@
       "Zustand",
       "i18n"
     ],
-    "category": "Enterprise Applications",
-    "llmDetails": {}
+    "category": "Enterprise Applications"
   },
   {
     "name": "Al-Dar Rehabilitation Clinic",
@@ -216,8 +204,7 @@
       "Tailwind",
       "Framer-motion"
     ],
-    "category": "Enterprise Applications",
-    "llmDetails": {}
+    "category": "Enterprise Applications"
   },
   {
     "name": "Luminink",
@@ -234,8 +221,7 @@
       "Blocknote",
       "TypeScript"
     ],
-    "category": "Full-Stack Web Apps",
-    "llmDetails": {}
+    "category": "Full-Stack Web Apps"
   },
   {
     "name": "Founders Language School",
@@ -248,8 +234,7 @@
       "Material UI",
       "Firebse"
     ],
-    "category": "Full-Stack Web Apps",
-    "llmDetails": {}
+    "category": "Full-Stack Web Apps"
   },
   {
     "name": "Yarrow Map Web",
@@ -266,8 +251,7 @@
       "Yarrow Map Web SDK",
       "TypeScript"
     ],
-    "category": "Enterprise Applications",
-    "llmDetails": {}
+    "category": "Enterprise Applications"
   },
   {
     "name": "Shahzod's Blog",
@@ -283,8 +267,7 @@
       "Clerk",
       "Blocknote"
     ],
-    "category": "Full-Stack Web Apps",
-    "llmDetails": {}
+    "category": "Full-Stack Web Apps"
   },
   {
     "name": "Agricultural statistics",
@@ -295,8 +278,7 @@
     "tags": [
       "ApexCharts.js"
     ],
-    "category": "Landing Pages",
-    "llmDetails": {}
+    "category": "Landing Pages"
   },
   {
     "name": "InMan",
@@ -311,8 +293,7 @@
       "TypeScript",
       "Shadcn UI"
     ],
-    "category": "Desktop Apps",
-    "llmDetails": {}
+    "category": "Desktop Apps"
   },
   {
     "name": "AS-Company",
@@ -325,8 +306,7 @@
       "Ajax",
       "Jquery"
     ],
-    "category": "Landing Pages",
-    "llmDetails": {}
+    "category": "Landing Pages"
   },
   {
     "name": "BilalIbnTuygun",
@@ -338,8 +318,7 @@
       "React.js",
       "Styled Components"
     ],
-    "category": "Landing Pages",
-    "llmDetails": {}
+    "category": "Landing Pages"
   },
   {
     "name": "ArcGis Desktop",
@@ -350,8 +329,7 @@
       "FontAwesome"
     ],
     "category": "Landing Pages",
-    "source": null,
-    "llmDetails": {}
+    "source": null
   },
   {
     "name": "FreshGoods",
@@ -360,8 +338,7 @@
     "live": "https://freshgoods-shop.netlify.app/",
     "source": "https://github.com/AbdukahharS/freshgoods",
     "tags": [],
-    "category": "Landing Pages",
-    "llmDetails": {}
+    "category": "Landing Pages"
   },
   {
     "name": "Hotel BT",
@@ -372,8 +349,7 @@
     "tags": [
       "FontAwesome"
     ],
-    "category": "Landing Pages",
-    "llmDetails": {}
+    "category": "Landing Pages"
   },
   {
     "name": "NS Tour",
@@ -387,8 +363,7 @@
       "Firebase",
       "Payme"
     ],
-    "category": "Full-Stack Web Apps",
-    "llmDetails": {}
+    "category": "Full-Stack Web Apps"
   },
   {
     "name": "Personal Portfolio",
@@ -397,8 +372,7 @@
     "live": "https://portfolio-doe.netlify.app/",
     "source": "https://github.com/AbdukahharS/john-doe-portfolio",
     "tags": [],
-    "category": "Landing Pages",
-    "llmDetails": {}
+    "category": "Landing Pages"
   },
   {
     "name": "Quotopia",
@@ -412,8 +386,7 @@
       "Mongoose",
       "Tailwind"
     ],
-    "category": "Full-Stack Web Apps",
-    "llmDetails": {}
+    "category": "Full-Stack Web Apps"
   },
   {
     "name": "Ali Abdulaziz",
@@ -424,8 +397,7 @@
     "tags": [
       "Bootstrap"
     ],
-    "category": "Landing Pages",
-    "llmDetails": {}
+    "category": "Landing Pages"
   },
   {
     "name": "CrashCourse",
@@ -436,8 +408,7 @@
       "Figma"
     ],
     "category": "Design Work",
-    "source": null,
-    "llmDetails": {}
+    "source": null
   },
   {
     "name": "SunnySide",
@@ -448,7 +419,6 @@
       "Figma"
     ],
     "category": "Design Work",
-    "source": null,
-    "llmDetails": {}
+    "source": null
   }
 ]

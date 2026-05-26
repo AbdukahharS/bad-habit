@@ -19,8 +19,7 @@
       "Zustand"
     ],
     "category": "Full-Stack Web Apps",
-    "highlighted": true,
-    "llmDetails": {}
+    "highlighted": true
   },
   {
     "name": "Ravon Taxi - Admin Dashboard",
@@ -41,8 +40,7 @@
       "Zod",
       "Axios"
     ],
-    "category": "Enterprise Applications",
-    "llmDetails": {}
+    "category": "Enterprise Applications"
   },
   {
     "name": "Ravon Taxi - Driver Mobile App",
@@ -62,8 +60,7 @@
       "Geolocation",
       "Framer Motion"
     ],
-    "category": "Mobile Apps",
-    "llmDetails": {}
+    "category": "Mobile Apps"
   },
   {
     "name": "Chorvoq Tourism Zone - Government Geoportal",
@@ -85,8 +82,7 @@
       "Recharts",
       "i18n"
     ],
-    "category": "Enterprise Applications",
-    "llmDetails": {}
+    "category": "Enterprise Applications"
   },
   {
     "name": "Global Crop - Farmer Monitoring Platform",
@@ -107,8 +103,7 @@
       "Recharts",
       "i18n"
     ],
-    "category": "Enterprise Applications",
-    "llmDetails": {}
+    "category": "Enterprise Applications"
   },
   {
     "name": "Global Crop - Landing Page",
@@ -120,9 +115,13 @@
     "image": "global-crop-landing.png",
     "live": "https://global-crop-landing.vercel.app/",
     "source": "https://github.com/AbdukahharS/global-crop-landing",
-    "tags": ["React", "TypeScript", "Vite", "Tailwind"],
-    "category": "Landing Pages",
-    "llmDetails": {}
+    "tags": [
+      "React",
+      "TypeScript",
+      "Vite",
+      "Tailwind"
+    ],
+    "category": "Landing Pages"
   },
   {
     "name": "Yarrow Map Web SDK Documentation",
@@ -134,9 +133,12 @@
     "image": "yarrow-web-sdk-docs.png",
     "live": "https://sdk.yarrow.uz/",
     "source": "https://github.com/AbdukahharS/yarrow-web-sdk-docs",
-    "tags": ["Vue", "I18n", "TypeScript"],
-    "category": "Documentation",
-    "llmDetails": {}
+    "tags": [
+      "Vue",
+      "I18n",
+      "TypeScript"
+    ],
+    "category": "Documentation"
   },
   {
     "name": "Yarrow Interactive Map Embed",
@@ -157,8 +159,7 @@
       "i18n",
       "Docker"
     ],
-    "category": "Documentation",
-    "llmDetails": {}
+    "category": "Documentation"
   },
   {
     "name": "Yarrow Map Web SDK",
@@ -171,9 +172,14 @@
     "live": null,
     "source": null,
     "packageRegistry": "https://www.npmjs.com/package/@yarrow-uz/yarrow-map-web-sdk",
-    "tags": ["Vitest", "MapLibre GL", "Rollup", "TypeScript", "Axios"],
-    "category": "Libraries",
-    "llmDetails": {}
+    "tags": [
+      "Vitest",
+      "MapLibre GL",
+      "Rollup",
+      "TypeScript",
+      "Axios"
+    ],
+    "category": "Libraries"
   },
   {
     "name": "Yarrow Map Flutter SDK",
@@ -186,9 +192,13 @@
     "live": null,
     "source": null,
     "packageRegistry": "https://pub.dev/packages/yarrow_map_flutter_sdk",
-    "tags": ["Flutter", "Dart", "MapLibre GL", "Dio"],
-    "category": "Libraries",
-    "llmDetails": {}
+    "tags": [
+      "Flutter",
+      "Dart",
+      "MapLibre GL",
+      "Dio"
+    ],
+    "category": "Libraries"
   },
   {
     "name": "Yarrow API Dashboard",
@@ -208,8 +218,7 @@
       "Chart.js",
       "Yarrow Map Web SDK"
     ],
-    "category": "Enterprise Applications",
-    "llmDetails": {}
+    "category": "Enterprise Applications"
   },
   {
     "name": "BSOK CRM",
@@ -230,8 +239,7 @@
       "Zustand",
       "i18n"
     ],
-    "category": "Enterprise Applications",
-    "llmDetails": {}
+    "category": "Enterprise Applications"
   },
   {
     "name": "Al-Dar Rehabilitation Clinic",
@@ -243,9 +251,12 @@
     "image": "al-dar.png",
     "live": "https://www.aldarrehabclinic.com/",
     "source": "https://github.com/AbdukahharS/al-dar-clinic",
-    "tags": ["Next.JS", "Tailwind", "Framer-motion"],
-    "category": "Enterprise Applications",
-    "llmDetails": {}
+    "tags": [
+      "Next.JS",
+      "Tailwind",
+      "Framer-motion"
+    ],
+    "category": "Enterprise Applications"
   },
   {
     "name": "Luminink",
@@ -266,8 +277,7 @@
       "Blocknote",
       "TypeScript"
     ],
-    "category": "Full-Stack Web Apps",
-    "llmDetails": {}
+    "category": "Full-Stack Web Apps"
   },
   {
     "name": "Founders Language School",
@@ -279,9 +289,12 @@
     "image": "founders.png",
     "live": "https://founderslc.netlify.app/",
     "source": "https://github.com/AbdukahharS/founders-mui",
-    "tags": ["React.js", "Material UI", "Firebse"],
-    "category": "Full-Stack Web Apps",
-    "llmDetails": {}
+    "tags": [
+      "React.js",
+      "Material UI",
+      "Firebse"
+    ],
+    "category": "Full-Stack Web Apps"
   },
   {
     "name": "Yarrow Map Web",
@@ -302,8 +315,7 @@
       "Yarrow Map Web SDK",
       "TypeScript"
     ],
-    "category": "Enterprise Applications",
-    "llmDetails": {}
+    "category": "Enterprise Applications"
   },
   {
     "name": "Shahzod's Blog",
@@ -323,8 +335,7 @@
       "Clerk",
       "Blocknote"
     ],
-    "category": "Full-Stack Web Apps",
-    "llmDetails": {}
+    "category": "Full-Stack Web Apps"
   },
   {
     "name": "Agricultural statistics",
@@ -336,9 +347,10 @@
     "image": "agricultural.png",
     "live": "https://agricultural-statistics.netlify.app/",
     "source": "https://github.com/AbdukahharS/agricultural-statistics",
-    "tags": ["ApexCharts.js"],
-    "category": "Landing Pages",
-    "llmDetails": {}
+    "tags": [
+      "ApexCharts.js"
+    ],
+    "category": "Landing Pages"
   },
   {
     "name": "InMan",
@@ -350,9 +362,14 @@
     "image": "inman.png",
     "source": "https://github.com/AbdukahharS/InMan",
     "live": null,
-    "tags": ["Nextron", "NextJS", "ElectronJS", "TypeScript", "Shadcn UI"],
-    "category": "Desktop Apps",
-    "llmDetails": {}
+    "tags": [
+      "Nextron",
+      "NextJS",
+      "ElectronJS",
+      "TypeScript",
+      "Shadcn UI"
+    ],
+    "category": "Desktop Apps"
   },
   {
     "name": "AS-Company",
@@ -364,9 +381,12 @@
     "image": "as-company.png",
     "live": "https://company-as.netlify.app/",
     "source": "https://github.com/AbdukahharS/ascompany",
-    "tags": ["Bootstrap", "Ajax", "Jquery"],
-    "category": "Landing Pages",
-    "llmDetails": {}
+    "tags": [
+      "Bootstrap",
+      "Ajax",
+      "Jquery"
+    ],
+    "category": "Landing Pages"
   },
   {
     "name": "BilalIbnTuygun",
@@ -378,9 +398,11 @@
     "image": "bilalibntuygun.png",
     "live": "https://bilalibntuygun.netlify.app/",
     "source": "https://github.com/AbdukahharS/bilalibntuygun",
-    "tags": ["React.js", "Styled Components"],
-    "category": "Landing Pages",
-    "llmDetails": {}
+    "tags": [
+      "React.js",
+      "Styled Components"
+    ],
+    "category": "Landing Pages"
   },
   {
     "name": "ArcGis Desktop",
@@ -391,10 +413,11 @@
     },
     "image": "arcgis.png",
     "live": null,
-    "tags": ["FontAwesome"],
+    "tags": [
+      "FontAwesome"
+    ],
     "category": "Landing Pages",
-    "source": null,
-    "llmDetails": {}
+    "source": null
   },
   {
     "name": "FreshGoods",
@@ -407,8 +430,7 @@
     "live": "https://freshgoods-shop.netlify.app/",
     "source": "https://github.com/AbdukahharS/freshgoods",
     "tags": [],
-    "category": "Landing Pages",
-    "llmDetails": {}
+    "category": "Landing Pages"
   },
   {
     "name": "Hotel BT",
@@ -420,9 +442,10 @@
     "image": "hbt.png",
     "live": "https://h-bt.netlify.app/",
     "source": "https://github.com/AbdukahharS/hbt",
-    "tags": ["FontAwesome"],
-    "category": "Landing Pages",
-    "llmDetails": {}
+    "tags": [
+      "FontAwesome"
+    ],
+    "category": "Landing Pages"
   },
   {
     "name": "NS Tour",
@@ -434,9 +457,13 @@
     "image": "nstour.png",
     "live": "https://ns-tour.netlify.app",
     "source": "https://github.com/AbdukahharS/tour",
-    "tags": ["React.js", "SASS", "Firebase", "Payme"],
-    "category": "Full-Stack Web Apps",
-    "llmDetails": {}
+    "tags": [
+      "React.js",
+      "SASS",
+      "Firebase",
+      "Payme"
+    ],
+    "category": "Full-Stack Web Apps"
   },
   {
     "name": "Personal Portfolio",
@@ -449,8 +476,7 @@
     "live": "https://portfolio-doe.netlify.app/",
     "source": "https://github.com/AbdukahharS/john-doe-portfolio",
     "tags": [],
-    "category": "Landing Pages",
-    "llmDetails": {}
+    "category": "Landing Pages"
   },
   {
     "name": "Quotopia",
@@ -462,9 +488,13 @@
     "image": "quotopia.png",
     "live": "https://quotopiaa.vercel.app/",
     "source": "https://github.com/AbdukahharS/quotopia",
-    "tags": ["Next.js", "MongoDB", "Mongoose", "Tailwind"],
-    "category": "Full-Stack Web Apps",
-    "llmDetails": {}
+    "tags": [
+      "Next.js",
+      "MongoDB",
+      "Mongoose",
+      "Tailwind"
+    ],
+    "category": "Full-Stack Web Apps"
   },
   {
     "name": "Ali Abdulaziz",
@@ -476,9 +506,10 @@
     "image": "ali-abdulaziz.png",
     "live": "https://ali-abdulaziz.netlify.app",
     "source": "https://github.com/AbdukahharS/personal-website",
-    "tags": ["Bootstrap"],
-    "category": "Landing Pages",
-    "llmDetails": {}
+    "tags": [
+      "Bootstrap"
+    ],
+    "category": "Landing Pages"
   },
   {
     "name": "CrashCourse",
@@ -489,10 +520,11 @@
     },
     "image": "crashcourse.png",
     "live": "https://www.figma.com/proto/wq2AKKCyGZbYWENEz4U1Pp/CrashCourse-2021?node-id=2-2&starting-point-node-id=2%3A2&mode=design&t=5snVJamAbCiZCx5W-1",
-    "tags": ["Figma"],
+    "tags": [
+      "Figma"
+    ],
     "category": "Design Work",
-    "source": null,
-    "llmDetails": {}
+    "source": null
   },
   {
     "name": "SunnySide",
@@ -503,9 +535,10 @@
     },
     "image": "Sunnyside.png",
     "live": "https://www.figma.com/proto/x5tmzrPqSXztS9tLIpFfJu/Sunnyside-Landing?node-id=3-4&mode=design&t=8o00bhdd9cVoXCkv-1",
-    "tags": ["Figma"],
+    "tags": [
+      "Figma"
+    ],
     "category": "Design Work",
-    "source": null,
-    "llmDetails": {}
+    "source": null
   }
 ]
