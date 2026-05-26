@@ -22,6 +22,27 @@
     "highlighted": true
   },
   {
+    "name": "ERT/IP Data Cleaner",
+    "description": {
+      "en": "Browser-only geophysical data processing application for cleaning and visualizing ERT/IP survey data from ABEM Terrameter instruments. Features multi-pass outlier detection, smart thresholds, IDW interpolation, 2D subsurface modeling with marching-squares contours, coordinate transformation to global UTM, and elevation fetching.",
+      "uz": "ABEM Terrameter asboblaridan olingan ERT/IP tadqiqot ma'lumotlarini tozalash va vizualizatsiya qilish uchun brauzerda ishlaydigan ilova. Ko'p bosqichli anomaliya aniqlash, aqlli chegaralar, IDW interpolyatsiya, marching-squares konturlari bilan 2D yer osti modeli, global UTM koordinataga transformatsiya va balandlik olish funksiyalarini qamrab oladi.",
+      "llm": "ERT/IP Data Cleaner is a browser-only single-page application built with Vite, React 19, and TypeScript for processing geophysical survey data from instruments like the ABEM Terrameter (Prosys II/III format). It cleans raw CSV/TSV data through multi-pass outlier filtering including within-group MAD rejection, log-space IQR spatial filtering, vertical coherence checks, cross-depth spike detection, and local sliding-window MAD filters. Valid electrode quadrupole stacks are averaged with physics-correct Rho recalculation (k × mean(VMN) / mean(IAB)), missing stations are interpolated from nearest neighbors, and results are exported as Syscal-compatible ISO-8859-1 CSV or a 4-sheet Excel workbook with cell-level highlighting. The app also renders 2D subsurface resistivity sections via IDW interpolation on a 320×160 grid with marching-squares contour lines, supporting both linear and logarithmic color scales. A coordinate calculator transforms local electrode positions to global UTM coordinates using two reference points or an azimuth, then fetches elevations from the Open-Meteo API and writes them to Global z-columns. All UI text is in Uzbek. Styled with Tailwind CSS v4 and shadcn/ui components."
+    },
+    "image": "geo.png",
+    "live": null,
+    "source": null,
+    "tags": [
+      "React",
+      "TypeScript",
+      "Vite",
+      "Tailwind CSS",
+      "shadcn/ui",
+      "Canvas",
+      "ExcelJS"
+    ],
+    "category": "Enterprise Applications"
+  },
+  {
     "name": "ERP Renovation",
     "description": {
       "en": "SaaS-ready ERP system for apartment renovation built with schema-per-tenant multi-tenancy. Features a strictly-sequenced pipeline across ~8 stages with checklist-gated acceptance, automated wage credits, real-time notifications, and financial tracking.",
