@@ -25,7 +25,7 @@ const experiencesByLocale: Record<Locale, ExperienceItem[]> = {
     {
       title: 'Web Developer @ Yarrow',
       description:
-        'Developing frontend of Yarrow Map and commercial Web SDK for using Yarrow Map.',
+        'Leading frontend development for the Yarrow Maps ecosystem — including the consumer-facing Yarrow Map Web app, commercial Web SDK and Flutter SDK, API developer dashboard, interactive map embed service, and comprehensive documentation platform.',
       location: 'Tashkent, Uzbekistan',
       link: {
         label: 'yarrow.uz',
@@ -35,18 +35,20 @@ const experiencesByLocale: Record<Locale, ExperienceItem[]> = {
       duration: '2025 - Present',
       tags: [
         'Vue 3',
-        'SDK development',
-        'Maplibre GL JS',
-        'JavaScript',
+        'Nuxt',
+        'SDK Development',
+        'MapLibre GL JS',
         'TypeScript',
         'React',
+        'Flutter',
+        'Pinia',
       ],
       id: 1,
     },
     {
       title: 'Freelancer',
       description:
-        'Developing dynamic and static websites and designing templates based on orders from around the world.',
+        'Delivering end-to-end solutions for clients worldwide — from enterprise ERP systems and real estate platforms to GIS geoportals, SaaS products, and cross-platform mobile applications.',
       location: 'Remote',
       duration: '2021 - Present',
       tags: [
@@ -54,8 +56,11 @@ const experiencesByLocale: Record<Locale, ExperienceItem[]> = {
         'TypeScript',
         'React',
         'Next.js',
+        'Vue',
         'Tailwind CSS',
         'NodeJS',
+        'NestJS',
+        'PostgreSQL',
         'Figma',
       ],
       id: 2,
@@ -65,7 +70,7 @@ const experiencesByLocale: Record<Locale, ExperienceItem[]> = {
     {
       title: 'Web Dasturchi @ Yarrow',
       description:
-        'Yarrow Map va Yarrow Map uchun tijoriy Web SDK loyihalarining frontend qismini ishlab chiqish.',
+        'Yarrow Xaritalar ekotizimi uchun frontend rivojlantirishni boshqaraman — iste\'molchilar uchun Yarrow Map Web ilovasi, tijoriy Web SDK va Flutter SDK, API dasturchi paneli, interaktiv xarita embed xizmati va keng qamrovli hujjatlar platformasi.',
       location: 'Toshkent, O`zbekiston',
       link: {
         label: 'yarrow.uz',
@@ -75,18 +80,20 @@ const experiencesByLocale: Record<Locale, ExperienceItem[]> = {
       duration: '2025 - Hozir',
       tags: [
         'Vue 3',
-        'SDK development',
-        'Maplibre GL JS',
-        'JavaScript',
+        'Nuxt',
+        'SDK Development',
+        'MapLibre GL JS',
         'TypeScript',
         'React',
+        'Flutter',
+        'Pinia',
       ],
       id: 1,
     },
     {
       title: 'Frilanser',
       description:
-        'Dunyoning turli joylaridan kelgan buyurtmalar asosida dinamik va statik veb-saytlar hamda dizayn shablonlarini ishlab chiqish.',
+        'Butun dunyo bo\'ylab mijozlar uchun kompleks yechimlar taqdim etaman — korporativ ERP tizimlari va ko\'chmas mulk platformalaridan tortib GIS geoportallar, SaaS mahsulotlari va kross-platforma mobil ilovalargacha.',
       location: 'Masofaviy',
       duration: '2021 - Hozir',
       tags: [
@@ -94,8 +101,11 @@ const experiencesByLocale: Record<Locale, ExperienceItem[]> = {
         'TypeScript',
         'React',
         'Next.js',
+        'Vue',
         'Tailwind CSS',
         'NodeJS',
+        'NestJS',
+        'PostgreSQL',
         'Figma',
       ],
       id: 2,

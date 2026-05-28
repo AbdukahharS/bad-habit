@@ -1,0 +1,494 @@
+[
+  {
+    "name": "UYDEK",
+    "description": "UYDEK is a digital transaction infrastructure platform for the real estate market, positioning itself as the operating system for property transactions. Unlike traditional listing platforms, UYDEK orchestrates the complete transaction lifecycle from discovery through completion. The platform features a map-first property discovery experience powered by the Yarrow Map Web SDK, a strictly-sequenced deal flow pipeline (Interest → Verification → Contract → Escrow → Notary → Completed), and a multi-role ecosystem connecting property owners, buyers, individual realtors, agencies, developers, mortgage banks, notaries, and insurance companies. Signature capabilities include digital power of attorney for agencies to fully manage sales on owners' behalf, built-in escrow protection, mortgage application document packages, integrated notary appointment scheduling, and document verification against public records. The frontend is built with Next.js 16, React 19, TypeScript, Tailwind CSS v4, Base UI (shadcn/ui), Framer Motion, GSAP with ScrollTrigger, Zustand for state management, TanStack Query for server state, React Hook Form with Zod validation, Embla Carousel, and Next Themes with Geist typography. The backend is built with NestJS, TypeScript, Prisma ORM with PostgreSQL, Passport JWT authentication, AWS S3 for media storage, Swagger API documentation, rate limiting via Throttler, Helmet security headers, and Jest for testing.",
+    "image": "https://abdukahhar.uz/projects/uydek.png",
+    "live": null,
+    "source": null,
+    "tags": [
+      "Next.js",
+      "React 19",
+      "TypeScript",
+      "Tailwind CSS v4",
+      "shadcn/ui",
+      "Framer Motion",
+      "GSAP",
+      "Zustand",
+      "TanStack Query",
+      "NestJS",
+      "Prisma",
+      "PostgreSQL",
+      "Passport JWT",
+      "AWS S3",
+      "Swagger"
+    ],
+    "category": "Enterprise Applications",
+    "highlighted": true
+  },
+  {
+    "name": "Cirth",
+    "description": "Cirth is a modern documentation hosting platform designed for developers and teams who need a streamlined way to publish and manage technical documentation. It features a rich text editor powered by TipTap, version management for tracking documentation changes over time, custom domain support for branded documentation sites, and seamless GitHub import functionality. The platform is built with Next.js 16, TypeScript, Supabase for backend and auth, Tailwind CSS with shadcn/ui components, and Zustand for state management. It represents a full-stack SaaS product with real-world production deployment.",
+    "image": "https://abdukahhar.uz/projects/cirth.png",
+    "live": "https://cirth.uz/",
+    "source": null,
+    "tags": [
+      "Next.js",
+      "TypeScript",
+      "Supabase",
+      "TipTap",
+      "Tailwind CSS",
+      "shadcn/ui",
+      "Zustand"
+    ],
+    "category": "Full-Stack Web Apps",
+    "highlighted": true
+  },
+  {
+    "name": "ERT/IP Data Cleaner",
+    "description": "ERT/IP Data Cleaner is a browser-only single-page application built with Vite, React 19, and TypeScript for processing geophysical survey data from instruments like the ABEM Terrameter (Prosys II/III format). It cleans raw CSV/TSV data through multi-pass outlier filtering including within-group MAD rejection, log-space IQR spatial filtering, vertical coherence checks, cross-depth spike detection, and local sliding-window MAD filters. Valid electrode quadrupole stacks are averaged with physics-correct Rho recalculation (k × mean(VMN) / mean(IAB)), missing stations are interpolated from nearest neighbors, and results are exported as Syscal-compatible ISO-8859-1 CSV or a 4-sheet Excel workbook with cell-level highlighting. The app also renders 2D subsurface resistivity sections via IDW interpolation on a 320×160 grid with marching-squares contour lines, supporting both linear and logarithmic color scales. A coordinate calculator transforms local electrode positions to global UTM coordinates using two reference points or an azimuth, then fetches elevations from the Open-Meteo API and writes them to Global z-columns. All UI text is in Uzbek. Styled with Tailwind CSS v4 and shadcn/ui components.",
+    "image": "https://abdukahhar.uz/projects/geo.png",
+    "live": null,
+    "source": null,
+    "tags": [
+      "React",
+      "TypeScript",
+      "Vite",
+      "Tailwind CSS",
+      "shadcn/ui",
+      "Canvas",
+      "ExcelJS"
+    ],
+    "category": "Enterprise Applications"
+  },
+  {
+    "name": "ERP Renovation",
+    "description": "ERP Renovation is an assembly-line ERP system for standardized apartment renovation, engineered as a B2B SaaS product from day one with schema-per-tenant multi-tenancy. The platform enforces a strictly-sequenced, checklist-gated pipeline where properties move through ~8 stages. Each stage is completed by a Master, accepted by an Inspector against a digital checklist, and upon acceptance the system automatically credits wages, unlocks the next stage, and dispatches notifications. The Owner sees consolidated unit economics and authors the templates that drive the entire pipeline. Built as a Turborepo monorepo over Bun workspaces: Elysia backend with Eden Treaty end-to-end types, React + Vite + TanStack Router frontend with PWA support, Drizzle ORM with PostgreSQL, BullMQ + Redis for background jobs, Better Auth for authentication, and Cloudflare R2 for media storage. Includes Web Push notifications, in-app notification center, real-time pub/sub, role-based access control, master ratings, finance dashboards with Plan-vs-Actual tracking, and unit closing with PDF report generation.",
+    "image": "https://abdukahhar.uz/projects/erp.png",
+    "live": null,
+    "source": null,
+    "tags": [
+      "React",
+      "TypeScript",
+      "Bun",
+      "Elysia",
+      "Drizzle ORM",
+      "PostgreSQL",
+      "BullMQ",
+      "Redis",
+      "TanStack Router",
+      "Tailwind CSS",
+      "shadcn/ui",
+      "Better Auth",
+      "PWA",
+      "Eden Treaty",
+      "Vite",
+      "Bun Test",
+      "React PDF"
+    ],
+    "category": "Enterprise Applications"
+  },
+  {
+    "name": "Ravon Taxi - Admin Dashboard",
+    "description": "Ravon Taxi Admin Dashboard is a comprehensive fleet management system built for a local taxi company. It provides real-time trip monitoring capabilities, driver oversight tools including status tracking and performance metrics, and a full analytics dashboard for business intelligence. The system handles complex state management for live fleet data and integrates with mapping services for visual trip tracking. Built with React, TypeScript, Zustand for state management, ShadCN UI component library, React Hook Form with Zod validation, and Axios for API communication.",
+    "image": "https://abdukahhar.uz/projects/ravon-admin.png",
+    "live": null,
+    "source": null,
+    "tags": [
+      "React",
+      "TypeScript",
+      "Zustand",
+      "ShadCN UI",
+      "React Hook Form",
+      "Zod",
+      "Axios"
+    ],
+    "category": "Enterprise Applications"
+  },
+  {
+    "name": "Ravon Taxi - Driver Mobile App",
+    "description": "Ravon Taxi Driver Mobile App is a cross-platform Android application built with Tauri, a Rust-based framework for building lightweight desktop and mobile applications. The app features real-time geolocation tracking for drivers, automated ride assignment system, push notifications for new ride requests, and real-time status updates. The UI is built with React and TypeScript, using Framer Motion for smooth animations and Zustand for state management. This project demonstrates the ability to build mobile-first applications using web technologies compiled to native platforms.",
+    "image": "https://abdukahhar.uz/projects/ravon-driver.jpg",
+    "live": null,
+    "source": null,
+    "tags": [
+      "React",
+      "TypeScript",
+      "Tauri",
+      "Zustand",
+      "Geolocation",
+      "Framer Motion"
+    ],
+    "category": "Mobile Apps"
+  },
+  {
+    "name": "Chorvoq Tourism Zone - Government Geoportal",
+    "description": "Chorvoq Tourism Zone Geoportal is a government-level tourism management platform developed for the Chorvoq recreation zone in Uzbekistan. The platform features advanced GIS capabilities including interactive map layers, spatial data visualization, and geographic analysis tools. It supports multilingual content (Uzbek, English, Russian) and integrates multiple mapping libraries including MapLibre GL JS, Leaflet, and OpenLayers for maximum compatibility. The platform includes data analytics charts powered by Recharts and comprehensive state management with Zustand. This project demonstrates experience with government-scale applications and complex geospatial web development.",
+    "image": "https://abdukahhar.uz/projects/chorvoq.png",
+    "live": null,
+    "source": null,
+    "tags": [
+      "React",
+      "TypeScript",
+      "Maplibre GL JS",
+      "Leaflet",
+      "OpenLayers",
+      "Zustand",
+      "Recharts",
+      "i18n"
+    ],
+    "category": "Enterprise Applications"
+  },
+  {
+    "name": "Global Crop - Farmer Monitoring Platform",
+    "description": "Global Crop is an agricultural monitoring platform developed for the banking sector to track and manage agricultural loans and field data. The platform provides GIS-based field mapping allowing bankers and agronomists to visualize farm boundaries, crop types, and land usage. It includes comprehensive data analytics dashboards for tracking loan performance, crop yield predictions, and farmer compliance. The system supports multiple languages and integrates MapLibre GL JS and Leaflet for mapping functionality. Built with React, TypeScript, Zustand, Recharts for data visualization, and full internationalization support.",
+    "image": "https://abdukahhar.uz/projects/globalcrop.png",
+    "live": null,
+    "source": null,
+    "tags": [
+      "React",
+      "TypeScript",
+      "Maplibre GL JS",
+      "Leaflet",
+      "Zustand",
+      "Recharts",
+      "i18n"
+    ],
+    "category": "Enterprise Applications"
+  },
+  {
+    "name": "Global Crop - Landing Page",
+    "description": "Global Crop Landing Page is a marketing website for the Global Crop agricultural monitoring platform. It serves as the primary entry point for potential banking clients and farmers, showcasing the platform's features, benefits, and case studies. Built with React, TypeScript, and Vite for fast development and optimized production builds. Styled with Tailwind CSS for responsive design across all device sizes. The landing page demonstrates skills in conversion-focused design and performance optimization.",
+    "image": "https://abdukahhar.uz/projects/global-crop-landing.png",
+    "live": "https://global-crop-landing.vercel.app/",
+    "source": "https://github.com/AbdukahharS/global-crop-landing",
+    "tags": [
+      "React",
+      "TypeScript",
+      "Vite",
+      "Tailwind"
+    ],
+    "category": "Landing Pages"
+  },
+  {
+    "name": "Yarrow Map Web SDK Documentation",
+    "description": "Yarrow Map Web SDK Documentation is a comprehensive documentation website built for the Yarrow Map Web SDK, a mapping library developed by Yarrow. The documentation includes API references, getting started guides, code examples, and interactive demos. Built with Vue 3, TypeScript, and VuePress-style documentation architecture. The site features full internationalization support and searchable content. This project demonstrates technical writing skills and the ability to create developer-friendly documentation for complex libraries.",
+    "image": "https://abdukahhar.uz/projects/yarrow-web-sdk-docs.png",
+    "live": "https://sdk.yarrow.uz/",
+    "source": "https://github.com/AbdukahharS/yarrow-web-sdk-docs",
+    "tags": [
+      "Vue",
+      "I18n",
+      "TypeScript"
+    ],
+    "category": "Documentation"
+  },
+  {
+    "name": "Yarrow Interactive Map Embed",
+    "description": "Yarrow Interactive Map Embed is a developer tool built with Nuxt 4 that allows third-party websites to embed Yarrow Maps with a single line of iframe code. The platform provides a landing page with an interactive configurator where users can set location coordinates, zoom levels, custom markers, and color themes via URL parameters. It features multilingual support in English, Russian, and Uzbek, a live preview demo, and copy-to-clipboard functionality for easy integration. The project uses Vue 3, TypeScript, @nuxt/ui, Tailwind CSS 4, and is containerized with Docker for deployment.",
+    "image": "https://abdukahhar.uz/projects/yarrow-interactive-map-embed.png",
+    "live": null,
+    "source": null,
+    "tags": [
+      "Nuxt 4",
+      "Vue 3",
+      "TypeScript",
+      "@nuxt/ui",
+      "Tailwind CSS 4",
+      "i18n",
+      "Docker"
+    ],
+    "category": "Documentation"
+  },
+  {
+    "name": "Yarrow Map Web SDK",
+    "description": "Yarrow Map Web SDK is a professional-grade TypeScript mapping library built on top of MapLibre GL. It abstracts low-level mapping complexity into a high-level developer-friendly API. Key features include interactive map rendering, turn-by-turn routing, geocoding search, real-time public transport tracking, and custom layer management for overlaying specialized data. The SDK is packaged and distributed via npm with comprehensive TypeScript declarations. Built with Rollup for bundling, Vitest for unit testing, Axios for HTTP requests, and fully typed with TypeScript. Published as @yarrow-uz/yarrow-map-web-sdk on npm.",
+    "image": "https://abdukahhar.uz/projects/yarrow-sdk.png",
+    "live": null,
+    "source": null,
+    "packageRegistry": "https://www.npmjs.com/package/@yarrow-uz/yarrow-map-web-sdk",
+    "tags": [
+      "Vitest",
+      "MapLibre GL",
+      "Rollup",
+      "TypeScript",
+      "Axios"
+    ],
+    "category": "Libraries"
+  },
+  {
+    "name": "Yarrow Map Flutter SDK",
+    "description": "Yarrow Map Flutter SDK is a native mobile SDK that brings Yarrow Maps functionality to Android and iOS applications. It maintains API parity with the Yarrow Map Web SDK, allowing developers to use consistent APIs across web and mobile platforms. Features include native map rendering using MapLibre GL, routing capabilities, geocoding search, and real-time public transport tracking. The SDK is built with Flutter and Dart, using the Dio HTTP client for API communication. Published on pub.dev as yarrow_map_flutter_sdk.",
+    "image": "https://abdukahhar.uz/projects/yarrow-flutter-sdk.png",
+    "live": null,
+    "source": null,
+    "packageRegistry": "https://pub.dev/packages/yarrow_map_flutter_sdk",
+    "tags": [
+      "Flutter",
+      "Dart",
+      "MapLibre GL",
+      "Dio"
+    ],
+    "category": "Libraries"
+  },
+  {
+    "name": "Yarrow API Dashboard",
+    "description": "Yarrow API Dashboard is a modern developer portal for managing API access to Yarrow mapping services. It provides a comprehensive interface for API key generation and management, usage analytics with Chart.js visualizations, billing and quota management, and full user authentication with theme switching support. A standout feature is the integrated interactive map with a GeoJSON drawer powered by the Yarrow Map Web SDK, allowing developers to test and preview their spatial data directly in the dashboard. Built with Vue 3, TypeScript, Vite, Pinia for state management, and deployed at dashboard.yarrow.uz.",
+    "image": "https://abdukahhar.uz/projects/yarrow-api-dashboard.png",
+    "live": "https://dashboard.yarrow.uz/",
+    "source": null,
+    "tags": [
+      "Vue 3",
+      "TypeScript",
+      "Vite",
+      "Pinia",
+      "Chart.js",
+      "Yarrow Map Web SDK"
+    ],
+    "category": "Enterprise Applications"
+  },
+  {
+    "name": "BSOK CRM",
+    "description": "BSOK CRM is a full-featured enterprise ERP and CRM system developed for a mesh wire and net manufacturing company. The application handles the entire business workflow including production tracking with shift-based reporting, inventory management with stock alerts, sales order processing, financial tracking with profit/loss calculations, and comprehensive customer and worker management modules. Built with React, TypeScript, Bun runtime for fast development, Tailwind CSS with shadcn/ui components, Zustand for state management, and full internationalization support. Open source with frontend code available on GitHub.",
+    "image": "https://abdukahhar.uz/projects/bsok-crm.png",
+    "live": "https://bsok-frontend.vercel.app/",
+    "source": "https://github.com/AbdukahharS/bsok-frontend",
+    "tags": [
+      "React",
+      "TypeScript",
+      "Bun",
+      "Tailwind CSS",
+      "shadcn/ui",
+      "Zustand",
+      "i18n"
+    ],
+    "category": "Enterprise Applications"
+  },
+  {
+    "name": "Al-Dar Rehabilitation Clinic",
+    "description": "Al-Dar Rehabilitation Clinic website is a professional healthcare website built for a rehabilitation clinic. The frontend features a modern, accessible design with smooth page transitions and animations powered by Framer Motion. The site includes service listings, doctor profiles, appointment information, and contact details. Built with Next.js for SEO optimization and Tailwind CSS for responsive styling. The project demonstrates ability to deliver clean, professional websites for healthcare clients.",
+    "image": "https://abdukahhar.uz/projects/al-dar.png",
+    "live": "https://www.aldarrehabclinic.com/",
+    "source": "https://github.com/AbdukahharS/al-dar-clinic",
+    "tags": [
+      "Next.JS",
+      "Tailwind",
+      "Framer-motion"
+    ],
+    "category": "Enterprise Applications"
+  },
+  {
+    "name": "Luminink",
+    "description": "Luminink is a creative content platform designed for writers, designers, and content creators. The application provides tools for capturing ideas, organizing creative projects, and sharing work with collaborators. Features include rich text editing powered by Blocknote, user authentication via Clerk, form validation with Zod, and toast notifications with Sonner. Built with Next.js, Tailwind CSS, TypeScript, and deployed on Vercel.",
+    "image": "https://abdukahhar.uz/projects/luminink.png",
+    "live": "https://luminink.vercel.app/",
+    "source": "https://github.com/AbdukahharS/luminink",
+    "tags": [
+      "Next.js",
+      "Tailwind",
+      "Sonner",
+      "Zod",
+      "Clerk",
+      "Blocknote",
+      "TypeScript"
+    ],
+    "category": "Full-Stack Web Apps"
+  },
+  {
+    "name": "Founders Language School",
+    "description": "Founders Language School website is a business website for an English language school. The site features course listings, pricing information, teacher profiles, student testimonials, and online registration capabilities. Built with React.js and Material UI for a polished, professional appearance. Backend functionality powered by Firebase for data storage and user management. Deployed on Netlify.",
+    "image": "https://abdukahhar.uz/projects/founders.png",
+    "live": "https://founderslc.netlify.app/",
+    "source": "https://github.com/AbdukahharS/founders-mui",
+    "tags": [
+      "React.js",
+      "Material UI",
+      "Firebse"
+    ],
+    "category": "Full-Stack Web Apps"
+  },
+  {
+    "name": "Yarrow Map Web",
+    "description": "Yarrow Map Web is a Nuxt 3 progressive web application that serves as the consumer-facing mapping platform for Yarrow. It provides interactive mapping with advanced search capabilities, turn-by-turn routing, and user profile management including saved locations and route history. The application integrates deeply with the Yarrow Map Web SDK for high-performance map rendering. Built with Nuxt 3, Vue 3, Pinia for state management, Vue i18n for multilingual support, Axios for API calls, and TypeScript throughout. Deployed at map.yarrow.uz.",
+    "image": "https://abdukahhar.uz/projects/yarrow-map-web.png",
+    "live": "https://map.yarrow.uz/",
+    "source": null,
+    "tags": [
+      "Nuxt 3",
+      "Vue 3",
+      "Pinia",
+      "i18n",
+      "Axios",
+      "Yarrow Map Web SDK",
+      "TypeScript"
+    ],
+    "category": "Enterprise Applications"
+  },
+  {
+    "name": "Shahzod's Blog",
+    "description": "Shahzod's Blog is a personal technical blog focused on web application development, modern JavaScript frameworks, and software engineering best practices. The blog features rich text editing with Blocknote, user authentication via Clerk, a clean reading experience with ShadCN UI components, and Firebase for data persistence. Built with Next.js, TypeScript, and deployed at blog.abdukahhar.uz. The blog serves as a platform for sharing tutorials, project case studies, and development insights.",
+    "image": "https://abdukahhar.uz/projects/blog.png",
+    "live": "https://blog.abdukahhar.uz",
+    "source": "https://github.com/AbdukahharS/blog",
+    "tags": [
+      "NextJS",
+      "ShadCn UI",
+      "Firebase",
+      "TypeScript",
+      "Clerk",
+      "Blocknote"
+    ],
+    "category": "Full-Stack Web Apps"
+  },
+  {
+    "name": "Agricultural statistics",
+    "description": "Agricultural Statistics is a data visualization demo showcasing agricultural statistics through interactive charts. The project demonstrates proficiency with ApexCharts.js for creating responsive, animated charts including bar charts, line graphs, and donut charts. Built as a standalone React application and deployed on Netlify. This project highlights data presentation skills for business intelligence dashboards.",
+    "image": "https://abdukahhar.uz/projects/agricultural.png",
+    "live": "https://agricultural-statistics.netlify.app/",
+    "source": "https://github.com/AbdukahharS/agricultural-statistics",
+    "tags": [
+      "ApexCharts.js"
+    ],
+    "category": "Landing Pages"
+  },
+  {
+    "name": "InMan",
+    "description": "InMan is an inventory management desktop application built for small to medium businesses. It provides features for tracking stock levels, managing suppliers, processing purchase orders, and generating inventory reports. The application is built with Nextron, which combines Next.js with ElectronJS to create cross-platform desktop apps. The UI uses ShadCN UI components and TypeScript for type safety. Available as a standalone desktop application for Windows, macOS, and Linux.",
+    "image": "https://abdukahhar.uz/projects/inman.png",
+    "source": "https://github.com/AbdukahharS/InMan",
+    "live": null,
+    "tags": [
+      "Nextron",
+      "NextJS",
+      "ElectronJS",
+      "TypeScript",
+      "Shadcn UI"
+    ],
+    "category": "Desktop Apps"
+  },
+  {
+    "name": "AS-Company",
+    "description": "AS-Company website is a business website built for AS-Company. It features company information, service listings, contact forms, and a responsive design. Built with Bootstrap for rapid UI development, jQuery for DOM manipulation, and Ajax for dynamic content loading without page refreshes. Deployed on Netlify. This project represents early web development work with foundational technologies.",
+    "image": "https://abdukahhar.uz/projects/as-company.png",
+    "live": "https://company-as.netlify.app/",
+    "source": "https://github.com/AbdukahharS/ascompany",
+    "tags": [
+      "Bootstrap",
+      "Ajax",
+      "Jquery"
+    ],
+    "category": "Landing Pages"
+  },
+  {
+    "name": "BilalIbnTuygun",
+    "description": "BilalIbnTuygun is a personal website built for Bilal ibn Tuygun. The site features biographical information, achievements, photo galleries, and contact details. Built with React.js and Styled Components for CSS-in-JS styling. Deployed on Netlify. This project demonstrates early React development skills and custom styling approaches.",
+    "image": "https://abdukahhar.uz/projects/bilalibntuygun.png",
+    "live": "https://bilalibntuygun.netlify.app/",
+    "source": "https://github.com/AbdukahharS/bilalibntuygun",
+    "tags": [
+      "React.js",
+      "Styled Components"
+    ],
+    "category": "Landing Pages"
+  },
+  {
+    "name": "ArcGis Desktop",
+    "description": "ArcGis Desktop is an online course preview landing page for ArcGIS Desktop training. The page showcases course curriculum, instructor information, pricing, and enrollment options. Built with HTML/CSS and FontAwesome for icons. This project demonstrates landing page design for educational content and conversion optimization.",
+    "image": "https://abdukahhar.uz/projects/arcgis.png",
+    "live": null,
+    "tags": [
+      "FontAwesome"
+    ],
+    "category": "Landing Pages",
+    "source": null
+  },
+  {
+    "name": "FreshGoods",
+    "description": "FreshGoods is a landing page for a grocery and fresh produce business. The page features product showcases, pricing information, and contact details. Deployed on Netlify. This project demonstrates clean, simple landing page design focused on product presentation.",
+    "image": "https://abdukahhar.uz/projects/freshgoods.png",
+    "live": "https://freshgoods-shop.netlify.app/",
+    "source": "https://github.com/AbdukahharS/freshgoods",
+    "tags": [],
+    "category": "Landing Pages"
+  },
+  {
+    "name": "Hotel BT",
+    "description": "Hotel BT is a landing page for a hotel business. The page includes room showcases, amenities listing, location information, and booking contact details. Built with HTML/CSS and FontAwesome for icons. Deployed on Netlify. This project demonstrates hospitality industry web design skills.",
+    "image": "https://abdukahhar.uz/projects/hbt.png",
+    "live": "https://h-bt.netlify.app/",
+    "source": "https://github.com/AbdukahharS/hbt",
+    "tags": [
+      "FontAwesome"
+    ],
+    "category": "Landing Pages"
+  },
+  {
+    "name": "NS Tour",
+    "description": "NS Tour is a full-featured business website for Nodirah-Sultan Travel Agency. The site includes tour package listings with detailed itineraries, online booking functionality, photo galleries of destinations, customer reviews, and integrated payment processing via Payme. Built with React.js, SASS for advanced styling, and Firebase for backend services including database and authentication. Deployed on Netlify.",
+    "image": "https://abdukahhar.uz/projects/nstour.png",
+    "live": "https://ns-tour.netlify.app",
+    "source": "https://github.com/AbdukahharS/tour",
+    "tags": [
+      "React.js",
+      "SASS",
+      "Firebase",
+      "Payme"
+    ],
+    "category": "Full-Stack Web Apps"
+  },
+  {
+    "name": "Personal Portfolio",
+    "description": "Personal Portfolio is a portfolio website template designed for developers and creatives. The template includes sections for about, skills, projects, and contact information. Built with HTML/CSS and vanilla JavaScript. Deployed on Netlify. This project demonstrates foundational web development and template design skills.",
+    "image": "https://abdukahhar.uz/projects/portfolio-doe.png",
+    "live": "https://portfolio-doe.netlify.app/",
+    "source": "https://github.com/AbdukahharS/john-doe-portfolio",
+    "tags": [],
+    "category": "Landing Pages"
+  },
+  {
+    "name": "Quotopia",
+    "description": "Quotopia is a social platform for discovering, creating, and sharing inspirational quotes. Users can browse quotes by category, author, or popularity, create their own quote collections, and share favorites on social media. The platform features user authentication, quote rating system, and search functionality. Built with Next.js, MongoDB with Mongoose ODM, and Tailwind CSS. Deployed on Vercel.",
+    "image": "https://abdukahhar.uz/projects/quotopia.png",
+    "live": "https://quotopiaa.vercel.app/",
+    "source": "https://github.com/AbdukahharS/quotopia",
+    "tags": [
+      "Next.js",
+      "MongoDB",
+      "Mongoose",
+      "Tailwind"
+    ],
+    "category": "Full-Stack Web Apps"
+  },
+  {
+    "name": "Ali Abdulaziz",
+    "description": "Ali Abdulaziz is a personal website built for Ali Abdulaziz. The site features biographical content, portfolio showcase, and contact information. Built with Bootstrap for responsive design. Deployed on Netlify. This project demonstrates early web development with CSS frameworks.",
+    "image": "https://abdukahhar.uz/projects/ali-abdulaziz.png",
+    "live": "https://ali-abdulaziz.netlify.app",
+    "source": "https://github.com/AbdukahharS/personal-website",
+    "tags": [
+      "Bootstrap"
+    ],
+    "category": "Landing Pages"
+  },
+  {
+    "name": "CrashCourse",
+    "description": "CrashCourse is a UI/UX design project for a business website. The design includes landing page layouts, component libraries, and responsive breakpoints. Created in Figma with interactive prototypes. This project demonstrates product design and visual communication skills.",
+    "image": "https://abdukahhar.uz/projects/crashcourse.png",
+    "live": "https://www.figma.com/proto/wq2AKKCyGZbYWENEz4U1Pp/CrashCourse-2021?node-id=2-2&starting-point-node-id=2%3A2&mode=design&t=5snVJamAbCiZCx5W-1",
+    "tags": [
+      "Figma"
+    ],
+    "category": "Design Work",
+    "source": null
+  },
+  {
+    "name": "SunnySide",
+    "description": "SunnySide is a landing page design project created in Figma. The design features modern visual aesthetics, clear call-to-action elements, and mobile-responsive layouts. Includes interactive prototype for client presentation. This project demonstrates visual design and landing page optimization skills.",
+    "image": "https://abdukahhar.uz/projects/Sunnyside.png",
+    "live": "https://www.figma.com/proto/x5tmzrPqSXztS9tLIpFfJu/Sunnyside-Landing?node-id=3-4&mode=design&t=8o00bhdd9cVoXCkv-1",
+    "tags": [
+      "Figma"
+    ],
+    "category": "Design Work",
+    "source": null
+  }
+]

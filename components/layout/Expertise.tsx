@@ -19,24 +19,24 @@ const expertiseAreasByLocale: Record<Locale, ExpertiseArea[]> = {
       icon: <Code className='w-8 h-8' />,
       title: 'Software Development',
       highlight: 'Software',
-      description: 'Experienced in both functional and OOP: JavaScript, TypeScript.',
+      description: 'Strong foundation in functional and OOP paradigms. Proficient in JavaScript, TypeScript, and software architecture for scalable systems.',
       gradient: 'from-pink-500 to-rose-500',
       bgGradient: 'linear-gradient(135deg, rgba(236, 72, 153, 0.1) 0%, rgba(244, 63, 94, 0.1) 100%)'
     },
     {
       icon: <Zap className='w-8 h-8' />,
-      title: 'Frontend Development',
-      highlight: 'Frontend Dev',
+      title: 'Frontend Dev',
+      highlight: 'Frontend',
       subtitle: 'React, NextJS',
-      description: 'Specialized in translating intricate designs into responsive interfaces. 4 years crafting production-ready applications with HTML, CSS, JS, React, NextJS and Vue.',
+      description: '5 years building production-grade interfaces with React, Next.js, Vue, Nuxt, Astro, and TanStack. From complex dashboards and interactive mapping apps to cross-platform mobile experiences.',
       gradient: 'from-blue-500 to-cyan-500',
       bgGradient: 'linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(6, 182, 212, 0.1) 100%)'
     },
     {
       icon: <Server className='w-8 h-8' />,
-      title: 'Backend Development',
-      highlight: 'NodeJS Dev',
-      description: 'Skilled in Backend development with Node.js and Bun, and building cross-platform desktop apps using Electron.js and Tauri',
+      title: 'Backend Dev',
+      highlight: 'NodeJS, Bun',
+      description: 'Backend with Node.js, Bun, Express.js, NestJS, and Elysia. PostgreSQL, Prisma, Drizzle ORM. Cross-platform desktop apps with Electron.js and Tauri, plus mobile with Flutter.',
       gradient: 'from-green-500 to-emerald-500',
       bgGradient: 'linear-gradient(135deg, rgba(34, 197, 94, 0.1) 0%, rgba(16, 185, 129, 0.1) 100%)'
     }
@@ -47,7 +47,7 @@ const expertiseAreasByLocale: Record<Locale, ExpertiseArea[]> = {
       icon: <Code className='w-8 h-8' />,
       title: 'Dasturiy ta`minot ishlab chiqish',
       highlight: 'Dasturiy',
-      description: 'Funksional va OOP yondashuvlarida tajriba: JavaScript, TypeScript.',
+      description: 'Funksional va OOP paradigmalarda mustahkam bilim. JavaScript, TypeScript va masshtablanuvchi tizimlar arxitekturasida tajriba.',
       gradient: 'from-pink-500 to-rose-500',
       bgGradient: 'linear-gradient(135deg, rgba(236, 72, 153, 0.1) 0%, rgba(244, 63, 94, 0.1) 100%)'
     },
@@ -56,7 +56,7 @@ const expertiseAreasByLocale: Record<Locale, ExpertiseArea[]> = {
       title: 'Frontend Dasturlash',
       highlight: 'Frontend',
       subtitle: 'React, NextJS',
-      description: 'Murakkab dizaynlarni moslashuvchan interfeyslarga aylantirishga ixtisoslashganman. HTML, CSS, JS, React, NextJS va Vue bilan 4 yillik amaliy tajriba.',
+      description: 'React, Next.js, Vue, Nuxt, Astro va TanStack bilan 5 yillik production-darajadagi interfeyslar yaratish tajribasi. Murakkab dashboardlar, interaktiv xarita ilovalari va kross-platforma mobil tajribalar.',
       gradient: 'from-blue-500 to-cyan-500',
       bgGradient: 'linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(6, 182, 212, 0.1) 100%)'
     },
@@ -64,7 +64,7 @@ const expertiseAreasByLocale: Record<Locale, ExpertiseArea[]> = {
       icon: <Server className='w-8 h-8' />,
       title: 'Backend Dasturlash',
       highlight: 'NodeJS',
-      description: 'Node.js va Bun bilan backend ishlab chiqishda, Electron.js va Tauri yordamida kross-platforma desktop ilovalar yaratishda tajribali.',
+      description: 'Node.js, Bun, Express.js, NestJS va Elysia bilan backend. PostgreSQL, Prisma, Drizzle ORM. Electron.js va Tauri yordamida desktop, Flutter bilan mobil ilovalar yaratish.',
       gradient: 'from-green-500 to-emerald-500',
       bgGradient: 'linear-gradient(135deg, rgba(34, 197, 94, 0.1) 0%, rgba(16, 185, 129, 0.1) 100%)'
     }
@@ -108,11 +108,11 @@ const Expertise = ({ title, subtitle, locale }: ExpertiseProps) => {
               filter: blur(0px);
             }
           }
-          
+
           .expertise-card {
             animation: expertiseEnter 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) both;
           }
-          
+
           .code-tag {
             opacity: 0.4;
             font-family: 'Courier New', monospace;
@@ -121,7 +121,7 @@ const Expertise = ({ title, subtitle, locale }: ExpertiseProps) => {
           }
         `
       }} />
-      
+
       <section className='px-6 md:px-12 xl:px-24 py-16 md:py-24' id='expertise'>
         <div className='text-center mb-16'>
           <div className='flex items-center justify-center gap-6 mb-6'>
@@ -150,7 +150,7 @@ const Expertise = ({ title, subtitle, locale }: ExpertiseProps) => {
                   index === 1 ? 'border-slate-300 lg:border-r-transparent' :
                   'border-slate-300 md:border-t-transparent lg:border-t-slate-300'
                 }`}
-                style={{ 
+                style={{
                   background: area.bgGradient,
                   borderColor: 'rgba(203, 213, 225, 0.3)'
                 }}
@@ -192,7 +192,7 @@ const Expertise = ({ title, subtitle, locale }: ExpertiseProps) => {
               </div>
             </div>
           ))}
-          
+
           {/* Original Quote Box - Hidden on certain screens */}
           <div className='p-6 justify-center items-center hidden md:flex lg:hidden relative'>
             <div className='relative p-6 rounded-2xl border border-white/10 backdrop-blur-sm group hover:border-purple-400/30 transition-all duration-500'

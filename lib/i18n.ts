@@ -80,7 +80,7 @@ const dictionaries: Record<Locale, Dictionary> = {
     meta: {
       title: 'Shahzod Abdukahhar',
       description:
-        'Software Engineer and Web Developer specializing in React, NextJS, and Node.js',
+        'Full-Stack Software Engineer specializing in React, Next.js, Vue, and Node.js. Building enterprise applications, GIS platforms, SDKs, and SaaS products.',
       siteName: 'Shahzod Abdukahhar personal website',
       openGraphLocale: 'en_US',
     },
@@ -100,7 +100,7 @@ const dictionaries: Record<Locale, Dictionary> = {
     },
     expertise: {
       title: 'Expertise',
-      subtitle: 'Crafting exceptional web experiences with modern technologies',
+      subtitle: 'Building scalable enterprise applications, GIS platforms, SDKs, and full-stack solutions',
     },
     projects: {
       title: 'My Projects',
@@ -111,13 +111,13 @@ const dictionaries: Record<Locale, Dictionary> = {
     },
     experience: {
       title: 'Experience',
-      subtitle: 'My professional journey building innovative web solutions',
+      subtitle: 'My professional journey building production-grade software across diverse domains',
       technologies: 'Technologies & Tools',
     },
     footer: {
       title: "Let's build something amazing together",
       description:
-        'Have an exciting project you need help with? Send me an email or contact me via instant message!',
+        'From enterprise systems and GIS platforms to SaaS products and mobile apps — let\'s turn your idea into production-ready software.',
       email: 'Email',
     },
     categories: commonCategories,
@@ -126,7 +126,7 @@ const dictionaries: Record<Locale, Dictionary> = {
     meta: {
       title: 'Shahzod Abdukahhar',
       description:
-        "React, NextJS va Node.js bo'yicha ixtisoslashgan dasturchi va veb-ishlab chiquvchi",
+        "React, Next.js, Vue va Node.js bo'yicha full-stack dasturchi. Korporativ ilovalar, GIS platformalari, SDK lar va SaaS mahsulotlarini ishlab chiqaman.",
       siteName: 'Shahzod Abdukahhar shaxsiy sayti',
       openGraphLocale: 'uz_UZ',
     },
@@ -147,7 +147,7 @@ const dictionaries: Record<Locale, Dictionary> = {
     expertise: {
       title: 'Ko`nikmalar',
       subtitle:
-        'Zamonaviy texnologiyalar bilan samarali veb-yechimlar yarataman',
+        'Masshtablanuvchi korporativ ilovalar, GIS platformalari, SDK lar va full-stack yechimlar yarataman',
     },
     projects: {
       title: 'Loyihalarim',
@@ -158,13 +158,13 @@ const dictionaries: Record<Locale, Dictionary> = {
     },
     experience: {
       title: 'Tajriba',
-      subtitle: 'Innovatsion veb-yechimlar yaratishdagi kasbiy yo`lim',
+      subtitle: 'Turli sohalarda production-darajadagi dasturiy ta\'minot yaratishdagi kasbiy yo\'lim',
       technologies: 'Texnologiyalar va vositalar',
     },
     footer: {
       title: 'Keling, birgalikda ajoyib mahsulot yarataylik',
       description:
-        'Qiziqarli loyiha bormi? Menga email yozing yoki tezkor messenjer orqali bog`laning.',
+        'Korporativ tizimlar va GIS platformalaridan tortib SaaS mahsulotlari va mobil ilovalargacha — g\'oyangizni production-darajadagi dasturiy ta\'minotga aylantiramiz.',
       email: 'Email',
     },
     categories: {
