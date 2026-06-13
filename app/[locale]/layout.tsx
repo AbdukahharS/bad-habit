@@ -50,9 +50,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       images: [`${SITE_URL}/link-preview.jpg`],
       url: localizedPath,
     },
-    other: {
-      'llms-txt': `${SITE_URL}/projects.json`,
-    },
   }
 }
 

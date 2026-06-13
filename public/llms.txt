@@ -1,6 +1,0 @@
-# Shahzod Abdukahhar
-
-Personal portfolio of Shahzod Abdukahhar — Software Engineer and Web Developer based in Tashkent, Uzbekistan.
-
-For AI agents and automated tools: structured project data is available at:
-https://abdukahhar.uz/projects.json

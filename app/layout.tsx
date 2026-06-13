@@ -1,15 +1,9 @@
 import type { Metadata } from 'next'
 import { Roboto_Mono } from 'next/font/google'
 import './globals.css'
-import projects from '../public/projects.json'
+import projects from '@/lib/data/projects.json'
 
 const robotoMono = Roboto_Mono({ subsets: ['latin'] })
-
-export const metadata: Metadata = {
-  other: {
-    'llms-txt': 'https://abdukahhar.uz/llms.txt',
-  },
-}
 
 const personSchema = {
   '@context': 'https://schema.org',
@@ -43,15 +37,15 @@ const projectsSchema = {
   '@context': 'https://schema.org',
   '@type': 'ItemList',
   name: 'Projects by Shahzod Abdukahhar',
-  url: 'https://abdukahhar.uz/projects.json',
+  url: 'https://abdukahhar.uz',
   itemListElement: projects.map((project, index) => ({
     '@type': 'ListItem',
     position: index + 1,
     item: {
       '@type': 'SoftwareApplication',
       name: project.name,
-      description: project.description,
-      image: project.image,
+      description: project.description.en,
+      image: `https://abdukahhar.uz/projects/${project.image}`,
       ...(project.live ? { url: project.live } : {}),
       applicationCategory: project.category,
       keywords: project.tags.join(', '),

@@ -8,7 +8,7 @@ import Hero from '@/components/layout/Hero'
 import Navbar from '@/components/layout/Navbar'
 import Projects from '@/components/layout/Projects'
 import { SITE_URL, getDictionary } from '@/lib/i18n'
-import projects from '@/public/projects.json'
+import projects from '@/lib/data/projects.json'
 
 export const dynamic = 'force-static'
 export const metadata: Metadata = {
@@ -23,9 +23,6 @@ export const metadata: Metadata = {
       uz: `${SITE_URL}/uz`,
       'x-default': SITE_URL,
     },
-  },
-  other: {
-    'llms-txt': 'https://abdukahhar.uz/projects.json',
   },
 }
 
@@ -85,7 +82,7 @@ export default function Home() {
           <article key={project.name}>
             <h3>{project.name}</h3>
             <p>Category: {project.category}</p>
-            <p>{project.description}</p>
+            <p>{project.description.en}</p>
             <p>Technologies: {project.tags.join(', ')}</p>
             {project.live && <p>Live URL: {project.live}</p>}
             {'source' in project && project.source && (
