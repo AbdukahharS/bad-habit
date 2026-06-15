@@ -49,6 +49,14 @@ type Dictionary = {
     live: string
     code: string
     package: string
+    viewAll: string
+    allProjectsTitle: string
+    allProjectsSubtitle: string
+    tagFilterLabel: string
+    clearFilters: string
+    noResults: string
+    back: string
+    selectedCount: string
   }
   experience: {
     title: string
@@ -108,6 +116,15 @@ const dictionaries: Record<Locale, Dictionary> = {
       live: 'Live',
       code: 'Code',
       package: 'Package',
+      viewAll: 'View all projects',
+      allProjectsTitle: 'All Projects',
+      allProjectsSubtitle:
+        'Every project I have shipped — full descriptions, complete tech stack, and tag-based filtering.',
+      tagFilterLabel: 'Filter by tags',
+      clearFilters: 'Clear filters',
+      noResults: 'No projects match the selected tags.',
+      back: 'Back to home',
+      selectedCount: 'selected',
     },
     experience: {
       title: 'Experience',
@@ -155,6 +172,15 @@ const dictionaries: Record<Locale, Dictionary> = {
       live: 'Sayt',
       code: 'Kod',
       package: 'Paket',
+      viewAll: 'Barcha loyihalarni ko\'rish',
+      allProjectsTitle: 'Barcha loyihalar',
+      allProjectsSubtitle:
+        'Men ishlab chiqqan har bir loyiha — to\'liq tavsiflar, butun texnologiyalar to\'plami va teglar bo\'yicha filtrlash.',
+      tagFilterLabel: 'Teglar bo\'yicha saralash',
+      clearFilters: 'Tozalash',
+      noResults: 'Tanlangan teglarga mos loyiha topilmadi.',
+      back: 'Bosh sahifaga',
+      selectedCount: 'tanlangan',
     },
     experience: {
       title: 'Tajriba',

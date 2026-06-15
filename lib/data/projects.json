@@ -3,28 +3,31 @@
     "name": "UYDEK",
     "description": {
       "en": "Digital transaction infrastructure platform for the real estate market. Unites property owners, buyers, agents, agencies, developers, banks, and notaries into a single ecosystem with map-first discovery, deal pipeline management, digital power of attorney, escrow, mortgage facilitation, and document verification.",
-      "uz": "Ko'chmas mulk bozori uchun raqamli tranzaksiya infratuzilma platformasi. Xaridorlar, agentlar, agentliklar, quruvchilar, banklar va notariuslarni xarita asosidagi kashfiyot, bitim pipeline boshqaruvi, raqamli ishonchnoma, eskrou, ipoteka yordami va hujjat tekshiruvi bilan birlashtiradi.",
-      "llm": "UYDEK is a digital transaction infrastructure platform for the real estate market, positioning itself as the operating system for property transactions. Unlike traditional listing platforms, UYDEK orchestrates the complete transaction lifecycle from discovery through completion. The platform features a map-first property discovery experience powered by the Yarrow Map Web SDK, a strictly-sequenced deal flow pipeline (Interest → Verification → Contract → Escrow → Notary → Completed), and a multi-role ecosystem connecting property owners, buyers, individual realtors, agencies, developers, mortgage banks, notaries, and insurance companies. Signature capabilities include digital power of attorney for agencies to fully manage sales on owners' behalf, built-in escrow protection, mortgage application document packages, integrated notary appointment scheduling, and document verification against public records. The frontend is built with Next.js 16, React 19, TypeScript, Tailwind CSS v4, Base UI (shadcn/ui), Framer Motion, GSAP with ScrollTrigger, Zustand for state management, TanStack Query for server state, React Hook Form with Zod validation, Embla Carousel, and Next Themes with Geist typography. The backend is built with NestJS, TypeScript, Prisma ORM with PostgreSQL, Passport JWT authentication, AWS S3 for media storage, Swagger API documentation, rate limiting via Throttler, Helmet security headers, and Jest for testing."
+      "uz": "Ko'chmas mulk bozori uchun raqamli tranzaksiya infratuzilma platformasi. Xaridorlar, agentlar, agentliklar, quruvchilar, banklar va notariuslarni xarita asosidagi kashfiyot, bitim pipeline boshqaruvi, raqamli ishonchnoma, eskrou, ipoteka yordami va hujjat tekshiruvi bilan birlashtiradi."
+    },
+    "longDescription": {
+      "en": "UYDEK is a digital transaction infrastructure platform for the real estate market, positioning itself as the operating system for property transactions. Unlike traditional listing platforms, UYDEK orchestrates the complete transaction lifecycle from discovery through completion. The platform features a map-first property discovery experience powered by the Yarrow Map Web SDK, a strictly-sequenced deal flow pipeline (Interest → Verification → Contract → Escrow → Notary → Completed), and a multi-role ecosystem connecting property owners, buyers, individual realtors, agencies, developers, mortgage banks, notaries, and insurance companies. Signature capabilities include digital power of attorney for agencies to fully manage sales on owners' behalf, built-in escrow protection, mortgage application document packages, integrated notary appointment scheduling, and document verification against public records. The frontend is built with Next.js 16, React 19, TypeScript, Tailwind CSS v4, Base UI (shadcn/ui), Framer Motion, GSAP with ScrollTrigger, Zustand for state management, TanStack Query for server state, React Hook Form with Zod validation, Embla Carousel, and Next Themes with Geist typography. The backend is built with NestJS, TypeScript, Prisma ORM with PostgreSQL, Passport JWT authentication, AWS S3 for media storage, Swagger API documentation, rate limiting via Throttler, Helmet security headers, and Jest for testing.",
+      "uz": "UYDEK — ko'chmas mulk bozori uchun raqamli tranzaksiya infratuzilma platformasi bo'lib, o'zini ko'chmas mulk bitimlarining operatsion tizimi sifatida pozitsiyalaydi. An'anaviy e'lon platformalaridan farqli o'laroq, UYDEK kashf etishdan tortib yakuniga qadar butun tranzaksiya hayotiy davrini boshqaradi. Platforma Yarrow Map Web SDK asosidagi xarita-birinchi mulk kashfiyotini, qat'iy ketma-ket bitim pipelineni (Qiziqish → Tekshiruv → Shartnoma → Eskrou → Notarius → Yakunlangan) va mulk egalari, xaridorlar, realtorlar, agentliklar, quruvchilar, ipoteka banklari, notariuslar va sug'urta kompaniyalarini birlashtiruvchi ko'p rolli ekotizimni taqdim etadi. Asosiy imkoniyatlar: agentliklar uchun raqamli ishonchnoma, o'rnatilgan eskrou himoyasi, ipoteka arizalari hujjat to'plamlari, notarius uchrashuvlarini rejalashtirish va hujjatlarni davlat reestrlari bilan tekshirish. Frontend Next.js 16, React 19, TypeScript, Tailwind CSS v4, shadcn/ui, Framer Motion, GSAP, Zustand, TanStack Query, React Hook Form va Zod asosida qurilgan. Backend NestJS, Prisma, PostgreSQL, Passport JWT, AWS S3 va Swagger asosida ishlaydi."
     },
     "image": "uydek.png",
     "live": null,
     "source": null,
     "tags": [
-      "Next.js",
-      "React 19",
-      "TypeScript",
-      "Tailwind CSS v4",
-      "shadcn/ui",
-      "Framer Motion",
-      "GSAP",
-      "Zustand",
-      "TanStack Query",
-      "NestJS",
-      "Prisma",
-      "PostgreSQL",
-      "Passport JWT",
-      "AWS S3",
-      "Swagger"
+      "nextjs",
+      "react",
+      "typescript",
+      "tailwind",
+      "shadcn",
+      "framer-motion",
+      "gsap",
+      "zustand",
+      "tanstack-query",
+      "nestjs",
+      "prisma",
+      "postgres",
+      "jwt",
+      "aws-s3",
+      "swagger"
     ],
     "category": "Enterprise Applications",
     "highlighted": true
@@ -32,21 +35,34 @@
   {
     "name": "Cirth",
     "description": {
-      "en": "Modern documentation hosting platform with rich text editing, version management, custom domains, and GitHub import. Built with Next.js 16 and Supabase.",
-      "uz": "Boy matn tahriri, versiya boshqaruvi, maxsus domenlar va GitHub importiga ega zamonaviy hujjat joylash platformasi. Next.js 16 va Supabase asosida qurilgan.",
-      "llm": "Cirth is a modern documentation hosting platform designed for developers and teams who need a streamlined way to publish and manage technical documentation. It features a rich text editor powered by TipTap, version management for tracking documentation changes over time, custom domain support for branded documentation sites, and seamless GitHub import functionality. The platform is built with Next.js 16, TypeScript, Supabase for backend and auth, Tailwind CSS with shadcn/ui components, and Zustand for state management. It represents a full-stack SaaS product with real-world production deployment."
+      "en": "Cirth is a SaaS platform where developers and teams write, version, and publish technical documentation under their own custom domain or a platform subdomain. Features a TipTap rich text editor, multi-version page trees, GitHub import, and custom domain routing at the Edge.",
+      "uz": "Cirth — dasturchilar va jamoalar texnik hujjatlarni o'z maxsus domenida yoki platforma subdomenida yozadigan, versiyalaydigan va nashr qiladigan SaaS platformasi. TipTap boy matn tahriri, ko'p versiyali sahifa daraxtlari, GitHub importi va Edge-da maxsus domen yo'naltirish imkoniyatlarini o'z ichiga oladi."
+    },
+    "longDescription": {
+      "en": "Cirth is a multi-tenant SaaS platform for publishing and managing technical documentation, giving every project its own versioned page tree and a public URL at either a custom domain or a platform subdomain (project.cirth.uz).\n\nThe editing experience is built on TipTap — a ProseMirror wrapper with first-class React support — extended with fenced code blocks syntax-highlighted by lowlight/highlight.js, tables, inline links, and a placeholder extension. The GitHub import wizard uses @octokit/rest to list markdown files in any repository, gray-matter to extract frontmatter metadata, and marked/turndown to convert markdown into TipTap-compatible HTML, allowing teams to migrate existing docs without copy-pasting.\n\nSupabase powers the entire backend: PostgreSQL with Row Level Security enforces per-user data ownership without any custom query guards; the Auth module handles email sign-in and OAuth; and @supabase/ssr synchronises session cookies between server components and API route handlers so every Next.js server fetch is authenticated transparently.\n\nCustom domain and subdomain routing lives in proxy.ts rather than Next.js middleware. On every request the proxy resolves the hostname against either the custom_domains or projects Supabase table, caches the result in an Edge-compatible in-memory Map for 60 seconds, and rewrites the URL to the internal /projects/[slug] route — all running in the Next.js Edge Runtime to avoid cold-start latency.\n\n@dnd-kit drives drag-and-drop page reordering in the sidebar and table views with optimistic UI updates. Recharts renders usage analytics in the admin dashboard. next-intl provides full English/Uzbek localisation across both the marketing site and the authenticated workspace. Zustand manages shared project and page selection state across route transitions. Bun is used as the package manager and runtime (next dev/build run via the --bun flag for faster module resolution), and Biome enforces linting and formatting. The project is deployed on Vercel with a daily billing-renewal cron job defined in vercel.json.",
+      "uz": "Cirth — texnik hujjatlarni nashr qilish va boshqarish uchun ko'p foydalanuvchili SaaS platforma bo'lib, har bir loyihaga maxsus domen yoki platforma subdomenida (project.cirth.uz) o'z versiyalangan sahifa daraxti va umumiy URL beriladi.\n\nTahrir tajribasi TipTap asosida qurilgan — React-ni birinchi darajada qo'llab-quvvatlovchi ProseMirror o'rami — lowlight/highlight.js orqali sintaksis ajratuvchi kod bloklari, jadvallar, ichki havolalar va placeholder kengaytmasi bilan to'ldirilgan. GitHub import ustasi @octokit/rest yordamida repository-dagi markdown fayllarni ro'yxatlaydi, gray-matter frontmatter metama'lumotlarini ajratib oladi va marked/turndown markdown-ni TipTap-mos HTML-ga aylantiradi — jamoalar mavjud hujjatlarni ko'chirmasdan migratsiya qila oladi.\n\nSupabase butun backendni ta'minlaydi: Row Level Security bilan PostgreSQL maxsus so'rov himoyalarisiz foydalanuvchi egaligini ta'minlaydi; Auth moduli elektron pochta va OAuth kirish imkonini beradi; @supabase/ssr session cookie-larini server komponentlari va API marshrutlari o'rtasida sinxronlashtiradi.\n\nMaxsus domen va subdomen yo'naltirish Next.js middleware o'rniga proxy.ts-da amalga oshiriladi. Har bir so'rovda proxy xost nomini custom_domains yoki projects Supabase jadvali orqali hal qiladi, natijani Edge-mos xotira Map-da 60 soniya keshaydi va URL-ni ichki /projects/[slug] marshruti sifatida qayta yozadi — hammasi kechikishni kamaytirish uchun Next.js Edge Runtime-da.\n\n@dnd-kit sidebar va jadval ko'rinishlarida optimistik UI yangilanishlari bilan sahifalarni qayta tartiblashni ta'minlaydi. Recharts admin dashboard-da foydalanish analitikasini ko'rsatadi. next-intl marketing sayti va ish maydoni bo'ylab inglizcha/o'zbekcha lokalizatsiyani ta'minlaydi. Zustand marshrut o'tishlari bo'ylab umumiy loyiha va sahifa holati boshqaruvini ta'minlaydi. Bun paket menejeri va runtime sifatida ishlatiladi (--bun bayrog'i orqali next dev/build), Biome esa linting va formatlashni ta'minlaydi. Loyiha Vercel-da vercel.json-da belgilangan kunlik billing-renewal cron ishi bilan joylashtirilgan."
     },
     "image": "cirth.png",
     "live": "https://cirth.uz/",
     "source": null,
     "tags": [
-      "Next.js",
-      "TypeScript",
-      "Supabase",
-      "TipTap",
-      "Tailwind CSS",
-      "shadcn/ui",
-      "Zustand"
+      "nextjs",
+      "react",
+      "typescript",
+      "tailwind",
+      "shadcn",
+      "supabase",
+      "tiptap",
+      "zustand",
+      "i18n",
+      "bun",
+      "zod",
+      "biome",
+      "sonner",
+      "recharts",
+      "rest-api",
+      "vercel",
+      "git"
     ],
     "category": "Full-Stack Web Apps",
     "highlighted": true
@@ -54,52 +70,80 @@
   {
     "name": "ERT/IP Data Cleaner",
     "description": {
-      "en": "Browser-only geophysical data processing application for cleaning and visualizing ERT/IP survey data from ABEM Terrameter instruments. Features multi-pass outlier detection, smart thresholds, IDW interpolation, 2D subsurface modeling with marching-squares contours, coordinate transformation to global UTM, and elevation fetching.",
-      "uz": "ABEM Terrameter asboblaridan olingan ERT/IP tadqiqot ma'lumotlarini tozalash va vizualizatsiya qilish uchun brauzerda ishlaydigan ilova. Ko'p bosqichli anomaliya aniqlash, aqlli chegaralar, IDW interpolyatsiya, marching-squares konturlari bilan 2D yer osti modeli, global UTM koordinataga transformatsiya va balandlik olish funksiyalarini qamrab oladi.",
-      "llm": "ERT/IP Data Cleaner is a browser-only single-page application built with Vite, React 19, and TypeScript for processing geophysical survey data from instruments like the ABEM Terrameter (Prosys II/III format). It cleans raw CSV/TSV data through multi-pass outlier filtering including within-group MAD rejection, log-space IQR spatial filtering, vertical coherence checks, cross-depth spike detection, and local sliding-window MAD filters. Valid electrode quadrupole stacks are averaged with physics-correct Rho recalculation (k × mean(VMN) / mean(IAB)), missing stations are interpolated from nearest neighbors, and results are exported as Syscal-compatible ISO-8859-1 CSV or a 4-sheet Excel workbook with cell-level highlighting. The app also renders 2D subsurface resistivity sections via IDW interpolation on a 320×160 grid with marching-squares contour lines, supporting both linear and logarithmic color scales. A coordinate calculator transforms local electrode positions to global UTM coordinates using two reference points or an azimuth, then fetches elevations from the Open-Meteo API and writes them to Global z-columns. All UI text is in Uzbek. Styled with Tailwind CSS v4 and shadcn/ui components."
+      "en": "Browser-only geophysical tool for cleaning and visualizing ERT/IP survey data from ABEM Terrameter instruments, with multi-pass spike filtering, 2D resistivity pseudosection rendering, and UTM coordinate transformation.",
+      "uz": "ABEM Terrameter asboblaridan olingan ERT/IP tadqiqot ma'lumotlarini tozalash va vizualizatsiya qilish uchun brauzerda ishlovchi geofizik vosita, ko'p bosqichli anomaliya filtri, 2D rezistivlik psevdokesmasi va UTM koordinata transformatsiyasi bilan."
+    },
+    "longDescription": {
+      "en": "ERT/IP Data Cleaner is a browser-only single-page application that processes raw geophysical survey data from ABEM Terrameter instruments (Prosys II/III and Syscal formats) entirely on the client — no server, no data leaves the browser.\n\nThe core of the app is a multi-pass filtering pipeline that runs up to eight iterations until convergence. Within each pass: a MAD filter rejects stacks inside the same electrode quadrupole group that deviate too far from the group median resistivity; log-space IQR fences flag spatial outliers across each depth level of the pseudosection; a vertical coherence check demotes isolated points in columns where more than half the depth levels are already gaps; and a local sliding-window MAD filter removes single-point spikes too narrow to be caught by the global IQR. Surviving stacks are averaged with physics-correct Rho recalculation (k × mean(VMN) / mean(IAB)) to preserve instrument-level accuracy, and missing stations are filled by linear interpolation from nearest neighbors at the same depth level.\n\nCleaned data exports as a Syscal-compatible ISO-8859-1 CSV — byte-level compatible with ProSys III — or as a 4-sheet Excel workbook built with ExcelJS, covering original data with highlighted invalid rows, grouped stacks with averaged rows marked in green, all rejected rows with rejection reasons, and the final cleaned output.\n\nThe pseudosection view uses the HTML Canvas API to draw a 2D resistivity section via IDW interpolation on a 320×160 grid with marching-squares contouring, keeping visualization entirely dependency-free with switchable linear and logarithmic color scales. A separate coordinate calculator transforms local electrode positions (measured along the survey profile) into global UTM coordinates using two GPS reference points, correctly handling perpendicular offsets for non-linear profiles, then calls the Open-Meteo REST API to fetch real-world elevations and write them into Global z-columns for 3D-ready output.\n\nReact Router DOM v7 manages client-side routing and guards the main cleaner behind a protected route that checks sessionStorage for a session token. Vite powers fast HMR during development, TypeScript enforces type safety end-to-end across parsing, filtering, and export logic, Tailwind CSS v4 and shadcn/ui handle styling, and Biome enforces linting and formatting. Bun is the package manager and a GitHub Actions workflow packages the app as a Pake desktop binary. The app is deployed on Vercel with an SPA rewrite rule.",
+      "uz": "ERT/IP Data Cleaner — ABEM Terrameter asboblaridan (Prosys II/III va Syscal formatlari) olingan xom geofizik tadqiqot ma'lumotlarini to'liq mijoz tomonida qayta ishlovchi brauzerda ishlovchi bir sahifali ilova — server yo'q, ma'lumotlar brauzerni tark etmaydi.\n\nIlovaning asosini natija barqarorlashguncha 8 ta iteratsiyagacha ishlaydigan ko'p bosqichli filtrlash pipeline tashkil etadi. Har bir passda: MAD filtri bir xil elektrod kvadrupol guruhi ichidagi stacklarni guruh median rezistivligidan juda chetga chiqqanlari sababli rad etadi; log-fazoviy IQR chegaralari psevdokesmaning har bir chuqurlik darajasida fazoviy anomaliyalarni aniqlaydi; vertikal izchillik tekshiruvi chuqurlik darajalarining yarmidan ko'pi bo'sh bo'lgan ustunlardagi alohida nuqtalarni o'chiradi; mahalliy sirpanma oyna MAD filtri esa global IQR ushlay olmaydigan tor nuqtali o'rkaklarni olib tashlaydi. Omon qolgan stacklar fizik to'g'ri Rho qayta hisoblash bilan o'rtachalanadi (k × o'rtacha(VMN) / o'rtacha(IAB)) va yo'q stansiyalar bir xil chuqurlik darajasidagi eng yaqin qo'shnilardan chiziqli interpolyatsiya orqali to'ldiriladi.\n\nTozalangan ma'lumotlar Syscal-mos ISO-8859-1 CSV sifatida — ProSys III bilan bayt darajasida mos — yoki ExcelJS yordamida qurilgan 4 varaqli Excel kitobi sifatida eksport qilinadi: yaroqsiz qatorlar ajratilgan asl ma'lumotlar, yashil rang bilan belgilangan o'rtacha qatorli guruhlangan stacklar, rad etish sabablari ko'rsatilgan barcha yaroqsiz qatorlar va yakuniy tozalangan natija.\n\nPsevdokesma ko'rinishi IDW interpolyatsiya orqali 320×160 katakchali setka bo'ylab 2D rezistivlik kesmani chizish uchun HTML Canvas API'dan foydalanadi, marching-squares konturlash bilan, chiziqli va logarifmik rang shkalalari o'rtasida almashish imkoniyati bilan. Alohida koordinata kalkulyatori mahalliy elektrod pozitsiyalarini (tadqiqot profili bo'ylab o'lchangan) ikkita GPS ta'rif nuqtasi yordamida global UTM koordinatalariga aylantiradi va Open-Meteo REST API'siga murojaat qilib haqiqiy balandliklarni oladi va ularni 3D tayyor chiqish uchun Global z-ustunlariga yozadi.\n\nReact Router DOM v7 mijoz tomonidagi marshrutlashni boshqaradi va sessionStorage-dagi sessiya tokenini tekshirib asosiy tozalovchini himoya qiladi. Vite ishlab chiqishda tez HMR ta'minlaydi, TypeScript parsing, filtrlash va eksport mantiqi bo'ylab end-to-end tip xavfsizligini ta'minlaydi, Tailwind CSS v4 va shadcn/ui dizaynni boshqaradi, Biome esa linting va formatlashni ta'minlaydi. Bun paket menejeri sifatida ishlatiladi va GitHub Actions ish jarayoni ilovani Pake desktop ikkilik faylga qadoqlaydi. Ilova Vercel-da SPA qayta yo'naltirish qoidasi bilan joylashtirilgan."
     },
     "image": "geo.png",
     "live": null,
     "source": null,
     "tags": [
-      "React",
-      "TypeScript",
-      "Vite",
-      "Tailwind CSS",
-      "shadcn/ui",
-      "Canvas",
-      "ExcelJS"
+      "react",
+      "typescript",
+      "vite",
+      "tailwind",
+      "shadcn",
+      "canvas",
+      "exceljs",
+      "bun",
+      "biome",
+      "git",
+      "vercel",
+      "rest-api",
+      "github-actions"
     ],
     "category": "Enterprise Applications"
   },
   {
     "name": "ERP Renovation",
     "description": {
-      "en": "SaaS-ready ERP system for apartment renovation built with schema-per-tenant multi-tenancy. Features a strictly-sequenced pipeline across ~8 stages with checklist-gated acceptance, automated wage credits, real-time notifications, and financial tracking.",
-      "uz": "Schema-per-tenant ko'p o'quvchilik bilan qurilgan, kvartira ta'miri uchun SaaS-ga tayyor ERP tizimi. ~8 bosqichdan iborat qat'iy ketma-ketlikdagi pipeline, checklist asosidagi qabul, avtomatik ish haqi kreditlari, real vaqt bildirishnomalari va moliyaviy kuzatuvni qamrab oladi.",
-      "llm": "ERP Renovation is an assembly-line ERP system for standardized apartment renovation, engineered as a B2B SaaS product from day one with schema-per-tenant multi-tenancy. The platform enforces a strictly-sequenced, checklist-gated pipeline where properties move through ~8 stages. Each stage is completed by a Master, accepted by an Inspector against a digital checklist, and upon acceptance the system automatically credits wages, unlocks the next stage, and dispatches notifications. The Owner sees consolidated unit economics and authors the templates that drive the entire pipeline. Built as a Turborepo monorepo over Bun workspaces: Elysia backend with Eden Treaty end-to-end types, React + Vite + TanStack Router frontend with PWA support, Drizzle ORM with PostgreSQL, BullMQ + Redis for background jobs, Better Auth for authentication, and Cloudflare R2 for media storage. Includes Web Push notifications, in-app notification center, real-time pub/sub, role-based access control, master ratings, finance dashboards with Plan-vs-Actual tracking, and unit closing with PDF report generation."
+      "en": "Assembly-line ERP for standardized apartment renovation, engineered as B2B SaaS with schema-per-tenant multi-tenancy on PostgreSQL. A checklist-gated pipeline of ~8 stages drives properties from first inspection through final handover with automated wage credits and real-time notifications.",
+      "uz": "PostgreSQL-da sxema-per-tenant ko'p o'quvchilik bilan B2B SaaS sifatida qurilgan kvartira ta'miri uchun konveyer ERP tizimi. ~8 bosqichli checklist asosidagi pipeline obyektlarni birinchi inspeksiyadan yakuniy topshirishgacha avtomatik ish haqi kreditlari va real vaqt bildirishnomalari bilan yuritadi."
+    },
+    "longDescription": {
+      "en": "ERP Renovation is an assembly-line ERP for standardized apartment renovation, built as a B2B SaaS product from day one with schema-per-tenant multi-tenancy on PostgreSQL. Properties move through a strictly-sequenced, checklist-gated pipeline of ~8 stages: a Master completes each stage and uploads mandatory photos; an Inspector accepts against a digital checklist; acceptance automatically credits the master's wage, unlocks the next stage, and dispatches notifications.\n\nThe monorepo is managed by Turborepo over Bun workspaces so each app and shared package builds and caches independently. Elysia — a TypeScript-first Bun framework — powers the API and exposes its types to the React frontend via Eden Treaty, giving end-to-end type safety without code generation. Drizzle ORM enforces hard tenant isolation by routing every query into the correct PostgreSQL schema via a per-request search_path resolver derived from the Better Auth session. Post-acceptance side-effects (wage credit, stage unlock, notifications) run as a BullMQ + Redis job chain separate from the request cycle, making Accept instant and the chain durable through restarts. React Hook Form paired with Zod schemas from a shared validators package keeps the same validation logic on both the browser form and the Elysia route. The frontend is a Vite PWA with TanStack Router for file-based type-safe routing and TanStack Query for server-state caching; an Elysia WebSocket endpoint drives live dashboard updates. Stage and floor-plan photos upload directly from the browser to Cloudflare R2 via Bun.s3 presigned URLs, keeping the app server free of binary traffic. Web Push over VAPID delivers task-available and acceptance notifications to installed PWAs, backed by an in-app inbox that stores every intent regardless of push outcome. @react-pdf/renderer generates the final handover certificate and Plan-vs-Actual financial report at unit closing. GitHub Actions runs the CI pipeline on every push.",
+      "uz": "ERP Renovation — birinchi kundan B2B SaaS mahsuloti sifatida, PostgreSQL-da sxema-per-tenant ko'p o'quvchilik bilan qurilgan standartlashtirilgan kvartira ta'miri uchun konveyer ERP tizimi. Obyektlar qat'iy ketma-ket, checklist asosidagi ~8 bosqichli pipelindan o'tadi: Usta har bir bosqichni bajarib, majburiy fotolarni yuklaydi; Nazoratchi raqamli checklist asosida qabul qiladi; qabul avtomatik ravishda usta ish haqini yozadi, keyingi bosqichni ochadi va bildirishnomalar yuboradi.\n\nMonoreponi Turborepo Bun workspaces ustida boshqaradi — har bir ilova va umumiy paket mustaqil build qilinadi va keshlanadi. Elysia — TypeScript-birinchi Bun freymvorki — API-ni ta'minlaydi va turlarini Eden Treaty orqali React frontendiga uzatadi, bu kod generatsiyasiz end-to-end tip xavfsizligini beradi. Drizzle ORM Better Auth sessiyasidan olingan per-request search_path resolver orqali har bir so'rovni to'g'ri PostgreSQL sxemasiga yo'naltiradi va qat'iy tenant izolyatsiyasini ta'minlaydi. Qabul oqibatlari (ish haqi krediti, bosqich ochilishi, bildirishnomalar) BullMQ + Redis ish zanjiri sifatida so'rov siklidan alohida ishlaydi. React Hook Form umumiy validators paketidagi Zod sxemalari bilan bir xil validatsiya mantiqini brauzer formasi va Elysia marshrutida ta'minlaydi. Frontend TanStack Router va TanStack Query bilan Vite PWA bo'lib, Elysia WebSocket endpointi jonli dashboard yangilanishlarini ta'minlaydi. Fotolar Bun.s3 oldindan imzolangan URL-lar orqali to'g'ridan-to'g'ri Cloudflare R2 ga yuklanadi. Web Push VAPID orqali o'rnatilgan PWA-larga bildirishnomalar yetkazadi. @react-pdf/renderer yakuniy qabul akti va moliyaviy hisobotni yaratadi. GitHub Actions har bir push-da CI pipelinini ishga tushiradi."
     },
     "image": "erp.png",
     "live": null,
     "source": null,
     "tags": [
-      "React",
-      "TypeScript",
-      "Bun",
-      "Elysia",
-      "Drizzle ORM",
-      "PostgreSQL",
-      "BullMQ",
-      "Redis",
-      "TanStack Router",
-      "Tailwind CSS",
-      "shadcn/ui",
-      "Better Auth",
-      "PWA",
-      "Eden Treaty",
-      "Vite",
-      "Bun Test",
-      "React PDF"
+      "react",
+      "typescript",
+      "bun",
+      "bun-test",
+      "elysia",
+      "eden-treaty",
+      "drizzle",
+      "postgres",
+      "bullmq",
+      "redis",
+      "tanstack-router",
+      "tanstack-query",
+      "react-hook-form",
+      "zod",
+      "tailwind",
+      "shadcn",
+      "better-auth",
+      "pwa",
+      "vite",
+      "react-pdf",
+      "docker",
+      "turborepo",
+      "github-actions",
+      "web-push",
+      "websocket",
+      "cloudflare-r2",
+      "i18n",
+      "git",
+      "js",
+      "rest-api",
+      "biome",
+      "framer-motion",
+      "caddy"
     ],
     "category": "Enterprise Applications"
   },
@@ -107,20 +151,23 @@
     "name": "Ravon Taxi - Admin Dashboard",
     "description": {
       "en": "Comprehensive fleet management system with real-time trip monitoring, driver oversight, and analytics dashboard for local taxi company.",
-      "uz": "Mahalliy taksi kompaniyasi uchun real vaqt safar kuzatuvi, haydovchilar nazorati va analitika paneliga ega kompleks avtopark boshqaruv tizimi.",
-      "llm": "Ravon Taxi Admin Dashboard is a comprehensive fleet management system built for a local taxi company. It provides real-time trip monitoring capabilities, driver oversight tools including status tracking and performance metrics, and a full analytics dashboard for business intelligence. The system handles complex state management for live fleet data and integrates with mapping services for visual trip tracking. Built with React, TypeScript, Zustand for state management, ShadCN UI component library, React Hook Form with Zod validation, and Axios for API communication."
+      "uz": "Mahalliy taksi kompaniyasi uchun real vaqt safar kuzatuvi, haydovchilar nazorati va analitika paneliga ega kompleks avtopark boshqaruv tizimi."
+    },
+    "longDescription": {
+      "en": "Ravon Taxi Admin Dashboard is a comprehensive fleet management system built for a local taxi company. It provides real-time trip monitoring capabilities, driver oversight tools including status tracking and performance metrics, and a full analytics dashboard for business intelligence. The system handles complex state management for live fleet data and integrates with mapping services for visual trip tracking. Built with React, TypeScript, Zustand for state management, ShadCN UI component library, React Hook Form with Zod validation, and Axios for API communication.",
+      "uz": "Ravon Taxi Admin Dashboard — mahalliy taksi kompaniyasi uchun qurilgan kompleks avtopark boshqaruv tizimi. Real vaqtda safarlarni kuzatish, holat va samaradorlik metrikalari bilan haydovchilar nazorati, hamda biznes razvedkasi uchun to'liq analitika panelini taqdim etadi. Tizim jonli avtopark ma'lumotlari uchun murakkab holat boshqaruvini boshqaradi va vizual safar kuzatuvi uchun xarita xizmatlari bilan integratsiyalashgan. React, TypeScript, Zustand, ShadCN UI, React Hook Form, Zod va Axios asosida qurilgan."
     },
     "image": "ravon-admin.png",
     "live": null,
     "source": null,
     "tags": [
-      "React",
-      "TypeScript",
-      "Zustand",
-      "ShadCN UI",
-      "React Hook Form",
-      "Zod",
-      "Axios"
+      "react",
+      "typescript",
+      "zustand",
+      "shadcn",
+      "react-hook-form",
+      "zod",
+      "axios"
     ],
     "category": "Enterprise Applications"
   },
@@ -128,19 +175,22 @@
     "name": "Ravon Taxi - Driver Mobile App",
     "description": {
       "en": "Cross-platform Android driver application with geolocation tracking, ride assignments, and real-time updates built with Tauri.",
-      "uz": "Tauri yordamida yaratilgan, geolokatsiya kuzatuvi, buyurtma biriktirish va real vaqt yangilanishlarini qo'llovchi kross-platforma Android haydovchi ilovasi.",
-      "llm": "Ravon Taxi Driver Mobile App is a cross-platform Android application built with Tauri, a Rust-based framework for building lightweight desktop and mobile applications. The app features real-time geolocation tracking for drivers, automated ride assignment system, push notifications for new ride requests, and real-time status updates. The UI is built with React and TypeScript, using Framer Motion for smooth animations and Zustand for state management. This project demonstrates the ability to build mobile-first applications using web technologies compiled to native platforms."
+      "uz": "Tauri yordamida yaratilgan, geolokatsiya kuzatuvi, buyurtma biriktirish va real vaqt yangilanishlarini qo'llovchi kross-platforma Android haydovchi ilovasi."
+    },
+    "longDescription": {
+      "en": "Ravon Taxi Driver Mobile App is a cross-platform Android application built with Tauri, a Rust-based framework for building lightweight desktop and mobile applications. The app features real-time geolocation tracking for drivers, automated ride assignment system, push notifications for new ride requests, and real-time status updates. The UI is built with React and TypeScript, using Framer Motion for smooth animations and Zustand for state management. This project demonstrates the ability to build mobile-first applications using web technologies compiled to native platforms.",
+      "uz": "Ravon Taxi Driver Mobile App — Tauri (yengil desktop va mobil ilovalar uchun Rust asosidagi framework) bilan qurilgan kross-platforma Android ilovasi. Haydovchilar uchun real vaqtda geolokatsiya kuzatuvi, avtomatik buyurtma biriktirish tizimi, yangi safar so'rovlari uchun push bildirishnomalar va real vaqt holat yangilanishlarini taqdim etadi. UI React va TypeScriptda, animatsiyalar uchun Framer Motion va holat boshqaruvi uchun Zustand ishlatilgan."
     },
     "image": "ravon-driver.jpg",
     "live": null,
     "source": null,
     "tags": [
-      "React",
-      "TypeScript",
-      "Tauri",
-      "Zustand",
-      "Geolocation",
-      "Framer Motion"
+      "react",
+      "typescript",
+      "tauri",
+      "zustand",
+      "geolocation",
+      "framer-motion"
     ],
     "category": "Mobile Apps"
   },
@@ -148,20 +198,23 @@
     "name": "Chorvoq Tourism Zone - Government Geoportal",
     "description": {
       "en": "Government tourism management platform with advanced GIS capabilities, interactive maps, and multilingual support for Chorvoq recreation zone.",
-      "uz": "Chorvoq dam olish hududi uchun ilg'or GIS imkoniyatlari, interaktiv xaritalar va ko'p tilli qo'llab-quvvatlashga ega davlat turizm boshqaruv platformasi.",
-      "llm": "Chorvoq Tourism Zone Geoportal is a government-level tourism management platform developed for the Chorvoq recreation zone in Uzbekistan. The platform features advanced GIS capabilities including interactive map layers, spatial data visualization, and geographic analysis tools. It supports multilingual content (Uzbek, English, Russian) and integrates multiple mapping libraries including MapLibre GL JS, Leaflet, and OpenLayers for maximum compatibility. The platform includes data analytics charts powered by Recharts and comprehensive state management with Zustand. This project demonstrates experience with government-scale applications and complex geospatial web development."
+      "uz": "Chorvoq dam olish hududi uchun ilg'or GIS imkoniyatlari, interaktiv xaritalar va ko'p tilli qo'llab-quvvatlashga ega davlat turizm boshqaruv platformasi."
+    },
+    "longDescription": {
+      "en": "Chorvoq Tourism Zone Geoportal is a government-level tourism management platform developed for the Chorvoq recreation zone in Uzbekistan. The platform features advanced GIS capabilities including interactive map layers, spatial data visualization, and geographic analysis tools. It supports multilingual content (Uzbek, English, Russian) and integrates multiple mapping libraries including MapLibre GL JS, Leaflet, and OpenLayers for maximum compatibility. The platform includes data analytics charts powered by Recharts and comprehensive state management with Zustand. This project demonstrates experience with government-scale applications and complex geospatial web development.",
+      "uz": "Chorvoq Tourism Zone Geoportal — O'zbekistondagi Chorvoq dam olish zonasi uchun ishlab chiqilgan davlat darajasidagi turizm boshqaruv platformasi. Platforma interaktiv xarita qatlamlari, fazoviy ma'lumotlarni vizualizatsiya qilish va geografik tahlil vositalarini o'z ichiga olgan ilg'or GIS imkoniyatlarini taqdim etadi. Ko'p tilli kontent (o'zbek, ingliz, rus) qo'llab-quvvatlanadi va maksimal mosligi uchun MapLibre GL JS, Leaflet va OpenLayers kartografiya kutubxonalari integratsiyalashgan. Recharts asosidagi analitik grafiklar va Zustand bilan kompleks holat boshqaruvi mavjud."
     },
     "image": "chorvoq.png",
     "live": null,
     "source": null,
     "tags": [
-      "React",
-      "TypeScript",
-      "Maplibre GL JS",
-      "Leaflet",
-      "OpenLayers",
-      "Zustand",
-      "Recharts",
+      "react",
+      "typescript",
+      "maplibre",
+      "leaflet",
+      "openlayers",
+      "zustand",
+      "recharts",
       "i18n"
     ],
     "category": "Enterprise Applications"
@@ -170,19 +223,22 @@
     "name": "Global Crop - Farmer Monitoring Platform",
     "description": {
       "en": "Banking sector agricultural monitoring platform with GIS-based field mapping, data analytics, and loan tracking for rural farmers.",
-      "uz": "Bank sohasi uchun GIS asosidagi dala xaritalash, ma'lumotlar analitikasi va kredit kuzatuviga ega qishloq xo'jaligi monitoring platformasi.",
-      "llm": "Global Crop is an agricultural monitoring platform developed for the banking sector to track and manage agricultural loans and field data. The platform provides GIS-based field mapping allowing bankers and agronomists to visualize farm boundaries, crop types, and land usage. It includes comprehensive data analytics dashboards for tracking loan performance, crop yield predictions, and farmer compliance. The system supports multiple languages and integrates MapLibre GL JS and Leaflet for mapping functionality. Built with React, TypeScript, Zustand, Recharts for data visualization, and full internationalization support."
+      "uz": "Bank sohasi uchun GIS asosidagi dala xaritalash, ma'lumotlar analitikasi va kredit kuzatuviga ega qishloq xo'jaligi monitoring platformasi."
+    },
+    "longDescription": {
+      "en": "Global Crop is an agricultural monitoring platform developed for the banking sector to track and manage agricultural loans and field data. The platform provides GIS-based field mapping allowing bankers and agronomists to visualize farm boundaries, crop types, and land usage. It includes comprehensive data analytics dashboards for tracking loan performance, crop yield predictions, and farmer compliance. The system supports multiple languages and integrates MapLibre GL JS and Leaflet for mapping functionality. Built with React, TypeScript, Zustand, Recharts for data visualization, and full internationalization support.",
+      "uz": "Global Crop — bank sohasi uchun qishloq xo'jaligi kreditlari va dala ma'lumotlarini kuzatish va boshqarish uchun ishlab chiqilgan qishloq xo'jaligi monitoring platformasi. Bank xodimlari va agronomlar uchun dala chegaralari, ekin turlari va yer foydalanishini vizualizatsiya qiladigan GIS asosidagi dala xaritalashni taqdim etadi. Kredit samaradorligini, hosildorlik prognozini va dehqonlar muvofiqligini kuzatish uchun keng qamrovli analitika panellari mavjud."
     },
     "image": "globalcrop.png",
     "live": null,
     "source": null,
     "tags": [
-      "React",
-      "TypeScript",
-      "Maplibre GL JS",
-      "Leaflet",
-      "Zustand",
-      "Recharts",
+      "react",
+      "typescript",
+      "maplibre",
+      "leaflet",
+      "zustand",
+      "recharts",
       "i18n"
     ],
     "category": "Enterprise Applications"
@@ -191,313 +247,273 @@
     "name": "Global Crop - Landing Page",
     "description": {
       "en": "Landing page for Global Crop agricultural monitoring platform built with React and Vite.",
-      "uz": "React va Vite asosida yaratilgan Global Crop qishloq xo'jaligi monitoring platformasi uchun landing sahifa.",
-      "llm": "Global Crop Landing Page is a marketing website for the Global Crop agricultural monitoring platform. It serves as the primary entry point for potential banking clients and farmers, showcasing the platform's features, benefits, and case studies. Built with React, TypeScript, and Vite for fast development and optimized production builds. Styled with Tailwind CSS for responsive design across all device sizes. The landing page demonstrates skills in conversion-focused design and performance optimization."
+      "uz": "React va Vite asosida yaratilgan Global Crop qishloq xo'jaligi monitoring platformasi uchun landing sahifa."
+    },
+    "longDescription": {
+      "en": "Global Crop Landing Page is a marketing website for the Global Crop agricultural monitoring platform. It serves as the primary entry point for potential banking clients and farmers, showcasing the platform's features, benefits, and case studies. Built with React, TypeScript, and Vite for fast development and optimized production builds. Styled with Tailwind CSS for responsive design across all device sizes.",
+      "uz": "Global Crop Landing Page — Global Crop qishloq xo'jaligi monitoring platformasi uchun marketing sayti. Potensial bank mijozlari va dehqonlar uchun asosiy kirish nuqtasi vazifasini bajaradi va platforma imkoniyatlari, foydalari hamda misol o'rganishlarini namoyish etadi. React, TypeScript va Vite asosida tez ishlab chiqish va optimallashtirilgan production buildlari uchun qurilgan. Barcha qurilma o'lchamlarida moslashuvchan dizayn uchun Tailwind CSS bilan dizayn qilingan."
     },
     "image": "global-crop-landing.png",
     "live": "https://global-crop-landing.vercel.app/",
     "source": "https://github.com/AbdukahharS/global-crop-landing",
-    "tags": [
-      "React",
-      "TypeScript",
-      "Vite",
-      "Tailwind"
-    ],
+    "tags": ["react", "typescript", "vite", "tailwind"],
     "category": "Landing Pages"
   },
   {
     "name": "Yarrow Map Web SDK Documentation",
     "description": {
-      "en": "I made the documentation website for the Yarrow Map Web SDK.",
-      "uz": "Yarrow Map Web SDK uchun hujjatlar saytini ishlab chiqdim.",
-      "llm": "Yarrow Map Web SDK Documentation is a comprehensive documentation website built for the Yarrow Map Web SDK, a mapping library developed by Yarrow. The documentation includes API references, getting started guides, code examples, and interactive demos. Built with Vue 3, TypeScript, and VuePress-style documentation architecture. The site features full internationalization support and searchable content. This project demonstrates technical writing skills and the ability to create developer-friendly documentation for complex libraries."
+      "en": "Documentation site for the Yarrow Map SDK covering Web and Flutter integrations, served in English, Uzbek, and Russian.",
+      "uz": "Yarrow Map SDK uchun Web va Flutter integratsiyalarini qamrab oluvchi hujjatlar sayti, ingliz, o'zbek va rus tillarida taqdim etiladi."
+    },
+    "longDescription": {
+      "en": "Yarrow Map Web SDK Documentation is a single-page application that serves API references, getting-started guides, and code examples for the Yarrow Map SDK across Web and Flutter platforms in three languages (English, Uzbek, Russian).\n\nVue Router handles client-side navigation between the Web and Flutter SDK sections, keeping transitions instant without full-page reloads. Rather than adopting an off-the-shelf documentation framework, the project ships a hand-built markdown parser (`markdownDocs.ts`) that converts raw `.md` files into typed `DocBlock` structures — covering headings, code fences with language detection, tables, lists, and table-of-contents extraction for sidebar navigation — so content is authored in plain Markdown without a heavy dependency. PrismJS handles syntax highlighting for the embedded code examples. Vue i18n (vue-i18n 9) drives the full three-language experience: sidebar links are re-extracted from the localized markdown on every locale change, and all UI strings update reactively. An IntersectionObserver watches which headings are in the viewport and highlights the corresponding sidebar entry in real time; on mobile the sidebar collapses into an animated hamburger drawer. Dark mode is implemented as a `useDarkMode` composable. Vite builds the project (with `vue-tsc` running a TypeScript check before every production build) and the output is containerized in a multi-stage Docker image built on Node.js Alpine. Both GitHub Actions and GitLab CI pipelines automate building and publishing the image to their respective container registries on every push to `main`.",
+      "uz": "Yarrow Map Web SDK Documentation — Yarrow Map SDK uchun Web va Flutter platformalarida API ma'lumotnomasi, boshlash qo'llanmalari va kod misollarini uch tilda (ingliz, o'zbek, rus) taqdim etuvchi bir sahifali ilova.\n\nVue Router Web va Flutter SDK bo'limlari o'rtasida mijoz tomonidagi navigatsiyani boshqaradi — sahifalar to'liq qayta yuklanmasdan tezkor almashadi. Tayyor hujjatlar frameworki o'rniga loyiha xom `.md` fayllarini tipli `DocBlock` strukturalariga aylantiruvchi maxsus markdown parser (`markdownDocs.ts`) bilan jihozlangan — sarlavhalar, til aniqlanishi bilan kod bloklari, jadvallar, ro'yxatlar va sidebar navigatsiyasi uchun mundarija ajratish imkoniyatlari mavjud. PrismJS joylashtirilgan kod misollarini sintaksis bilan ajratib ko'rsatadi. Vue i18n (vue-i18n 9) to'liq uch tilli tajribani ta'minlaydi: sidebar havolalari har bir til o'zgarishida lokallashtirilgan markdowndan qayta ajratib olinadi. IntersectionObserver qaysi sarlavhalar ko'rinish maydonida ekanligini kuzatadi va tegishli sidebar yozuvini real vaqtda ajratib ko'rsatadi; mobil qurilmalarda sidebar animatsiyali tortma menyuga yig'iladi. Qorong'i rejim `useDarkMode` kompozabli orqali amalga oshirilgan. Vite loyihani build qiladi (har bir production build oldidan `vue-tsc` TypeScript tekshiruvini o'tkazadi) va natija Node.js Alpine asosidagi ko'p bosqichli Docker tasviriga joylanadi. GitHub Actions ham, GitLab CI ham `main` ga har bir push'da tasvirni o'z container registrlariga avtomatik build qilib yuklaydi."
     },
     "image": "yarrow-web-sdk-docs.png",
     "live": "https://sdk.yarrow.uz/",
     "source": "https://github.com/AbdukahharS/yarrow-web-sdk-docs",
-    "tags": [
-      "Vue",
-      "I18n",
-      "TypeScript"
-    ],
+    "tags": ["vue", "typescript", "vite", "i18n", "docker", "github-actions", "gitlab-ci", "prismjs", "markdown", "git"],
     "category": "Documentation"
   },
   {
     "name": "Yarrow Interactive Map Embed",
     "description": {
       "en": "Nuxt 4 landing page and iframe embed endpoint for Yarrow Maps. Features one-line iframe embed with URL parameters for location, zoom, markers, and theme. Includes multi-language support (EN/RU/UZ), live demo, and copy-to-clipboard functionality.",
-      "uz": "Yarrow Xaritalar uchun Nuxt 4 landing sahifa va iframe embed endpoint. Joylashuv, zoom, marker va theme uchun URL parametrlari bilan bir qatorli iframe embed imkoniyati. Ko'p tilli qo'llab-quvvatlash (EN/RU/UZ), live demo va copy-to-clipboard funksionalligini o'z ichiga oladi.",
-      "llm": "Yarrow Interactive Map Embed is a developer tool built with Nuxt 4 that allows third-party websites to embed Yarrow Maps with a single line of iframe code. The platform provides a landing page with an interactive configurator where users can set location coordinates, zoom levels, custom markers, and color themes via URL parameters. It features multilingual support in English, Russian, and Uzbek, a live preview demo, and copy-to-clipboard functionality for easy integration. The project uses Vue 3, TypeScript, @nuxt/ui, Tailwind CSS 4, and is containerized with Docker for deployment."
+      "uz": "Yarrow Xaritalar uchun Nuxt 4 landing sahifa va iframe embed endpoint. Joylashuv, zoom, marker va theme uchun URL parametrlari bilan bir qatorli iframe embed imkoniyati. Ko'p tilli qo'llab-quvvatlash (EN/RU/UZ), live demo va copy-to-clipboard funksionalligini o'z ichiga oladi."
+    },
+    "longDescription": {
+      "en": "Yarrow Interactive Map Embed is a developer tool built with Nuxt 4 that allows third-party websites to embed Yarrow Maps with a single line of iframe code. The platform provides a landing page with an interactive configurator where users can set location coordinates, zoom levels, custom markers, and color themes via URL parameters. It features multilingual support in English, Russian, and Uzbek, a live preview demo, and copy-to-clipboard functionality for easy integration. The project uses Vue 3, TypeScript, @nuxt/ui, Tailwind CSS 4, and is containerized with Docker for deployment.",
+      "uz": "Yarrow Interactive Map Embed — uchinchi tomon saytlariga Yarrow Xaritalarni bitta qator iframe kodi bilan joylashtirish imkoniyatini beradigan, Nuxt 4 asosida qurilgan dasturchi vositasi. Platforma foydalanuvchilarga URL parametrlari orqali joylashuv, zoom, maxsus markerlar va rang temalarini sozlash imkonini beruvchi interaktiv konfigurator bilan landing sahifani taqdim etadi. Ingliz, rus va o'zbek tillarida ko'p tilli qo'llab-quvvatlash, jonli demo va clipboardga nusxalash funksionalligi mavjud. Loyiha Vue 3, TypeScript, @nuxt/ui, Tailwind CSS 4 dan foydalanadi va Docker bilan konteynerlashtirilgan."
     },
     "image": "yarrow-interactive-map-embed.png",
     "live": null,
     "source": null,
-    "tags": [
-      "Nuxt 4",
-      "Vue 3",
-      "TypeScript",
-      "@nuxt/ui",
-      "Tailwind CSS 4",
-      "i18n",
-      "Docker"
-    ],
+    "tags": ["nuxt", "vue", "typescript", "nuxt-ui", "tailwind", "i18n", "docker"],
     "category": "Documentation"
   },
   {
     "name": "Yarrow Map Web SDK",
     "description": {
       "en": "TypeScript-based mapping library built on top of MapLibre GL. Provides high-level API for interactive maps with routing, search, public transport tracking, and custom layer management.",
-      "uz": "MapLibre GL ustiga qurilgan TypeScript xaritalash kutubxonasi. Marshrutlash, qidiruv, jamoat transporti kuzatuvi va maxsus layer boshqaruvi bilan yuqori darajadagi API taqdim etadi.",
-      "llm": "Yarrow Map Web SDK is a professional-grade TypeScript mapping library built on top of MapLibre GL. It abstracts low-level mapping complexity into a high-level developer-friendly API. Key features include interactive map rendering, turn-by-turn routing, geocoding search, real-time public transport tracking, and custom layer management for overlaying specialized data. The SDK is packaged and distributed via npm with comprehensive TypeScript declarations. Built with Rollup for bundling, Vitest for unit testing, Axios for HTTP requests, and fully typed with TypeScript. Published as @yarrow-uz/yarrow-map-web-sdk on npm."
+      "uz": "MapLibre GL ustiga qurilgan TypeScript xaritalash kutubxonasi. Marshrutlash, qidiruv, jamoat transporti kuzatuvi va maxsus layer boshqaruvi bilan yuqori darajadagi API taqdim etadi."
+    },
+    "longDescription": {
+      "en": "Yarrow Map Web SDK is a professional-grade TypeScript mapping library built on top of MapLibre GL. It abstracts low-level mapping complexity into a high-level developer-friendly API. Key features include interactive map rendering, turn-by-turn routing, geocoding search, real-time public transport tracking, and custom layer management for overlaying specialized data. The SDK is packaged and distributed via npm with comprehensive TypeScript declarations. Built with Rollup for bundling, Vitest for unit testing, Axios for HTTP requests, and fully typed with TypeScript. Published as @yarrow-uz/yarrow-map-web-sdk on npm.",
+      "uz": "Yarrow Map Web SDK — MapLibre GL ustiga qurilgan professional darajadagi TypeScript xaritalash kutubxonasi. Past darajadagi xaritalash murakkabligini yuqori darajadagi dasturchi uchun qulay APIga aylantiradi. Asosiy imkoniyatlar: interaktiv xarita render qilish, qadam-baqadam marshrutlash, geokoding qidiruv, real vaqtda jamoat transporti kuzatuvi va maxsus ma'lumotlarni qoplash uchun maxsus qatlam boshqaruvi. SDK to'liq TypeScript deklaratsiyalari bilan npm orqali tarqatiladi. Rollup, Vitest, Axios va TypeScript bilan qurilgan."
     },
     "image": "yarrow-sdk.png",
     "live": null,
     "source": null,
     "packageRegistry": "https://www.npmjs.com/package/@yarrow-uz/yarrow-map-web-sdk",
-    "tags": [
-      "Vitest",
-      "MapLibre GL",
-      "Rollup",
-      "TypeScript",
-      "Axios"
-    ],
+    "tags": ["vitest", "maplibre", "rollup", "typescript", "axios"],
     "category": "Libraries"
   },
   {
     "name": "Yarrow Map Flutter SDK",
     "description": {
       "en": "Flutter mobile SDK for integrating Yarrow Maps in mobile applications. Provides API parity with the Yarrow Web SDK for map rendering, routing, search, and public transport tracking.",
-      "uz": "Mobil ilovalarda Yarrow Xaritalarini integratsiya qilish uchun Flutter mobil SDK. Xarita chizish, marshrutlash, qidiruv va jamoat transporti kuzatuvi uchun Yarrow Web SDK bilan API parityni taqdim etadi.",
-      "llm": "Yarrow Map Flutter SDK is a native mobile SDK that brings Yarrow Maps functionality to Android and iOS applications. It maintains API parity with the Yarrow Map Web SDK, allowing developers to use consistent APIs across web and mobile platforms. Features include native map rendering using MapLibre GL, routing capabilities, geocoding search, and real-time public transport tracking. The SDK is built with Flutter and Dart, using the Dio HTTP client for API communication. Published on pub.dev as yarrow_map_flutter_sdk."
+      "uz": "Mobil ilovalarda Yarrow Xaritalarini integratsiya qilish uchun Flutter mobil SDK. Xarita chizish, marshrutlash, qidiruv va jamoat transporti kuzatuvi uchun Yarrow Web SDK bilan API parityni taqdim etadi."
+    },
+    "longDescription": {
+      "en": "Yarrow Map Flutter SDK is a native mobile SDK that brings Yarrow Maps functionality to Android and iOS applications. It maintains API parity with the Yarrow Map Web SDK, allowing developers to use consistent APIs across web and mobile platforms. Features include native map rendering using MapLibre GL, routing capabilities, geocoding search, and real-time public transport tracking. The SDK is built with Flutter and Dart, using the Dio HTTP client for API communication. Published on pub.dev as yarrow_map_flutter_sdk.",
+      "uz": "Yarrow Map Flutter SDK — Yarrow Xaritalar funksionalligini Android va iOS ilovalariga olib keladigan native mobil SDK. Yarrow Map Web SDK bilan API parityni saqlab, dasturchilarga web va mobil platformalarda izchil APIlardan foydalanish imkonini beradi. MapLibre GL yordamida native xarita rendering, marshrutlash imkoniyatlari, geokoding qidiruv va real vaqtda jamoat transporti kuzatuvi mavjud. Flutter va Dart asosida qurilgan, Dio HTTP klienti ishlatilgan."
     },
     "image": "yarrow-flutter-sdk.png",
     "live": null,
     "source": null,
     "packageRegistry": "https://pub.dev/packages/yarrow_map_flutter_sdk",
-    "tags": [
-      "Flutter",
-      "Dart",
-      "MapLibre GL",
-      "Dio"
-    ],
+    "tags": ["flutter", "dart", "maplibre", "dio"],
     "category": "Libraries"
   },
   {
     "name": "Yarrow API Dashboard",
     "description": {
       "en": "Modern API management dashboard built with Vue 3, TypeScript, and Vite. Provides comprehensive interface for managing API keys, viewing analytics, handling billing, and user authentication with theme switching. Includes interactive map with GeoJSON drawer using Yarrow Map Web SDK.",
-      "uz": "Vue 3, TypeScript va Vite bilan qurilgan zamonaviy API boshqaruv paneli. API kalitlarni boshqarish, analitikani ko'rish, billing va foydalanuvchi autentifikatsiyasi uchun keng qamrovli interfeysni taqdim etadi. Yarrow Map Web SDK yordamida GeoJSON chizg'ich bilan interaktiv xarita qo'shilgan.",
-      "llm": "Yarrow API Dashboard is a modern developer portal for managing API access to Yarrow mapping services. It provides a comprehensive interface for API key generation and management, usage analytics with Chart.js visualizations, billing and quota management, and full user authentication with theme switching support. A standout feature is the integrated interactive map with a GeoJSON drawer powered by the Yarrow Map Web SDK, allowing developers to test and preview their spatial data directly in the dashboard. Built with Vue 3, TypeScript, Vite, Pinia for state management, and deployed at dashboard.yarrow.uz."
+      "uz": "Vue 3, TypeScript va Vite bilan qurilgan zamonaviy API boshqaruv paneli. API kalitlarni boshqarish, analitikani ko'rish, billing va foydalanuvchi autentifikatsiyasi uchun keng qamrovli interfeysni taqdim etadi. Yarrow Map Web SDK yordamida GeoJSON chizg'ich bilan interaktiv xarita qo'shilgan."
+    },
+    "longDescription": {
+      "en": "Yarrow API Dashboard is a modern developer portal for managing API access to Yarrow mapping services. It provides a comprehensive interface for API key generation and management, usage analytics with Chart.js visualizations, billing and quota management, and full user authentication with theme switching support. A standout feature is the integrated interactive map with a GeoJSON drawer powered by the Yarrow Map Web SDK, allowing developers to test and preview their spatial data directly in the dashboard. Built with Vue 3, TypeScript, Vite, Pinia for state management, and deployed at dashboard.yarrow.uz.",
+      "uz": "Yarrow API Dashboard — Yarrow xaritalash xizmatlariga API kirishini boshqarish uchun zamonaviy dasturchi portali. API kalit yaratish va boshqarish, Chart.js vizualizatsiyalari bilan foydalanish analitikasi, billing va kvota boshqaruvi hamda tema almashtirish bilan to'liq foydalanuvchi autentifikatsiyasi uchun keng qamrovli interfeysni taqdim etadi. Asosiy xususiyatlardan biri — Yarrow Map Web SDK asosidagi GeoJSON chizg'ich bilan integratsiyalashgan interaktiv xarita. Vue 3, TypeScript, Vite va Pinia asosida qurilgan."
     },
     "image": "yarrow-api-dashboard.png",
     "live": "https://dashboard.yarrow.uz/",
     "source": null,
-    "tags": [
-      "Vue 3",
-      "TypeScript",
-      "Vite",
-      "Pinia",
-      "Chart.js",
-      "Yarrow Map Web SDK"
-    ],
+    "tags": ["vue", "typescript", "vite", "pinia", "chartjs", "yarrow-sdk"],
     "category": "Enterprise Applications"
   },
   {
     "name": "BSOK CRM",
     "description": {
       "en": "Enterprise ERP and CRM application for mesh wire/net manufacturing. Features production tracking, inventory management, sales, financial tracking, and customer/worker management.",
-      "uz": "To'r va sim ishlab chiqarish uchun korporativ ERP/CRM ilovasi. Ishlab chiqarish, ombor, savdo, moliya hamda mijoz/xodim boshqaruvini qamrab oladi.",
-      "llm": "BSOK CRM is a full-featured enterprise ERP and CRM system developed for a mesh wire and net manufacturing company. The application handles the entire business workflow including production tracking with shift-based reporting, inventory management with stock alerts, sales order processing, financial tracking with profit/loss calculations, and comprehensive customer and worker management modules. Built with React, TypeScript, Bun runtime for fast development, Tailwind CSS with shadcn/ui components, Zustand for state management, and full internationalization support. Open source with frontend code available on GitHub."
+      "uz": "To'r va sim ishlab chiqarish uchun korporativ ERP/CRM ilovasi. Ishlab chiqarish, ombor, savdo, moliya hamda mijoz/xodim boshqaruvini qamrab oladi."
+    },
+    "longDescription": {
+      "en": "BSOK CRM is a full-featured enterprise ERP and CRM system developed for a mesh wire and net manufacturing company. The application handles the entire business workflow including production tracking with shift-based reporting, inventory management with stock alerts, sales order processing, financial tracking with profit/loss calculations, and comprehensive customer and worker management modules. Built with React, TypeScript, Bun runtime for fast development, Tailwind CSS with shadcn/ui components, Zustand for state management, and full internationalization support. Open source with frontend code available on GitHub.",
+      "uz": "BSOK CRM — to'r va sim ishlab chiqaruvchi kompaniya uchun ishlab chiqilgan to'liq korxona ERP va CRM tizimi. Ilova butun biznes ish jarayonini boshqaradi: smenaga asoslangan hisobot bilan ishlab chiqarishni kuzatish, ombor xabarnomalari, savdo buyurtmalarini qayta ishlash, foyda/zarar hisob-kitoblari bilan moliyaviy kuzatuv va keng qamrovli mijoz va xodim boshqaruv modullari. React, TypeScript, Bun, Tailwind CSS, shadcn/ui, Zustand va to'liq i18n qo'llab-quvvatlash bilan qurilgan."
     },
     "image": "bsok-crm.png",
     "live": "https://bsok-frontend.vercel.app/",
     "source": "https://github.com/AbdukahharS/bsok-frontend",
-    "tags": [
-      "React",
-      "TypeScript",
-      "Bun",
-      "Tailwind CSS",
-      "shadcn/ui",
-      "Zustand",
-      "i18n"
-    ],
+    "tags": ["react", "typescript", "bun", "tailwind", "shadcn", "zustand", "i18n"],
     "category": "Enterprise Applications"
   },
   {
     "name": "Al-Dar Rehabilitation Clinic",
     "description": {
       "en": "I developed Frontend of Al-Dar clinic's website",
-      "uz": "Al-Dar klinikasi sayti uchun frontend qismini ishlab chiqdim.",
-      "llm": "Al-Dar Rehabilitation Clinic website is a professional healthcare website built for a rehabilitation clinic. The frontend features a modern, accessible design with smooth page transitions and animations powered by Framer Motion. The site includes service listings, doctor profiles, appointment information, and contact details. Built with Next.js for SEO optimization and Tailwind CSS for responsive styling. The project demonstrates ability to deliver clean, professional websites for healthcare clients."
+      "uz": "Al-Dar klinikasi sayti uchun frontend qismini ishlab chiqdim."
+    },
+    "longDescription": {
+      "en": "Al-Dar Rehabilitation Clinic website is a professional healthcare website built for a rehabilitation clinic. The frontend features a modern, accessible design with smooth page transitions and animations powered by Framer Motion. The site includes service listings, doctor profiles, appointment information, and contact details. Built with Next.js for SEO optimization and Tailwind CSS for responsive styling.",
+      "uz": "Al-Dar Rehabilitation Clinic sayti — reabilitatsiya klinikasi uchun qurilgan professional sog'liqni saqlash sayti. Frontendda zamonaviy, qulay dizayn, Framer Motion asosidagi silliq sahifa o'tishlari va animatsiyalar mavjud. Sayt xizmatlar ro'yxati, shifokorlar profillari, uchrashuv ma'lumotlari va aloqa tafsilotlarini o'z ichiga oladi. SEO optimallashtirish uchun Next.js va moslashuvchan stil uchun Tailwind CSS bilan qurilgan."
     },
     "image": "al-dar.png",
     "live": "https://www.aldarrehabclinic.com/",
     "source": "https://github.com/AbdukahharS/al-dar-clinic",
-    "tags": [
-      "Next.JS",
-      "Tailwind",
-      "Framer-motion"
-    ],
+    "tags": ["nextjs", "tailwind", "framer-motion"],
     "category": "Enterprise Applications"
   },
   {
     "name": "Luminink",
     "description": {
       "en": "Illuminate Your Ideas, Capture Your Creativity.",
-      "uz": "G'oyalaringizni yoritib, ijodingizni namoyon eting.",
-      "llm": "Luminink is a creative content platform designed for writers, designers, and content creators. The application provides tools for capturing ideas, organizing creative projects, and sharing work with collaborators. Features include rich text editing powered by Blocknote, user authentication via Clerk, form validation with Zod, and toast notifications with Sonner. Built with Next.js, Tailwind CSS, TypeScript, and deployed on Vercel."
+      "uz": "G'oyalaringizni yoritib, ijodingizni namoyon eting."
+    },
+    "longDescription": {
+      "en": "Luminink is a creative content platform designed for writers, designers, and content creators. The application provides tools for capturing ideas, organizing creative projects, and sharing work with collaborators. Features include rich text editing powered by Blocknote, user authentication via Clerk, form validation with Zod, and toast notifications with Sonner. Built with Next.js, Tailwind CSS, TypeScript, and deployed on Vercel.",
+      "uz": "Luminink — yozuvchilar, dizaynerlar va kontent yaratuvchilari uchun mo'ljallangan ijodiy kontent platformasi. Ilova g'oyalarni qamrab olish, ijodiy loyihalarni tashkil qilish va ishlarni hamkorlar bilan ulashish uchun vositalarni taqdim etadi. Blocknote asosida boy matn tahriri, Clerk orqali foydalanuvchi autentifikatsiyasi, Zod bilan forma validatsiyasi va Sonner bildirishnomalar mavjud."
     },
     "image": "luminink.png",
     "live": "https://luminink.vercel.app/",
     "source": "https://github.com/AbdukahharS/luminink",
-    "tags": [
-      "Next.js",
-      "Tailwind",
-      "Sonner",
-      "Zod",
-      "Clerk",
-      "Blocknote",
-      "TypeScript"
-    ],
+    "tags": ["nextjs", "tailwind", "sonner", "zod", "clerk", "blocknote", "typescript"],
     "category": "Full-Stack Web Apps"
   },
   {
     "name": "Founders Language School",
     "description": {
       "en": "Business website for Founders Language School.",
-      "uz": "Founders Language School uchun biznes veb-sayt.",
-      "llm": "Founders Language School website is a business website for an English language school. The site features course listings, pricing information, teacher profiles, student testimonials, and online registration capabilities. Built with React.js and Material UI for a polished, professional appearance. Backend functionality powered by Firebase for data storage and user management. Deployed on Netlify."
+      "uz": "Founders Language School uchun biznes veb-sayt."
+    },
+    "longDescription": {
+      "en": "Founders Language School website is a business website for an English language school. The site features course listings, pricing information, teacher profiles, student testimonials, and online registration capabilities. Built with React.js and Material UI for a polished, professional appearance. Backend functionality powered by Firebase for data storage and user management. Deployed on Netlify.",
+      "uz": "Founders Language School sayti — ingliz tili maktabi uchun biznes sayt. Sayt kurslar ro'yxati, narxlar, o'qituvchilar profillari, talabalar fikrlari va onlayn ro'yxatdan o'tish imkoniyatlarini o'z ichiga oladi. React.js va Material UI bilan qurilgan, backend Firebase asosida."
     },
     "image": "founders.png",
     "live": "https://founderslc.netlify.app/",
     "source": "https://github.com/AbdukahharS/founders-mui",
-    "tags": [
-      "React.js",
-      "Material UI",
-      "Firebse"
-    ],
+    "tags": ["react", "mui", "firebase"],
     "category": "Full-Stack Web Apps"
   },
   {
     "name": "Yarrow Map Web",
     "description": {
       "en": "A Nuxt 3 progressive web application providing interactive mapping with search, routing, and user profile features. Integrates with Yarrow Map Web SDK for map rendering.",
-      "uz": "Qidiruv, marshrutlash va foydalanuvchi profili funksiyalari bo'lgan Nuxt 3 progressiv veb-ilova. Xarita chizish uchun Yarrow Map Web SDK bilan integratsiyalashgan.",
-      "llm": "Yarrow Map Web is a Nuxt 3 progressive web application that serves as the consumer-facing mapping platform for Yarrow. It provides interactive mapping with advanced search capabilities, turn-by-turn routing, and user profile management including saved locations and route history. The application integrates deeply with the Yarrow Map Web SDK for high-performance map rendering. Built with Nuxt 3, Vue 3, Pinia for state management, Vue i18n for multilingual support, Axios for API calls, and TypeScript throughout. Deployed at map.yarrow.uz."
+      "uz": "Qidiruv, marshrutlash va foydalanuvchi profili funksiyalari bo'lgan Nuxt 3 progressiv veb-ilova. Xarita chizish uchun Yarrow Map Web SDK bilan integratsiyalashgan."
+    },
+    "longDescription": {
+      "en": "Yarrow Map Web is a Nuxt 3 progressive web application that serves as the consumer-facing mapping platform for Yarrow. It provides interactive mapping with advanced search capabilities, turn-by-turn routing, and user profile management including saved locations and route history. The application integrates deeply with the Yarrow Map Web SDK for high-performance map rendering. Built with Nuxt 3, Vue 3, Pinia for state management, Vue i18n for multilingual support, Axios for API calls, and TypeScript throughout. Deployed at map.yarrow.uz.",
+      "uz": "Yarrow Map Web — Yarrow uchun foydalanuvchiga mo'ljallangan xaritalash platformasi sifatida xizmat qiluvchi Nuxt 3 progressiv veb-ilova. Ilg'or qidiruv imkoniyatlari, qadam-baqadam marshrutlash va saqlangan joylar hamda marshrut tarixi bilan foydalanuvchi profil boshqaruvini taqdim etadi. Yuqori unumdorlikdagi xarita rendering uchun Yarrow Map Web SDK bilan chuqur integratsiyalashgan."
     },
     "image": "yarrow-map-web.png",
     "live": "https://map.yarrow.uz/",
     "source": null,
-    "tags": [
-      "Nuxt 3",
-      "Vue 3",
-      "Pinia",
-      "i18n",
-      "Axios",
-      "Yarrow Map Web SDK",
-      "TypeScript"
-    ],
+    "tags": ["nuxt", "vue", "pinia", "i18n", "axios", "yarrow-sdk", "typescript"],
     "category": "Enterprise Applications"
   },
   {
     "name": "Shahzod's Blog",
     "description": {
       "en": "My own blog website about application development",
-      "uz": "Dastur ishlab chiqish haqida shaxsiy blog saytim.",
-      "llm": "Shahzod's Blog is a personal technical blog focused on web application development, modern JavaScript frameworks, and software engineering best practices. The blog features rich text editing with Blocknote, user authentication via Clerk, a clean reading experience with ShadCN UI components, and Firebase for data persistence. Built with Next.js, TypeScript, and deployed at blog.abdukahhar.uz. The blog serves as a platform for sharing tutorials, project case studies, and development insights."
+      "uz": "Dastur ishlab chiqish haqida shaxsiy blog saytim."
+    },
+    "longDescription": {
+      "en": "Shahzod's Blog is a personal technical blog focused on web application development, modern JavaScript frameworks, and software engineering best practices. The blog features rich text editing with Blocknote, user authentication via Clerk, a clean reading experience with ShadCN UI components, and Firebase for data persistence. Built with Next.js, TypeScript, and deployed at blog.abdukahhar.uz. The blog serves as a platform for sharing tutorials, project case studies, and development insights.",
+      "uz": "Shahzod's Blog — veb-ilovalar ishlab chiqish, zamonaviy JavaScript frameworklari va dasturlash ish amaliyotlariga qaratilgan shaxsiy texnik blog. Blogda Blocknote bilan boy matn tahriri, Clerk orqali foydalanuvchi autentifikatsiyasi, ShadCN UI komponentlari bilan toza o'qish tajribasi va Firebase ma'lumotlar saqlash mavjud."
     },
     "image": "blog.png",
     "live": "https://blog.abdukahhar.uz",
     "source": "https://github.com/AbdukahharS/blog",
-    "tags": [
-      "NextJS",
-      "ShadCn UI",
-      "Firebase",
-      "TypeScript",
-      "Clerk",
-      "Blocknote"
-    ],
+    "tags": ["nextjs", "shadcn", "firebase", "typescript", "clerk", "blocknote"],
     "category": "Full-Stack Web Apps"
   },
   {
     "name": "Agricultural statistics",
     "description": {
       "en": "Code snippet for presenting statistics",
-      "uz": "Statistikani taqdim etish uchun kod namunasi.",
-      "llm": "Agricultural Statistics is a data visualization demo showcasing agricultural statistics through interactive charts. The project demonstrates proficiency with ApexCharts.js for creating responsive, animated charts including bar charts, line graphs, and donut charts. Built as a standalone React application and deployed on Netlify. This project highlights data presentation skills for business intelligence dashboards."
+      "uz": "Statistikani taqdim etish uchun kod namunasi."
+    },
+    "longDescription": {
+      "en": "Agricultural Statistics is a data visualization demo showcasing agricultural statistics through interactive charts. The project demonstrates proficiency with ApexCharts.js for creating responsive, animated charts including bar charts, line graphs, and donut charts. Built as a standalone React application and deployed on Netlify.",
+      "uz": "Agricultural Statistics — interaktiv grafiklar orqali qishloq xo'jaligi statistikasini namoyish etuvchi ma'lumotlar vizualizatsiyasi demosi. Loyiha bar, chiziq va donut grafiklarini yaratish uchun ApexCharts.js bilan ishlash mahoratini namoyish etadi."
     },
     "image": "agricultural.png",
     "live": "https://agricultural-statistics.netlify.app/",
     "source": "https://github.com/AbdukahharS/agricultural-statistics",
-    "tags": [
-      "ApexCharts.js"
-    ],
+    "tags": ["apexcharts"],
     "category": "Landing Pages"
   },
   {
     "name": "InMan",
     "description": {
       "en": "Inventory Management Desktop Application",
-      "uz": "Ombor boshqaruvi uchun desktop ilova.",
-      "llm": "InMan is an inventory management desktop application built for small to medium businesses. It provides features for tracking stock levels, managing suppliers, processing purchase orders, and generating inventory reports. The application is built with Nextron, which combines Next.js with ElectronJS to create cross-platform desktop apps. The UI uses ShadCN UI components and TypeScript for type safety. Available as a standalone desktop application for Windows, macOS, and Linux."
+      "uz": "Ombor boshqaruvi uchun desktop ilova."
+    },
+    "longDescription": {
+      "en": "InMan is an inventory management desktop application built for small to medium businesses. It provides features for tracking stock levels, managing suppliers, processing purchase orders, and generating inventory reports. The application is built with Nextron, which combines Next.js with ElectronJS to create cross-platform desktop apps. The UI uses ShadCN UI components and TypeScript for type safety. Available as a standalone desktop application for Windows, macOS, and Linux.",
+      "uz": "InMan — kichik va o'rta bizneslar uchun qurilgan ombor boshqaruvi desktop ilovasi. Ombor darajalarini kuzatish, ta'minotchilarni boshqarish, xarid buyurtmalarini qayta ishlash va ombor hisobotlarini yaratish imkoniyatlarini taqdim etadi. Ilova Nextron (Next.js + ElectronJS) asosida qurilgan."
     },
     "image": "inman.png",
     "source": "https://github.com/AbdukahharS/InMan",
     "live": null,
-    "tags": [
-      "Nextron",
-      "NextJS",
-      "ElectronJS",
-      "TypeScript",
-      "Shadcn UI"
-    ],
+    "tags": ["nextron", "nextjs", "electron", "typescript", "shadcn"],
     "category": "Desktop Apps"
   },
   {
     "name": "AS-Company",
     "description": {
       "en": "Business website for AS-Company.",
-      "uz": "AS-Company uchun biznes veb-sayt.",
-      "llm": "AS-Company website is a business website built for AS-Company. It features company information, service listings, contact forms, and a responsive design. Built with Bootstrap for rapid UI development, jQuery for DOM manipulation, and Ajax for dynamic content loading without page refreshes. Deployed on Netlify. This project represents early web development work with foundational technologies."
+      "uz": "AS-Company uchun biznes veb-sayt."
+    },
+    "longDescription": {
+      "en": "AS-Company website is a business website built for AS-Company. It features company information, service listings, contact forms, and a responsive design. Built with Bootstrap for rapid UI development, jQuery for DOM manipulation, and Ajax for dynamic content loading without page refreshes. Deployed on Netlify.",
+      "uz": "AS-Company sayti — AS-Company uchun qurilgan biznes sayt. Kompaniya ma'lumotlari, xizmatlar ro'yxati, aloqa formalari va moslashuvchan dizaynni o'z ichiga oladi. Bootstrap, jQuery va Ajax asosida qurilgan."
     },
     "image": "as-company.png",
     "live": "https://company-as.netlify.app/",
     "source": "https://github.com/AbdukahharS/ascompany",
-    "tags": [
-      "Bootstrap",
-      "Ajax",
-      "Jquery"
-    ],
+    "tags": ["bootstrap", "ajax", "jquery"],
     "category": "Landing Pages"
   },
   {
     "name": "BilalIbnTuygun",
     "description": {
       "en": "Personal website for Bilal ibn Tuygun.",
-      "uz": "Bilal ibn Tuygun uchun shaxsiy veb-sayt.",
-      "llm": "BilalIbnTuygun is a personal website built for Bilal ibn Tuygun. The site features biographical information, achievements, photo galleries, and contact details. Built with React.js and Styled Components for CSS-in-JS styling. Deployed on Netlify. This project demonstrates early React development skills and custom styling approaches."
+      "uz": "Bilal ibn Tuygun uchun shaxsiy veb-sayt."
+    },
+    "longDescription": {
+      "en": "BilalIbnTuygun is a personal website built for Bilal ibn Tuygun. The site features biographical information, achievements, photo galleries, and contact details. Built with React.js and Styled Components for CSS-in-JS styling. Deployed on Netlify.",
+      "uz": "BilalIbnTuygun — Bilal ibn Tuygun uchun qurilgan shaxsiy sayt. Biografik ma'lumotlar, yutuqlar, foto galereyalar va aloqa tafsilotlari mavjud. React.js va Styled Components asosida qurilgan."
     },
     "image": "bilalibntuygun.png",
     "live": "https://bilalibntuygun.netlify.app/",
     "source": "https://github.com/AbdukahharS/bilalibntuygun",
-    "tags": [
-      "React.js",
-      "Styled Components"
-    ],
+    "tags": ["react", "styled-components"],
     "category": "Landing Pages"
   },
   {
     "name": "ArcGis Desktop",
     "description": {
       "en": "Online course preview page for ArcGis Desktop.",
-      "uz": "ArcGis Desktop uchun onlayn kurs preview sahifasi.",
-      "llm": "ArcGis Desktop is an online course preview landing page for ArcGIS Desktop training. The page showcases course curriculum, instructor information, pricing, and enrollment options. Built with HTML/CSS and FontAwesome for icons. This project demonstrates landing page design for educational content and conversion optimization."
+      "uz": "ArcGis Desktop uchun onlayn kurs preview sahifasi."
+    },
+    "longDescription": {
+      "en": "ArcGis Desktop is an online course preview landing page for ArcGIS Desktop training. The page showcases course curriculum, instructor information, pricing, and enrollment options. Built with HTML/CSS and FontAwesome for icons.",
+      "uz": "ArcGis Desktop — ArcGIS Desktop bo'yicha o'quv kurs uchun onlayn preview landing sahifasi. Sahifa o'quv dasturi, o'qituvchi haqida ma'lumot, narxlar va ro'yxatga olish variantlarini namoyish etadi. HTML/CSS va FontAwesome asosida qurilgan."
     },
     "image": "arcgis.png",
     "live": null,
-    "tags": [
-      "FontAwesome"
-    ],
+    "tags": ["fontawesome"],
     "category": "Landing Pages",
     "source": null
   },
@@ -505,8 +521,11 @@
     "name": "FreshGoods",
     "description": {
       "en": "Landing page for a business.",
-      "uz": "Biznes uchun landing sahifa.",
-      "llm": "FreshGoods is a landing page for a grocery and fresh produce business. The page features product showcases, pricing information, and contact details. Deployed on Netlify. This project demonstrates clean, simple landing page design focused on product presentation."
+      "uz": "Biznes uchun landing sahifa."
+    },
+    "longDescription": {
+      "en": "FreshGoods is a landing page for a grocery and fresh produce business. The page features product showcases, pricing information, and contact details. Deployed on Netlify.",
+      "uz": "FreshGoods — oziq-ovqat va yangi mahsulotlar biznesi uchun landing sahifa. Mahsulotlar namoyishi, narxlar va aloqa tafsilotlari mavjud."
     },
     "image": "freshgoods.png",
     "live": "https://freshgoods-shop.netlify.app/",
@@ -518,41 +537,43 @@
     "name": "Hotel BT",
     "description": {
       "en": "Landing page for a hotel.",
-      "uz": "Mehmonxona uchun landing sahifa.",
-      "llm": "Hotel BT is a landing page for a hotel business. The page includes room showcases, amenities listing, location information, and booking contact details. Built with HTML/CSS and FontAwesome for icons. Deployed on Netlify. This project demonstrates hospitality industry web design skills."
+      "uz": "Mehmonxona uchun landing sahifa."
+    },
+    "longDescription": {
+      "en": "Hotel BT is a landing page for a hotel business. The page includes room showcases, amenities listing, location information, and booking contact details. Built with HTML/CSS and FontAwesome for icons.",
+      "uz": "Hotel BT — mehmonxona biznesi uchun landing sahifa. Xonalar namoyishi, xizmatlar ro'yxati, joylashuv ma'lumoti va bron qilish aloqalari mavjud."
     },
     "image": "hbt.png",
     "live": "https://h-bt.netlify.app/",
     "source": "https://github.com/AbdukahharS/hbt",
-    "tags": [
-      "FontAwesome"
-    ],
+    "tags": ["fontawesome"],
     "category": "Landing Pages"
   },
   {
     "name": "NS Tour",
     "description": {
       "en": "Business website for Nodirah-Sultan Travel Agency.",
-      "uz": "Nodirah-Sultan sayyohlik agentligi uchun biznes veb-sayt.",
-      "llm": "NS Tour is a full-featured business website for Nodirah-Sultan Travel Agency. The site includes tour package listings with detailed itineraries, online booking functionality, photo galleries of destinations, customer reviews, and integrated payment processing via Payme. Built with React.js, SASS for advanced styling, and Firebase for backend services including database and authentication. Deployed on Netlify."
+      "uz": "Nodirah-Sultan sayyohlik agentligi uchun biznes veb-sayt."
+    },
+    "longDescription": {
+      "en": "NS Tour is a full-featured business website for Nodirah-Sultan Travel Agency. The site includes tour package listings with detailed itineraries, online booking functionality, photo galleries of destinations, customer reviews, and integrated payment processing via Payme. Built with React.js, SASS for advanced styling, and Firebase for backend services including database and authentication.",
+      "uz": "NS Tour — Nodirah-Sultan sayyohlik agentligi uchun to'liq biznes sayt. Sayt batafsil marshrutlar bilan tur paketlari, onlayn bron qilish, manzillarning foto galereyalari, mijozlar fikrlari va Payme orqali to'lov integratsiyasini o'z ichiga oladi."
     },
     "image": "nstour.png",
     "live": "https://ns-tour.netlify.app",
     "source": "https://github.com/AbdukahharS/tour",
-    "tags": [
-      "React.js",
-      "SASS",
-      "Firebase",
-      "Payme"
-    ],
+    "tags": ["react", "sass", "firebase", "payme"],
     "category": "Full-Stack Web Apps"
   },
   {
     "name": "Personal Portfolio",
     "description": {
       "en": "Personal portfolio website tepmplate.",
-      "uz": "Shaxsiy portfolio sayt shabloni.",
-      "llm": "Personal Portfolio is a portfolio website template designed for developers and creatives. The template includes sections for about, skills, projects, and contact information. Built with HTML/CSS and vanilla JavaScript. Deployed on Netlify. This project demonstrates foundational web development and template design skills."
+      "uz": "Shaxsiy portfolio sayt shabloni."
+    },
+    "longDescription": {
+      "en": "Personal Portfolio is a portfolio website template designed for developers and creatives. The template includes sections for about, skills, projects, and contact information. Built with HTML/CSS and vanilla JavaScript.",
+      "uz": "Personal Portfolio — dasturchilar va ijodkorlar uchun mo'ljallangan portfolio sayt shabloni. Shablon o'zi haqida, ko'nikmalar, loyihalar va aloqa bo'limlarini o'z ichiga oladi."
     },
     "image": "portfolio-doe.png",
     "live": "https://portfolio-doe.netlify.app/",
@@ -564,47 +585,47 @@
     "name": "Quotopia",
     "description": {
       "en": "Discover & Share Quotes",
-      "uz": "Iqtiboslarni kashf eting va ulashing.",
-      "llm": "Quotopia is a social platform for discovering, creating, and sharing inspirational quotes. Users can browse quotes by category, author, or popularity, create their own quote collections, and share favorites on social media. The platform features user authentication, quote rating system, and search functionality. Built with Next.js, MongoDB with Mongoose ODM, and Tailwind CSS. Deployed on Vercel."
+      "uz": "Iqtiboslarni kashf eting va ulashing."
+    },
+    "longDescription": {
+      "en": "Quotopia is a social platform for discovering, creating, and sharing inspirational quotes. Users can browse quotes by category, author, or popularity, create their own quote collections, and share favorites on social media. The platform features user authentication, quote rating system, and search functionality. Built with Next.js, MongoDB with Mongoose ODM, and Tailwind CSS.",
+      "uz": "Quotopia — ilhomlantiruvchi iqtiboslarni kashf qilish, yaratish va ulashish uchun ijtimoiy platforma. Foydalanuvchilar iqtiboslarni kategoriya, muallif yoki ommabopligi bo'yicha ko'rib chiqishi, o'z to'plamlarini yaratishi va sevimlilarini ulashishi mumkin."
     },
     "image": "quotopia.png",
     "live": "https://quotopiaa.vercel.app/",
     "source": "https://github.com/AbdukahharS/quotopia",
-    "tags": [
-      "Next.js",
-      "MongoDB",
-      "Mongoose",
-      "Tailwind"
-    ],
+    "tags": ["nextjs", "mongodb", "mongoose", "tailwind"],
     "category": "Full-Stack Web Apps"
   },
   {
     "name": "Ali Abdulaziz",
     "description": {
       "en": "Personal website for Ali Abdulaziz.",
-      "uz": "Ali Abdulaziz uchun shaxsiy veb-sayt.",
-      "llm": "Ali Abdulaziz is a personal website built for Ali Abdulaziz. The site features biographical content, portfolio showcase, and contact information. Built with Bootstrap for responsive design. Deployed on Netlify. This project demonstrates early web development with CSS frameworks."
+      "uz": "Ali Abdulaziz uchun shaxsiy veb-sayt."
+    },
+    "longDescription": {
+      "en": "Ali Abdulaziz is a personal website built for Ali Abdulaziz. The site features biographical content, portfolio showcase, and contact information. Built with Bootstrap for responsive design.",
+      "uz": "Ali Abdulaziz — Ali Abdulaziz uchun qurilgan shaxsiy sayt. Biografik kontent, portfolio namoyishi va aloqa ma'lumotlari mavjud. Bootstrap asosida qurilgan."
     },
     "image": "ali-abdulaziz.png",
     "live": "https://ali-abdulaziz.netlify.app",
     "source": "https://github.com/AbdukahharS/personal-website",
-    "tags": [
-      "Bootstrap"
-    ],
+    "tags": ["bootstrap"],
     "category": "Landing Pages"
   },
   {
     "name": "CrashCourse",
     "description": {
       "en": "Design for business website",
-      "uz": "Biznes veb-sayt dizayni.",
-      "llm": "CrashCourse is a UI/UX design project for a business website. The design includes landing page layouts, component libraries, and responsive breakpoints. Created in Figma with interactive prototypes. This project demonstrates product design and visual communication skills."
+      "uz": "Biznes veb-sayt dizayni."
+    },
+    "longDescription": {
+      "en": "CrashCourse is a UI/UX design project for a business website. The design includes landing page layouts, component libraries, and responsive breakpoints. Created in Figma with interactive prototypes.",
+      "uz": "CrashCourse — biznes sayti uchun UI/UX dizayn loyihasi. Dizayn landing sahifa maketlari, komponent kutubxonalari va moslashuvchan tarmoqlarni o'z ichiga oladi. Figma da interaktiv prototiplar bilan yaratilgan."
     },
     "image": "crashcourse.png",
     "live": "https://www.figma.com/proto/wq2AKKCyGZbYWENEz4U1Pp/CrashCourse-2021?node-id=2-2&starting-point-node-id=2%3A2&mode=design&t=5snVJamAbCiZCx5W-1",
-    "tags": [
-      "Figma"
-    ],
+    "tags": ["figma"],
     "category": "Design Work",
     "source": null
   },
@@ -612,14 +633,15 @@
     "name": "SunnySide",
     "description": {
       "en": "Landing page design",
-      "uz": "Landing sahifa dizayni.",
-      "llm": "SunnySide is a landing page design project created in Figma. The design features modern visual aesthetics, clear call-to-action elements, and mobile-responsive layouts. Includes interactive prototype for client presentation. This project demonstrates visual design and landing page optimization skills."
+      "uz": "Landing sahifa dizayni."
+    },
+    "longDescription": {
+      "en": "SunnySide is a landing page design project created in Figma. The design features modern visual aesthetics, clear call-to-action elements, and mobile-responsive layouts. Includes interactive prototype for client presentation.",
+      "uz": "SunnySide — Figma da yaratilgan landing sahifa dizayn loyihasi. Dizayn zamonaviy vizual estetika, aniq call-to-action elementlari va mobil moslashuvchan maketlarni o'z ichiga oladi."
     },
     "image": "Sunnyside.png",
     "live": "https://www.figma.com/proto/x5tmzrPqSXztS9tLIpFfJu/Sunnyside-Landing?node-id=3-4&mode=design&t=8o00bhdd9cVoXCkv-1",
-    "tags": [
-      "Figma"
-    ],
+    "tags": ["figma"],
     "category": "Design Work",
     "source": null
   }
