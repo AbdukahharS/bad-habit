@@ -51,6 +51,7 @@ export default function Home() {
           liveLabel={dict.projects.live}
           codeLabel={dict.projects.code}
           packageLabel={dict.projects.package}
+          viewAllLabel={dict.projects.viewAll}
           categoryLabels={dict.categories}
           locale='en'
         />

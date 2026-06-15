@@ -1,6 +1,7 @@
 'use client'
 
 import { useMemo, useState } from 'react'
+import Link from 'next/link'
 import {
   Target,
   Globe,
@@ -12,45 +13,11 @@ import {
   Building2,
   FileText,
   Package,
+  ArrowRight,
 } from 'lucide-react'
 import Masonry from '../Masonry'
 import type { Locale, ProjectCategory } from '@/lib/i18n'
-import rawCatalog from '@/lib/data/projects.json'
-
-type Project = {
-  name: string
-  description: string
-  image: string
-  live: string | null
-  source: string | null
-  tags: string[]
-  category: ProjectCategory
-  highlighted?: boolean
-  packageRegistry?: string | null
-}
-
-type LocalizedText = Record<Locale, string>
-
-type LocalizedProject = Omit<Project, 'description'> & {
-  description: LocalizedText
-}
-
-const projectCatalog: LocalizedProject[] = (rawCatalog as unknown as Array<
-  Omit<LocalizedProject, 'description'> & {
-    description: { en: string; uz: string; llm: string }
-    llmDetails?: Record<string, string>
-  }
->).map((p) => ({
-  ...p,
-  description: { en: p.description.en, uz: p.description.uz },
-}))
-
-const categoryCounts = projectCatalog.reduce((acc, project) => {
-  acc.All = (acc.All || 0) + 1
-  acc[project.category as keyof Omit<typeof acc, 'All'>] =
-    (acc[project.category as keyof Omit<typeof acc, 'All'>] || 0) + 1
-  return acc
-}, {} as Record<ProjectCategory, number>)
+import { localizeProjects } from '@/lib/projects'
 
 type ProjectsProps = {
   title: string
@@ -58,6 +25,7 @@ type ProjectsProps = {
   liveLabel: string
   codeLabel: string
   packageLabel: string
+  viewAllLabel: string
   categoryLabels: Record<ProjectCategory, string>
   locale: Locale
 }
@@ -68,20 +36,28 @@ const Projects = ({
   liveLabel,
   codeLabel,
   packageLabel,
+  viewAllLabel,
   categoryLabels,
   locale,
 }: ProjectsProps) => {
   const [current, setCurrent] = useState<ProjectCategory>('All')
   const [isFilterOpen, setIsFilterOpen] = useState(false)
 
-  const projects = useMemo(
-    () =>
-      projectCatalog.map((project) => ({
-        ...project,
-        description: project.description[locale],
-      })),
-    [locale]
-  )
+  const projects = useMemo(() => {
+    const all = localizeProjects(locale)
+    return all.filter((p) => p.highlighted)
+  }, [locale])
+
+  const categoryCounts = useMemo(() => {
+    return projects.reduce(
+      (acc, project) => {
+        acc.All = (acc.All || 0) + 1
+        acc[project.category] = (acc[project.category] || 0) + 1
+        return acc
+      },
+      { All: 0 } as Record<ProjectCategory, number>
+    )
+  }, [projects])
 
   return (
     <section className='w-full px-6 md:px-12 xl:px-24 mb-28' id='projects'>
@@ -197,6 +173,15 @@ const Projects = ({
         codeLabel={codeLabel}
         packageLabel={packageLabel}
       />
+      <div className='flex justify-center mt-4'>
+        <Link
+          href={`/${locale}/projects`}
+          className='group inline-flex items-center gap-3 px-6 py-3 rounded-xl bg-linear-to-r from-blue-600/80 to-purple-600/80 hover:from-blue-500 hover:to-purple-500 text-white font-semibold border border-blue-400/40 shadow-lg shadow-blue-500/20 transition-all duration-300 hover:scale-105 hover:shadow-blue-500/40'
+        >
+          <span>{viewAllLabel}</span>
+          <ArrowRight className='w-5 h-5 transition-transform duration-300 group-hover:translate-x-1' />
+        </Link>
+      </div>
     </section>
   )
 }

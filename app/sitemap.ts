@@ -33,5 +33,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'weekly' as const,
       priority: locale === 'uz' ? 0.95 : 0.9,
     })),
+    ...locales.map((locale) => ({
+      url: `${SITE_URL}/${locale}/projects`,
+      lastModified: now,
+      alternates: {
+        languages: {
+          en: `${SITE_URL}/en/projects`,
+          uz: `${SITE_URL}/uz/projects`,
+        },
+      },
+      changeFrequency: 'weekly' as const,
+      priority: 0.85,
+    })),
   ]
 }

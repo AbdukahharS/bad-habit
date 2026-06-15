@@ -40,6 +40,7 @@ export default async function Home({ params }: Props) {
         liveLabel={dict.projects.live}
         codeLabel={dict.projects.code}
         packageLabel={dict.projects.package}
+        viewAllLabel={dict.projects.viewAll}
         categoryLabels={dict.categories}
         locale={locale}
       />

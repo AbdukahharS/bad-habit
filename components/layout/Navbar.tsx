@@ -99,7 +99,10 @@ const Navbar = ({
     },
   ]
   const localizedRoot = basePath ?? `/${locale}`
-  const sectionHref = (sectionId: string) => `${localizedRoot}#${sectionId}`
+  const sectionHref = (sectionId: string) => {
+    if (sectionId === 'projects') return `${localizedRoot}/projects`
+    return `${localizedRoot}#${sectionId}`
+  }
   const homeHref = localizedRoot || '/'
 
   return (
