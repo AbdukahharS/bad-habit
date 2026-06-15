@@ -3,19 +3,22 @@ import Link from 'next/link'
 import React, { useMemo } from 'react'
 import { Globe, Palette, Monitor, Layers, Smartphone, Building2, FileText, Package, Star } from 'lucide-react'
 import type { ProjectCategory } from '@/lib/i18n'
+import { TagChip } from '@/components/icons/tags'
+
+type MasonryItem = {
+  name: string
+  description: string
+  image: string
+  live: string | null
+  source: string | null
+  tags: string[]
+  category: ProjectCategory
+  highlighted?: boolean
+  packageRegistry?: string | null
+}
 
 type MasonryProps = {
-  items: {
-    name: string
-    description: string
-    image: string
-    live: string | null
-    source: string | null
-    tags: string[]
-    category: ProjectCategory
-    highlighted?: boolean
-    packageRegistry?: string | null
-  }[]
+  items: MasonryItem[]
   current: ProjectCategory
   liveLabel: string
   codeLabel: string
@@ -200,13 +203,8 @@ const Masonry: React.FC<MasonryProps> = ({
 
                 {item.tags.length > 0 && (
                   <div className='flex flex-wrap gap-2 pt-2'>
-                    {item.tags.slice(0, 3).map((tag, tagIndex) => (
-                      <span
-                        key={tagIndex}
-                        className='px-2 py-1 text-xs font-medium rounded-full bg-white/10 text-white/80 border border-white/20 backdrop-blur-sm transition-all duration-300'
-                      >
-                        {tag}
-                      </span>
+                    {item.tags.slice(0, 3).map((tag) => (
+                      <TagChip key={tag} slug={tag} size='sm' />
                     ))}
                     {item.tags.length > 3 && (
                       <span className='px-2 py-1 text-xs font-medium rounded-full bg-white/10 text-white/60 border border-white/20'>
