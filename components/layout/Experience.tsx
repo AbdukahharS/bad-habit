@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { MapPin, Minus, Plus, ExternalLink, Calendar, Briefcase } from 'lucide-react'
+import { IconMapPin, IconMinus, IconPlus, IconExternalLink, IconCalendar, IconBriefcase } from '@tabler/icons-react'
 import Link from 'next/link'
 import Image from 'next/image'
 import type { Locale } from '@/lib/i18n'
@@ -159,7 +159,7 @@ const Experience = ({ title, subtitle, technologiesLabel, locale }: ExperiencePr
         <div className='text-center mb-16'>
           <div className='flex items-center justify-center gap-4 mb-6'>
             <div className='w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center'>
-              <Briefcase className='w-6 h-6 text-white' />
+              <IconBriefcase className='w-6 h-6 text-white' />
             </div>
             <h2 className='text-4xl sm:text-7xl font-bold text-white font-poppins tracking-wide'>
               {title}
@@ -196,14 +196,14 @@ const Experience = ({ title, subtitle, technologiesLabel, locale }: ExperiencePr
                         {experience.title}
                       </h3>
                       <div className='flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/20 text-blue-300 border border-blue-500/30'>
-                        <Calendar className='w-4 h-4' />
+                        <IconCalendar className='w-4 h-4' />
                         <span className='text-sm font-medium'>{experience.duration}</span>
                       </div>
                     </div>
                     
                     <div className='flex items-center gap-6 text-gray-300'>
                       <div className='flex items-center gap-2'>
-                        <MapPin className='w-4 h-4 text-purple-400' />
+                        <IconMapPin className='w-4 h-4 text-purple-400' />
                         <span className='text-sm font-medium'>{experience.location}</span>
                       </div>
                       {experience.link && (
@@ -213,7 +213,7 @@ const Experience = ({ title, subtitle, technologiesLabel, locale }: ExperiencePr
                           className='flex items-center gap-2 group/link hover:text-blue-400 transition-colors duration-300'
                           onClick={(e) => e.stopPropagation()}
                         >
-                          <ExternalLink className='w-4 h-4' />
+                          <IconExternalLink className='w-4 h-4' />
                           <span className='text-sm font-medium underline'>{experience.link.label}</span>
                         </Link>
                       )}
@@ -226,7 +226,7 @@ const Experience = ({ title, subtitle, technologiesLabel, locale }: ExperiencePr
                         ? 'bg-purple-500/20 border-purple-400/50 text-purple-300 rotate-180' 
                         : 'bg-white/5 border-white/20 text-gray-400 hover:bg-purple-500/20 hover:border-purple-400/50 hover:text-purple-300'
                     }`}>
-                      {opens.includes(experience.id) ? <Minus className='w-5 h-5' /> : <Plus className='w-5 h-5' />}
+                      {opens.includes(experience.id) ? <IconMinus className='w-5 h-5' /> : <IconPlus className='w-5 h-5' />}
                     </div>
                   </div>
                 </button>

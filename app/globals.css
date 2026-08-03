@@ -28,6 +28,15 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+/* Clickable elements keep the pointer cursor (Tailwind v4 preflight resets it) */
+button:not(:disabled),
+[role='button']:not(:disabled),
+input[type='checkbox'],
+input[type='radio'],
+select {
+  cursor: pointer;
+}
+
 /* Custom Scrollbar - Modern Neon Glassmorphism */
 ::-webkit-scrollbar {
   width: 12px;
@@ -91,5 +100,161 @@ html {
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+}
+
+/* View transitions — cross-fade with a slight rise between pages */
+@media (prefers-reduced-motion: no-preference) {
+  ::view-transition-old(.page-swap) {
+    animation: vt-page-out 220ms ease-in both;
+  }
+
+  ::view-transition-new(.page-swap) {
+    animation: vt-page-in 300ms ease-out both;
+  }
+}
+
+@keyframes vt-page-out {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes vt-page-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Projects gallery (all-projects page) */
+@keyframes galleryEnter {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.gallery-card {
+  animation: galleryEnter 0.45s ease-out both;
+}
+
+/* Project cards (home section masonry) */
+@keyframes cardEnter {
+  0% {
+    opacity: 0;
+    transform: scale(0.8) translateY(30px);
+    filter: blur(8px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+    filter: blur(0px);
+  }
+}
+
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.masonry-container {
+  transition: all 0.3s ease-out;
+}
+
+.masonry-grid {
+  columns: 1;
+  column-gap: 1.5rem;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .masonry-grid {
+    columns: 2;
+    column-gap: 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .masonry-grid {
+    columns: 3;
+  }
+}
+
+@media (min-width: 1280px) {
+  .masonry-grid {
+    columns: 4;
+  }
+}
+
+.project-card {
+  break-inside: avoid;
+  margin-bottom: 1.5rem;
+  animation: cardEnter 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.project-card:hover {
+  transform: scale(1.02) translateY(-8px);
+  box-shadow:
+    0 25px 50px -12px rgba(59, 130, 246, 0.25),
+    0 0 0 1px rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+}
+
+.project-card.highlighted {
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.project-card.highlighted::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: calc(0.75rem + 2px);
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6, #ec4899, #3b82f6);
+  background-size: 400% 400%;
+  animation: gradient-shift 4s ease infinite;
+  z-index: -1;
+  opacity: 0.8;
+}
+
+.project-card.highlighted::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: calc(0.75rem + 2px);
+  background: linear-gradient(
+    135deg,
+    rgba(59, 130, 246, 0.15) 0%,
+    rgba(147, 51, 234, 0.15) 50%,
+    rgba(236, 72, 153, 0.15) 100%
+  );
+  z-index: -1;
+}
+
+@media (min-width: 768px) {
+  .project-card {
+    margin-bottom: 2rem;
   }
 }

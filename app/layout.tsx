@@ -1,4 +1,6 @@
-import type { Metadata } from 'next'
+/// <reference types='react/canary' />
+
+import { ViewTransition } from 'react'
 import { Roboto_Mono } from 'next/font/google'
 import './globals.css'
 import projects from '@/lib/data/projects.json'
@@ -77,7 +79,7 @@ export default function RootLayout({
       <body
         className={`${robotoMono.className} antialiased bg-background overflow-x-hidden`}
       >
-        {children}
+        <ViewTransition default='page-swap'>{children}</ViewTransition>
       </body>
     </html>
   )

@@ -3,6 +3,9 @@ import Image from "next/image";
 export type TagSlug =
   | "nextjs"
   | "react"
+  | "happy-dom"
+  | "testing-library"
+  | "react-testing-library"
   | "typescript"
   | "tailwind"
   | "shadcn"
@@ -22,7 +25,8 @@ export type TagSlug =
   | "vite"
   | "canvas"
   | "exceljs"
-  | "bun"
+  | "bun-package-manager"
+  | "bun-runtime"
   | "bun-test"
   | "elysia"
   | "drizzle"
@@ -48,6 +52,8 @@ export type TagSlug =
   | "docker"
   | "vitest"
   | "rollup"
+  | "rolldown"
+  | "tsdown"
   | "flutter"
   | "dart"
   | "dio"
@@ -83,9 +89,11 @@ export type TagSlug =
   | "biome"
   | "caddy"
   | "vercel"
+  | "click"
   | "gitlab-ci"
   | "prismjs"
-  | "markdown";
+  | "markdown"
+  | "pake";
 
 export type TagMeta = {
   label: string;
@@ -95,6 +103,12 @@ export type TagMeta = {
 export const TAG_REGISTRY: Record<TagSlug, TagMeta> = {
   nextjs: { label: "Next.js", iconFile: "nextjs.svg" },
   react: { label: "React", iconFile: "react.svg" },
+  "happy-dom": { label: "Happy DOM" },
+  "testing-library": { label: "Testing Library", iconFile: "testing-library.png" },
+  "react-testing-library": {
+    label: "React Testing Library",
+    iconFile: "testing-library.png",
+  },
   typescript: { label: "TypeScript", iconFile: "typescript.svg" },
   tailwind: { label: "Tailwind CSS", iconFile: "tailwind.svg" },
   shadcn: { label: "shadcn/ui", iconFile: "shadcn-ui.svg" },
@@ -114,7 +128,8 @@ export const TAG_REGISTRY: Record<TagSlug, TagMeta> = {
   vite: { label: "Vite", iconFile: "vite.svg" },
   canvas: { label: "Canvas" },
   exceljs: { label: "ExcelJS" },
-  bun: { label: "Bun", iconFile: "bun.svg" },
+  "bun-package-manager": { label: "Bun Package Manager", iconFile: "bun.svg" },
+  "bun-runtime": { label: "Bun Runtime", iconFile: "bun.svg" },
   "bun-test": { label: "Bun Test", iconFile: "bun.svg" },
   elysia: { label: "Elysia", iconFile: "elysia.png" },
   drizzle: { label: "Drizzle ORM", iconFile: "drizzle.svg" },
@@ -143,6 +158,8 @@ export const TAG_REGISTRY: Record<TagSlug, TagMeta> = {
   docker: { label: "Docker", iconFile: "docker.svg" },
   vitest: { label: "Vitest", iconFile: "vitest.svg" },
   rollup: { label: "Rollup", iconFile: "rollup.svg" },
+  rolldown: { label: "Rolldown", iconFile: "rolldown.svg" },
+  tsdown: { label: "tsdown", iconFile: "tsdown.svg" },
   flutter: { label: "Flutter", iconFile: "flutter.svg" },
   dart: { label: "Dart", iconFile: "dart.svg" },
   dio: { label: "Dio", iconFile: "dart.svg" },
@@ -181,9 +198,11 @@ export const TAG_REGISTRY: Record<TagSlug, TagMeta> = {
   biome: { label: "Biome", iconFile: "biome.svg" },
   caddy: { label: "Caddy", iconFile: "caddy.png" },
   vercel: { label: "Vercel", iconFile: "vercel.svg" },
-  "gitlab-ci": { label: "GitLab CI" },
+  click: { label: "Click", iconFile: "click.png" },
+  "gitlab-ci": { label: "GitLab CI", iconFile: "gitlab.svg" },
   prismjs: { label: "PrismJS", iconFile: "prismjs.svg" },
   markdown: { label: "Markdown" },
+  pake: { label: "Pake" },
 };
 
 export const ALL_TAG_SLUGS = (Object.keys(TAG_REGISTRY) as TagSlug[]).sort(
@@ -191,7 +210,7 @@ export const ALL_TAG_SLUGS = (Object.keys(TAG_REGISTRY) as TagSlug[]).sort(
 );
 
 export const isTagSlug = (value: string): value is TagSlug =>
-  Object.prototype.hasOwnProperty.call(TAG_REGISTRY, value);
+  Object.hasOwn(TAG_REGISTRY, value);
 
 export const getTag = (slug: string): TagMeta => {
   if (isTagSlug(slug)) return TAG_REGISTRY[slug];

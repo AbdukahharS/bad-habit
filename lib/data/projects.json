@@ -55,17 +55,117 @@
       "tiptap",
       "zustand",
       "i18n",
-      "bun",
+      "bun-package-manager",
       "zod",
       "biome",
       "sonner",
       "recharts",
       "rest-api",
       "vercel",
+      "click",
       "git"
     ],
     "category": "Full-Stack Web Apps",
     "highlighted": true
+  },
+  {
+    "name": "Shifo Med - Clinic Management System",
+    "description": {
+      "en": "PLACEHOLDER PROJECT — clinic management system for a private multi-branch medical centre. Patient records, doctor schedules, lab result delivery, cashier desk, and Payme/Click invoice settlement.",
+      "uz": "PLACEHOLDER LOYIHA — ko'p filialli xususiy tibbiyot markazi uchun klinika boshqaruv tizimi. Bemor kartotekasi, shifokor jadvali, tahlil natijalarini yetkazish, kassa va Payme/Click orqali to'lovlar."
+    },
+    "longDescription": {
+      "en": "PLACEHOLDER PROJECT — invented sample entry, replace with real content.\n\nShifo Med replaced the paper registry and three disconnected Excel files a private medical centre used across its branches. Reception registers a patient once, and the same record follows them through consultation, lab work, procedures, and the cashier desk. Doctors see only their own queue for the day, write consultation notes against a template per speciality, and attach lab results and imaging files to the patient's timeline.\n\nThe admin panel is a Next.js App Router application with React, TypeScript, and Tailwind CSS on shadcn/ui, using TanStack Query for cached server state and React Hook Form with Zod for the registration, consultation, and invoice forms. Reception runs the whole day from a keyboard-first screen, so most flows are reachable without a mouse.\n\nThe API is a NestJS service on Prisma ORM and PostgreSQL. JWT auth with role guards separates reception, doctors, lab staff, cashiers, and branch administrators; every write against a patient record is logged to an audit table, since medical data is edited by many hands. Invoices settle through Payme and Click, scans and imaging files live on AWS S3 with short-lived signed URLs, and the REST surface is documented with Swagger for the mobile client built later. Both services run under Docker on the clinic's own server.",
+      "uz": "PLACEHOLDER LOYIHA — o'ylab topilgan namuna yozuv, haqiqiy ma'lumot bilan almashtiring.\n\nShifo Med xususiy tibbiyot markazining filiallarida ishlatilgan qog'oz jurnal va bir-biriga bog'lanmagan uchta Excel faylini almashtirdi. Registratura bemorni bir marta ro'yxatdan o'tkazadi va shu yozuv qabul, tahlil, muolaja va kassa bosqichlarida u bilan birga boradi. Shifokor faqat o'z kunlik navbatini ko'radi, mutaxassislik bo'yicha shablon asosida qabul xulosasini yozadi, tahlil va tasvir fayllarini bemor tarixiga biriktiradi.\n\nAdmin panel — React, TypeScript va Tailwind CSS bilan Next.js App Router ilovasi: shadcn/ui komponentlari, kesh uchun TanStack Query, ro'yxatga olish, qabul va hisob-faktura formalari uchun React Hook Form va Zod. Registratura butun kunni klaviatura asosidagi ekrandan boshqaradi, ya'ni asosiy amallar sichqonchasiz bajariladi.\n\nAPI — Prisma ORM va PostgreSQL asosidagi NestJS xizmati. JWT va rol guard-lari registratura, shifokorlar, laboratoriya, kassa va filial administratorlarini ajratadi; bemor yozuviga har qanday o'zgartirish audit jadvaliga yoziladi, chunki tibbiy ma'lumot ko'p qo'ldan o'tadi. To'lovlar Payme va Click orqali yopiladi, skaner va tasvir fayllari AWS S3-da qisqa muddatli imzolangan havolalar bilan saqlanadi, REST API esa keyinchalik yozilgan mobil mijoz uchun Swagger bilan hujjatlashtirilgan. Ikkala xizmat klinikaning o'z serverida Docker ostida ishlaydi."
+    },
+    "image": "shifo-med.png",
+    "live": null,
+    "source": null,
+    "tags": [
+      "nextjs",
+      "react",
+      "typescript",
+      "tailwind",
+      "shadcn",
+      "tanstack-query",
+      "react-hook-form",
+      "zod",
+      "nestjs",
+      "prisma",
+      "postgres",
+      "jwt",
+      "aws-s3",
+      "payme",
+      "click",
+      "swagger",
+      "docker"
+    ],
+    "category": "Full-Stack Web Apps"
+  },
+  {
+    "name": "Omborchi",
+    "description": {
+      "en": "PLACEHOLDER PROJECT — warehouse and order management platform for wholesalers and small retail chains. Multi-warehouse stock, purchase and sales orders, barcode picking, and Excel reporting.",
+      "uz": "PLACEHOLDER LOYIHA — ulgurji sotuvchilar va kichik savdo tarmoqlari uchun ombor va buyurtmalarni boshqarish platformasi. Ko'p omborli qoldiq, xarid va sotuv buyurtmalari, shtrix-kod bilan yig'ish va Excel hisobotlari."
+    },
+    "longDescription": {
+      "en": "PLACEHOLDER PROJECT — invented sample entry, replace with real content.\n\nOmborchi is an inventory and order management system for distributors running several warehouses at once. It tracks stock movements as an append-only ledger — receipts, transfers, write-offs, and sales all become immutable entries — so the current quantity of any SKU in any warehouse is always reconstructible and auditable.\n\nThe web client is built with Next.js, React, and TypeScript, styled with Tailwind CSS, with Zustand holding cart and picking-session state across route changes and Recharts rendering turnover and stock-ageing dashboards. Warehouse staff pick orders from a barcode-driven mobile view, and managers export any filtered report to Excel through ExcelJS.\n\nThe backend is a NestJS API using Prisma ORM against PostgreSQL, with JWT auth and per-warehouse permissions, transactional stock operations that guard against overselling, product images stored on AWS S3, and a REST surface documented with Swagger. The stack is containerised with Docker for on-premise deployment at client sites.",
+      "uz": "PLACEHOLDER LOYIHA — o'ylab topilgan namuna yozuv, haqiqiy ma'lumot bilan almashtiring.\n\nOmborchi — bir vaqtda bir nechta ombor bilan ishlaydigan distribyutorlar uchun ombor va buyurtmalarni boshqarish tizimi. Tovar harakati faqat qo'shiladigan reyestr sifatida saqlanadi — qabul, ko'chirish, hisobdan chiqarish va sotuv o'zgarmas yozuvlarga aylanadi — shuning uchun istalgan omborda istalgan mahsulot qoldig'ini qayta tiklash va tekshirish mumkin.\n\nVeb mijoz Next.js, React va TypeScript asosida, Tailwind CSS bilan bezatilgan; Zustand savat va yig'ish sessiyasi holatini saqlaydi, Recharts esa aylanma va qoldiq eskirishi dashboardlarini chizadi. Ombor xodimlari buyurtmalarni shtrix-kod asosidagi mobil ko'rinishdan yig'adi, menejerlar esa istalgan hisobotni ExcelJS orqali Excel-ga eksport qiladi.\n\nBackend — PostgreSQL ustida Prisma ORM ishlatadigan NestJS API: JWT autentifikatsiya, ombor bo'yicha ruxsatlar, ortiqcha sotuvning oldini oluvchi tranzaksion amallar, AWS S3-dagi mahsulot rasmlari va Swagger bilan hujjatlashtirilgan REST API. Tizim mijoz serverlariga o'rnatish uchun Docker konteynerlariga joylangan."
+    },
+    "image": "omborchi.png",
+    "live": null,
+    "source": null,
+    "tags": [
+      "nextjs",
+      "react",
+      "typescript",
+      "tailwind",
+      "zustand",
+      "recharts",
+      "exceljs",
+      "nestjs",
+      "prisma",
+      "postgres",
+      "jwt",
+      "aws-s3",
+      "rest-api",
+      "swagger",
+      "docker"
+    ],
+    "category": "Full-Stack Web Apps"
+  },
+  {
+    "name": "TezYuk - Freight Dispatch Platform",
+    "description": {
+      "en": "PLACEHOLDER PROJECT — dispatch and tracking platform for a regional freight carrier. Order intake, driver assignment, live vehicle map, waybill generation, and per-route cost reporting.",
+      "uz": "PLACEHOLDER LOYIHA — mintaqaviy yuk tashish kompaniyasi uchun dispetcherlik va kuzatuv platformasi. Buyurtma qabuli, haydovchi biriktirish, jonli transport xaritasi, yuk xati va marshrut bo'yicha xarajat hisoboti."
+    },
+    "longDescription": {
+      "en": "PLACEHOLDER PROJECT — invented sample entry, replace with real content.\n\nTezYuk is the internal dispatch system of a freight carrier running intercity routes with its own fleet plus contracted drivers. Dispatchers take an order by phone or from the client portal, pick a vehicle whose capacity and current position fit the route, and assign a driver; the driver's phone reports its position to the platform, and the dispatch board shows every active trip on one map with its status, cargo, and estimated arrival.\n\nThe dispatcher console is a Next.js application with React and TypeScript, styled with Tailwind CSS. The live fleet map is rendered with MapLibre GL — vehicle markers, route lines, and loading points update in place — while Zustand keeps the selected trip and map filters in sync across panels, and TanStack Query handles order and vehicle data. Position updates and status changes arrive over a WebSocket connection so the board never polls.\n\nThe backend is a NestJS API on Prisma ORM and PostgreSQL, with JWT authentication for dispatchers, drivers, and accountants. Incoming GPS pings land in Redis first and are flushed to PostgreSQL in batches by BullMQ workers, which also generate waybill PDFs and nightly per-route profitability reports. The REST API is documented with Swagger for the driver mobile app, and the whole stack is deployed with Docker.",
+      "uz": "PLACEHOLDER LOYIHA — o'ylab topilgan namuna yozuv, haqiqiy ma'lumot bilan almashtiring.\n\nTezYuk — o'z avtoparki va shartnomaviy haydovchilar bilan shaharlararo yo'nalishlarda ishlaydigan yuk tashish kompaniyasining ichki dispetcherlik tizimi. Dispetcher buyurtmani telefon orqali yoki mijoz portalidan qabul qiladi, sig'imi va joriy joylashuvi marshrutga mos transportni tanlaydi va haydovchini biriktiradi; haydovchi telefoni joylashuvni platformaga uzatadi, dispetcher taxtasi esa barcha faol reyslarni holati, yuki va taxminiy yetib borish vaqti bilan bitta xaritada ko'rsatadi.\n\nDispetcher konsoli — React va TypeScript bilan Next.js ilovasi, Tailwind CSS bilan bezatilgan. Jonli avtopark xaritasi MapLibre GL orqali chiziladi — transport belgilari, marshrut chiziqlari va yuklash nuqtalari o'z o'rnida yangilanadi — Zustand tanlangan reys va xarita filtrlarini panellar o'rtasida sinxron saqlaydi, TanStack Query esa buyurtma va transport ma'lumotlarini boshqaradi. Joylashuv va holat o'zgarishlari WebSocket orqali keladi, shuning uchun taxta so'rov yubormaydi.\n\nBackend — Prisma ORM va PostgreSQL asosidagi NestJS API; dispetcher, haydovchi va buxgalterlar uchun JWT autentifikatsiya. Kiruvchi GPS signallari avval Redis-ga tushadi va BullMQ ishchilari tomonidan PostgreSQL-ga to'plam holida yoziladi; xuddi shu ishchilar yuk xati PDF-larini va marshrut bo'yicha tungi rentabellik hisobotlarini shakllantiradi. REST API haydovchi mobil ilovasi uchun Swagger bilan hujjatlashtirilgan, butun tizim esa Docker bilan joylashtiriladi."
+    },
+    "image": "tezyuk.png",
+    "live": null,
+    "source": null,
+    "tags": [
+      "nextjs",
+      "react",
+      "typescript",
+      "tailwind",
+      "maplibre",
+      "zustand",
+      "tanstack-query",
+      "nestjs",
+      "prisma",
+      "postgres",
+      "jwt",
+      "redis",
+      "bullmq",
+      "websocket",
+      "swagger",
+      "docker"
+    ],
+    "category": "Full-Stack Web Apps"
   },
   {
     "name": "ERT/IP Data Cleaner",
@@ -74,8 +174,8 @@
       "uz": "ABEM Terrameter asboblaridan olingan ERT/IP tadqiqot ma'lumotlarini tozalash va vizualizatsiya qilish uchun brauzerda ishlovchi geofizik vosita, ko'p bosqichli anomaliya filtri, 2D rezistivlik psevdokesmasi va UTM koordinata transformatsiyasi bilan."
     },
     "longDescription": {
-      "en": "ERT/IP Data Cleaner is a browser-only single-page application that processes raw geophysical survey data from ABEM Terrameter instruments (Prosys II/III and Syscal formats) entirely on the client — no server, no data leaves the browser.\n\nThe core of the app is a multi-pass filtering pipeline that runs up to eight iterations until convergence. Within each pass: a MAD filter rejects stacks inside the same electrode quadrupole group that deviate too far from the group median resistivity; log-space IQR fences flag spatial outliers across each depth level of the pseudosection; a vertical coherence check demotes isolated points in columns where more than half the depth levels are already gaps; and a local sliding-window MAD filter removes single-point spikes too narrow to be caught by the global IQR. Surviving stacks are averaged with physics-correct Rho recalculation (k × mean(VMN) / mean(IAB)) to preserve instrument-level accuracy, and missing stations are filled by linear interpolation from nearest neighbors at the same depth level.\n\nCleaned data exports as a Syscal-compatible ISO-8859-1 CSV — byte-level compatible with ProSys III — or as a 4-sheet Excel workbook built with ExcelJS, covering original data with highlighted invalid rows, grouped stacks with averaged rows marked in green, all rejected rows with rejection reasons, and the final cleaned output.\n\nThe pseudosection view uses the HTML Canvas API to draw a 2D resistivity section via IDW interpolation on a 320×160 grid with marching-squares contouring, keeping visualization entirely dependency-free with switchable linear and logarithmic color scales. A separate coordinate calculator transforms local electrode positions (measured along the survey profile) into global UTM coordinates using two GPS reference points, correctly handling perpendicular offsets for non-linear profiles, then calls the Open-Meteo REST API to fetch real-world elevations and write them into Global z-columns for 3D-ready output.\n\nReact Router DOM v7 manages client-side routing and guards the main cleaner behind a protected route that checks sessionStorage for a session token. Vite powers fast HMR during development, TypeScript enforces type safety end-to-end across parsing, filtering, and export logic, Tailwind CSS v4 and shadcn/ui handle styling, and Biome enforces linting and formatting. Bun is the package manager and a GitHub Actions workflow packages the app as a Pake desktop binary. The app is deployed on Vercel with an SPA rewrite rule.",
-      "uz": "ERT/IP Data Cleaner — ABEM Terrameter asboblaridan (Prosys II/III va Syscal formatlari) olingan xom geofizik tadqiqot ma'lumotlarini to'liq mijoz tomonida qayta ishlovchi brauzerda ishlovchi bir sahifali ilova — server yo'q, ma'lumotlar brauzerni tark etmaydi.\n\nIlovaning asosini natija barqarorlashguncha 8 ta iteratsiyagacha ishlaydigan ko'p bosqichli filtrlash pipeline tashkil etadi. Har bir passda: MAD filtri bir xil elektrod kvadrupol guruhi ichidagi stacklarni guruh median rezistivligidan juda chetga chiqqanlari sababli rad etadi; log-fazoviy IQR chegaralari psevdokesmaning har bir chuqurlik darajasida fazoviy anomaliyalarni aniqlaydi; vertikal izchillik tekshiruvi chuqurlik darajalarining yarmidan ko'pi bo'sh bo'lgan ustunlardagi alohida nuqtalarni o'chiradi; mahalliy sirpanma oyna MAD filtri esa global IQR ushlay olmaydigan tor nuqtali o'rkaklarni olib tashlaydi. Omon qolgan stacklar fizik to'g'ri Rho qayta hisoblash bilan o'rtachalanadi (k × o'rtacha(VMN) / o'rtacha(IAB)) va yo'q stansiyalar bir xil chuqurlik darajasidagi eng yaqin qo'shnilardan chiziqli interpolyatsiya orqali to'ldiriladi.\n\nTozalangan ma'lumotlar Syscal-mos ISO-8859-1 CSV sifatida — ProSys III bilan bayt darajasida mos — yoki ExcelJS yordamida qurilgan 4 varaqli Excel kitobi sifatida eksport qilinadi: yaroqsiz qatorlar ajratilgan asl ma'lumotlar, yashil rang bilan belgilangan o'rtacha qatorli guruhlangan stacklar, rad etish sabablari ko'rsatilgan barcha yaroqsiz qatorlar va yakuniy tozalangan natija.\n\nPsevdokesma ko'rinishi IDW interpolyatsiya orqali 320×160 katakchali setka bo'ylab 2D rezistivlik kesmani chizish uchun HTML Canvas API'dan foydalanadi, marching-squares konturlash bilan, chiziqli va logarifmik rang shkalalari o'rtasida almashish imkoniyati bilan. Alohida koordinata kalkulyatori mahalliy elektrod pozitsiyalarini (tadqiqot profili bo'ylab o'lchangan) ikkita GPS ta'rif nuqtasi yordamida global UTM koordinatalariga aylantiradi va Open-Meteo REST API'siga murojaat qilib haqiqiy balandliklarni oladi va ularni 3D tayyor chiqish uchun Global z-ustunlariga yozadi.\n\nReact Router DOM v7 mijoz tomonidagi marshrutlashni boshqaradi va sessionStorage-dagi sessiya tokenini tekshirib asosiy tozalovchini himoya qiladi. Vite ishlab chiqishda tez HMR ta'minlaydi, TypeScript parsing, filtrlash va eksport mantiqi bo'ylab end-to-end tip xavfsizligini ta'minlaydi, Tailwind CSS v4 va shadcn/ui dizaynni boshqaradi, Biome esa linting va formatlashni ta'minlaydi. Bun paket menejeri sifatida ishlatiladi va GitHub Actions ish jarayoni ilovani Pake desktop ikkilik faylga qadoqlaydi. Ilova Vercel-da SPA qayta yo'naltirish qoidasi bilan joylashtirilgan."
+      "en": "ERT/IP Data Cleaner is a browser-only single-page application that processes raw geophysical survey data from ABEM Terrameter instruments (Prosys II/III and Syscal formats) entirely on the client — no server, no data leaves the browser.\n\nThe core of the app is a multi-pass filtering pipeline that runs up to eight iterations until convergence. Within each pass: a MAD filter rejects stacks inside the same electrode quadrupole group that deviate too far from the group median resistivity; log-space IQR fences flag spatial outliers across each depth level of the pseudosection; a vertical coherence check demotes isolated points in columns where more than half the depth levels are already gaps; and a local sliding-window MAD filter removes single-point spikes too narrow to be caught by the global IQR. Surviving stacks are averaged with physics-correct Rho recalculation (k × mean(VMN) / mean(IAB)) to preserve instrument-level accuracy, and missing stations are filled by linear interpolation from nearest neighbors at the same depth level.\n\nCleaned data exports as a Syscal-compatible ISO-8859-1 CSV — byte-level compatible with ProSys III — or as a 4-sheet Excel workbook built with ExcelJS, covering original data with highlighted invalid rows, grouped stacks with averaged rows marked in green, all rejected rows with rejection reasons, and the final cleaned output.\n\nThe pseudosection view uses the HTML Canvas API to draw a 2D resistivity section via IDW interpolation on a 320×160 grid with marching-squares contouring, keeping visualization entirely dependency-free with switchable linear and logarithmic color scales. A separate coordinate calculator transforms local electrode positions (measured along the survey profile) into global UTM coordinates using two GPS reference points, correctly handling perpendicular offsets for non-linear profiles, then calls the Open-Meteo REST API to fetch real-world elevations and write them into Global z-columns for 3D-ready output.\n\nReact Router DOM v7 manages client-side routing and guards the main cleaner behind a protected route that checks sessionStorage for a session token. Vite powers fast HMR during development, TypeScript enforces type safety end-to-end across parsing, filtering, and export logic, Tailwind CSS v4 and shadcn/ui handle styling, and Biome enforces linting and formatting. Bun is the package manager. The app is deployed on Vercel with an SPA rewrite rule so direct URL navigation works correctly. Because the target users are field geophysicists who expect a native desktop tool, a GitHub Actions matrix workflow triggered on version tags uses Pake — a CLI that wraps any URL into a lightweight desktop app via a Tauri/WebView shell — to cross-compile the live Vercel URL into platform-native installers (Windows MSI, macOS DMG, Linux DEB) without maintaining a separate Tauri project. The built artifacts are automatically uploaded as GitHub Release assets.",
+      "uz": "ERT/IP Data Cleaner — ABEM Terrameter asboblaridan (Prosys II/III va Syscal formatlari) olingan xom geofizik tadqiqot ma'lumotlarini to'liq mijoz tomonida qayta ishlovchi brauzerda ishlovchi bir sahifali ilova — server yo'q, ma'lumotlar brauzerni tark etmaydi.\n\nIlovaning asosini natija barqarorlashguncha 8 ta iteratsiyagacha ishlaydigan ko'p bosqichli filtrlash pipeline tashkil etadi. Har bir passda: MAD filtri bir xil elektrod kvadrupol guruhi ichidagi stacklarni guruh median rezistivligidan juda chetga chiqqanlari sababli rad etadi; log-fazoviy IQR chegaralari psevdokesmaning har bir chuqurlik darajasida fazoviy anomaliyalarni aniqlaydi; vertikal izchillik tekshiruvi chuqurlik darajalarining yarmidan ko'pi bo'sh bo'lgan ustunlardagi alohida nuqtalarni o'chiradi; mahalliy sirpanma oyna MAD filtri esa global IQR ushlay olmaydigan tor nuqtali o'rkaklarni olib tashlaydi. Omon qolgan stacklar fizik to'g'ri Rho qayta hisoblash bilan o'rtachalanadi (k × o'rtacha(VMN) / o'rtacha(IAB)) va yo'q stansiyalar bir xil chuqurlik darajasidagi eng yaqin qo'shnilardan chiziqli interpolyatsiya orqali to'ldiriladi.\n\nTozalangan ma'lumotlar Syscal-mos ISO-8859-1 CSV sifatida — ProSys III bilan bayt darajasida mos — yoki ExcelJS yordamida qurilgan 4 varaqli Excel kitobi sifatida eksport qilinadi: yaroqsiz qatorlar ajratilgan asl ma'lumotlar, yashil rang bilan belgilangan o'rtacha qatorli guruhlangan stacklar, rad etish sabablari ko'rsatilgan barcha yaroqsiz qatorlar va yakuniy tozalangan natija.\n\nPsevdokesma ko'rinishi IDW interpolyatsiya orqali 320×160 katakchali setka bo'ylab 2D rezistivlik kesmani chizish uchun HTML Canvas API'dan foydalanadi, marching-squares konturlash bilan, chiziqli va logarifmik rang shkalalari o'rtasida almashish imkoniyati bilan. Alohida koordinata kalkulyatori mahalliy elektrod pozitsiyalarini (tadqiqot profili bo'ylab o'lchangan) ikkita GPS ta'rif nuqtasi yordamida global UTM koordinatalariga aylantiradi va Open-Meteo REST API'siga murojaat qilib haqiqiy balandliklarni oladi va ularni 3D tayyor chiqish uchun Global z-ustunlariga yozadi.\n\nReact Router DOM v7 mijoz tomonidagi marshrutlashni boshqaradi va sessionStorage-dagi sessiya tokenini tekshirib asosiy tozalovchini himoya qiladi. Vite ishlab chiqishda tez HMR ta'minlaydi, TypeScript parsing, filtrlash va eksport mantiqi bo'ylab end-to-end tip xavfsizligini ta'minlaydi, Tailwind CSS v4 va shadcn/ui dizaynni boshqaradi, Biome esa linting va formatlashni ta'minlaydi. Bun paket menejeri sifatida ishlatiladi. Ilova Vercel-da to'g'ridan-to'g'ri URL navigatsiyasi to'g'ri ishlashi uchun SPA qayta yo'naltirish qoidasi bilan joylashtirilgan. Maqsadli foydalanuvchilar native desktop vositasini kutadigan dala geofiziklari bo'lgani uchun, versiya teglari bo'yicha ishga tushadigan GitHub Actions matrix ish jarayoni Pake — har qanday URL ni Tauri/WebView qobig'i orqali yengil desktop ilovaga o'radigan CLI — yordamida alohida Tauri loyihasini qo'llamasdan jonli Vercel URL ni platforma-native o'rnatuvchilarga (Windows MSI, macOS DMG, Linux DEB) cross-kompilyatsiya qiladi. Qurilgan fayllar avtomatik ravishda GitHub Release assetlari sifatida yuklanadi."
     },
     "image": "geo.png",
     "live": null,
@@ -88,12 +188,13 @@
       "shadcn",
       "canvas",
       "exceljs",
-      "bun",
+      "bun-package-manager",
       "biome",
       "git",
       "vercel",
       "rest-api",
-      "github-actions"
+      "github-actions",
+      "pake"
     ],
     "category": "Enterprise Applications"
   },
@@ -113,7 +214,7 @@
     "tags": [
       "react",
       "typescript",
-      "bun",
+      "bun-runtime",
       "bun-test",
       "elysia",
       "eden-treaty",
@@ -305,7 +406,7 @@
     "live": null,
     "source": null,
     "packageRegistry": "https://www.npmjs.com/package/@yarrow-uz/yarrow-map-web-sdk",
-    "tags": ["vitest", "maplibre", "rollup", "typescript", "axios"],
+    "tags": ["vitest", "maplibre", "rolldown", "tsdown", "typescript", "react", "happy-dom", "testing-library", "react-testing-library"],
     "category": "Libraries"
   },
   {
@@ -354,7 +455,7 @@
     "image": "bsok-crm.png",
     "live": "https://bsok-frontend.vercel.app/",
     "source": "https://github.com/AbdukahharS/bsok-frontend",
-    "tags": ["react", "typescript", "bun", "tailwind", "shadcn", "zustand", "i18n"],
+    "tags": ["react", "typescript", "bun-package-manager", "tailwind", "shadcn", "zustand", "i18n"],
     "category": "Enterprise Applications"
   },
   {

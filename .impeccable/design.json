@@ -1,0 +1,171 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-08-03T10:53:11.555Z",
+  "title": "Design System: Bad Habit — Shahzod Abdukahhar",
+  "extensions": {
+    "colorMeta": {
+      "midnight-ink": {
+        "role": "neutral",
+        "displayName": "Midnight Ink",
+        "canonical": "#1a191d",
+        "tonalRamp": ["#0b0a0d", "#131216", "#1a191d", "#26252a", "#37363b", "#55545a", "#8a8990", "#d8d7db"]
+      },
+      "paper-ghost": {
+        "role": "neutral",
+        "displayName": "Paper Ghost",
+        "canonical": "#ededed",
+        "tonalRamp": ["#1a1a1a", "#2e2e2e", "#4a4a4a", "#6e6e6e", "#969696", "#bdbdbd", "#dbdbdb", "#ededed"]
+      },
+      "electric-azure": {
+        "role": "primary",
+        "displayName": "Electric Azure",
+        "canonical": "#3b82f6",
+        "tonalRamp": ["#172554", "#1e3a8a", "#1e40af", "#1d4ed8", "#2563eb", "#3b82f6", "#60a5fa", "#bfdbfe"]
+      },
+      "neon-orchid": {
+        "role": "primary",
+        "displayName": "Neon Orchid",
+        "canonical": "#8b5cf6",
+        "tonalRamp": ["#2e1065", "#4c1d95", "#5b21b6", "#6d28d9", "#7c3aed", "#8b5cf6", "#a78bfa", "#ddd6fe"]
+      },
+      "signal-magenta": {
+        "role": "primary",
+        "displayName": "Signal Magenta",
+        "canonical": "#ec4899",
+        "tonalRamp": ["#500724", "#831843", "#9d174d", "#be185d", "#db2777", "#ec4899", "#f472b6", "#fbcfe8"]
+      },
+      "cyan-glow": {
+        "role": "secondary",
+        "displayName": "Cyan Glow",
+        "canonical": "#22d3ee",
+        "tonalRamp": ["#164e63", "#155e75", "#0e7490", "#0891b2", "#06b6d4", "#22d3ee", "#67e8f9", "#a5f3fc"]
+      },
+      "terminal-green": {
+        "role": "secondary",
+        "displayName": "Terminal Green",
+        "canonical": "#22c55e",
+        "tonalRamp": ["#14532d", "#166534", "#15803d", "#16a34a", "#22c55e", "#4ade80", "#86efac", "#bbf7d0"]
+      },
+      "amber-star": {
+        "role": "tertiary",
+        "displayName": "Amber Star",
+        "canonical": "#fbbf24",
+        "tonalRamp": ["#451a03", "#78350f", "#92400e", "#b45309", "#d97706", "#f59e0b", "#fbbf24", "#fde68a"]
+      },
+      "glass-border": {
+        "role": "neutral",
+        "displayName": "Glass Border",
+        "canonical": "rgba(255, 255, 255, 0.1)",
+        "tonalRamp": ["rgba(255,255,255,0.03)", "rgba(255,255,255,0.06)", "rgba(255,255,255,0.1)", "rgba(255,255,255,0.15)", "rgba(255,255,255,0.2)", "rgba(255,255,255,0.3)", "rgba(255,255,255,0.4)", "rgba(255,255,255,0.5)"]
+      }
+    },
+    "typographyMeta": {
+      "hero": { "displayName": "Hero", "purpose": "Full-screen name lockup only; one per page." },
+      "display": { "displayName": "Display", "purpose": "Section titles, often beside a gradient icon tile." },
+      "title": { "displayName": "Title", "purpose": "Card titles, gallery project names, testimonial authors." },
+      "body": { "displayName": "Body", "purpose": "Descriptions and paragraphs; gray-300, brightens to white on hover." },
+      "label": { "displayName": "Label", "purpose": "// comment labels, nav superscripts, metadata, counts." }
+    },
+    "shadows": [
+      { "name": "hover-glow", "value": "0 25px 50px -12px rgba(59, 130, 246, 0.25), 0 0 0 1px rgba(255,255,255,0.1)", "purpose": "Project-card hover; pairs with scale(1.02) translateY(-8px)." },
+      { "name": "image-seat", "value": "0 25px 50px -12px rgba(0, 0, 0, 0.4)", "purpose": "Archive-gallery screenshots only, to seat the image on the page." },
+      { "name": "neon-bloom", "value": "0 0 15px hsl(220,100%,80%), 0 0 30px hsl(220,90%,70%), 0 0 60px hsl(220,70%,60%)", "purpose": "Custom cursor and active-language dot; genuinely luminous elements only." }
+    ],
+    "motion": [
+      { "name": "ease-spring", "value": "cubic-bezier(0.34, 1.56, 0.64, 1)", "purpose": "Entrance animations (cards, sections) with 0.6–0.8s duration and 0.1–0.2s stagger." },
+      { "name": "ease-standard", "value": "cubic-bezier(0.4, 0, 0.2, 1)", "purpose": "Hover/state transitions, typically 300–500ms." },
+      { "name": "gradient-shift", "value": "4s ease infinite", "purpose": "Animated gradient ring on highlighted project cards." },
+      { "name": "page-swap", "value": "out 220ms ease-in / in 300ms ease-out", "purpose": "View-transition cross-fade with slight rise; disabled under prefers-reduced-motion." }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "640px" },
+      { "name": "md", "value": "768px" },
+      { "name": "lg", "value": "1024px" },
+      { "name": "xl", "value": "1280px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary CTA Button",
+      "kind": "button",
+      "refersTo": "button-cta",
+      "description": "Gradient-fill main action (e.g. View all projects). Saturates, scales, and glows on hover.",
+      "html": "<button class=\"ds-btn-cta\" type=\"button\"><span>View all projects</span><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M5 12h14\"/><path d=\"m12 5 7 7-7 7\"/></svg></button>",
+      "css": ".ds-btn-cta { display: inline-flex; align-items: center; gap: 12px; padding: 12px 24px; border-radius: 12px; border: 1px solid rgba(96,165,250,0.4); background: linear-gradient(90deg, rgba(37,99,235,0.8), rgba(147,51,234,0.8)); color: #ffffff; font-family: 'Roboto Mono', monospace; font-weight: 600; font-size: 1rem; cursor: pointer; box-shadow: 0 10px 15px -3px rgba(59,130,246,0.2); transition: all 0.3s cubic-bezier(0.4,0,0.2,1); } .ds-btn-cta:hover { background: linear-gradient(90deg, #3b82f6, #a855f7); transform: scale(1.05); box-shadow: 0 10px 25px -3px rgba(59,130,246,0.4); } .ds-btn-cta:hover svg { transform: translateX(4px); } .ds-btn-cta svg { transition: transform 0.3s; } .ds-btn-cta:focus-visible { outline: 2px solid #60a5fa; outline-offset: 2px; }"
+    },
+    {
+      "name": "Tag Chip",
+      "kind": "chip",
+      "refersTo": "chip-tag",
+      "description": "Pill tech-tag with optional icon; used on project cards and the gallery tag filter. Second chip shows the active/selected state.",
+      "html": "<span class=\"ds-chip\">TypeScript</span><button class=\"ds-chip ds-chip-active\" type=\"button\">React</button>",
+      "css": ".ds-chip { display: inline-flex; align-items: center; gap: 6px; padding: 4px 8px; border-radius: 9999px; border: 1px solid rgba(255,255,255,0.15); background: rgba(255,255,255,0.05); color: rgba(255,255,255,0.85); font-family: 'Roboto Mono', monospace; font-weight: 500; font-size: 0.75rem; backdrop-filter: blur(4px); transition: all 0.3s cubic-bezier(0.4,0,0.2,1); } button.ds-chip { cursor: pointer; } button.ds-chip:hover { transform: scale(1.05); border-color: rgba(255,255,255,0.3); } .ds-chip-active { background: rgba(255,255,255,0.2); color: #ffffff; border-color: rgba(255,255,255,0.5); box-shadow: 0 4px 6px -1px rgba(0,0,0,0.3); } .ds-chip:focus-visible { outline: 2px solid rgba(255,255,255,0.6); outline-offset: 2px; }"
+    },
+    {
+      "name": "Nav Link (// comment style)",
+      "kind": "nav",
+      "refersTo": "nav-pill",
+      "description": "Desktop navbar link in code-comment grammar with a numbered superscript. Hover tints the label azure and scales.",
+      "html": "<a class=\"ds-nav-link\" href=\"#projects\"><span class=\"ds-nav-text\">// projects</span><small class=\"ds-nav-num\">02</small></a>",
+      "css": ".ds-nav-link { position: relative; display: inline-block; padding: 8px 16px; color: #ffffff; font-family: 'Roboto Mono', monospace; font-weight: 700; font-size: 1rem; text-decoration: none; transition: all 0.3s cubic-bezier(0.4,0,0.2,1); } .ds-nav-link:hover { transform: scale(1.05); } .ds-nav-text { position: relative; z-index: 1; transition: color 0.3s; } .ds-nav-link:hover .ds-nav-text { color: #60a5fa; } .ds-nav-num { position: absolute; top: -4px; right: -4px; font-size: 0.75rem; font-weight: 400; color: #93c5fd; opacity: 0.7; transition: opacity 0.3s; } .ds-nav-link:hover .ds-nav-num { opacity: 1; } .ds-nav-link:focus-visible { outline: 2px solid #60a5fa; outline-offset: 2px; border-radius: 4px; }"
+    },
+    {
+      "name": "Project Card (showcase register)",
+      "kind": "card",
+      "refersTo": "card-glass",
+      "description": "Glass masonry card: gradient-tinted surface, hairline border, tag chips, ghost action links. Flat at rest; hover lifts and ignites the blue glow.",
+      "html": "<article class=\"ds-card-project\"><div class=\"ds-card-media\"></div><div class=\"ds-card-body\"><h3 class=\"ds-card-title\">UYDEK</h3><p class=\"ds-card-desc\">Digital transaction infrastructure platform for the real estate market.</p><div class=\"ds-card-tags\"><span class=\"ds-mini-chip\">Next.js</span><span class=\"ds-mini-chip\">NestJS</span><span class=\"ds-mini-chip\">+4</span></div><div class=\"ds-card-actions\"><a class=\"ds-action\" href=\"#\"><svg width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M7 17 17 7\"/><path d=\"M8 7h9v9\"/></svg>Live</a><a class=\"ds-action ds-action-alt\" href=\"#\"><svg width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.4 5.4 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4\"/></svg>Code</a></div></div></article>",
+      "css": ".ds-card-project { width: 300px; border-radius: 12px; overflow: hidden; border: 1px solid rgba(255,255,255,0.1); background: linear-gradient(135deg, rgba(59,130,246,0.1) 0%, rgba(147,51,234,0.1) 50%, rgba(236,72,153,0.1) 100%); backdrop-filter: blur(10px); transition: all 0.5s cubic-bezier(0.4,0,0.2,1); } .ds-card-project:hover { transform: scale(1.02) translateY(-8px); box-shadow: 0 25px 50px -12px rgba(59,130,246,0.25), 0 0 0 1px rgba(255,255,255,0.1); } .ds-card-media { height: 150px; background: linear-gradient(135deg, #1e293b, #0f172a); } .ds-card-body { padding: 24px; display: flex; flex-direction: column; gap: 12px; } .ds-card-title { margin: 0; font-family: Poppins, sans-serif; font-weight: 700; font-size: 1.25rem; color: #ffffff; transition: color 0.3s; } .ds-card-project:hover .ds-card-title { color: #93c5fd; } .ds-card-desc { margin: 0; font-family: 'Roboto Mono', monospace; font-size: 0.875rem; line-height: 1.6; color: #d1d5db; } .ds-card-tags { display: flex; flex-wrap: wrap; gap: 8px; } .ds-mini-chip { padding: 4px 8px; border-radius: 9999px; border: 1px solid rgba(255,255,255,0.15); background: rgba(255,255,255,0.05); color: rgba(255,255,255,0.85); font-family: 'Roboto Mono', monospace; font-size: 0.75rem; } .ds-card-actions { display: flex; gap: 12px; padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.1); } .ds-action { display: inline-flex; align-items: center; gap: 4px; padding: 8px 12px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.1); color: #ffffff; font-family: 'Roboto Mono', monospace; font-size: 0.75rem; font-weight: 600; text-decoration: none; transition: all 0.3s; } .ds-action:hover { background: rgba(255,255,255,0.2); transform: scale(1.05); } .ds-action-alt { background: rgba(31,41,55,0.8); border-color: transparent; color: #d1d5db; } .ds-action-alt:hover { background: #374151; }"
+    },
+    {
+      "name": "Filter Button",
+      "kind": "button",
+      "refersTo": "button-cta",
+      "description": "Category filter with icon and floating count badge. First shows inactive, second the active gradient state.",
+      "html": "<button class=\"ds-filter\" type=\"button\"><svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"12\" cy=\"12\" r=\"10\"/><circle cx=\"12\" cy=\"12\" r=\"4\"/></svg><span>All</span><span class=\"ds-filter-count\">12</span></button><button class=\"ds-filter ds-filter-active\" type=\"button\"><svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"2\" y=\"7\" width=\"20\" height=\"14\" rx=\"2\"/><path d=\"M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2\"/></svg><span>Enterprise</span><span class=\"ds-filter-count\">5</span></button>",
+      "css": ".ds-filter { position: relative; display: inline-flex; align-items: center; gap: 8px; padding: 8px 16px 8px 12px; border-radius: 12px; border: 1px solid rgba(55,65,81,0.5); background: rgba(31,41,55,0.3); color: #d1d5db; font-family: 'Roboto Mono', monospace; font-weight: 500; font-size: 0.875rem; cursor: pointer; backdrop-filter: blur(4px); transition: all 0.3s cubic-bezier(0.4,0,0.2,1); } .ds-filter:hover { background: rgba(55,65,81,0.5); color: #ffffff; border-color: rgba(107,114,128,0.5); transform: scale(1.05); } .ds-filter-count { position: absolute; top: -6px; right: -8px; min-width: 20px; height: 20px; padding: 0 4px; border-radius: 9999px; background: rgba(59,130,246,0.8); color: #ffffff; font-size: 10px; font-weight: 700; display: flex; align-items: center; justify-content: center; transition: all 0.3s; } .ds-filter-active { background: linear-gradient(90deg, rgba(37,99,235,0.8), rgba(147,51,234,0.8)); color: #ffffff; border-color: rgba(96,165,250,0.5); box-shadow: 0 10px 15px -3px rgba(59,130,246,0.25); transform: scale(1.05); } .ds-filter-active .ds-filter-count { background: #ffffff; color: #2563eb; } .ds-filter:focus-visible { outline: 2px solid #60a5fa; outline-offset: 2px; }"
+    },
+    {
+      "name": "Testimonial Card",
+      "kind": "card",
+      "refersTo": "card-glass",
+      "description": "Glass quote card with role-hued quote icon and bordered avatar; featured variant uses the orchid→magenta tint.",
+      "html": "<figure class=\"ds-testimonial\"><div class=\"ds-testimonial-top\"><svg class=\"ds-testimonial-quote\" width=\"32\" height=\"32\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z\"/><path d=\"M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z\"/></svg><span class=\"ds-testimonial-avatar\"></span></div><blockquote class=\"ds-testimonial-text\">A \\\"show, don't just tell\\\" type of partner.</blockquote><figcaption class=\"ds-testimonial-name\">- Sabrina Narzullaeva<span class=\"ds-testimonial-role\">Marketing Specialist at Founders</span></figcaption></figure>",
+      "css": ".ds-testimonial { width: 320px; margin: 0; padding: 32px; border-radius: 16px; border: 1px solid rgba(255,255,255,0.1); background: linear-gradient(135deg, rgba(147,51,234,0.1) 0%, rgba(236,72,153,0.1) 100%); backdrop-filter: blur(8px); transition: all 0.5s cubic-bezier(0.4,0,0.2,1); } .ds-testimonial:hover { transform: scale(1.02); border-color: rgba(192,132,252,0.5); } .ds-testimonial-top { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 16px; } .ds-testimonial-quote { color: #c084fc; transition: color 0.3s; } .ds-testimonial:hover .ds-testimonial-quote { color: #d8b4fe; } .ds-testimonial-avatar { width: 64px; height: 64px; border-radius: 9999px; border: 2px solid rgba(192,132,252,0.5); background: linear-gradient(135deg, #374151, #111827); transition: border-color 0.3s; } .ds-testimonial:hover .ds-testimonial-avatar { border-color: #d8b4fe; } .ds-testimonial-text { margin: 0 0 16px; font-family: 'Roboto Mono', monospace; font-size: 0.9375rem; line-height: 1.6; color: #d1d5db; transition: color 0.3s; } .ds-testimonial:hover .ds-testimonial-text { color: #ffffff; } .ds-testimonial-name { font-family: Poppins, sans-serif; font-weight: 700; font-size: 1.25rem; color: #ffffff; } .ds-testimonial-role { display: block; font-family: 'Roboto Mono', monospace; font-weight: 500; font-size: 0.875rem; color: #d8b4fe; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Glass Terminal",
+    "overview": "A developer console rendered in glass and neon. The whole site is a dark terminal window whose chrome — nav links written as // comments, numbered superscripts, a glowing gradient scrollbar, mono type as the base voice — keeps reminding you a developer built this by hand. On top of that terminal sits a premium glass material: translucent surfaces, hairline borders, backdrop blur, and a single blue→purple→pink gradient engine that tints everything it touches. The mood is sleek and premium, but never stiff: motion is springy, hovers scale and glow, and a custom neon cursor with a fading trail turns the pointer itself into part of the brand on desktop. The system runs in two deliberate registers: showcase (expressive glass, gradient, glow) for the home page, and archive (quiet editorial hairlines and ghost numbers) for the all-projects gallery.",
+    "keyCharacteristics": [
+      "Dark-only palette on Midnight Ink (#1a191d); there is no light theme.",
+      "One accent engine: the azure→orchid→magenta gradient, reused at low opacity everywhere.",
+      "Glass surfaces are flat at rest; glow and shadow appear only as a response to interaction.",
+      "Code-grammar labeling (// label, numbered items, mono type) is the brand's voice.",
+      "Springy entrance physics: cubic-bezier(0.34, 1.56, 0.64, 1) with staggered delays."
+    ],
+    "rules": [
+      { "name": "The Gradient Is the Accent Rule", "body": "The brand accent is the azure→orchid→magenta ramp as a whole, almost always at ~10% opacity as a surface tint or ~80% as a CTA fill. A saturated single-hue accent used solo is off-system.", "section": "colors" },
+      { "name": "The One-Badge Rule", "body": "Amber exists only on the SaaS badge. If a new featured marker is needed, restyle the badge — don't spread amber into the palette.", "section": "colors" },
+      { "name": "The // Comment Rule", "body": "Navigational and meta labels are written as code comments (// projects) with mono type. New nav-like labels inherit the grammar; prose never does.", "section": "typography" },
+      { "name": "The Two-Voice Rule", "body": "Headlines are Poppins, everything else is Roboto Mono. Never set body copy in Poppins or headlines in mono.", "section": "typography" },
+      { "name": "The Flat-By-Default Rule", "body": "Surfaces are flat at rest. Shadows appear only in response to state (hover, active, focus) — never as ambient decoration on static chrome.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do keep every surface on Midnight Ink; fade imagery into it with gradients rather than introducing new background colors.",
+      "Do use the spring easing (cubic-bezier(0.34, 1.56, 0.64, 1)) with staggered 0.1–0.2s delays for entrance animations.",
+      "Do write nav and meta labels in // comment grammar with Roboto Mono.",
+      "Do choose the register deliberately: showcase (glass, glow, gradient) for storytelling sections, archive (hairlines, ghost numbers, restraint) for dense artifact lists.",
+      "Do keep hover feedback doubled — scale plus a color or glow shift — on every interactive element.",
+      "Do ship every string in both uz and en; the design must survive longer Uzbek labels."
+    ],
+    "donts": [
+      "Don't add ambient drop shadows to static surfaces; glow is earned by interaction (The Flat-By-Default Rule).",
+      "Don't introduce a light theme or light cards; the system is dark-only.",
+      "Don't use a saturated single-hue accent where the gradient tint belongs (The Gradient Is the Accent Rule).",
+      "Don't mix registers on one surface — no neon glow inside the archive gallery, no bare hairline lists inside the showcase home.",
+      "Don't reuse amber outside the SaaS badge (The One-Badge Rule).",
+      "Don't render the custom cursor or heavy entrance motion where prefers-reduced-motion applies; view transitions already honor it."
+    ]
+  }
+}

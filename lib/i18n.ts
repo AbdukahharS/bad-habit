@@ -57,6 +57,7 @@ type Dictionary = {
     noResults: string
     back: string
     selectedCount: string
+    matchAllTags: string
   }
   experience: {
     title: string
@@ -125,6 +126,7 @@ const dictionaries: Record<Locale, Dictionary> = {
       noResults: 'No projects match the selected tags.',
       back: 'Back to home',
       selectedCount: 'selected',
+      matchAllTags: 'Match all tags',
     },
     experience: {
       title: 'Experience',
@@ -181,6 +183,7 @@ const dictionaries: Record<Locale, Dictionary> = {
       noResults: 'Tanlangan teglarga mos loyiha topilmadi.',
       back: 'Bosh sahifaga',
       selectedCount: 'tanlangan',
+      matchAllTags: 'Barcha teglarga mos',
     },
     experience: {
       title: 'Tajriba',

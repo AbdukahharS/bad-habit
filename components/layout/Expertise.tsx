@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import { Code, Zap, Server, Quote } from 'lucide-react'
+import { IconCode, IconBolt, IconServer, IconQuote } from '@tabler/icons-react'
 import type { Locale } from '@/lib/i18n'
 import type { ReactNode } from 'react'
 
@@ -16,7 +16,7 @@ type ExpertiseArea = {
 const expertiseAreasByLocale: Record<Locale, ExpertiseArea[]> = {
   en: [
     {
-      icon: <Code className='w-8 h-8' />,
+      icon: <IconCode className='w-8 h-8' />,
       title: 'Software Development',
       highlight: 'Software',
       description: 'Strong foundation in functional and OOP paradigms. Proficient in JavaScript, TypeScript, and software architecture for scalable systems.',
@@ -24,7 +24,7 @@ const expertiseAreasByLocale: Record<Locale, ExpertiseArea[]> = {
       bgGradient: 'linear-gradient(135deg, rgba(236, 72, 153, 0.1) 0%, rgba(244, 63, 94, 0.1) 100%)'
     },
     {
-      icon: <Zap className='w-8 h-8' />,
+      icon: <IconBolt className='w-8 h-8' />,
       title: 'Frontend Dev',
       highlight: 'Frontend',
       subtitle: 'React, NextJS',
@@ -33,7 +33,7 @@ const expertiseAreasByLocale: Record<Locale, ExpertiseArea[]> = {
       bgGradient: 'linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(6, 182, 212, 0.1) 100%)'
     },
     {
-      icon: <Server className='w-8 h-8' />,
+      icon: <IconServer className='w-8 h-8' />,
       title: 'Backend Dev',
       highlight: 'NodeJS, Bun',
       description: 'Backend with Node.js, Bun, Express.js, NestJS, and Elysia. PostgreSQL, Prisma, Drizzle ORM. Cross-platform desktop apps with Electron.js and Tauri, plus mobile with Flutter.',
@@ -44,7 +44,7 @@ const expertiseAreasByLocale: Record<Locale, ExpertiseArea[]> = {
   ,
   uz: [
     {
-      icon: <Code className='w-8 h-8' />,
+      icon: <IconCode className='w-8 h-8' />,
       title: 'Dasturiy ta`minot ishlab chiqish',
       highlight: 'Dasturiy',
       description: 'Funksional va OOP paradigmalarda mustahkam bilim. JavaScript, TypeScript va masshtablanuvchi tizimlar arxitekturasida tajriba.',
@@ -52,7 +52,7 @@ const expertiseAreasByLocale: Record<Locale, ExpertiseArea[]> = {
       bgGradient: 'linear-gradient(135deg, rgba(236, 72, 153, 0.1) 0%, rgba(244, 63, 94, 0.1) 100%)'
     },
     {
-      icon: <Zap className='w-8 h-8' />,
+      icon: <IconBolt className='w-8 h-8' />,
       title: 'Frontend Dasturlash',
       highlight: 'Frontend',
       subtitle: 'React, NextJS',
@@ -61,7 +61,7 @@ const expertiseAreasByLocale: Record<Locale, ExpertiseArea[]> = {
       bgGradient: 'linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(6, 182, 212, 0.1) 100%)'
     },
     {
-      icon: <Server className='w-8 h-8' />,
+      icon: <IconServer className='w-8 h-8' />,
       title: 'Backend Dasturlash',
       highlight: 'NodeJS',
       description: 'Node.js, Bun, Express.js, NestJS va Elysia bilan backend. PostgreSQL, Prisma, Drizzle ORM. Electron.js va Tauri yordamida desktop, Flutter bilan mobil ilovalar yaratish.',
@@ -126,7 +126,7 @@ const Expertise = ({ title, subtitle, locale }: ExpertiseProps) => {
         <div className='text-center mb-16'>
           <div className='flex items-center justify-center gap-6 mb-6'>
             <div className='w-20 h-20 rounded-xl bg-linear-to-br from-purple-500 to-pink-600 flex items-center justify-center'>
-              <Code className='size-12 text-white' />
+              <IconCode className='size-12 text-white' />
             </div>
             <h2 className='text-4xl sm:text-8xl font-bold text-white font-poppins tracking-wide'>
               {title}
@@ -213,7 +213,7 @@ const Expertise = ({ title, subtitle, locale }: ExpertiseProps) => {
                style={{ background: 'linear-gradient(135deg, rgba(147, 51, 234, 0.1) 0%, rgba(79, 70, 229, 0.1) 100%)' }}>
             <div className='flex items-start gap-6'>
               <div className='p-3 rounded-xl bg-purple-500/20 border border-purple-400/30 backdrop-blur-sm group-hover:scale-110 transition-transform duration-300'>
-                <Quote className='w-6 h-6 text-purple-400' />
+                <IconQuote className='w-6 h-6 text-purple-400' />
               </div>
               <blockquote className='flex-1'>
                 <p className='text-xl sm:text-2xl font-semibold text-white mb-4 font-poppins leading-relaxed group-hover:text-blue-300 transition-colors duration-300'>

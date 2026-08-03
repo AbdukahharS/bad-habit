@@ -1,7 +1,12 @@
-import { Quote, MessageCircle, Linkedin, Send, Github } from 'lucide-react'
+import {
+  IconQuote,
+  IconMessageCircle,
+  IconSend,
+  IconBrandGithub,
+  IconBrandLinkedin,
+} from '@tabler/icons-react'
 import Image from 'next/image'
 import Link from 'next/link'
-import React from 'react'
 import type { Locale } from '@/lib/i18n'
 
 type FooterProps = {
@@ -112,25 +117,25 @@ const Footer = ({ title, description, emailLabel, locale }: FooterProps) => {
                 {
                   href: 'https://wa.me/998881630804',
                   label: 'WhatsApp',
-                  icon: <MessageCircle className='w-5 h-5' />,
+                  icon: <IconMessageCircle className='w-5 h-5' />,
                   color: 'green',
                 },
                 {
                   href: 'https://www.linkedin.com/in/shahzod-kahhorov/',
                   label: 'LinkedIn',
-                  icon: <Linkedin className='w-5 h-5' />,
+                  icon: <IconBrandLinkedin className='w-5 h-5' />,
                   color: 'blue',
                 },
                 {
                   href: 'https://t.me/shahzod_qaxxorov',
                   label: 'Telegram',
-                  icon: <Send className='w-5 h-5' />,
+                  icon: <IconSend className='w-5 h-5' />,
                   color: 'cyan',
                 },
                 {
                   href: 'https://github.com/AbdukahharS',
                   label: 'GitHub',
-                  icon: <Github className='w-5 h-5' />,
+                  icon: <IconBrandGithub className='w-5 h-5' />,
                   color: 'purple',
                 },
               ].map(({ href, label, icon, color }) => (
@@ -181,7 +186,7 @@ const Footer = ({ title, description, emailLabel, locale }: FooterProps) => {
               }}
             >
               <div className='flex flex-row items-start justify-between mb-4'>
-                <Quote className='w-8 h-8 text-purple-400 group-hover:text-purple-300 transition-colors duration-300' />
+                <IconQuote className='w-8 h-8 text-purple-400 group-hover:text-purple-300 transition-colors duration-300' />
                 <div className='w-16 h-16 rounded-full overflow-hidden border-2 border-purple-400/50 group-hover:border-purple-300 transition-colors duration-300'>
                   <Image
                     src={featuredTestimonial.image}
@@ -225,7 +230,7 @@ const Footer = ({ title, description, emailLabel, locale }: FooterProps) => {
                 }}
               >
                 <div className='flex flex-row items-start justify-between mb-3'>
-                  <Quote
+                  <IconQuote
                     className={`w-6 h-6 transition-colors duration-300 ${
                       index === 0
                         ? 'text-blue-400 group-hover:text-blue-300'

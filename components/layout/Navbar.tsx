@@ -2,15 +2,15 @@
 
 import type { Locale } from '@/lib/i18n'
 import {
-  Briefcase,
-  ChevronDown,
-  Code,
-  Globe,
-  Home,
-  Mail,
-  Menu,
-  X,
-} from 'lucide-react'
+  IconBriefcase,
+  IconChevronDown,
+  IconCode,
+  IconWorld,
+  IconHome,
+  IconMail,
+  IconMenu2,
+  IconX,
+} from '@tabler/icons-react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useEffect, useRef, useState } from 'react'
@@ -80,22 +80,22 @@ const Navbar = ({
     {
       id: 'expertise',
       label: navLabels.expertise,
-      icon: <Code className='w-4 h-4' />,
+      icon: <IconCode className='w-4 h-4' />,
     },
     {
       id: 'projects',
       label: navLabels.projects,
-      icon: <Home className='w-4 h-4' />,
+      icon: <IconHome className='w-4 h-4' />,
     },
     {
       id: 'experience',
       label: navLabels.experience,
-      icon: <Briefcase className='w-4 h-4' />,
+      icon: <IconBriefcase className='w-4 h-4' />,
     },
     {
       id: 'contact',
       label: navLabels.contact,
-      icon: <Mail className='w-4 h-4' />,
+      icon: <IconMail className='w-4 h-4' />,
     },
   ]
   const localizedRoot = basePath ?? `/${locale}`
@@ -127,7 +127,7 @@ const Navbar = ({
                 className='flex lg:hidden justify-center items-center w-12 h-12 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 hover:border-purple-400/50 group transition-all duration-300 hover:scale-110'
                 onClick={() => setActive(true)}
               >
-                <Menu
+                <IconMenu2
                   size={20}
                   className='group-hover:text-purple-400 transition-colors duration-300'
                 />
@@ -227,11 +227,11 @@ const Navbar = ({
                       onClick={() => setLangOpen(!langOpen)}
                       className='group cursor-pointer flex items-center gap-2 px-3 py-2 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 hover:border-cyan-400/50 transition-all duration-300'
                     >
-                      <Globe className='w-4 h-4 text-cyan-400' />
+                      <IconWorld className='w-4 h-4 text-cyan-400' />
                       <span className='text-sm font-bold text-white group-hover:text-cyan-300 transition-colors'>
                         {currentLang.label}
                       </span>
-                      <ChevronDown
+                      <IconChevronDown
                         className={`w-3 h-3 text-white/60 group-hover:text-cyan-300 transition-all duration-300 ${
                           langOpen ? 'rotate-180' : ''
                         }`}
@@ -250,7 +250,7 @@ const Navbar = ({
                         <div className='px-3 py-2 text-xs text-white/40 uppercase tracking-wider font-mono'>
                           {`// ${navLabels.language}`}
                         </div>
-                        {languages.map((lang, i) => (
+                        {languages.map((lang) => (
                           <Link
                             key={lang.code}
                             href={
@@ -322,7 +322,7 @@ const Navbar = ({
               className='absolute top-6 right-6 w-12 h-12 flex justify-center items-center rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 hover:border-red-400/50 group transition-all duration-300 hover:scale-110'
               onClick={() => setActive(false)}
             >
-              <X
+              <IconX
                 size={20}
                 className='group-hover:text-red-400 transition-colors duration-300'
               />
