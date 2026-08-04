@@ -129,7 +129,7 @@ A near-monochrome dark base lit by one neon gradient engine; supporting hues app
 ### Hierarchy
 - **Hero** (Poppins 600, `clamp(2.25rem, 9vw, 9rem)`, tight leading): The full-screen name lockup only. One per page, with a soft black text-shadow over the cover image.
 - **Display** (Poppins 700, `text-4xl` → `sm:text-7xl/8xl`, `tracking-wide`): Section titles (Expertise, Projects, Experience). Often paired with a gradient icon tile to its left.
-- **Title** (Poppins 700, `text-xl`–`2xl`, normal leading): Card titles, gallery project names (up to `3.25rem` black in the archive register), testimonial authors.
+- **Title** (Poppins 700, `text-xl`–`2xl`, normal leading): Card titles, testimonial authors. Archive-register project names run `text-base` on compact cards and `text-2xl`–`3xl` (900) in the expanded dossier.
 - **Body** (Roboto Mono 400, `text-sm`–`base`, `leading-relaxed` ≈ 1.7): Descriptions, quotes, paragraphs. Body color is `gray-300`, brightening to white on card hover.
 - **Label** (Roboto Mono 400–700, `text-xs`, sometimes `uppercase tracking-wider`): Code-comment labels (`// uz`, `// language`), nav superscripts (`01`–`06`), category metadata, counts.
 
@@ -143,17 +143,16 @@ Full-bleed dark sections with a shared horizontal rhythm: `px-6` on mobile, `md:
 
 - **Hero:** 100vh cover image with a bottom gradient fade into Midnight Ink; content dead-centered.
 - **Projects (showcase):** CSS-columns masonry — 1 column mobile, 2 at `md`, 3 at `lg`, 4 at `xl`, `1.5–2rem` column gap. Cards avoid breaking across columns.
-- **Projects (archive):** a single vertical list separated by `white/6%` hairlines, each entry alternating image/description columns (`2fr_3fr` ↔ `3fr_2fr`) with a giant ghost index number bleeding off the top-right.
+- **Projects (archive):** an index wall. A sticky toolbar (search + tag-filter toggle + `n/36` count) sits under the navbar; below it, a `13–15rem` sticky category rail (desktop, hairline left rule, mono index + label + count, scroll-spy active state) beside category sections separated by `white/6%` hairlines. Each section carries a `// 0i` mono label, a Poppins section title, a count, and a giant ghost index bleeding off the top-right. Inside a section, projects are a compact card grid (`sm:2 / xl:3` columns); a card expands in place to a full-width two-column dossier (screenshot left, detail right). On mobile the rail collapses to a sticky horizontal chip row.
 - **Footer:** 45/55 split — contact column left, testimonial mosaic right — collapsing to stacked on mobile.
 - **Navbar:** fixed, floating in a `mx-4/8/12` inset; it never spans edge-to-edge.
 
 ## Elevation & Depth
 
-The system is **flat by default, glow on state**. Depth at rest comes from translucency (backdrop blur over the dark base) and hairline borders, not shadows. Shadows exist only as interaction feedback — a hover lifts a card and lights a blue glow beneath it — plus one ambient exception: gallery screenshots carry a deep black drop shadow (`shadow-2xl shadow-black/40`) to seat the image on the page.
+The system is **flat by default, glow on state**. Depth at rest comes from translucency (backdrop blur over the dark base) and hairline borders, not shadows. Shadows exist only as interaction feedback — a hover lifts a card and lights a blue glow beneath it.
 
 ### Shadow Vocabulary
 - **Hover Glow** (`box-shadow: 0 25px 50px -12px rgba(59, 130, 246, 0.25), 0 0 0 1px rgba(255,255,255,0.1)`): Project-card hover. The card scales to `1.02` and rises `8px` as the glow ignites.
-- **Image Seat** (`box-shadow: 0 25px 50px -12px rgba(0,0,0,0.4)`): Archive-gallery screenshots only.
 - **Neon Bloom** (layered `0 0 15–120px` hsl glows): The custom cursor and the active-language dot. Reserved for genuinely luminous elements.
 
 ### Named Rules
@@ -190,6 +189,13 @@ Soft, friendly geometry at three scales: small controls at `8px` (rounded-lg), s
 ### Filter Buttons
 - **Style:** `12px` radius pill-buttons with a category icon and a floating circular count badge.
 - **State:** Inactive = `gray-800/30` fill, `gray-300` text, `gray-700/50` border. Active = azure→orchid gradient at 80%, white text, azure border at 50%, blue glow, `scale-105`.
+
+### Archive Project Card (all-projects page)
+- **Style:** Flat `12px` card — `white/2` fill, 1px `white/8` hairline, no glass, no glow (archive register). A 16:10 screenshot tops the card; below, a Poppins-bold name, a 2-line clamped mono description, up to 4 tag chips with a `+N` overflow counter, and a footer row of live/code/package links. A circular `+` affordance top-right of the text block opens the dossier.
+- **Hover:** Border brightens to `white/20`, screenshot scales `1.04`, title tints azure (`blue-300`).
+- **Expanded (dossier):** The card swaps in place to a full-width two-column panel (screenshot left, detail right) on a `white/15` border: `// category` mono label, 900-weight Poppins name, full long description, complete tag set, ghost-style action buttons (`white/10` fill), and a circular close button. One dossier open at a time.
+- **Badge:** The SaaS ★ badge (amber, The One-Badge Rule) floats top-left on the screenshot.
+- **Category rail:** Sticky index of the 8 categories — hairline left rule, `0i` mono index, label, count. Active item is full-white with a white rule segment; the row is scroll-spy driven. Collapses to a sticky horizontal chip row under the toolbar on mobile.
 
 ### Experience Accordion
 - **Style:** `16px` glass card; header is the whole click target with title, duration pill (`blue-500/20`), and location row. A `48px` circular toggle button rotates 180° and fills orchid when open.
