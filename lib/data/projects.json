@@ -1,6 +1,7 @@
 [
   {
     "name": "UYDEK",
+    "showOnHome": true,
     "description": {
       "en": "Digital transaction infrastructure platform for the real estate market. Unites property owners, buyers, agents, agencies, developers, banks, and notaries into a single ecosystem with map-first discovery, deal pipeline management, digital power of attorney, escrow, mortgage facilitation, and document verification.",
       "uz": "Ko'chmas mulk bozori uchun raqamli tranzaksiya infratuzilma platformasi. Xaridorlar, agentlar, agentliklar, quruvchilar, banklar va notariuslarni xarita asosidagi kashfiyot, bitim pipeline boshqaruvi, raqamli ishonchnoma, eskrou, ipoteka yordami va hujjat tekshiruvi bilan birlashtiradi."
@@ -34,6 +35,8 @@
   },
   {
     "name": "Cirth",
+    "showOnHome": true,
+    "badge": "SaaS",
     "description": {
       "en": "Cirth is a SaaS platform where developers and teams write, version, and publish technical documentation under their own custom domain or a platform subdomain. Features a TipTap rich text editor, multi-version page trees, GitHub import, and custom domain routing at the Edge.",
       "uz": "Cirth — dasturchilar va jamoalar texnik hujjatlarni o'z maxsus domenida yoki platforma subdomenida yozadigan, versiyalaydigan va nashr qiladigan SaaS platformasi. TipTap boy matn tahriri, ko'p versiyali sahifa daraxtlari, GitHub importi va Edge-da maxsus domen yo'naltirish imkoniyatlarini o'z ichiga oladi."
@@ -200,6 +203,7 @@
   },
   {
     "name": "ERP Renovation",
+    "showOnHome": true,
     "description": {
       "en": "Assembly-line ERP for standardized apartment renovation, engineered as B2B SaaS with schema-per-tenant multi-tenancy on PostgreSQL. A checklist-gated pipeline of ~8 stages drives properties from first inspection through final handover with automated wage credits and real-time notifications.",
       "uz": "PostgreSQL-da sxema-per-tenant ko'p o'quvchilik bilan B2B SaaS sifatida qurilgan kvartira ta'miri uchun konveyer ERP tizimi. ~8 bosqichli checklist asosidagi pipeline obyektlarni birinchi inspeksiyadan yakuniy topshirishgacha avtomatik ish haqi kreditlari va real vaqt bildirishnomalari bilan yuritadi."
@@ -274,6 +278,7 @@
   },
   {
     "name": "Ravon Taxi - Driver Mobile App",
+    "showOnHome": true,
     "description": {
       "en": "Cross-platform Android driver application with geolocation tracking, ride assignments, and real-time updates built with Tauri.",
       "uz": "Tauri yordamida yaratilgan, geolokatsiya kuzatuvi, buyurtma biriktirish va real vaqt yangilanishlarini qo'llovchi kross-platforma Android haydovchi ilovasi."
@@ -297,6 +302,7 @@
   },
   {
     "name": "Chorvoq Tourism Zone - Government Geoportal",
+    "showOnHome": true,
     "description": {
       "en": "Government tourism management platform with advanced GIS capabilities, interactive maps, and multilingual support for Chorvoq recreation zone.",
       "uz": "Chorvoq dam olish hududi uchun ilg'or GIS imkoniyatlari, interaktiv xaritalar va ko'p tilli qo'llab-quvvatlashga ega davlat turizm boshqaruv platformasi."
@@ -322,6 +328,7 @@
   },
   {
     "name": "Global Crop - Farmer Monitoring Platform",
+    "showOnHome": true,
     "description": {
       "en": "Banking sector agricultural monitoring platform with GIS-based field mapping, data analytics, and loan tracking for rural farmers.",
       "uz": "Bank sohasi uchun GIS asosidagi dala xaritalash, ma'lumotlar analitikasi va kredit kuzatuviga ega qishloq xo'jaligi monitoring platformasi."
@@ -394,6 +401,7 @@
   },
   {
     "name": "Yarrow Map Web SDK",
+    "showOnHome": true,
     "description": {
       "en": "TypeScript-based mapping library built on top of MapLibre GL. Provides high-level API for interactive maps with routing, search, public transport tracking, and custom layer management.",
       "uz": "MapLibre GL ustiga qurilgan TypeScript xaritalash kutubxonasi. Marshrutlash, qidiruv, jamoat transporti kuzatuvi va maxsus layer boshqaruvi bilan yuqori darajadagi API taqdim etadi."
@@ -556,6 +564,7 @@
   },
   {
     "name": "InMan",
+    "showOnHome": true,
     "description": {
       "en": "Inventory Management Desktop Application",
       "uz": "Ombor boshqaruvi uchun desktop ilova."

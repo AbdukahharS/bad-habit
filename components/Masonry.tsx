@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import React, { useMemo } from 'react'
+import React from 'react'
 import {
   IconWorld,
   IconPalette,
@@ -26,12 +26,12 @@ type MasonryItem = {
   tags: string[]
   category: ProjectCategory
   highlighted?: boolean
+  badge?: string
   packageRegistry?: string | null
 }
 
 type MasonryProps = {
   items: MasonryItem[]
-  current: ProjectCategory
   liveLabel: string
   codeLabel: string
   packageLabel: string
@@ -39,24 +39,16 @@ type MasonryProps = {
 
 const Masonry: React.FC<MasonryProps> = ({
   items,
-  current,
   liveLabel,
   codeLabel,
   packageLabel,
 }) => {
-  // Get filtered items
-  const filteredItems = useMemo(() => {
-    return items.filter(
-      (item) => current === 'All' || item.category === current,
-    )
-  }, [items, current])
-
   return (
-    <div className='masonry-container py-16'>
+    <div className='masonry-container py-8'>
       <div className='masonry-grid'>
-        {filteredItems.map((item, index) => (
+        {items.map((item, index) => (
           <div
-            key={`${item.name}-${current}`}
+            key={item.name}
             className={`project-card rounded-xl overflow-hidden group${item.highlighted ? ' highlighted' : ''}`}
             style={{
               background:
@@ -76,11 +68,11 @@ const Masonry: React.FC<MasonryProps> = ({
                 className='w-full h-auto transition-all duration-700 ease-out group-hover:scale-110 group-hover:brightness-110'
               />
               <div className='absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300' />
-              {item.highlighted && (
+              {item.badge && (
                 <div className='absolute top-3 right-3 flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-gradient-to-br from-amber-400/20 via-white/10 to-amber-400/20 backdrop-blur-sm border border-amber-400/30'>
                   <IconStar className='w-3.5 h-3.5 text-amber-400 fill-amber-400 drop-shadow-lg' />
                   <span className='text-xs font-semibold text-amber-300 drop-shadow-md'>
-                    SaaS
+                    {item.badge}
                   </span>
                 </div>
               )}

@@ -13,6 +13,8 @@ export type Project = {
   tags: string[]
   category: ProjectCategory
   highlighted?: boolean
+  showOnHome?: boolean
+  badge?: string
   packageRegistry?: string | null
 }
 
