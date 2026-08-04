@@ -9,24 +9,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date()
 
   return [
-    {
-      url: SITE_URL,
-      lastModified: now,
-      alternates: {
-        languages: {
-          en: SITE_URL,
-          uz: `${SITE_URL}/uz`,
-        },
-      },
-      changeFrequency: 'weekly',
-      priority: 1,
-    },
     ...locales.map((locale) => ({
       url: `${SITE_URL}/${locale}`,
       lastModified: now,
       alternates: {
         languages: {
-          en: SITE_URL,
+          en: `${SITE_URL}/en`,
           uz: `${SITE_URL}/uz`,
         },
       },

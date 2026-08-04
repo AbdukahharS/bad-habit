@@ -35,9 +35,16 @@ type Dictionary = {
     language: string
     openMenu: string
     closeMenu: string
+    external: string
   }
   hero: {
     subtitle: string
+    positioning: string
+    proofStrip: string
+    viewProjects: string
+    scrollDown: string
+    shotUydekAlt: string
+    shotYarrowAlt: string
   }
   expertise: {
     title: string
@@ -56,8 +63,11 @@ type Dictionary = {
     clearFilters: string
     noResults: string
     back: string
-    selectedCount: string
     matchAllTags: string
+    categoryIndexLabel: string
+    searchPlaceholder: string
+    showDetails: string
+    hideDetails: string
   }
   experience: {
     title: string
@@ -67,7 +77,16 @@ type Dictionary = {
   footer: {
     title: string
     description: string
-    email: string
+    colophon: string
+  }
+  seo: {
+    aboutHeading: string
+    aboutText: string
+    projectsHeading: string
+    categoryLabel: string
+    technologiesLabel: string
+    liveLabel: string
+    sourceLabel: string
   }
   categories: Record<ProjectCategory, string>
 }
@@ -103,9 +122,18 @@ const dictionaries: Record<Locale, Dictionary> = {
       language: 'language',
       openMenu: 'Open menu',
       closeMenu: 'Close menu',
+      external: 'external link',
     },
     hero: {
       subtitle: 'SOFTWARE ENGINEER, WEB DEVELOPER',
+      positioning:
+        'I build enterprise systems, GIS platforms, SDKs, and SaaS products.',
+      proofStrip:
+        '// Tashkent, Uzbekistan · 4+ years · open to freelance & full-time',
+      viewProjects: 'View projects',
+      scrollDown: 'Scroll down',
+      shotUydekAlt: 'UYDEK real-estate platform screenshot',
+      shotYarrowAlt: 'Yarrow Map web app screenshot',
     },
     expertise: {
       title: 'Expertise',
@@ -120,13 +148,16 @@ const dictionaries: Record<Locale, Dictionary> = {
       viewAll: 'View all projects',
       allProjectsTitle: 'All Projects',
       allProjectsSubtitle:
-        'Every project I have shipped — full descriptions, complete tech stack, and tag-based filtering.',
+        'Every project I have shipped — browse by category, search the stack, open any card for the full story.',
       tagFilterLabel: 'Filter by tags',
       clearFilters: 'Clear filters',
-      noResults: 'No projects match the selected tags.',
+      noResults: 'No projects match your search or filters.',
       back: 'Back to home',
-      selectedCount: 'selected',
       matchAllTags: 'Match all tags',
+      categoryIndexLabel: 'Jump to category',
+      searchPlaceholder: 'Search projects, stacks, categories…',
+      showDetails: 'Open details',
+      hideDetails: 'Close details',
     },
     experience: {
       title: 'Experience',
@@ -137,7 +168,18 @@ const dictionaries: Record<Locale, Dictionary> = {
       title: "Let's build something amazing together",
       description:
         'From enterprise systems and GIS platforms to SaaS products and mobile apps — let\'s turn your idea into production-ready software.',
-      email: 'Email',
+      colophon:
+        '© {year} Shahzod Abdukahhar · Tashkent, Uzbekistan · built with Next.js',
+    },
+    seo: {
+      aboutHeading: 'About Shahzod Abdukahhar',
+      aboutText:
+        'Shahzod Abdukahhar is a Software Engineer and Web Developer based in Tashkent, Uzbekistan with 4+ years of experience building enterprise applications, SaaS products, GIS platforms, SDKs, and full-stack solutions. Specializes in React, Next.js, Vue, TypeScript, Node.js, Bun, Flutter, Electron.js, and Tauri. Available for freelance and full-time opportunities. Contact: shahzod@abdukahhar.uz',
+      projectsHeading: 'All Projects',
+      categoryLabel: 'Category',
+      technologiesLabel: 'Technologies',
+      liveLabel: 'Live URL',
+      sourceLabel: 'Source code',
     },
     categories: commonCategories,
   },
@@ -150,21 +192,30 @@ const dictionaries: Record<Locale, Dictionary> = {
       openGraphLocale: 'uz_UZ',
     },
     nav: {
-      expertise: 'tajriba',
+      expertise: 'koʻnikmalar',
       projects: 'loyihalar',
-      experience: 'faoliyat',
+      experience: 'tajriba',
       contact: 'aloqa',
       blog: 'blog',
       cirth: 'cirth',
       language: 'til',
       openMenu: 'Menyuni ochish',
       closeMenu: 'Menyuni yopish',
+      external: 'tashqi havola',
     },
     hero: {
-      subtitle: 'DASTURIY MUHANDIS, VEB DASTURCHI',
+      subtitle: 'DASTURIY TAʼMINOT MUHANDISI, VEB DASTURCHI',
+      positioning:
+        'Korporativ tizimlar, GIS platformalari, SDK lar va SaaS mahsulotlari yarataman.',
+      proofStrip:
+        '// Toshkent, Oʻzbekiston · 4+ yil tajriba · frilans va toʻliq stavkaga ochiq',
+      viewProjects: 'Loyihalarni koʻrish',
+      scrollDown: 'Pastga',
+      shotUydekAlt: 'UYDEK koʻchmas mulk platformasi skrinshoti',
+      shotYarrowAlt: 'Yarrow Map veb-ilovasi skrinshoti',
     },
     expertise: {
-      title: 'Ko`nikmalar',
+      title: 'Koʻnikmalar',
       subtitle:
         'Masshtablanuvchi korporativ ilovalar, GIS platformalari, SDK lar va full-stack yechimlar yarataman',
     },
@@ -177,13 +228,16 @@ const dictionaries: Record<Locale, Dictionary> = {
       viewAll: 'Barcha loyihalarni ko\'rish',
       allProjectsTitle: 'Barcha loyihalar',
       allProjectsSubtitle:
-        'Men ishlab chiqqan har bir loyiha — to\'liq tavsiflar, butun texnologiyalar to\'plami va teglar bo\'yicha filtrlash.',
+        'Men ishlab chiqqan har bir loyiha — kategoriya bo\'ylab ko\'ring, texnologiya bo\'ylab qidiring, to\'liq hikoya uchun kartani oching.',
       tagFilterLabel: 'Teglar bo\'yicha saralash',
       clearFilters: 'Tozalash',
-      noResults: 'Tanlangan teglarga mos loyiha topilmadi.',
+      noResults: 'Qidiruv yoki filtrlarga mos loyiha topilmadi.',
       back: 'Bosh sahifaga',
-      selectedCount: 'tanlangan',
       matchAllTags: 'Barcha teglarga mos',
+      categoryIndexLabel: 'Kategoriyaga o\'tish',
+      searchPlaceholder: 'Loyiha, texnologiya, kategoriya qidirish…',
+      showDetails: 'Batafsil ochish',
+      hideDetails: 'Yopish',
     },
     experience: {
       title: 'Tajriba',
@@ -194,7 +248,18 @@ const dictionaries: Record<Locale, Dictionary> = {
       title: 'Keling, birgalikda ajoyib mahsulot yarataylik',
       description:
         'Korporativ tizimlar va GIS platformalaridan tortib SaaS mahsulotlari va mobil ilovalargacha — g\'oyangizni production-darajadagi dasturiy ta\'minotga aylantiramiz.',
-      email: 'Email',
+      colophon:
+        '© {year} Shahzod Abdukahhar · Toshkent, Oʻzbekiston · Next.js bilan yaratilgan',
+    },
+    seo: {
+      aboutHeading: 'Shahzod Abdukahhar haqida',
+      aboutText:
+        'Shahzod Abdukahhar — Toshkent, Oʻzbekistonda yashovchi dasturiy taʼminot muhandisi va veb-dasturchi. Korporativ ilovalar, SaaS mahsulotlari, GIS platformalari, SDK lar va full-stack yechimlar yaratishda 4+ yillik tajribaga ega. React, Next.js, Vue, TypeScript, Node.js, Bun, Flutter, Electron.js va Tauri boʻyicha ixtisoslashgan. Frilans va toʻliq stavka takliflariga ochiq. Aloqa: shahzod@abdukahhar.uz',
+      projectsHeading: 'Barcha loyihalar',
+      categoryLabel: 'Kategoriya',
+      technologiesLabel: 'Texnologiyalar',
+      liveLabel: 'Jonli havola',
+      sourceLabel: 'Manba kodi',
     },
     categories: {
       All: 'Barchasi',

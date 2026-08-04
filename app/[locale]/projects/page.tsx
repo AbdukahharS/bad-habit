@@ -1,16 +1,16 @@
+import { IconArrowLeft } from '@tabler/icons-react'
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { IconArrowLeft } from '@tabler/icons-react'
 import { notFound } from 'next/navigation'
 
 import Footer from '@/components/layout/Footer'
 import ProjectsGallery from '@/components/layout/ProjectsGallery'
 import {
-  SITE_URL,
   getDictionary,
   isValidLocale,
-  locales,
   type Locale,
+  locales,
+  SITE_URL,
 } from '@/lib/i18n'
 import { localizeProjects } from '@/lib/projects'
 
@@ -70,11 +70,11 @@ export default async function ProjectsPage({ params }: Props) {
           <IconArrowLeft className='w-4 h-4 transition-transform duration-200 group-hover:-translate-x-1' />
           {dict.projects.back}
         </Link>
-        <div className='flex flex-col xl:flex-row xl:items-end justify-between gap-6 pb-10 border-b border-white/[0.08]'>
+        <div className='flex flex-col xl:flex-row xl:items-end justify-between gap-6 pb-10'>
           <h1 className='text-6xl sm:text-7xl xl:text-[6.5rem] font-black tracking-tight font-poppins leading-[0.92] text-white'>
             {dict.projects.allProjectsTitle}
           </h1>
-          <p className='text-sm text-white/40 max-w-xs xl:text-right xl:pb-1 leading-relaxed shrink-0'>
+          <p className='text-sm text-white/55 max-w-xs xl:text-right xl:pb-1 leading-relaxed shrink-0'>
             {dict.projects.allProjectsSubtitle}
           </p>
         </div>
@@ -88,8 +88,11 @@ export default async function ProjectsPage({ params }: Props) {
           tagFilterLabel: dict.projects.tagFilterLabel,
           clearFilters: dict.projects.clearFilters,
           noResults: dict.projects.noResults,
-          selectedCount: dict.projects.selectedCount,
           matchAllTags: dict.projects.matchAllTags,
+          categoryIndexLabel: dict.projects.categoryIndexLabel,
+          searchPlaceholder: dict.projects.searchPlaceholder,
+          showDetails: dict.projects.showDetails,
+          hideDetails: dict.projects.hideDetails,
           categoryLabels: dict.categories,
         }}
       />

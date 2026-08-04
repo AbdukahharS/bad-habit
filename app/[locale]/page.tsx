@@ -5,6 +5,7 @@ import Experience from '@/components/layout/Experience'
 import Footer from '@/components/layout/Footer'
 import Hero from '@/components/layout/Hero'
 import Projects from '@/components/layout/Projects'
+import projects from '@/lib/data/projects.json'
 import { getDictionary, isValidLocale, locales, type Locale } from '@/lib/i18n'
 
 type Props = {
@@ -28,7 +29,16 @@ export default async function Home({ params }: Props) {
 
   return (
     <main>
-      <Hero subtitle={dict.hero.subtitle} />
+      <Hero
+        subtitle={dict.hero.subtitle}
+        positioning={dict.hero.positioning}
+        proofStrip={dict.hero.proofStrip}
+        viewProjectsLabel={dict.hero.viewProjects}
+        scrollDownLabel={dict.hero.scrollDown}
+        shotUydekAlt={dict.hero.shotUydekAlt}
+        shotYarrowAlt={dict.hero.shotYarrowAlt}
+        locale={locale}
+      />
       <Expertise
         title={dict.expertise.title}
         subtitle={dict.expertise.subtitle}
@@ -36,12 +46,10 @@ export default async function Home({ params }: Props) {
       />
       <Projects
         title={dict.projects.title}
-        filterLabel={dict.projects.filter}
         liveLabel={dict.projects.live}
         codeLabel={dict.projects.code}
         packageLabel={dict.projects.package}
         viewAllLabel={dict.projects.viewAll}
-        categoryLabels={dict.categories}
         locale={locale}
       />
       <Experience
@@ -53,9 +61,36 @@ export default async function Home({ params }: Props) {
       <Footer
         title={dict.footer.title}
         description={dict.footer.description}
-        emailLabel={dict.footer.email}
+        colophon={dict.footer.colophon}
         locale={locale}
       />
+      <div className='sr-only' aria-hidden='true'>
+        <h2>{dict.seo.aboutHeading}</h2>
+        <p>{dict.seo.aboutText}</p>
+        <h2>{dict.seo.projectsHeading}</h2>
+        {projects.map((project) => (
+          <article key={project.name}>
+            <h3>{project.name}</h3>
+            <p>
+              {dict.seo.categoryLabel}: {project.category}
+            </p>
+            <p>{project.description[locale]}</p>
+            <p>
+              {dict.seo.technologiesLabel}: {project.tags.join(', ')}
+            </p>
+            {project.live && (
+              <p>
+                {dict.seo.liveLabel}: {project.live}
+              </p>
+            )}
+            {'source' in project && project.source && (
+              <p>
+                {dict.seo.sourceLabel}: {project.source}
+              </p>
+            )}
+          </article>
+        ))}
+      </div>
     </main>
   )
 }
