@@ -71,7 +71,7 @@ const experiencesByLocale: Record<Locale, ExperienceItem[]> = {
       title: 'Web Dasturchi @ Yarrow',
       description:
         'Yarrow Xaritalar ekotizimi uchun frontend rivojlantirishni boshqaraman — iste\'molchilar uchun Yarrow Map Web ilovasi, tijoriy Web SDK va Flutter SDK, API dasturchi paneli, interaktiv xarita embed xizmati va keng qamrovli hujjatlar platformasi.',
-      location: 'Toshkent, O`zbekiston',
+      location: 'Toshkent, Oʻzbekiston',
       link: {
         label: 'yarrow.uz',
         url: 'https://map.yarrow.uz',
@@ -155,7 +155,10 @@ const Experience = ({ title, subtitle, technologiesLabel, locale }: ExperiencePr
         `
       }} />
       
-      <section id='experience' className='px-6 md:px-12 xl:px-24'>
+      <section
+        id='experience'
+        className='px-6 md:px-12 xl:px-24 py-16 md:py-24 scroll-mt-24'
+      >
         <div className='text-center mb-16'>
           <div className='flex items-center justify-center gap-4 mb-6'>
             <div className='w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center'>

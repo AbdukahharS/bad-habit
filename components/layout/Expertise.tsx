@@ -45,7 +45,7 @@ const expertiseAreasByLocale: Record<Locale, ExpertiseArea[]> = {
   uz: [
     {
       icon: <IconCode className='w-8 h-8' />,
-      title: 'Dasturiy ta`minot ishlab chiqish',
+      title: 'Dasturiy taʼminot ishlab chiqish',
       highlight: 'Dasturiy',
       description: 'Funksional va OOP paradigmalarda mustahkam bilim. JavaScript, TypeScript va masshtablanuvchi tizimlar arxitekturasida tajriba.',
       gradient: 'from-pink-500 to-rose-500',
@@ -77,7 +77,7 @@ const quoteByLocale: Record<Locale, { text: string; author: string }> = {
     author: '- Prophet Muhammad (peace be upon him)',
   },
   uz: {
-    text: '"Ilm va sabrdan afzalroq uyg`unlik yo`q."',
+    text: '"Ilm va sabrdan afzalroq uygʻunlik yoʻq."',
     author: '- Muhammad (s.a.v.)',
   },
 }
@@ -180,7 +180,7 @@ const Expertise = ({ title, subtitle, locale }: ExpertiseProps) => {
                   {/* Vertical line */}
                   <div className='absolute left-4 top-6 h-[calc(100%-48px)] border-l border-white/30 opacity-60'></div>
 
-                  <div className="before:content-['<h3>'] before:mb-1 before:block before:opacity-40 before:-ml-8.75 before:text-sm before:font-mono before:text-slate-400 after:content-['</h3>'] after:mt-1 after:block after:opacity-40 after:-ml-8.75 after:text-sm after:font-mono after:text-slate-400">
+                  <div className="before:content-['<p>'] before:mb-1 before:block before:opacity-40 before:-ml-8.75 before:text-sm before:font-mono before:text-slate-400 after:content-['</p>'] after:mt-1 after:block after:opacity-40 after:-ml-8.75 after:text-sm after:font-mono after:text-slate-400">
                     <p className='text-gray-300 leading-relaxed group-hover:text-white transition-colors duration-300'>
                       {area.description}
                     </p>

@@ -2,6 +2,7 @@
 
 import type { Locale } from '@/lib/i18n'
 import {
+  IconArrowUpRight,
   IconBriefcase,
   IconChevronDown,
   IconCode,
@@ -182,14 +183,16 @@ const Navbar = ({
                   href='https://blog.abdukahhar.uz'
                   target='_blank'
                   rel='noopener noreferrer'
+                  aria-label={`// ${navLabels.blog} (${navLabels.external})`}
                   className={`group relative px-3 xl:px-4 py-2 font-bold transition-all duration-300 hover:scale-105 ${
                     hovered && hovered !== 'blog' ? 'opacity-50' : 'opacity-100'
                   }`}
                   onMouseEnter={() => setHovered('blog')}
                   onMouseLeave={() => setHovered(null)}
                 >
-                  <span className='relative z-10 text-white group-hover:text-green-400 transition-colors duration-300'>
+                  <span className='relative z-10 inline-flex items-center gap-1 text-white group-hover:text-green-400 transition-colors duration-300'>
                     {`// ${navLabels.blog}`}
+                    <IconArrowUpRight className='w-3.5 h-3.5 opacity-70' />
                   </span>
                   <small className='absolute -top-1 -right-1 xl:right-0 text-xs opacity-70 text-green-300 font-normal group-hover:opacity-100 transition-opacity duration-300'>
                     05
@@ -201,6 +204,7 @@ const Navbar = ({
                   href='https://cirth.uz'
                   target='_blank'
                   rel='noopener noreferrer'
+                  aria-label={`// ${navLabels.cirth} (${navLabels.external})`}
                   className={`group relative px-3 xl:px-4 py-2 font-bold transition-all duration-300 hover:scale-105 ${
                     hovered && hovered !== 'cirth'
                       ? 'opacity-50'
@@ -209,8 +213,9 @@ const Navbar = ({
                   onMouseEnter={() => setHovered('cirth')}
                   onMouseLeave={() => setHovered(null)}
                 >
-                  <span className='relative z-10 text-white group-hover:text-purple-400 transition-colors duration-300'>
+                  <span className='relative z-10 inline-flex items-center gap-1 text-white group-hover:text-purple-400 transition-colors duration-300'>
                     {`// ${navLabels.cirth}`}
+                    <IconArrowUpRight className='w-3.5 h-3.5 opacity-70' />
                   </span>
                   <small className='absolute -top-1 -right-1 xl:right-0 text-xs opacity-70 text-purple-300 font-normal group-hover:opacity-100 transition-opacity duration-300'>
                     06
