@@ -25,13 +25,13 @@ const Hero = ({ subtitle }: HeroProps) => {
       <div className='w-full h-[90vh] z-20 flex justify-center items-center flex-col gap-4 lg:gap-8'>
         <h1
           className={
-            '[text-shadow:_0_0_16px_rgb(0_0_0_/_50%)] text-4xl text-center md:text-6xl lg:text-7xl xl:text-9xl ' +
+            '[text-shadow:0_0_16px_rgb(0_0_0/50%)] text-4xl text-center md:text-6xl lg:text-7xl xl:text-9xl ' +
             poppins.className
           }
         >
           SHAHZOD <br className='hidden lg:inline' /> ABDUKAHHAR
         </h1>
-        <h2 className='[text-shadow:_0_0_16px_rgb(0_0_0_/_50%)] text-xl md:text-2xl xl:text-3xl text-center font-semibold tracking-widest'>
+        <h2 className='[text-shadow:0_0_16px_rgb(0_0_0/50%)] text-xl md:text-2xl xl:text-3xl text-center font-semibold tracking-widest'>
           {subtitle}
         </h2>
       </div>
