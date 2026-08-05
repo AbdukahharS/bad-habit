@@ -38,6 +38,7 @@ type NavbarProps = {
     language: string
     openMenu: string
     closeMenu: string
+    external: string
   }
 }
 

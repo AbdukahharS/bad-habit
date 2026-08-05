@@ -29,16 +29,7 @@ export default async function Home({ params }: Props) {
 
   return (
     <main>
-      <Hero
-        subtitle={dict.hero.subtitle}
-        positioning={dict.hero.positioning}
-        proofStrip={dict.hero.proofStrip}
-        viewProjectsLabel={dict.hero.viewProjects}
-        scrollDownLabel={dict.hero.scrollDown}
-        shotUydekAlt={dict.hero.shotUydekAlt}
-        shotYarrowAlt={dict.hero.shotYarrowAlt}
-        locale={locale}
-      />
+      <Hero subtitle={dict.hero.subtitle} />
       <Expertise
         title={dict.expertise.title}
         subtitle={dict.expertise.subtitle}
@@ -61,7 +52,7 @@ export default async function Home({ params }: Props) {
       <Footer
         title={dict.footer.title}
         description={dict.footer.description}
-        colophon={dict.footer.colophon}
+        emailLabel={dict.footer.email}
         locale={locale}
       />
       <div className='sr-only' aria-hidden='true'>

@@ -39,12 +39,6 @@ type Dictionary = {
   }
   hero: {
     subtitle: string
-    positioning: string
-    proofStrip: string
-    viewProjects: string
-    scrollDown: string
-    shotUydekAlt: string
-    shotYarrowAlt: string
   }
   expertise: {
     title: string
@@ -77,7 +71,7 @@ type Dictionary = {
   footer: {
     title: string
     description: string
-    colophon: string
+    email: string
   }
   seo: {
     aboutHeading: string
@@ -126,14 +120,6 @@ const dictionaries: Record<Locale, Dictionary> = {
     },
     hero: {
       subtitle: 'SOFTWARE ENGINEER, WEB DEVELOPER',
-      positioning:
-        'I build enterprise systems, GIS platforms, SDKs, and SaaS products.',
-      proofStrip:
-        '// Tashkent, Uzbekistan · 4+ years · open to freelance & full-time',
-      viewProjects: 'View projects',
-      scrollDown: 'Scroll down',
-      shotUydekAlt: 'UYDEK real-estate platform screenshot',
-      shotYarrowAlt: 'Yarrow Map web app screenshot',
     },
     expertise: {
       title: 'Expertise',
@@ -168,8 +154,7 @@ const dictionaries: Record<Locale, Dictionary> = {
       title: "Let's build something amazing together",
       description:
         'From enterprise systems and GIS platforms to SaaS products and mobile apps — let\'s turn your idea into production-ready software.',
-      colophon:
-        '© {year} Shahzod Abdukahhar · Tashkent, Uzbekistan · built with Next.js',
+      email: 'Email',
     },
     seo: {
       aboutHeading: 'About Shahzod Abdukahhar',
@@ -205,14 +190,6 @@ const dictionaries: Record<Locale, Dictionary> = {
     },
     hero: {
       subtitle: 'DASTURIY TAʼMINOT MUHANDISI, VEB DASTURCHI',
-      positioning:
-        'Korporativ tizimlar, GIS platformalari, SDK lar va SaaS mahsulotlari yarataman.',
-      proofStrip:
-        '// Toshkent, Oʻzbekiston · 4+ yil tajriba · frilans va toʻliq stavkaga ochiq',
-      viewProjects: 'Loyihalarni koʻrish',
-      scrollDown: 'Pastga',
-      shotUydekAlt: 'UYDEK koʻchmas mulk platformasi skrinshoti',
-      shotYarrowAlt: 'Yarrow Map veb-ilovasi skrinshoti',
     },
     expertise: {
       title: 'Koʻnikmalar',
@@ -248,8 +225,7 @@ const dictionaries: Record<Locale, Dictionary> = {
       title: 'Keling, birgalikda ajoyib mahsulot yarataylik',
       description:
         'Korporativ tizimlar va GIS platformalaridan tortib SaaS mahsulotlari va mobil ilovalargacha — g\'oyangizni production-darajadagi dasturiy ta\'minotga aylantiramiz.',
-      colophon:
-        '© {year} Shahzod Abdukahhar · Toshkent, Oʻzbekiston · Next.js bilan yaratilgan',
+      email: 'Email',
     },
     seo: {
       aboutHeading: 'Shahzod Abdukahhar haqida',

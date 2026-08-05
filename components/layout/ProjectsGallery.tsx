@@ -11,7 +11,7 @@ import {
 } from '@tabler/icons-react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react'
 import { getTag, TagChip } from '@/components/icons/tags'
 import type { ProjectCategory } from '@/lib/i18n'
 import type { LocalizedProject } from '@/lib/projects'
@@ -42,6 +42,7 @@ type CategoryGroup = {
 }
 
 const MAX_CARD_TAGS = 4
+const FLIP_DURATION_MS = 480
 
 const ProjectsGallery = ({ projects, labels }: ProjectsGalleryProps) => {
   const [query, setQuery] = useState('')
@@ -53,6 +54,10 @@ const ProjectsGallery = ({ projects, labels }: ProjectsGalleryProps) => {
     null,
   )
   const sectionRefs = useRef<Map<ProjectCategory, HTMLElement>>(new Map())
+  const rootRef = useRef<HTMLDivElement>(null)
+  const flipRects = useRef<Map<string, DOMRect> | null>(null)
+  const flipCleanup = useRef<(() => void) | null>(null)
+  const flipFocus = useRef<{ id: string; opening: boolean } | null>(null)
 
   const availableTags = useMemo(() => {
     const counts = new Map<string, number>()
@@ -189,11 +194,130 @@ const ProjectsGallery = ({ projects, labels }: ProjectsGalleryProps) => {
     setActiveCategory(category)
   }
 
-  const toggleProject = (name: string) =>
+  // FLIP morph: snapshot every card/section rect before the swap, invert the
+  // deltas on the new DOM in the layout effect below, then release to identity
+  const toggleProject = (name: string) => {
+    flipCleanup.current?.()
+    flipCleanup.current = null
+    flipFocus.current = { id: `p:${name}`, opening: openProject !== name }
+    const reduceMotion = window.matchMedia(
+      '(prefers-reduced-motion: reduce)',
+    ).matches
+    if (!reduceMotion && rootRef.current) {
+      const rects = new Map<string, DOMRect>()
+      for (const el of rootRef.current.querySelectorAll('[data-flip-id]')) {
+        const id = el.getAttribute('data-flip-id')
+        if (id) rects.set(id, el.getBoundingClientRect())
+      }
+      flipRects.current = rects
+    }
     setOpenProject((prev) => (prev === name ? null : name))
+  }
+
+  // biome-ignore lint/correctness/useExhaustiveDependencies: runs only when openProject changes, right after the swap renders
+  useLayoutEffect(() => {
+    const first = flipRects.current
+    flipRects.current = null
+    const focus = flipFocus.current
+    flipFocus.current = null
+    if (!rootRef.current) return
+
+    const elements = Array.from(
+      rootRef.current.querySelectorAll<HTMLElement>('[data-flip-id]'),
+    )
+    const focusEl = focus
+      ? elements.find((el) => el.getAttribute('data-flip-id') === focus.id)
+      : undefined
+
+    // Keep the swap's target in view: an opened dossier lands below the fold
+    // otherwise; a closed card may be scrolled past. Smooth when the FLIP
+    // morph runs, instant when it doesn't (reduced motion).
+    const scrollToFocus = (smooth: boolean) =>
+      focusEl?.scrollIntoView({
+        behavior: smooth ? 'smooth' : 'auto',
+        block: focus?.opening ? 'start' : 'center',
+      })
+
+    if (!first) {
+      scrollToFocus(false)
+      return
+    }
+
+    const movedSections = new Set<HTMLElement>()
+    const inverted: HTMLElement[] = []
+
+    const invert = (el: HTMLElement, prev: DOMRect, withScale: boolean) => {
+      const last = el.getBoundingClientRect()
+      const dx = prev.left - last.left
+      const dy = prev.top - last.top
+      const sx = withScale && last.width > 0 ? prev.width / last.width : 1
+      const sy = withScale && last.height > 0 ? prev.height / last.height : 1
+      const moved =
+        Math.abs(dx) > 1 ||
+        Math.abs(dy) > 1 ||
+        Math.abs(sx - 1) > 0.01 ||
+        Math.abs(sy - 1) > 0.01
+      if (!moved) return
+      // Kill the entrance animation: its fill state would override the transform
+      el.style.animation = 'none'
+      el.style.transition = 'none'
+      el.style.transformOrigin = 'top left'
+      el.style.transform = `translate(${dx}px, ${dy}px) scale(${sx}, ${sy})`
+      inverted.push(el)
+    }
+
+    // Sections below the toggled one shift as whole blocks (translate only);
+    // their cards ride along, so per-card flips happen only in the section
+    // that stayed put
+    for (const el of elements) {
+      if (!el.dataset.flipId?.startsWith('s:')) continue
+      const prev = first.get(el.dataset.flipId)
+      if (!prev) continue
+      const count = inverted.length
+      invert(el, prev, false)
+      if (inverted.length > count) movedSections.add(el)
+    }
+    for (const el of elements) {
+      if (!el.dataset.flipId?.startsWith('p:')) continue
+      const prev = first.get(el.dataset.flipId)
+      if (!prev) continue
+      const section = el.closest('[data-flip-id^="s:"]')
+      if (section && movedSections.has(section as HTMLElement)) continue
+      invert(el, prev, true)
+    }
+
+    if (inverted.length === 0) {
+      scrollToFocus(false)
+      return
+    }
+    const raf = requestAnimationFrame(() => {
+      for (const el of inverted) {
+        el.style.transition = `transform ${FLIP_DURATION_MS}ms cubic-bezier(0.22, 1, 0.36, 1)`
+        el.style.transform = ''
+      }
+    })
+    const timer = window.setTimeout(() => {
+      for (const el of inverted) {
+        el.style.transition = ''
+        el.style.transformOrigin = ''
+      }
+      // Scroll only after the morph lands: scrollIntoView targets the live
+      // (still-transformed) box and would land off by the travel distance
+      scrollToFocus(true)
+    }, FLIP_DURATION_MS + 60)
+    flipCleanup.current = () => {
+      cancelAnimationFrame(raf)
+      window.clearTimeout(timer)
+      for (const el of inverted) {
+        el.style.transition = ''
+        el.style.transform = ''
+        el.style.transformOrigin = ''
+      }
+    }
+  }, [openProject])
 
   return (
-    <div className='w-full'>
+    <div className='w-full' ref={rootRef}>
       {/* Toolbar: search + tag filter */}
       <div className='sticky top-[4.5rem] lg:top-20 z-20 bg-[#1a191d]/95 backdrop-blur-md border-b border-white/[0.08]'>
         <div className='px-6 md:px-12 xl:px-24 py-3 flex items-center gap-3'>
@@ -416,6 +540,7 @@ const ProjectsGallery = ({ projects, labels }: ProjectsGalleryProps) => {
                 <section
                   key={group.category}
                   data-category={group.category}
+                  data-flip-id={`s:${group.category}`}
                   ref={(el) => {
                     if (el) sectionRefs.current.set(group.category, el)
                     else sectionRefs.current.delete(group.category)
@@ -452,7 +577,7 @@ const ProjectsGallery = ({ projects, labels }: ProjectsGalleryProps) => {
                           key={`${project.name}-${filterKey}`}
                           project={project}
                           labels={labels}
-                          onClose={() => setOpenProject(null)}
+                          onClose={() => toggleProject(project.name)}
                         />
                       ) : (
                         <ProjectCard
@@ -488,7 +613,8 @@ const ProjectCard = ({ project, index, labels, onOpen }: ProjectCardProps) => {
 
   return (
     <article
-      className='gallery-card group relative flex flex-col rounded-xl border border-white/[0.08] bg-white/[0.02] overflow-hidden transition-colors duration-300 hover:border-white/20'
+      data-flip-id={`p:${project.name}`}
+      className='gallery-card group relative flex flex-col rounded-xl border border-white/[0.08] bg-white/[0.02] overflow-hidden transition-[border-color,transform] duration-300 hover:border-white/20 active:scale-[0.985] active:duration-100 cursor-pointer'
       style={{ animationDelay: `${Math.min(index * 40, 320)}ms` }}
     >
       <button
@@ -520,8 +646,8 @@ const ProjectCard = ({ project, index, labels, onOpen }: ProjectCardProps) => {
             <h3 className='text-base font-bold font-poppins text-white leading-snug group-hover:text-blue-300 transition-colors duration-200'>
               {project.name}
             </h3>
-            <span className='shrink-0 mt-0.5 w-6 h-6 rounded-full border border-white/15 flex items-center justify-center text-white/40 group-hover:text-white group-hover:border-white/40 transition-colors duration-200'>
-              <IconPlus className='w-3.5 h-3.5' />
+            <span className='shrink-0 mt-0.5 w-6 h-6 rounded-full border border-white/15 flex items-center justify-center text-white/40 group-hover:text-white group-hover:border-white/40 group-active:border-white/60 transition-colors duration-200'>
+              <IconPlus className='w-3.5 h-3.5 transition-transform duration-200 ease-out group-active:rotate-90' />
             </span>
           </div>
           <p className='text-white/55 text-sm leading-relaxed line-clamp-2'>
@@ -598,7 +724,10 @@ const ExpandedProjectCard = ({
   onClose,
 }: ExpandedProjectCardProps) => {
   return (
-    <article className='gallery-card col-span-full grid md:grid-cols-2 rounded-xl border border-white/15 bg-white/[0.03] overflow-hidden'>
+    <article
+      data-flip-id={`p:${project.name}`}
+      className='gallery-card col-span-full grid md:grid-cols-2 rounded-xl border border-white/15 bg-white/[0.03] overflow-hidden scroll-mt-36'
+    >
       {/* Screenshot */}
       <div className='relative border-b md:border-b-0 md:border-r border-white/[0.08] min-h-56'>
         <Image
@@ -617,7 +746,7 @@ const ExpandedProjectCard = ({
       </div>
 
       {/* Detail */}
-      <div className='flex flex-col gap-5 p-6 md:p-8'>
+      <div className='gallery-dossier-detail flex flex-col gap-5 p-6 md:p-8'>
         <div className='flex items-start justify-between gap-4'>
           <div className='flex flex-col gap-1.5'>
             <span className='font-mono text-xs uppercase tracking-[0.2em] text-white/30'>
@@ -631,7 +760,7 @@ const ExpandedProjectCard = ({
             type='button'
             onClick={onClose}
             aria-label={labels.hideDetails}
-            className='shrink-0 w-9 h-9 rounded-full border border-white/15 flex items-center justify-center text-white/50 hover:text-white hover:border-white/40 transition-colors duration-200'
+            className='shrink-0 w-9 h-9 rounded-full border border-white/15 flex items-center justify-center text-white/50 hover:text-white hover:border-white/40 active:scale-90 transition-[color,border-color,transform] duration-200'
           >
             <IconX className='w-4 h-4' />
           </button>

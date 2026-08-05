@@ -152,6 +152,41 @@ html {
   animation: galleryEnter 0.45s ease-out both;
 }
 
+/* Expanded dossier — the FLIP morph in ProjectsGallery drives the container;
+   the detail column staggers in as the morph lands */
+@keyframes dossierFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .gallery-dossier-detail > * {
+    animation: dossierFadeUp 0.45s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+
+  .gallery-dossier-detail > *:nth-child(1) {
+    animation-delay: 100ms;
+  }
+
+  .gallery-dossier-detail > *:nth-child(2) {
+    animation-delay: 170ms;
+  }
+
+  .gallery-dossier-detail > *:nth-child(3) {
+    animation-delay: 240ms;
+  }
+
+  .gallery-dossier-detail > *:nth-child(4) {
+    animation-delay: 310ms;
+  }
+}
+
 /* Project cards (home section masonry) */
 @keyframes cardEnter {
   0% {
