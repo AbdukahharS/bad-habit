@@ -415,7 +415,7 @@
     "source": null,
     "packageRegistry": "https://www.npmjs.com/package/@yarrow-uz/yarrow-map-web-sdk",
     "tags": ["vitest", "maplibre", "rolldown", "tsdown", "typescript", "react", "happy-dom", "testing-library", "react-testing-library"],
-    "category": "Libraries"
+    "category": "Dev Tools/Utils"
   },
   {
     "name": "Yarrow Map Flutter SDK",
@@ -432,7 +432,7 @@
     "source": null,
     "packageRegistry": "https://pub.dev/packages/yarrow_map_flutter_sdk",
     "tags": ["flutter", "dart", "maplibre", "dio"],
-    "category": "Libraries"
+    "category": "Dev Tools/Utils"
   },
   {
     "name": "Yarrow API Dashboard",
@@ -754,5 +754,32 @@
     "tags": ["figma"],
     "category": "Design Work",
     "source": null
+  },
+  {
+    "name": "Code Preview",
+    "description": {
+      "en": "Client-side code-to-image generator that turns source code into shareable graphics. Pick from 60+ syntax themes, 200+ languages, custom local fonts, and 9 curated background presets — then export as PNG/JPEG.",
+      "uz": "Kodni ulashish mumkin bo'lgan grafikaga aylantiruvchi mijoz tomonidagi vosita. 60+ sintaksis mavzusi, 200+ til, maxsus lokal shriftlar va 9 ta tayyor fon orasidan tanlang va PNG/JPEG sifatida eksport qiling."
+    },
+    "longDescription": {
+      "en": "Code Preview is a browser-only tool that turns code into shareable graphics — no backend, no account, no data leaves the device. The editing surface is a transparent textarea stacked over a syntax-highlighted layer: Shiki's highlighter produces the HTML in the background, and a luma calculation on the theme's background color decides whether the app renders in light or dark mode so the controls always stay legible.\n\nThe syntax highlighting engine exposes 60+ themes (Catppuccin family, Dracula variants, GitHub variants, Gruvbox, Tokyo Night, Nord, Solarized, and more) and 200+ languages. The 5 layout presets swap between a bare window, a centered title bar, a macOS traffic-light header, a Windows-style control cluster, and a tab-style variant — each with editable title text.\n\nBackgrounds ship as 9 curated WebP presets (Aurora, Ridge, Coast, Bloom, Dunes, Mist, Circuit, Server, Itachi) plus an upload slot that compresses user images before storing them. Every option (theme, language, font, scale, spacing, blur, opacity, layout, background) is persisted to localStorage via react-use so the editor restores exactly where you left it. The output is rasterized at 4× device pixel ratio through dom-to-image and downloaded as JPEG.\n\nThe frontend is built with React 19, TypeScript, Vite (rolldown), Tailwind CSS v4, Base UI (shadcn/ui), lucide-react for icons, class-variance-authority and clsx for styling, with the React Compiler enabled for automatic memoization. Build-time prerendering runs through a Bun script that walks the dist output, inlines critical CSS via html-minifier, and writes static files for a CDN-friendly deploy. Bun is the package manager. Deployed at code.abdukahhar.uz.",
+      "uz": "Code Preview — kodni ulashish mumkin bo'lgan grafikaga aylantiruvchi brauzerda ishlaydigan vosita — server yo'q, akkaunt yo'q, ma'lumot qurilmani tark etmaydi. Tahrirlash sirti shaffof textarea va sintaksis ajratilgan qatlam ustida joylashgan: Shiki ajratuvchisi fonda HTML yaratadi va mavzu fon rangidagi yorqinlik hisob-kitobi ilova yorug'lik yoki qorong'i rejimda chizilishini aniqlaydi, shunda boshqaruv elementlari doimo o'qilishi mumkin bo'ladi.\n\nSintaksis ajratish mexanizmi 60+ mavzu (Catppuccin oilasi, Dracula variantlari, GitHub variantlari, Gruvbox, Tokyo Night, Nord, Solarized va boshqalar) va 200+ tilni taqdim etadi. 5 ta layout shabloni odday oynadan markazlangan sarlavha paneli, macOS signal-chiroqlari sarlavhasi, Windows uslubidagi boshqaruv klasteri va tab uslubidagi variantga o'zgartiradi — har biri tahrirlanadigan sarlavha matni bilan.\n\nFonlar 9 ta tayyor WebP shablon (Aurora, Ridge, Coast, Bloom, Dunes, Mist, Circuit, Server, Itachi) va foydalanuvchi tasvirlarini siqishdan oldin saqlaydigan yuklash teshigi bilan birga keladi. Barcha sozlamalar (mavzu, til, shrift, masshtab, oraliq, loyqalantirish, shaffoflik, layout, fon) react-use orqali localStorage-ga saqlanadi. Chiqish dom-to-image orqali 4× qurilma piksel nisbatida rastrlashtiriladi va JPEG sifatida yuklanadi.\n\nFrontend React 19, TypeScript, Vite (rolldown), Tailwind CSS v4, Base UI (shadcn/ui), lucide-react, class-variance-authority va clsx asosida qurilgan, React Compiler avtomatik memoizatsiya uchun yoqilgan. Build vaqtidagi oldindan renderlash dist natijasini aylanib, html-minifier orqali muhim CSS ni ichki kiritadi va CDN-ga qulay deploy uchun statik fayllarni yozadi. Bun paket menejeri sifatida ishlatiladi. code.abdukahhar.uz da joylashtirilgan."
+    },
+    "image": "code-preview.png",
+    "live": "https://code.abdukahhar.uz/",
+    "source": "https://github.com/AbdukahharS/code-preview",
+    "tags": [
+      "react",
+      "typescript",
+      "vite",
+      "tailwind",
+      "shadcn",
+      "shiki",
+      "lucide-react",
+      "dom-to-image",
+      "clsx",
+      "bun-package-manager"
+    ],
+    "category": "Dev Tools/Utils"
   }
 ]

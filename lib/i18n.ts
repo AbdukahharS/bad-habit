@@ -16,7 +16,7 @@ export type ProjectCategory =
   | 'Landing Pages'
   | 'Documentation'
   | 'Design Work'
-  | 'Libraries'
+  | 'Dev Tools/Utils'
 
 type Dictionary = {
   meta: {
@@ -94,7 +94,7 @@ const commonCategories: Record<ProjectCategory, string> = {
   'Landing Pages': 'Landing Pages',
   Documentation: 'Documentation',
   'Design Work': 'Design Work',
-  Libraries: 'Libraries',
+  'Dev Tools/Utils': 'Dev Tools/Utils',
 }
 
 const dictionaries: Record<Locale, Dictionary> = {
@@ -246,7 +246,7 @@ const dictionaries: Record<Locale, Dictionary> = {
       'Landing Pages': 'Landing sahifalar',
       Documentation: 'Hujjatlar',
       'Design Work': 'Dizayn ishlari',
-      Libraries: 'Kutubxonalar',
+      'Dev Tools/Utils': 'Dasturchi vositalari',
     },
   },
 }

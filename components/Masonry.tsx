@@ -154,7 +154,7 @@ const Masonry: React.FC<MasonryProps> = ({
                                     ? 'bg-emerald-500/10 border-emerald-500/30 group-hover:bg-emerald-500/20 group-hover:border-emerald-400/50'
                                     : item.category === 'Design Work'
                                       ? 'bg-pink-500/10 border-pink-500/30 group-hover:bg-pink-500/20 group-hover:border-pink-400/50'
-                                      : item.category === 'Libraries'
+                                      : item.category === 'Dev Tools/Utils'
                                         ? 'bg-rose-500/10 border-rose-500/30 group-hover:bg-rose-500/20 group-hover:border-rose-400/50'
                                         : ''
                     }`}
@@ -208,7 +208,7 @@ const Masonry: React.FC<MasonryProps> = ({
                         <IconPalette className='w-4 h-4' />
                       </div>
                     )}
-                    {item.category === 'Libraries' && (
+                    {item.category === 'Dev Tools/Utils' && (
                       <div
                         className={`flex items-center gap-1.5 ${item.highlighted ? 'text-white/80' : 'text-rose-400'}`}
                       >
