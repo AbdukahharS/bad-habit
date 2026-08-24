@@ -123,7 +123,8 @@ const dictionaries: Record<Locale, Dictionary> = {
     },
     expertise: {
       title: 'Expertise',
-      subtitle: 'Building scalable enterprise applications, GIS platforms, SDKs, and full-stack solutions',
+      subtitle:
+        'Building scalable enterprise applications, GIS platforms, SDKs, and full-stack solutions',
     },
     projects: {
       title: 'My Projects',
@@ -147,13 +148,14 @@ const dictionaries: Record<Locale, Dictionary> = {
     },
     experience: {
       title: 'Experience',
-      subtitle: 'My professional journey building production-grade software across diverse domains',
+      subtitle:
+        'My professional journey building production-grade software across diverse domains',
       technologies: 'Technologies & Tools',
     },
     footer: {
       title: "Let's build something amazing together",
       description:
-        'From enterprise systems and GIS platforms to SaaS products and mobile apps — let\'s turn your idea into production-ready software.',
+        "From enterprise systems and GIS platforms to SaaS products and mobile apps — let's turn your idea into production-ready software.",
       email: 'Email',
     },
     seo: {
@@ -202,29 +204,30 @@ const dictionaries: Record<Locale, Dictionary> = {
       live: 'Sayt',
       code: 'Kod',
       package: 'Paket',
-      viewAll: 'Barcha loyihalarni ko\'rish',
+      viewAll: "Barcha loyihalarni ko'rish",
       allProjectsTitle: 'Barcha loyihalar',
       allProjectsSubtitle:
-        'Men ishlab chiqqan har bir loyiha — kategoriya bo\'ylab ko\'ring, texnologiya bo\'ylab qidiring, to\'liq hikoya uchun kartani oching.',
-      tagFilterLabel: 'Teglar bo\'yicha saralash',
+        "Men ishlab chiqqan har bir loyiha — kategoriya bo'ylab ko'ring, texnologiya bo'ylab qidiring, to'liq hikoya uchun kartani oching.",
+      tagFilterLabel: "Teglar bo'yicha saralash",
       clearFilters: 'Tozalash',
       noResults: 'Qidiruv yoki filtrlarga mos loyiha topilmadi.',
       back: 'Bosh sahifaga',
       matchAllTags: 'Barcha teglarga mos',
-      categoryIndexLabel: 'Kategoriyaga o\'tish',
+      categoryIndexLabel: "Kategoriyaga o'tish",
       searchPlaceholder: 'Loyiha, texnologiya, kategoriya qidirish…',
       showDetails: 'Batafsil ochish',
       hideDetails: 'Yopish',
     },
     experience: {
       title: 'Tajriba',
-      subtitle: 'Turli sohalarda production-darajadagi dasturiy ta\'minot yaratishdagi kasbiy yo\'lim',
+      subtitle:
+        "Turli sohalarda production-darajadagi dasturiy ta'minot yaratishdagi kasbiy yo'lim",
       technologies: 'Texnologiyalar va vositalar',
     },
     footer: {
       title: 'Keling, birgalikda ajoyib mahsulot yarataylik',
       description:
-        'Korporativ tizimlar va GIS platformalaridan tortib SaaS mahsulotlari va mobil ilovalargacha — g\'oyangizni production-darajadagi dasturiy ta\'minotga aylantiramiz.',
+        "Korporativ tizimlar va GIS platformalaridan tortib SaaS mahsulotlari va mobil ilovalargacha — g'oyangizni production-darajadagi dasturiy ta'minotga aylantiramiz.",
       email: 'Email',
     },
     seo: {

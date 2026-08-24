@@ -1,7 +1,14 @@
 'use client'
 
 import { useState } from 'react'
-import { IconMapPin, IconMinus, IconPlus, IconExternalLink, IconCalendar, IconBriefcase } from '@tabler/icons-react'
+import {
+  IconMapPin,
+  IconMinus,
+  IconPlus,
+  IconExternalLink,
+  IconCalendar,
+  IconBriefcase,
+} from '@tabler/icons-react'
 import Link from 'next/link'
 import Image from 'next/image'
 import type { Locale } from '@/lib/i18n'
@@ -70,7 +77,7 @@ const experiencesByLocale: Record<Locale, ExperienceItem[]> = {
     {
       title: 'Web Dasturchi @ Yarrow',
       description:
-        'Yarrow Xaritalar ekotizimi uchun frontend rivojlantirishni boshqaraman — iste\'molchilar uchun Yarrow Map Web ilovasi, tijoriy Web SDK va Flutter SDK, API dasturchi paneli, interaktiv xarita embed xizmati va keng qamrovli hujjatlar platformasi.',
+        "Yarrow Xaritalar ekotizimi uchun frontend rivojlantirishni boshqaraman — iste'molchilar uchun Yarrow Map Web ilovasi, tijoriy Web SDK va Flutter SDK, API dasturchi paneli, interaktiv xarita embed xizmati va keng qamrovli hujjatlar platformasi.",
       location: 'Toshkent, Oʻzbekiston',
       link: {
         label: 'yarrow.uz',
@@ -93,7 +100,7 @@ const experiencesByLocale: Record<Locale, ExperienceItem[]> = {
     {
       title: 'Frilanser',
       description:
-        'Butun dunyo bo\'ylab mijozlar uchun kompleks yechimlar taqdim etaman — korporativ ERP tizimlari va ko\'chmas mulk platformalaridan tortib GIS geoportallar, SaaS mahsulotlari va kross-platforma mobil ilovalargacha.',
+        "Butun dunyo bo'ylab mijozlar uchun kompleks yechimlar taqdim etaman — korporativ ERP tizimlari va ko'chmas mulk platformalaridan tortib GIS geoportallar, SaaS mahsulotlari va kross-platforma mobil ilovalargacha.",
       location: 'Masofaviy',
       duration: '2021 - Hozir',
       tags: [
@@ -120,7 +127,12 @@ type ExperienceProps = {
   locale: Locale
 }
 
-const Experience = ({ title, subtitle, technologiesLabel, locale }: ExperienceProps) => {
+const Experience = ({
+  title,
+  subtitle,
+  technologiesLabel,
+  locale,
+}: ExperienceProps) => {
   const experiences = experiencesByLocale[locale]
   const [opens, setOpens] = useState<number[]>([1, 2])
 
@@ -134,8 +146,9 @@ const Experience = ({ title, subtitle, technologiesLabel, locale }: ExperiencePr
 
   return (
     <>
-      <style dangerouslySetInnerHTML={{
-        __html: `
+      <style
+        dangerouslySetInnerHTML={{
+          __html: `
           @keyframes experienceEnter {
             0% {
               opacity: 0;
@@ -152,9 +165,10 @@ const Experience = ({ title, subtitle, technologiesLabel, locale }: ExperiencePr
           .experience-card {
             animation: experienceEnter 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) both;
           }
-        `
-      }} />
-      
+        `,
+        }}
+      />
+
       <section
         id='experience'
         className='px-6 md:px-12 xl:px-24 py-16 md:py-24 scroll-mt-24'
@@ -168,11 +182,9 @@ const Experience = ({ title, subtitle, technologiesLabel, locale }: ExperiencePr
               {title}
             </h2>
           </div>
-          <p className='text-xl text-gray-300 max-w-2xl mx-auto'>
-            {subtitle}
-          </p>
+          <p className='text-xl text-gray-300 max-w-2xl mx-auto'>{subtitle}</p>
         </div>
-        
+
         <div className='flex flex-col gap-8 max-w-4xl w-full mx-auto'>
           {experiences.map((experience, index) => (
             <div
@@ -183,9 +195,10 @@ const Experience = ({ title, subtitle, technologiesLabel, locale }: ExperiencePr
               <div
                 className='relative rounded-2xl border border-white/10 backdrop-blur-sm overflow-hidden transition-all duration-500 hover:scale-[1.02] hover:border-purple-400/30'
                 style={{
-                  background: index === 0 
-                    ? 'linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(147, 51, 234, 0.1) 100%)' 
-                    : 'linear-gradient(135deg, rgba(147, 51, 234, 0.1) 0%, rgba(236, 72, 153, 0.1) 100%)'
+                  background:
+                    index === 0
+                      ? 'linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(147, 51, 234, 0.1) 100%)'
+                      : 'linear-gradient(135deg, rgba(147, 51, 234, 0.1) 0%, rgba(236, 72, 153, 0.1) 100%)',
                 }}
               >
                 {/* Header */}
@@ -200,14 +213,18 @@ const Experience = ({ title, subtitle, technologiesLabel, locale }: ExperiencePr
                       </h3>
                       <div className='flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/20 text-blue-300 border border-blue-500/30'>
                         <IconCalendar className='w-4 h-4' />
-                        <span className='text-sm font-medium'>{experience.duration}</span>
+                        <span className='text-sm font-medium'>
+                          {experience.duration}
+                        </span>
                       </div>
                     </div>
-                    
+
                     <div className='flex items-center gap-6 text-gray-300'>
                       <div className='flex items-center gap-2'>
                         <IconMapPin className='w-4 h-4 text-purple-400' />
-                        <span className='text-sm font-medium'>{experience.location}</span>
+                        <span className='text-sm font-medium'>
+                          {experience.location}
+                        </span>
                       </div>
                       {experience.link && (
                         <Link
@@ -217,19 +234,27 @@ const Experience = ({ title, subtitle, technologiesLabel, locale }: ExperiencePr
                           onClick={(e) => e.stopPropagation()}
                         >
                           <IconExternalLink className='w-4 h-4' />
-                          <span className='text-sm font-medium underline'>{experience.link.label}</span>
+                          <span className='text-sm font-medium underline'>
+                            {experience.link.label}
+                          </span>
                         </Link>
                       )}
                     </div>
                   </div>
-                  
+
                   <div className='sm:ml-4'>
-                    <div className={`flex items-center justify-center rounded-full w-12 h-12 border transition-all duration-300 ${
-                      opens.includes(experience.id) 
-                        ? 'bg-purple-500/20 border-purple-400/50 text-purple-300 rotate-180' 
-                        : 'bg-white/5 border-white/20 text-gray-400 hover:bg-purple-500/20 hover:border-purple-400/50 hover:text-purple-300'
-                    }`}>
-                      {opens.includes(experience.id) ? <IconMinus className='w-5 h-5' /> : <IconPlus className='w-5 h-5' />}
+                    <div
+                      className={`flex items-center justify-center rounded-full w-12 h-12 border transition-all duration-300 ${
+                        opens.includes(experience.id)
+                          ? 'bg-purple-500/20 border-purple-400/50 text-purple-300 rotate-180'
+                          : 'bg-white/5 border-white/20 text-gray-400 hover:bg-purple-500/20 hover:border-purple-400/50 hover:text-purple-300'
+                      }`}
+                    >
+                      {opens.includes(experience.id) ? (
+                        <IconMinus className='w-5 h-5' />
+                      ) : (
+                        <IconPlus className='w-5 h-5' />
+                      )}
                     </div>
                   </div>
                 </button>
@@ -237,7 +262,9 @@ const Experience = ({ title, subtitle, technologiesLabel, locale }: ExperiencePr
                 {/* Expandable Content */}
                 <div
                   className={`transition-all duration-500 overflow-hidden ${
-                    opens.includes(experience.id) ? 'max-h-[600px] opacity-100' : 'max-h-0 opacity-0'
+                    opens.includes(experience.id)
+                      ? 'max-h-[600px] opacity-100'
+                      : 'max-h-0 opacity-0'
                   }`}
                 >
                   <div className='px-6 sm:px-8 pb-6 sm:pb-8 border-t border-white/10'>
@@ -246,9 +273,11 @@ const Experience = ({ title, subtitle, technologiesLabel, locale }: ExperiencePr
                         <p className='text-gray-300 leading-relaxed text-lg'>
                           {experience.description}
                         </p>
-                        
+
                         <div className='space-y-3'>
-                          <h4 className='text-sm font-semibold text-white uppercase tracking-wide'>{technologiesLabel}</h4>
+                          <h4 className='text-sm font-semibold text-white uppercase tracking-wide'>
+                            {technologiesLabel}
+                          </h4>
                           <div className='flex flex-wrap gap-2'>
                             {experience.tags.map((tag, tagIndex) => (
                               <span
@@ -261,14 +290,14 @@ const Experience = ({ title, subtitle, technologiesLabel, locale }: ExperiencePr
                           </div>
                         </div>
                       </div>
-                      
+
                       {experience.logo && (
                         <div className='flex items-center justify-center lg:justify-end'>
                           <div className='w-24 h-24 sm:w-32 sm:h-32 rounded-2xl bg-white/10 backdrop-blur-sm border border-white/20 p-4 flex items-center justify-center'>
-                            <Image 
-                              src={`/employers/${experience.logo}`} 
-                              width={80} 
-                              height={80} 
+                            <Image
+                              src={`/employers/${experience.logo}`}
+                              width={80}
+                              height={80}
                               alt={`${experience.title} logo`}
                               className='w-full h-full object-contain opacity-90'
                             />

@@ -23,20 +23,20 @@ export default function CursorFollower() {
   const updateTrail = useCallback(() => {
     const now = Date.now()
     if (now - lastUpdate.current > 16) {
-      setTrail(prevTrail => {
+      setTrail((prevTrail) => {
         const newSegment: TrailSegment = {
           x: mousePos.current.x,
           y: mousePos.current.y,
           scale: 0.9,
           opacity: 0.7,
-          id: now
+          id: now,
         }
 
         const newTrail = [newSegment, ...prevTrail.slice(0, TRAIL_LENGTH - 1)]
         return newTrail.map((segment, index) => ({
           ...segment,
           scale: Math.max(0.4, 0.9 - index * 0.1),
-          opacity: Math.max(0.2, 0.7 - index * 0.08)
+          opacity: Math.max(0.2, 0.7 - index * 0.08),
         }))
       })
       lastUpdate.current = now
@@ -63,7 +63,6 @@ export default function CursorFollower() {
     window.addEventListener('mousemove', handleMouseMove)
     return () => window.removeEventListener('mousemove', handleMouseMove)
   }, [])
-
 
   return (
     <>

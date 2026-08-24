@@ -55,7 +55,7 @@ const testimonialsByLocale: Record<Locale, Testimonial[]> = {
       image: '/testimonials/default.png',
       alt: 'Sabrina Narzullaeva',
       quote:
-        'Shahzod turli texnik yechimlardan foydalangan holda dasturlashdagi yuqori salohiyatini namoyon qildi. Uning doimiy e\'tibori va texnik mahorati bilan birga, ish jarayonidagi hamkorligimiz ham juda samarali bo\'ldi. Mijoz sifatida undagi eng kuchli jihatlardan biri gapdan ko\'ra amalda natija ko\'rsatishidir.',
+        "Shahzod turli texnik yechimlardan foydalangan holda dasturlashdagi yuqori salohiyatini namoyon qildi. Uning doimiy e'tibori va texnik mahorati bilan birga, ish jarayonidagi hamkorligimiz ham juda samarali bo'ldi. Mijoz sifatida undagi eng kuchli jihatlardan biri gapdan ko'ra amalda natija ko'rsatishidir.",
       name: 'Sabrina Narzullaeva',
       role: 'Founders kompaniyasida marketing mutaxassisi',
     },
@@ -63,7 +63,7 @@ const testimonialsByLocale: Record<Locale, Testimonial[]> = {
       image: '/testimonials/abdulaziz.png',
       alt: 'Abdulaziz Abdumutalibov',
       quote:
-        'Shahzod mening shaxsiy veb-saytimni yaratib berdi va natijadan juda mamnunman. U ehtiyojlarimni to\'liq tushundi, chiroyli sayt tayyorladi va jarayonni juda oson qildi. Albatta tavsiya qilaman!',
+        "Shahzod mening shaxsiy veb-saytimni yaratib berdi va natijadan juda mamnunman. U ehtiyojlarimni to'liq tushundi, chiroyli sayt tayyorladi va jarayonni juda oson qildi. Albatta tavsiya qilaman!",
       name: 'Abdulaziz Abdumutalibov',
       role: 'WeDo Consulting Agency hammuassisi',
     },
@@ -71,7 +71,7 @@ const testimonialsByLocale: Record<Locale, Testimonial[]> = {
       image: '/testimonials/bilalibntuygun.png',
       alt: 'Bilal ibn Tuygun',
       quote:
-        'Saytim ustida ishlash jarayoni juda yoqimli bo\'ldi. Uning texnologik bilimi, mayda detallarga e\'tibori va mas\'uliyati natijasida men xohlagan tasavvurimni aniq aks ettirgan zamonaviy va qulay veb-sayt paydo bo\'ldi. Tajribali veb dasturchi qidirayotganlarga uni chin dildan tavsiya qilaman.',
+        "Saytim ustida ishlash jarayoni juda yoqimli bo'ldi. Uning texnologik bilimi, mayda detallarga e'tibori va mas'uliyati natijasida men xohlagan tasavvurimni aniq aks ettirgan zamonaviy va qulay veb-sayt paydo bo'ldi. Tajribali veb dasturchi qidirayotganlarga uni chin dildan tavsiya qilaman.",
       name: 'Bilal ibn Tuygun',
     },
   ],

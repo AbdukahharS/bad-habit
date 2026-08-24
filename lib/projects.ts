@@ -23,7 +23,10 @@ export const projectCatalog: Project[] = (rawCatalog as Project[]).map((p) => ({
   packageRegistry: p.packageRegistry ?? null,
 }))
 
-export type LocalizedProject = Omit<Project, 'description' | 'longDescription'> & {
+export type LocalizedProject = Omit<
+  Project,
+  'description' | 'longDescription'
+> & {
   description: string
   longDescription: string
 }

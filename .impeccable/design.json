@@ -8,74 +8,198 @@
         "role": "neutral",
         "displayName": "Midnight Ink",
         "canonical": "#1a191d",
-        "tonalRamp": ["#0b0a0d", "#131216", "#1a191d", "#26252a", "#37363b", "#55545a", "#8a8990", "#d8d7db"]
+        "tonalRamp": [
+          "#0b0a0d",
+          "#131216",
+          "#1a191d",
+          "#26252a",
+          "#37363b",
+          "#55545a",
+          "#8a8990",
+          "#d8d7db"
+        ]
       },
       "paper-ghost": {
         "role": "neutral",
         "displayName": "Paper Ghost",
         "canonical": "#ededed",
-        "tonalRamp": ["#1a1a1a", "#2e2e2e", "#4a4a4a", "#6e6e6e", "#969696", "#bdbdbd", "#dbdbdb", "#ededed"]
+        "tonalRamp": [
+          "#1a1a1a",
+          "#2e2e2e",
+          "#4a4a4a",
+          "#6e6e6e",
+          "#969696",
+          "#bdbdbd",
+          "#dbdbdb",
+          "#ededed"
+        ]
       },
       "electric-azure": {
         "role": "primary",
         "displayName": "Electric Azure",
         "canonical": "#3b82f6",
-        "tonalRamp": ["#172554", "#1e3a8a", "#1e40af", "#1d4ed8", "#2563eb", "#3b82f6", "#60a5fa", "#bfdbfe"]
+        "tonalRamp": [
+          "#172554",
+          "#1e3a8a",
+          "#1e40af",
+          "#1d4ed8",
+          "#2563eb",
+          "#3b82f6",
+          "#60a5fa",
+          "#bfdbfe"
+        ]
       },
       "neon-orchid": {
         "role": "primary",
         "displayName": "Neon Orchid",
         "canonical": "#8b5cf6",
-        "tonalRamp": ["#2e1065", "#4c1d95", "#5b21b6", "#6d28d9", "#7c3aed", "#8b5cf6", "#a78bfa", "#ddd6fe"]
+        "tonalRamp": [
+          "#2e1065",
+          "#4c1d95",
+          "#5b21b6",
+          "#6d28d9",
+          "#7c3aed",
+          "#8b5cf6",
+          "#a78bfa",
+          "#ddd6fe"
+        ]
       },
       "signal-magenta": {
         "role": "primary",
         "displayName": "Signal Magenta",
         "canonical": "#ec4899",
-        "tonalRamp": ["#500724", "#831843", "#9d174d", "#be185d", "#db2777", "#ec4899", "#f472b6", "#fbcfe8"]
+        "tonalRamp": [
+          "#500724",
+          "#831843",
+          "#9d174d",
+          "#be185d",
+          "#db2777",
+          "#ec4899",
+          "#f472b6",
+          "#fbcfe8"
+        ]
       },
       "cyan-glow": {
         "role": "secondary",
         "displayName": "Cyan Glow",
         "canonical": "#22d3ee",
-        "tonalRamp": ["#164e63", "#155e75", "#0e7490", "#0891b2", "#06b6d4", "#22d3ee", "#67e8f9", "#a5f3fc"]
+        "tonalRamp": [
+          "#164e63",
+          "#155e75",
+          "#0e7490",
+          "#0891b2",
+          "#06b6d4",
+          "#22d3ee",
+          "#67e8f9",
+          "#a5f3fc"
+        ]
       },
       "terminal-green": {
         "role": "secondary",
         "displayName": "Terminal Green",
         "canonical": "#22c55e",
-        "tonalRamp": ["#14532d", "#166534", "#15803d", "#16a34a", "#22c55e", "#4ade80", "#86efac", "#bbf7d0"]
+        "tonalRamp": [
+          "#14532d",
+          "#166534",
+          "#15803d",
+          "#16a34a",
+          "#22c55e",
+          "#4ade80",
+          "#86efac",
+          "#bbf7d0"
+        ]
       },
       "amber-star": {
         "role": "tertiary",
         "displayName": "Amber Star",
         "canonical": "#fbbf24",
-        "tonalRamp": ["#451a03", "#78350f", "#92400e", "#b45309", "#d97706", "#f59e0b", "#fbbf24", "#fde68a"]
+        "tonalRamp": [
+          "#451a03",
+          "#78350f",
+          "#92400e",
+          "#b45309",
+          "#d97706",
+          "#f59e0b",
+          "#fbbf24",
+          "#fde68a"
+        ]
       },
       "glass-border": {
         "role": "neutral",
         "displayName": "Glass Border",
         "canonical": "rgba(255, 255, 255, 0.1)",
-        "tonalRamp": ["rgba(255,255,255,0.03)", "rgba(255,255,255,0.06)", "rgba(255,255,255,0.1)", "rgba(255,255,255,0.15)", "rgba(255,255,255,0.2)", "rgba(255,255,255,0.3)", "rgba(255,255,255,0.4)", "rgba(255,255,255,0.5)"]
+        "tonalRamp": [
+          "rgba(255,255,255,0.03)",
+          "rgba(255,255,255,0.06)",
+          "rgba(255,255,255,0.1)",
+          "rgba(255,255,255,0.15)",
+          "rgba(255,255,255,0.2)",
+          "rgba(255,255,255,0.3)",
+          "rgba(255,255,255,0.4)",
+          "rgba(255,255,255,0.5)"
+        ]
       }
     },
     "typographyMeta": {
-      "hero": { "displayName": "Hero", "purpose": "Full-screen name lockup only; one per page." },
-      "display": { "displayName": "Display", "purpose": "Section titles, often beside a gradient icon tile." },
-      "title": { "displayName": "Title", "purpose": "Card titles, gallery project names, testimonial authors." },
-      "body": { "displayName": "Body", "purpose": "Descriptions and paragraphs; gray-300, brightens to white on hover." },
-      "label": { "displayName": "Label", "purpose": "// comment labels, nav superscripts, metadata, counts." }
+      "hero": {
+        "displayName": "Hero",
+        "purpose": "Full-screen name lockup only; one per page."
+      },
+      "display": {
+        "displayName": "Display",
+        "purpose": "Section titles, often beside a gradient icon tile."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Card titles, gallery project names, testimonial authors."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Descriptions and paragraphs; gray-300, brightens to white on hover."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "// comment labels, nav superscripts, metadata, counts."
+      }
     },
     "shadows": [
-      { "name": "hover-glow", "value": "0 25px 50px -12px rgba(59, 130, 246, 0.25), 0 0 0 1px rgba(255,255,255,0.1)", "purpose": "Project-card hover; pairs with scale(1.02) translateY(-8px)." },
-      { "name": "image-seat", "value": "0 25px 50px -12px rgba(0, 0, 0, 0.4)", "purpose": "Archive-gallery screenshots only, to seat the image on the page." },
-      { "name": "neon-bloom", "value": "0 0 15px hsl(220,100%,80%), 0 0 30px hsl(220,90%,70%), 0 0 60px hsl(220,70%,60%)", "purpose": "Custom cursor and active-language dot; genuinely luminous elements only." }
+      {
+        "name": "hover-glow",
+        "value": "0 25px 50px -12px rgba(59, 130, 246, 0.25), 0 0 0 1px rgba(255,255,255,0.1)",
+        "purpose": "Project-card hover; pairs with scale(1.02) translateY(-8px)."
+      },
+      {
+        "name": "image-seat",
+        "value": "0 25px 50px -12px rgba(0, 0, 0, 0.4)",
+        "purpose": "Archive-gallery screenshots only, to seat the image on the page."
+      },
+      {
+        "name": "neon-bloom",
+        "value": "0 0 15px hsl(220,100%,80%), 0 0 30px hsl(220,90%,70%), 0 0 60px hsl(220,70%,60%)",
+        "purpose": "Custom cursor and active-language dot; genuinely luminous elements only."
+      }
     ],
     "motion": [
-      { "name": "ease-spring", "value": "cubic-bezier(0.34, 1.56, 0.64, 1)", "purpose": "Entrance animations (cards, sections) with 0.6–0.8s duration and 0.1–0.2s stagger." },
-      { "name": "ease-standard", "value": "cubic-bezier(0.4, 0, 0.2, 1)", "purpose": "Hover/state transitions, typically 300–500ms." },
-      { "name": "gradient-shift", "value": "4s ease infinite", "purpose": "Animated gradient ring on highlighted project cards." },
-      { "name": "page-swap", "value": "out 220ms ease-in / in 300ms ease-out", "purpose": "View-transition cross-fade with slight rise; disabled under prefers-reduced-motion." }
+      {
+        "name": "ease-spring",
+        "value": "cubic-bezier(0.34, 1.56, 0.64, 1)",
+        "purpose": "Entrance animations (cards, sections) with 0.6–0.8s duration and 0.1–0.2s stagger."
+      },
+      {
+        "name": "ease-standard",
+        "value": "cubic-bezier(0.4, 0, 0.2, 1)",
+        "purpose": "Hover/state transitions, typically 300–500ms."
+      },
+      {
+        "name": "gradient-shift",
+        "value": "4s ease infinite",
+        "purpose": "Animated gradient ring on highlighted project cards."
+      },
+      {
+        "name": "page-swap",
+        "value": "out 220ms ease-in / in 300ms ease-out",
+        "purpose": "View-transition cross-fade with slight rise; disabled under prefers-reduced-motion."
+      }
     ],
     "breakpoints": [
       { "name": "sm", "value": "640px" },
@@ -145,11 +269,31 @@
       "Springy entrance physics: cubic-bezier(0.34, 1.56, 0.64, 1) with staggered delays."
     ],
     "rules": [
-      { "name": "The Gradient Is the Accent Rule", "body": "The brand accent is the azure→orchid→magenta ramp as a whole, almost always at ~10% opacity as a surface tint or ~80% as a CTA fill. A saturated single-hue accent used solo is off-system.", "section": "colors" },
-      { "name": "The One-Badge Rule", "body": "Amber exists only on the SaaS badge. If a new featured marker is needed, restyle the badge — don't spread amber into the palette.", "section": "colors" },
-      { "name": "The // Comment Rule", "body": "Navigational and meta labels are written as code comments (// projects) with mono type. New nav-like labels inherit the grammar; prose never does.", "section": "typography" },
-      { "name": "The Two-Voice Rule", "body": "Headlines are Poppins, everything else is Roboto Mono. Never set body copy in Poppins or headlines in mono.", "section": "typography" },
-      { "name": "The Flat-By-Default Rule", "body": "Surfaces are flat at rest. Shadows appear only in response to state (hover, active, focus) — never as ambient decoration on static chrome.", "section": "elevation" }
+      {
+        "name": "The Gradient Is the Accent Rule",
+        "body": "The brand accent is the azure→orchid→magenta ramp as a whole, almost always at ~10% opacity as a surface tint or ~80% as a CTA fill. A saturated single-hue accent used solo is off-system.",
+        "section": "colors"
+      },
+      {
+        "name": "The One-Badge Rule",
+        "body": "Amber exists only on the SaaS badge. If a new featured marker is needed, restyle the badge — don't spread amber into the palette.",
+        "section": "colors"
+      },
+      {
+        "name": "The // Comment Rule",
+        "body": "Navigational and meta labels are written as code comments (// projects) with mono type. New nav-like labels inherit the grammar; prose never does.",
+        "section": "typography"
+      },
+      {
+        "name": "The Two-Voice Rule",
+        "body": "Headlines are Poppins, everything else is Roboto Mono. Never set body copy in Poppins or headlines in mono.",
+        "section": "typography"
+      },
+      {
+        "name": "The Flat-By-Default Rule",
+        "body": "Surfaces are flat at rest. Shadows appear only in response to state (hover, active, focus) — never as ambient decoration on static chrome.",
+        "section": "elevation"
+      }
     ],
     "dos": [
       "Do keep every surface on Midnight Ink; fade imagery into it with gradients rather than introducing new background colors.",

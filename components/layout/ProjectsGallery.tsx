@@ -11,7 +11,14 @@ import {
 } from '@tabler/icons-react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react'
+import {
+  useCallback,
+  useEffect,
+  useLayoutEffect,
+  useMemo,
+  useRef,
+  useState,
+} from 'react'
 import { getTag, TagChip } from '@/components/icons/tags'
 import type { ProjectCategory } from '@/lib/i18n'
 import type { LocalizedProject } from '@/lib/projects'
