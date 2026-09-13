@@ -34,9 +34,8 @@
     "highlighted": true
   },
   {
-    "name": "Cirth",
-    "showOnHome": true,
-    "badge": "SaaS",
+    "name": "Cirth v1",
+    "status": "Legacy",
     "description": {
       "en": "Cirth is a SaaS platform where developers and teams write, version, and publish technical documentation under their own custom domain or a platform subdomain. Features a TipTap rich text editor, multi-version page trees, GitHub import, and custom domain routing at the Edge.",
       "uz": "Cirth — dasturchilar va jamoalar texnik hujjatlarni o'z maxsus domenida yoki platforma subdomenida yozadigan, versiyalaydigan va nashr qiladigan SaaS platformasi. TipTap boy matn tahriri, ko'p versiyali sahifa daraxtlari, GitHub importi va Edge-da maxsus domen yo'naltirish imkoniyatlarini o'z ichiga oladi."
@@ -46,7 +45,7 @@
       "uz": "Cirth — texnik hujjatlarni nashr qilish va boshqarish uchun ko'p foydalanuvchili SaaS platforma bo'lib, har bir loyihaga maxsus domen yoki platforma subdomenida (project.cirth.uz) o'z versiyalangan sahifa daraxti va umumiy URL beriladi.\n\nTahrir tajribasi TipTap asosida qurilgan — React-ni birinchi darajada qo'llab-quvvatlovchi ProseMirror o'rami — lowlight/highlight.js orqali sintaksis ajratuvchi kod bloklari, jadvallar, ichki havolalar va placeholder kengaytmasi bilan to'ldirilgan. GitHub import ustasi @octokit/rest yordamida repository-dagi markdown fayllarni ro'yxatlaydi, gray-matter frontmatter metama'lumotlarini ajratib oladi va marked/turndown markdown-ni TipTap-mos HTML-ga aylantiradi — jamoalar mavjud hujjatlarni ko'chirmasdan migratsiya qila oladi.\n\nSupabase butun backendni ta'minlaydi: Row Level Security bilan PostgreSQL maxsus so'rov himoyalarisiz foydalanuvchi egaligini ta'minlaydi; Auth moduli elektron pochta va OAuth kirish imkonini beradi; @supabase/ssr session cookie-larini server komponentlari va API marshrutlari o'rtasida sinxronlashtiradi.\n\nMaxsus domen va subdomen yo'naltirish Next.js middleware o'rniga proxy.ts-da amalga oshiriladi. Har bir so'rovda proxy xost nomini custom_domains yoki projects Supabase jadvali orqali hal qiladi, natijani Edge-mos xotira Map-da 60 soniya keshaydi va URL-ni ichki /projects/[slug] marshruti sifatida qayta yozadi — hammasi kechikishni kamaytirish uchun Next.js Edge Runtime-da.\n\n@dnd-kit sidebar va jadval ko'rinishlarida optimistik UI yangilanishlari bilan sahifalarni qayta tartiblashni ta'minlaydi. Recharts admin dashboard-da foydalanish analitikasini ko'rsatadi. next-intl marketing sayti va ish maydoni bo'ylab inglizcha/o'zbekcha lokalizatsiyani ta'minlaydi. Zustand marshrut o'tishlari bo'ylab umumiy loyiha va sahifa holati boshqaruvini ta'minlaydi. Bun paket menejeri va runtime sifatida ishlatiladi (--bun bayrog'i orqali next dev/build), Biome esa linting va formatlashni ta'minlaydi. Loyiha Vercel-da vercel.json-da belgilangan kunlik billing-renewal cron ishi bilan joylashtirilgan."
     },
     "image": "cirth.png",
-    "live": "https://cirth.uz/",
+    "live": null,
     "source": null,
     "tags": [
       "nextjs",
@@ -66,6 +65,91 @@
       "rest-api",
       "vercel",
       "click",
+      "git"
+    ],
+    "category": "Full-Stack Web Apps",
+    "highlighted": true
+  },
+  {
+    "name": "Cirth v2",
+    "status": "Legacy",
+    "description": {
+      "en": "Documentation site builder and hosting platform: write in a rich MDX editor, sync from GitHub, and publish fast static docs to *.cirth.app subdomains or custom domains on Cloudflare. Multi-tenant Bun + Elysia backend with end-to-end type safety.",
+      "uz": "Hujjatlar saytlarini yaratish va hosting platformasi: boy MDX tahrirchisida yozing, GitHub-dan sinxronlang va statik hujjatlarni *.cirth.app subdomenlari yoki maxsus domenda Cloudflare orqali nashr eting. Ko'p foydalanuvchili Bun + Elysia backend, uchidan-uchunga tip xavfsizligi bilan."
+    },
+    "longDescription": {
+      "en": "Cirth v2 is a documentation site builder and hosting platform — create a site, write docs in a rich editor, sync content from GitHub, and publish fast static sites to *.cirth.app subdomains or your own custom domains. The codebase is a Bun monorepo managed by Turborepo: an Elysia API on the Bun runtime, a React 19 + Vite dashboard, an Astro 6 marketing site, and a Cloudflare Worker that routes published sites. End-to-end type safety comes from an Eden Treaty chain — the API exports its Elysia App type, a type-only contracts package re-exports it, and the dashboard's API client is fully typed against it with no code generation.\n\nWriting happens in TipTap (ProseMirror) with custom extensions for callouts (info/warning/danger), tab containers, and code groups. Every save flows through a three-representation pipeline: the editor's JSON is converted to MDX, compiled to HTML with @mdx-js/mdx (remark-gfm, rehype-highlight, rehype-slug), and all three forms are stored per page. Updates automatically snapshot page versions (keeping the last 50), and changing a page's slug creates a redirect from the old path. A site-builder service compiles published pages into a complete static site per version — navigation, theme assets, 404 pages, and redirects included.\n\nMulti-tenancy runs on Better Auth with organizations — every signup auto-provisions a personal workspace — backed by a two-tier SQLite setup: one auth database plus an isolated database per organization holding sites, versions, pages, assets, and redirects. A TenantManager pools connections (LRU eviction, WAL mode, performance pragmas) and auto-migrates tenant schemas on first access, while an Elysia tenant plugin resolves the session and organization per request and hands each route a scoped Drizzle connection.\n\nContent is imported or kept in sync with GitHub: OAuth connect, a repository import flow (markdown and GitBook sources), and webhook-driven sync so pushes deploy automatically. Publishing targets Cloudflare Pages, with a Cloudflare Worker routing *.cirth.app subdomains and custom domains (SSL included) to the latest build; assets live in Cloudflare R2 and routing state in Workers KV.\n\nBilling runs on Lemon Squeezy — subscriptions plus affiliate and referral programs. The dashboard is React 19, Vite, Tailwind CSS 4, and shadcn/ui (base-nova style, Tabler icons) with Base UI headless components, React Router, TanStack Query for server state, and React Hook Form with Arktype validation; the API compiles to a native Bun binary. Biome lints and formats the whole monorepo. The project is discontinued, but the source remains available on GitHub.",
+      "uz": "Cirth v2 — hujjatlar saytlarini yaratish va hosting qilish platformasi: sayt ochasiz, hujjatlarni boy tahrirchida yozasiz, kontentni GitHub-dan sinxronlaysiz va tez statik saytlarni *.cirth.app subdomenlari yoki o'z maxsus domeningizda nashr etasiz. Kod bazasi Turborepo boshqaradigan Bun monoreposidir: Bun runtime-da Elysia API, React 19 + Vite dashboard, Astro 6 marketing sayti va nashr etilgan saytlarni yo'naltiruvchi Cloudflare Worker. Uchidan-uchunga tip xavfsizligi Eden Treaty zanjiri orqali ta'minlanadi — API o'zining Elysia App tipini eksport qiladi, tip-only contracts paketi uni qayta eksport qiladi va dashboard API klienti kod generatsiyasiz to'liq tiplangan bo'ladi.\n\nYozish TipTap (ProseMirror) da amalga oshadi — callout (info/warning/danger), tab konteynerlari va kod guruhlari uchun maxsus kengaytmalar bilan. Har bir saqlash uch vakillikli pipelinedan o'tadi: tahrirchi JSON'i MDX-ga aylantiriladi, @mdx-js/mdx (remark-gfm, rehype-highlight, rehype-slug) bilan HTML-ga kompilyatsiya qilinadi va uchala shakl ham sahifa bo'yicha saqlanadi. Yangilanishlar sahifa versiyalari snapshotlarini avtomatik yaratadi (oxirgi 50 tasi saqlanadi), sahifa slug-i o'zgarsa eski yo'ldan yangi yo'lga redirect yaratiladi. Site-builder xizmi nashr etilgan sahifalarni har bir versiya uchun to'liq statik saytga kompilyatsiya qiladi — navigatsiya, tema assetlari, 404 sahifalar va redirectlar bilan.\n\nKo'p foydalanuvchilik Better Auth organizatsiyalari ustida ishlaydi — har bir ro'yxatdan o'tish shaxsiy workspace-ni avtomatik yaratadi — va ikki qatlamli SQLite arxitekturasi bilan qo'llanadi: bitta auth bazasi va har bir organizatsiya uchun alohida baza (saytlar, versiyalar, sahifalar, assetlar, redirectlar). TenantManager ulanishlarni boshqaradi (LRU eviktsiya, WAL rejimi, performansa pragmalari) va tenant sxemalarini birinchi kirishda avtomatik migratsiya qiladi; Elysia tenant plagini har bir so'rovda sessiya va organizatsiyani aniqlab, har bir marshrutga scoped Drizzle ulanishini beradi.\n\nKontent GitHub orqali import qilinadi yoki sinxron holatda saqlanadi: OAuth ulanish, repository import oqimi (markdown va GitBook manbalari) va webhook asosidagi sinxronlash — push bo'lganda deploy avtomatik ishga tushadi. Nashr Cloudflare Pages-ga qilinadi; Cloudflare Worker *.cirth.app subdomenlari va maxsus domenni (SSL bilan) eng so'nggi build-ga yo'naltiradi; assetlar Cloudflare R2-da, marshrut holati Workers KV-da saqlanadi.\n\nTo'lovlar Lemon Squeezy orqali — obunalar, affiliate va referral dasturlari bilan. Dashboard React 19, Vite, Tailwind CSS 4 va shadcn/ui (base-nova uslubi, Tabler ikonkalari), Base UI headless komponentlari, React Router, server holati uchun TanStack Query hamda React Hook Form + Arktype validatsiyasi asosida qurilgan; API native Bun binary-siga kompilyatsiya qilinadi. Butun monorepoda Biome lint va formatni ta'minlaydi. Loyiha to'xtatilgan, ammo manba kodi GitHub-da ochiq."
+    },
+    "image": "cirth-v2.png",
+    "live": null,
+    "source": "https://github.com/AbdukahharS/cirth-v2",
+    "tags": [
+      "react",
+      "typescript",
+      "vite",
+      "tailwind",
+      "shadcn",
+      "elysia",
+      "eden-treaty",
+      "drizzle",
+      "sqlite",
+      "better-auth",
+      "tanstack-query",
+      "react-hook-form",
+      "mdx",
+      "astro",
+      "cloudflare",
+      "lemon-squeezy",
+      "turborepo",
+      "bun-runtime",
+      "bun-package-manager",
+      "biome",
+      "git"
+    ],
+    "category": "Full-Stack Web Apps",
+    "highlighted": true
+  },
+  {
+    "name": "Cirth v3",
+    "showOnHome": true,
+    "badge": "SaaS",
+    "status": "Coming soon",
+    "description": {
+      "en": "Third-generation rebuild of the Cirth docs platform: public docs render at runtime from a single org-scoped Postgres — no build-to-deploy pipeline, no per-tenant databases. Bun 1.4 + Elysia API, TanStack Start dashboard, Markdown-canonical content, one-VPS delivery with Docker + Caddy.",
+      "uz": "Cirth hujjatlar platformasining uchinchi avlod qayta qurilishi: ommaviy hujjatlar bitta org-scoped Postgres-dan runtime-da render qilinadi — build-to-deploy pipeline yo'q, per-tenant bazalar yo'q. Bun 1.4 + Elysia API, TanStack Start dashboard, Markdown-kanonik kontent, Docker + Caddy bilan bitta VPS-da yetkazib berish."
+    },
+    "longDescription": {
+      "en": "Cirth v3 is the third generation of the Cirth docs platform, rebuilt around three rules: no per-tenant databases, no build-to-deploy pipeline, and no in-memory cross-request state. Public docs render at runtime from a single org-scoped PostgreSQL through layered caches, so editing in the dashboard makes changes live in seconds — the deploy subsystem that plagued v2 is deleted outright. The whole stack runs on one VPS with Docker Compose and Caddy (on-demand TLS for custom domains), making the \"GitBook-class docs at a fraction of the cost\" positioning an architectural property rather than a marketing line.\n\nThe codebase is a pinned Bun 1.4 monorepo orchestrated by Turborepo, with an Elysia API as the only server — auth, control plane, and public docs rendering — and a TanStack Start (SPA mode) dashboard. TypeBox schemas are the single source of truth for API shapes: packages/contracts derives them from the Drizzle schema via drizzle-typebox, the dashboard's Eden Treaty client types against them, and types flow DB → API → client with zero code generation. Better Auth (email + password, GitHub OAuth, organizations plugin) fronts tenancy.\n\nTenancy is org → member → role, and the content model is project → section → version → page tree with per-section versioning, so a Changelog section can version independently from Docs. Content is Markdown-canonical — GFM plus a registry of extended directives (:::embed, :::tabs) — importable from MDX (subset), VuePress, GitHub alerts, or GitBook liquid, and exportable as plain Markdown. Authoring uses a CodeMirror 6 editor with live preview, autosave, slash commands, and full-snapshot history with diff/restore; multi-locale content ships with fallback chains and hreflang alternates.\n\nThe render path layers caches (in-process LRU → Redis → HTTP ETag/SWR) and purges through Redis generation counters — no cache scans. Postgres FTS powers search behind a SearchService, a Bun-native queue over a Postgres job table (LISTEN/NOTIFY wakeups) runs background work, and billing is Polar.sh behind a PaymentProvider adapter with data-driven plan limits. Asset uploads go through a storage driver with Bun.Image producing WebP variants. Observability — OpenTelemetry traces and structured logs — is in from day one, alongside an RLS-overhead benchmark and a render-path load harness in the test suite.",
+      "uz": "Cirth v3 — Cirth hujjatlar platformasining uchinchi avlodi bo'lib, uch qoida asosida qayta qurilgan: per-tenant bazalar yo'q, build-to-deploy pipeline yo'q, xotiradagi cross-request holati yo'q. Ommaviy hujjatlar bitta org-scoped PostgreSQL-dan qatlamli keshlar orqali runtime-da render qilinadi — dashboarddagi tahrir bir necha soniyada jonli bo'ladi, v2-ni qiynagan deploy tizimi butunlay o'chirilgan. Butun stack bitta VPS-da Docker Compose va Caddy (maxsus domenlar uchun on-demand TLS) bilan ishlaydi — bu \"GitBook-darajadagi hujjatlarni bir necha barobar arzon\" pozitsionerasini arxitekturaviy xususiyatga aylantiradi.\n\nKod bazasi — Turborepo boshqaradigan qat'iy pinlangan Bun 1.4 monorepo: auth, control plane va ommaviy hujjatlarni render qilishni o'zida birlashtirgan yagona server sifatida Elysia API hamda TanStack Start (SPA rejimi) dashboard. TypeBox sxemalari API shakllarining yagona manbaidir: packages/contracts ularni drizzle-typebox orqali Drizzle sxemasidan hosil qiladi, dashboardning Eden Treaty klienti ularga qarab tiplanadi va tiplar DB → API → klient yo'nalishida kod generatsiyasiz oqadi. Tenancy oldida Better Auth (email + parol, GitHub OAuth, organizatsiyalar plagini) turadi.\n\nTenancy org → member → role shaklida, kontent modeli esa project → section → version → sahifa daraxti bo'lib, har bir section mustaqil versiyalanadi — Masalan, Changelog sectioni Docs-dan alohida versiyalanishi mumkin. Kontent Markdown-kanonik: GFM va kengaytirilgan direktivalar registri (:::embed, :::tabs); MDX (qismiy), VuePress, GitHub alerts yoki GitBook liquid-dan import qilinadi va oddiy Markdown sifatida eksport qilinadi. Mualliflik uchun CodeMirror 6 tahrirchisi ishlatiladi — jonli preview, avtosaqlash, slash buyruqlari va diff/tiklash imkoniyati bilan to'liq snapshot tarixi; ko'p tilli kontent fallback zanjirlari va hreflang muqobil bilan keladi.\n\nRender yo'li keshlarni qatlamlaydi (prosess ichidagi LRU → Redis → HTTP ETag/SWR) va Redis generation counterlari orqali tozalaydi — kesh skanlari yo'q. Qidiruv SearchService ortida Postgres FTS bilan ishlaydi, fon ishlari Postgres job jadvali ustidagi Bun-native navbatda (LISTEN/NOTIFY uyg'otishlari) yuradi, billing esa PaymentProvider adapteri ortida Polar.sh bo'lib, reja limitlari ma'lumotlar asosida boshqariladi. Asset yuklashlar storage drayveri orqali boradi, Bun.Image WebP variantlarini yaratadi. Kuzatuvchanlik — OpenTelemetry trace va strukturaviy loglar — birinchi kundan bor, test to'plamida esa RLS-overhead benchmarki va render yo'li yuk sinovi mavjud."
+    },
+    "image": "cirth-v3.png",
+    "live": null,
+    "source": null,
+    "tags": [
+      "react",
+      "typescript",
+      "vite",
+      "tanstack-start",
+      "tanstack-router",
+      "tailwind",
+      "shadcn",
+      "elysia",
+      "eden-treaty",
+      "typebox",
+      "drizzle",
+      "postgres",
+      "better-auth",
+      "redis",
+      "codemirror",
+      "markdown",
+      "polar",
+      "docker",
+      "caddy",
+      "turborepo",
+      "bun-runtime",
+      "bun-package-manager",
+      "biome",
       "git"
     ],
     "category": "Full-Stack Web Apps",
@@ -742,5 +826,23 @@
       "bun-package-manager"
     ],
     "category": "Dev Tools/Utils"
+  },
+  {
+    "name": "Resume Tailor",
+    "showOnHome": true,
+    "description": {
+      "en": "Personal AI tool that tailors a resume to a job post and renders an exactly-one-page PDF with zero dead space. An OpenCode agent skill writes and audits the content; a zero-dependency Bun script binary-searches the root font size in headless Chromium, prints to PDF, and verifies the fit.",
+      "uz": "Rezyumeni ish e'loniga moslashtiradigan va aynan bir sahifali, bo'sh joy qoldirmaydigan PDF yaratadigan shaxsiy AI vositasi. OpenCode agent skill-i kontentni yozadi va tekshiradi; dependensiyasiz Bun skripti headless Chromium-da ildiz shrift o'lchamini binar qidiruv bilan moslaydi, PDF chop etadi va natijani tekshiradi."
+    },
+    "longDescription": {
+      "en": "Resume Tailor is a personal AI tool that tailors a resume to a specific job post and renders it as an exactly-one-page PDF with zero dead space. It is built for OpenCode — any agent-skills-compatible assistant works — but is fully usable standalone. The division of labor is the whole point: the AI never touches layout, and the renderer never rewrites content. The resume-tailor skill picks which projects to feature, rewrites bullets against the job post, and reorders skill emphasis; a read-only auditor subagent independently fact-checks the draft against the profile, portfolio, and job post before anything renders.\n\nLayout fitting is mechanical. scripts/render.mjs — a zero-dependency Bun script — composes content.json into a locked Letter-size HTML/CSS template with exactly one knob: the root font size. It loads the composed page in headless Chromium, measures real rendered content height against the printable area, and binary-searches the largest font size (8–14px by default) whose content fits, then prints to PDF and verifies the result: exactly one page, fill ≥ 92% of the printable height, no vertical gap between blocks larger than three line-heights, and no empty elements.\n\nEvery run prints a JSON verdict — PASS, TOO_MUCH (overflows even at the minimum font: trim), MULTI_PAGE, DEAD_SPACE (under-filled: add content), or INVALID_CONTENT (schema violation) — with exit code 0 only on PASS, so failures are actionable by both humans and agents. Personal data (profile.md, config.local.json, output/) is gitignored, so the repo can be published without exposing anything private; forking it and swapping in your own profile and template is the intended reuse. The only way the model influences the fit is by writing less or more content.",
+      "uz": "Resume Tailor — rezyumeni aniq bir ish e'loniga moslashtiradigan va uni aynan bir sahifali, bo'sh joy qoldirmaydigan PDFga aylantiradigan shaxsiy AI vositasi. U OpenCode uchun qurilgan (agent-skills-mos har qanday yordamchi ishlaydi), lekin mustaqil ham to'liq ishlaydi. Ishlarni taqsimlash asosiy g'oyadir: AI hech qachon maketga tegmaydi, renderer esa kontentni qayta yozmaydi. resume-tailor skill-i qaysi loyihalarni ko'rsatishni tanlaydi, bullet-larni ish e'loniga qarab qayta yozadi va skill ustuvorligini o'zgartiradi; read-only auditor subagenti esa hech narsa render qilinishidan oldin loyiha profil, portfolio va ish e'loni asosida mustaqil tekshiradi.\n\nMaketga moslashtirish mexanik jarayon. scripts/render.mjs — dependensiyasiz Bun skripti — content.json-ni bitta sozlanadigan parametri bor qulflangan Letter o'lchamidagi HTML/CSS shablonga joylaydi: ildiz shrift o'lchami. U tuzilgan sahifani headless Chromium-da yuklaydi, haqiqiy render balandligini chop etish maydoni bilan o'lchaydi va kontentga sig'adigan eng katta shrift o'lchamini (standart 8–14px) binar qidiruv bilan topadi, so'ng PDF chop etadi va natijani tekshiradi: aynan bir sahifa, chop etish maydonining ≥ 92%i to'ldirilgan, bloklar orasidagi vertikal bo'shliq uch qator balandligidan katta bo'lmasligi va bo'sh elementlar yo'qligi.\n\nHar bir ishga tushirish JSON verdict chiqaradi — PASS, TOO_MUCH (minimum shriftda ham sig'maydi: qisqartirish kerak), MULTI_PAGE, DEAD_SPACE (kam to'ldirilgan: kontent qo'shish kerak) yoki INVALID_CONTENT (sxema buzilishi) — va faqat PASS holatda exit code 0 beradi, shuning uchun xatolar ham odamlar, ham agentlar uchun tushunarli. Shaxsiy ma'lumotlar (profile.md, config.local.json, output/) gitignored — repoga hech narsa maxfiy qoldirmasdan ochiq joylashtirish mumkin; uni fork qilib o'z profilingiz va shabloningizni ulash nazarda tutilgan qayta foydalanish usulidir. Modelning maketga yagona ta'siri — kamroq yoki ko'proq kontent yozishidir."
+    },
+    "image": "resume-tailor.png",
+    "live": null,
+    "source": "https://github.com/AbdukahharS/resume-tailor",
+    "tags": ["js", "bun-runtime", "chromium", "git"],
+    "category": "Dev Tools/Utils",
+    "highlighted": true
   }
 ]

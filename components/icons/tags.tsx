@@ -94,6 +94,16 @@ export type TagSlug =
   | 'prismjs'
   | 'markdown'
   | 'pake'
+  | 'astro'
+  | 'mdx'
+  | 'sqlite'
+  | 'cloudflare'
+  | 'lemon-squeezy'
+  | 'tanstack-start'
+  | 'typebox'
+  | 'codemirror'
+  | 'polar'
+  | 'chromium'
 
 export type TagMeta = {
   label: string
@@ -206,6 +216,16 @@ export const TAG_REGISTRY: Record<TagSlug, TagMeta> = {
   prismjs: { label: 'PrismJS', iconFile: 'prismjs.svg' },
   markdown: { label: 'Markdown' },
   pake: { label: 'Pake' },
+  astro: { label: 'Astro' },
+  mdx: { label: 'MDX' },
+  sqlite: { label: 'SQLite' },
+  cloudflare: { label: 'Cloudflare', iconFile: 'cloudflare.svg' },
+  'lemon-squeezy': { label: 'Lemon Squeezy' },
+  'tanstack-start': { label: 'TanStack Start' },
+  typebox: { label: 'TypeBox' },
+  codemirror: { label: 'CodeMirror' },
+  polar: { label: 'Polar.sh' },
+  chromium: { label: 'Chromium' },
 }
 
 export const ALL_TAG_SLUGS = (Object.keys(TAG_REGISTRY) as TagSlug[]).sort(
