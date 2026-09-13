@@ -15,6 +15,7 @@ export type Project = {
   highlighted?: boolean
   showOnHome?: boolean
   badge?: string
+  status?: string
   packageRegistry?: string | null
 }
 

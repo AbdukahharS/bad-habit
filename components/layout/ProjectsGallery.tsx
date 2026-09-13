@@ -645,6 +645,11 @@ const ProjectCard = ({ project, index, labels, onOpen }: ProjectCardProps) => {
               {project.badge} ★
             </span>
           )}
+          {project.status && (
+            <span className='absolute top-2.5 right-2.5 px-2 py-0.5 rounded-md bg-[#1a191d]/70 border border-white/15 backdrop-blur-sm text-white/70 text-xs font-semibold tracking-wide'>
+              {project.status}
+            </span>
+          )}
         </div>
 
         {/* Body */}
@@ -748,6 +753,11 @@ const ExpandedProjectCard = ({
         {project.badge && (
           <span className='absolute top-3 left-3 px-2 py-0.5 rounded-md bg-amber-400/90 text-[#1a191d] text-xs font-bold tracking-wide'>
             {project.badge} ★
+          </span>
+        )}
+        {project.status && (
+          <span className='absolute top-3 right-3 px-2 py-0.5 rounded-md bg-[#1a191d]/70 border border-white/15 backdrop-blur-sm text-white/70 text-xs font-semibold tracking-wide'>
+            {project.status}
           </span>
         )}
       </div>

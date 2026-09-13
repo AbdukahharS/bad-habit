@@ -27,6 +27,7 @@ type MasonryItem = {
   category: ProjectCategory
   highlighted?: boolean
   badge?: string
+  status?: string
   packageRegistry?: string | null
 }
 
@@ -71,6 +72,13 @@ const Masonry: React.FC<MasonryProps> = ({
                     <IconStar className='w-3.5 h-3.5 text-amber-400 fill-amber-400 drop-shadow-lg' />
                     <span className='text-xs font-semibold text-amber-300 drop-shadow-md'>
                       {item.badge}
+                    </span>
+                  </div>
+                )}
+                {item.status && (
+                  <div className='absolute top-3 left-3 px-2.5 py-1 rounded-md bg-black/40 backdrop-blur-sm border border-white/15'>
+                    <span className='text-xs font-semibold text-white/75'>
+                      {item.status}
                     </span>
                   </div>
                 )}
