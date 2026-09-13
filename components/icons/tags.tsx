@@ -254,6 +254,7 @@ export const TagChip = ({
           alt=''
           width={iconPx}
           height={iconPx}
+          style={{ width: iconPx, height: iconPx, objectFit: 'contain' }}
           className='shrink-0'
           aria-hidden='true'
         />

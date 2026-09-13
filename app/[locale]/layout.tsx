@@ -1,19 +1,19 @@
 /// <reference types='react/canary' />
 
 import type { Metadata } from 'next'
+import { Roboto_Mono } from 'next/font/google'
 import { notFound } from 'next/navigation'
 import { ViewTransition } from 'react'
-import { Roboto_Mono } from 'next/font/google'
 
 import CursorFollower from '@/components/CursorFollower'
 import Navbar from '@/components/layout/Navbar'
 import projects from '@/lib/data/projects.json'
 import {
-  SITE_URL,
   getDictionary,
   isValidLocale,
-  locales,
   type Locale,
+  locales,
+  SITE_URL,
 } from '@/lib/i18n'
 import '../globals.css'
 
@@ -123,7 +123,7 @@ export default async function LocaleLayout({ children, params }: Props) {
   const dict = getDictionary(locale)
 
   return (
-    <html lang={locale}>
+    <html lang={locale} data-scroll-behavior='smooth'>
       <head>
         <script
           type='application/ld+json'

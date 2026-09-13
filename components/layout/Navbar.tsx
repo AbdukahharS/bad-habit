@@ -1,20 +1,20 @@
 'use client'
 
-import type { Locale } from '@/lib/i18n'
 import {
   IconArrowUpRight,
   IconBriefcase,
   IconChevronDown,
   IconCode,
-  IconWorld,
   IconHome,
   IconMail,
   IconMenu2,
+  IconWorld,
   IconX,
 } from '@tabler/icons-react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useEffect, useRef, useState } from 'react'
+import type { Locale } from '@/lib/i18n'
 
 type Links =
   | 'expertise'
@@ -144,15 +144,17 @@ const Navbar = ({
                   src='/logo.png'
                   className='block lg:hidden xl:block'
                   alt='logo'
-                  width={scrolled ? 180 : 220}
-                  height={scrolled ? 48 : 60}
+                  width={455}
+                  height={100}
+                  style={{ width: scrolled ? 180 : 220, height: 'auto' }}
                 />
                 <Image
                   src='/cropped-logo.png'
                   className='hidden lg:block xl:hidden'
                   alt='logo'
-                  width={scrolled ? 80 : 100}
-                  height={scrolled ? 80 : 100}
+                  width={240}
+                  height={100}
+                  style={{ width: scrolled ? 80 : 100, height: 'auto' }}
                 />
               </Link>
 
@@ -336,7 +338,13 @@ const Navbar = ({
 
             {/* Logo */}
             <div className='pt-4'>
-              <Image src='/logo.png' alt='logo' width={160} height={44} />
+              <Image
+                src='/logo.png'
+                alt='logo'
+                width={455}
+                height={100}
+                style={{ width: 160, height: 'auto' }}
+              />
             </div>
 
             {/* Navigation Items - Code Style */}
