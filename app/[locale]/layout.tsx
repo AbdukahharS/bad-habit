@@ -8,7 +8,6 @@ import { ViewTransition } from 'react'
 import CursorFollower from '@/components/CursorFollower'
 import Navbar from '@/components/layout/Navbar'
 import ViewTransitionGuard from '@/components/ViewTransitionGuard'
-import projects from '@/lib/data/projects.json'
 import {
   getDictionary,
   isValidLocale,
@@ -16,6 +15,7 @@ import {
   locales,
   SITE_URL,
 } from '@/lib/i18n'
+import { projectCatalog } from '@/lib/projects'
 import '../globals.css'
 
 const robotoMono = Roboto_Mono({ subsets: ['latin'] })
@@ -53,7 +53,9 @@ const projectsSchema = {
   '@type': 'ItemList',
   name: 'Projects by Shahzod Abdukahhar',
   url: 'https://abdukahhar.uz',
-  itemListElement: projects.map((project, index) => ({
+  itemListElement: projectCatalog
+    .filter((project) => project.status !== 'Legacy')
+    .map((project, index) => ({
     '@type': 'ListItem',
     position: index + 1,
     item: {

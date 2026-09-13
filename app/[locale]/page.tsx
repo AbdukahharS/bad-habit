@@ -4,8 +4,8 @@ import Expertise from '@/components/layout/Expertise'
 import Footer from '@/components/layout/Footer'
 import Hero from '@/components/layout/Hero'
 import Projects from '@/components/layout/Projects'
-import projects from '@/lib/data/projects.json'
 import { getDictionary, isValidLocale, type Locale, locales } from '@/lib/i18n'
+import { projectCatalog } from '@/lib/projects'
 
 type Props = {
   params: Promise<{ locale: string }>
@@ -58,7 +58,9 @@ export default async function Home({ params }: Props) {
         <h2>{dict.seo.aboutHeading}</h2>
         <p>{dict.seo.aboutText}</p>
         <h2>{dict.seo.projectsHeading}</h2>
-        {projects.map((project) => (
+        {projectCatalog
+          .filter((project) => project.status !== 'Legacy')
+          .map((project) => (
           <article key={project.name}>
             <h3>{project.name}</h3>
             <p>
