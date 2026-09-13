@@ -7,6 +7,7 @@ import { ViewTransition } from 'react'
 
 import CursorFollower from '@/components/CursorFollower'
 import Navbar from '@/components/layout/Navbar'
+import ViewTransitionGuard from '@/components/ViewTransitionGuard'
 import projects from '@/lib/data/projects.json'
 import {
   getDictionary,
@@ -125,6 +126,7 @@ export default async function LocaleLayout({ children, params }: Props) {
   return (
     <html lang={locale} data-scroll-behavior='smooth'>
       <head>
+        <ViewTransitionGuard />
         <script
           type='application/ld+json'
           dangerouslySetInnerHTML={{ __html: jsonLd(personSchema) }}
