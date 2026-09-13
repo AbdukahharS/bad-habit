@@ -1,7 +1,7 @@
+import { IconBolt, IconCode, IconQuote, IconServer } from '@tabler/icons-react'
 import Image from 'next/image'
-import { IconCode, IconBolt, IconServer, IconQuote } from '@tabler/icons-react'
-import type { Locale } from '@/lib/i18n'
 import type { ReactNode } from 'react'
+import type { Locale } from '@/lib/i18n'
 
 type ExpertiseArea = {
   icon: ReactNode

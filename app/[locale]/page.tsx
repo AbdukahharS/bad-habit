@@ -1,12 +1,11 @@
 import { notFound } from 'next/navigation'
-
-import Expertise from '@/components/layout/Expertise'
 import Experience from '@/components/layout/Experience'
+import Expertise from '@/components/layout/Expertise'
 import Footer from '@/components/layout/Footer'
 import Hero from '@/components/layout/Hero'
 import Projects from '@/components/layout/Projects'
 import projects from '@/lib/data/projects.json'
-import { getDictionary, isValidLocale, locales, type Locale } from '@/lib/i18n'
+import { getDictionary, isValidLocale, type Locale, locales } from '@/lib/i18n'
 
 type Props = {
   params: Promise<{ locale: string }>

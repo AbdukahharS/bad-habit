@@ -1,16 +1,16 @@
 'use client'
 
-import { useState } from 'react'
 import {
+  IconBriefcase,
+  IconCalendar,
+  IconExternalLink,
   IconMapPin,
   IconMinus,
   IconPlus,
-  IconExternalLink,
-  IconCalendar,
-  IconBriefcase,
 } from '@tabler/icons-react'
-import Link from 'next/link'
 import Image from 'next/image'
+import Link from 'next/link'
+import { useState } from 'react'
 import type { Locale } from '@/lib/i18n'
 
 type ExperienceItem = {

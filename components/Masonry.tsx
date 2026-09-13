@@ -1,21 +1,21 @@
+import {
+  IconArrowUpRight,
+  IconBrandGithub,
+  IconBuildingSkyscraper,
+  IconDeviceDesktop,
+  IconDeviceMobile,
+  IconFileText,
+  IconPackage,
+  IconPalette,
+  IconStack2,
+  IconStar,
+  IconWorld,
+} from '@tabler/icons-react'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
-import {
-  IconWorld,
-  IconPalette,
-  IconDeviceDesktop,
-  IconStack2,
-  IconDeviceMobile,
-  IconBuildingSkyscraper,
-  IconFileText,
-  IconPackage,
-  IconStar,
-  IconArrowUpRight,
-  IconBrandGithub,
-} from '@tabler/icons-react'
-import type { ProjectCategory } from '@/lib/i18n'
 import { TagChip } from '@/components/icons/tags'
+import type { ProjectCategory } from '@/lib/i18n'
 
 type MasonryItem = {
   name: string

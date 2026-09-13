@@ -1,6 +1,6 @@
 import type { MetadataRoute } from 'next'
 
-import { SITE_URL, locales } from '@/lib/i18n'
+import { locales, SITE_URL } from '@/lib/i18n'
 
 export const dynamic = 'force-static'
 export const revalidate = 604800 // weekly
