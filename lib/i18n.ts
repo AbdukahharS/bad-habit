@@ -72,6 +72,7 @@ type Dictionary = {
     title: string
     description: string
     email: string
+    archBtw: string
   }
   seo: {
     aboutHeading: string
@@ -157,6 +158,7 @@ const dictionaries: Record<Locale, Dictionary> = {
       description:
         "From enterprise systems and GIS platforms to SaaS products and mobile apps — let's turn your idea into production-ready software.",
       email: 'Email',
+      archBtw: 'I use Arch, BTW',
     },
     seo: {
       aboutHeading: 'About Shahzod Abdukahhar',
@@ -229,6 +231,7 @@ const dictionaries: Record<Locale, Dictionary> = {
       description:
         "Korporativ tizimlar va GIS platformalaridan tortib SaaS mahsulotlari va mobil ilovalargacha — g'oyangizni production-darajadagi dasturiy ta'minotga aylantiramiz.",
       email: 'Email',
+      archBtw: 'I use Arch, BTW',
     },
     seo: {
       aboutHeading: 'Shahzod Abdukahhar haqida',

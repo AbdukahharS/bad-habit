@@ -100,6 +100,7 @@ export default async function ProjectsPage({ params }: Props) {
         title={dict.footer.title}
         description={dict.footer.description}
         emailLabel={dict.footer.email}
+        archBtw={dict.footer.archBtw}
         locale={locale}
       />
     </main>

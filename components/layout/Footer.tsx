@@ -13,6 +13,7 @@ type FooterProps = {
   title: string
   description: string
   emailLabel: string
+  archBtw: string
   locale: Locale
 }
 
@@ -77,7 +78,13 @@ const testimonialsByLocale: Record<Locale, Testimonial[]> = {
   ],
 }
 
-const Footer = ({ title, description, emailLabel, locale }: FooterProps) => {
+const Footer = ({
+  title,
+  description,
+  emailLabel,
+  archBtw,
+  locale,
+}: FooterProps) => {
   const testimonials = testimonialsByLocale[locale]
   const featuredTestimonial = testimonials[0]
   const secondaryTestimonials = testimonials.slice(1)
@@ -275,6 +282,14 @@ const Footer = ({ title, description, emailLabel, locale }: FooterProps) => {
           </div>
         </div>
       </div>
+
+      <p
+        className='relative pt-6 pb-10 text-center text-sm md:text-base font-mono text-gray-500 select-none transition-colors duration-300 hover:text-gray-300'
+        title='btw'
+      >
+        <span className='text-[#1793D1]'>~$</span> {archBtw}
+        <span className='inline-block w-2 h-4 ml-1 align-[-2px] bg-gray-500 animate-pulse' />
+      </p>
     </footer>
   )
 }
