@@ -1,6 +1,7 @@
 /// <reference types='react/canary' />
 
 import type { Metadata } from 'next'
+import Script from 'next/script'
 import { Roboto_Mono } from 'next/font/google'
 import { notFound } from 'next/navigation'
 import { ViewTransition } from 'react'
@@ -141,6 +142,11 @@ export default async function LocaleLayout({ children, params }: Props) {
       <body
         className={`${robotoMono.className} antialiased bg-background overflow-x-hidden`}
       >
+        {/* TopSayt.uz hisoblagich */}
+        <Script
+          src='https://topsayt.uz/counter/31.js'
+          strategy='afterInteractive'
+        />
         <ViewTransition default='page-swap'>
           <CursorFollower />
           <Navbar locale={locale} navLabels={dict.nav} />
