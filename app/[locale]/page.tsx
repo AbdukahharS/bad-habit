@@ -62,27 +62,27 @@ export default async function Home({ params }: Props) {
         {projectCatalog
           .filter((project) => project.status !== 'Legacy')
           .map((project) => (
-          <article key={project.name}>
-            <h3>{project.name}</h3>
-            <p>
-              {dict.seo.categoryLabel}: {project.category}
-            </p>
-            <p>{project.description[locale]}</p>
-            <p>
-              {dict.seo.technologiesLabel}: {project.tags.join(', ')}
-            </p>
-            {project.live && (
+            <article key={project.name}>
+              <h3>{project.name}</h3>
               <p>
-                {dict.seo.liveLabel}: {project.live}
+                {dict.seo.categoryLabel}: {project.category}
               </p>
-            )}
-            {'source' in project && project.source && (
+              <p>{project.description[locale]}</p>
               <p>
-                {dict.seo.sourceLabel}: {project.source}
+                {dict.seo.technologiesLabel}: {project.tags.join(', ')}
               </p>
-            )}
-          </article>
-        ))}
+              {project.live && (
+                <p>
+                  {dict.seo.liveLabel}: {project.live}
+                </p>
+              )}
+              {'source' in project && project.source && (
+                <p>
+                  {dict.seo.sourceLabel}: {project.source}
+                </p>
+              )}
+            </article>
+          ))}
       </div>
     </main>
   )

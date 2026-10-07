@@ -56,18 +56,18 @@ const projectsSchema = {
   itemListElement: projectCatalog
     .filter((project) => project.status !== 'Legacy')
     .map((project, index) => ({
-    '@type': 'ListItem',
-    position: index + 1,
-    item: {
-      '@type': 'SoftwareApplication',
-      name: project.name,
-      description: project.description.en,
-      image: `https://abdukahhar.uz/projects/${project.image}`,
-      ...(project.live ? { url: project.live } : {}),
-      applicationCategory: project.category,
-      keywords: project.tags.join(', '),
-    },
-  })),
+      '@type': 'ListItem',
+      position: index + 1,
+      item: {
+        '@type': 'SoftwareApplication',
+        name: project.name,
+        description: project.description.en,
+        image: `https://abdukahhar.uz/projects/${project.image}`,
+        ...(project.live ? { url: project.live } : {}),
+        applicationCategory: project.category,
+        keywords: project.tags.join(', '),
+      },
+    })),
 }
 
 function jsonLd(data: object) {
