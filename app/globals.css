@@ -37,6 +37,18 @@ select {
   cursor: pointer;
 }
 
+/* TopSayt.uz counter badge — the script's tracking pixel must stay in the DOM
+   (the svg request is what registers the visit), so it's only visually hidden. */
+a[href^="https://topsayt.uz/ref"] {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  pointer-events: none;
+}
+
 /* Custom Scrollbar - Modern Neon Glassmorphism */
 ::-webkit-scrollbar {
   width: 12px;
