@@ -1,5 +1,21 @@
 [
   {
+    "name": "Hokim Xarita",
+    "description": {
+      "en": "Map-first GIS management dashboard for a regional government. Unites Sirdaryo viloyat's districts, neighborhoods (mahallas), points of interest, and utility coverage layers on top of the Yarrow Map Web SDK, with a role-based admin panel, audit log, and change-request approval workflow.",
+      "uz": "Viloyat hokimligi uchun xarita asosidagi GIS boshqaruv paneli. Sirdaryo viloyatining tumanlari, mahallalari, qiziqish nuqtalari va kommunal qoplamalarini Yarrow Map Web SDK asosida birlashtiradi; rollarga asoslangan admin panel, audit jurnali va o'zgarishlarni tasdiqlash jarayoni bilan."
+    },
+    "longDescription": {
+      "en": "Hokim Xarita is a geographic information system for governing a viloyat (region), built for a distributed per-region architecture with a local admin panel and a central aggregation service. The map-first workspace layers districts, mahallas (neighborhoods), and points of interest over the Yarrow Map Web SDK, and adds thematic overlays for utility coverage and outages (gas, water, electricity), economic activity, and demographics, alongside a live region summary — population, district and mahalla counts, registered objects, and active outages. The backend is consumed through a single typed HokimApi seam: the OpenAPI schema is hand-transcribed into TypeScript, with envelope unwrapping, structured error mapping, and a cookie session backed by optional bearer tokens; endpoints the backend does not expose yet raise a typed error and the UI degrades gracefully. Administrative work is guarded by role-based access, a change-request workflow with author/approver roles, an audit log, two-factor authentication, forced password rotation, and an idle timeout. Built with React 19, TypeScript, Vite, React Router, TanStack Query, Zustand, and Biome, with full ru/uz localization, xlsx export, Open-Meteo weather integration, and all times rendered in Asia/Tashkent.",
+      "uz": "Hokim Xarita — viloyatni boshqarish uchun geoinformatsion tizim; mahalliy admin panel va markaziy agregatsiya xizmati bilan taqsimlangan, har bir viloyat uchun alohida arxitekturada qurilgan. Xarita-birinchi ish maydoni tumanlar, mahallalar va qiziqish nuqtalarini Yarrow Map Web SDK qoplami ustida birlashtiradi hamda kommunal qoplash va o'chishlar (gaz, suv, elektr), iqtisodiy faollik va demografiya uchun mavzuli qatlamlarni, shuningdek jonli viloyat xulosasini — aholi, tuman va mahalla sonlari, ro'yxatga olingan obyektlar va faol o'chishlar — qo'shadi. Backend bitta tipizatsiyalangan HokimApi orqali ishlatiladi: OpenAPI sxemasi qo'lda TypeScriptga ko'chirilgan, javob konvertini ochish, tuzilmali xato xaritalash va bearer tokenni qo'llab-quvvatlaydigan cookie sessiya bilan; backend hali ochmaganda tipizatsiyalangan xato ko'tariladi va UI muammosiz ishlashda davom etadi. Administrator ishlari rolga asoslangan kirish, muallif/tasdiqlovchi rollari bilan o'zgarishlar so'rovi jarayoni, audit jurnali, ikki bosqichli autentifikatsiya, majburiy parol yangilash va bo'sh turish taymeri bilan himoyalangan. React 19, TypeScript, Vite, React Router, TanStack Query, Zustand va Biome asosida qurilgan; to'liq ru/uz lokalizatsiyasi, xlsx eksporti, Open-Meteo ob-havo integratsiyasi va barcha vaqtlar Asia/Tashkent bo'yicha ko'rsatiladi."
+    },
+    "image": "hokim.png",
+    "live": null,
+    "source": null,
+    "tags": ["react", "typescript", "vite", "react-router", "tanstack-query", "zustand", "yarrow-sdk", "maplibre", "geojson", "openapi", "biome", "i18n"],
+    "category": "Enterprise Applications"
+  },
+  {
     "name": "UYDEK",
     "showOnHome": true,
     "description": {
