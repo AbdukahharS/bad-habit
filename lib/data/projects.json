@@ -1,5 +1,21 @@
 [
   {
+    "name": "Yarrow Map Tool",
+    "description": {
+      "en": "Crowdsourced map editor for the Yarrow ecosystem, live at mapeditor.yarrow.uz. Signed-in contributors draw roads, buildings, addresses, places, transport, vegetation, relief, and hydrography over the Yarrow Map Web SDK and submit change suggestions that pass through a moderation inspection queue.",
+      "uz": "Yarrow ekotizimi uchun ochiq xarita muharriri, mapeditor.yarrow.uz saytida ishlaydi. Tizimga kirgan foydalanuvchilar Yarrow Map Web SDK ustida yo'llar, binolar, manzillar, joylar, transport, o'simliklar, relyef va gidrografiyani chizib, moderatsiya tekshiruv navbatidan o'tadigan o'zgarish takliflarini yuboradi."
+    },
+    "longDescription": {
+      "en": "Yarrow Map Tool is the crowdsourced map editor of the Yarrow ecosystem, live at mapeditor.yarrow.uz. Every page sits behind the Yarrow ID HTTP-only cookie, so the app renders fully client-side, like the other Yarrow SPAs. The map-first workspace runs on the Yarrow Map Web SDK with default and hybrid styles, and equips contributors with select, suggest-place, problem-report, and tagging tools, a layers panel, and one-tap geolocation. A guided create flow spans roads, buildings, addresses, places, transport, vegetation, relief, and hydrography: a drawing HUD walks users through placing points, lines, and polygons — including multi-part geometries with draggable vertices — then category-specific forms collect details such as localized road names, lane counts, and start/end levels, with bindings and comments attached before saving. Every submission becomes a suggestion (create, update, or removal) that the author tracks on a personal dashboard with contribution, approved, and under-review stats plus nearby activity, while moderators process the queue in a dedicated review workspace with a structured reject dialog. Built with Nuxt 4, Vue 3, TypeScript, Pinia, and Tailwind CSS v4, localized into Uzbek (default), English, and Russian via @nuxtjs/i18n, with @nuxt/fonts typography and a custom yarrow icon collection served through @nuxt/icon.",
+      "uz": "Yarrow Map Tool — Yarrow ekotizimining ochiq xarita muharriri; mapeditor.yarrow.uz saytida ishlaydi. Har bir sahifa Yarrow ID HTTP-only cookie orqali himoyalangan, shuning uchun ilova boshqa Yarrow SPA-lari kabi to'liq klient tomonda render qilinadi. Xarita-birinchi ish maydoni Yarrow Map Web SDK asosida standart va gibrid uslublar bilan ishlaydi hamda foydalanuvchilarga tanlash, joy taklif, muammo va yorliq vositalarini, qatlamlar panelini va bir bosishda geolokatsiyani beradi. Yo'naltirilgan yaratish oqimi yo'llar, binolar, manzillar, joylar, transport, o'simliklar, relyef va gidrografiyani qamrab oladi: chizish HUD-i foydalanuvchini nuqta, chiziq va poligonlar joylashtirish bo'ylab boshlab boradi (sudrash mumkin bo'lgan uchli ko'p qismli geometriyalar ham), so'ngra turkumga xos formalar mahalliy tilidagi yo'l nomlari, yo'laklar soni va boshlang'ich/yakuniy qavatlar kabi tafsilotlarni yig'adi; saqlashdan oldin bog'lanishlar va izohlar qo'shiladi. Har bir yuborilgan ish taklifga (yaratish, tahrirlash yoki o'chirish) aylanadi; muallif uni shaxsiy boshqaruv panelida hissa, tasdiqlangan va ko'rib chiqilayotgan statistikasi hamda yaqin atrofdagi faoliyat bilan kuzatadi, moderatorlar esa alohida ko'rib chiqish maydonida tuzilmali rad etish dialogi bilan tekshiruv navbatini qayta ishlaydi. Nuxt 4, Vue 3, TypeScript, Pinia va Tailwind CSS v4 asosida qurilgan; @nuxtjs/i18n orqali o'zbek (standart), ingliz va rus tillariga lokalizatsiya qilingan, @nuxt/fonts tipografiyasi va @nuxt/icon orqali maxsus yarrow ikonkalar to'plami bilan."
+    },
+    "image": "yarrow-tool.png",
+    "live": "https://mapeditor.yarrow.uz/",
+    "source": null,
+    "tags": ["nuxt", "vue", "typescript", "pinia", "tailwind", "yarrow-sdk", "maplibre", "geojson", "i18n"],
+    "category": "Enterprise Applications"
+  },
+  {
     "name": "Hokim Xarita",
     "description": {
       "en": "Map-first GIS management dashboard for a regional government. Unites Sirdaryo viloyat's districts, neighborhoods (mahallas), points of interest, and utility coverage layers on top of the Yarrow Map Web SDK, with a role-based admin panel, audit log, and change-request approval workflow.",
