@@ -22,25 +22,25 @@ Personal portfolio and website built with Next.js 14, featuring custom animation
 
 ```bash
 # Install dependencies
-npm install
+bun install
 
 # Start development server
-npm run dev
+bun run dev
 
 # Build for production
-npm run build
+bun run build
 
 # Start production server
-npm run start
+bun run start
 
 # Run linting
-npm run lint
+bun run lint
 
 # Run linting and apply fixes
-npm run lint:fix
+bun run lint:fix
 
 # Format files
-npm run format
+bun run format
 ```
 
 ## Project Structure
