@@ -32,7 +32,7 @@ const experiencesByLocale: Record<Locale, ExperienceItem[]> = {
     {
       title: 'Software Engineer @ Lumidia AI',
       description:
-        "Building Lumidia, an AI presentation generator, across the whole stack — a NestJS/Prisma/PostgreSQL backend with session-cookie auth, async generation jobs and full Stripe billing; the React frontend's real API integration; and the core C#/.NET engine that learns any .pptx template and rebuilds pixel-faithful decks with semantic table and chart editing.",
+        "Building Lumidia, an AI presentation generator, across the whole stack — a NestJS/Prisma/PostgreSQL backend with session-cookie auth, async generation jobs and full Stripe billing; the React frontend's real API integration; and the document-generation engine powering deck creation.",
       location: 'Remote',
       link: {
         label: 'lumidia.ai',
@@ -47,8 +47,6 @@ const experiencesByLocale: Record<Locale, ExperienceItem[]> = {
         'Stripe',
         'TypeScript',
         'React',
-        'C#/.NET',
-        'OpenXML',
       ],
       id: 3,
     },
@@ -100,7 +98,7 @@ const experiencesByLocale: Record<Locale, ExperienceItem[]> = {
     {
       title: 'Software Engineer @ Lumidia AI',
       description:
-        "Lumidia — AI taqdimot generatorini to'liq stek bo'ylab ishlab chiqaman — sessiya-cookie autentifikatsiya, asinxron generatsiya joblari va to'liq Stripe billingga ega NestJS/Prisma/PostgreSQL backend; React frontendning haqiqiy API integratsiyasi; va har qanday .pptx shablonini o'rganib, semantik jadval va diagramma tahrirlash bilan pikselma-piksel decklar qayta yaratadigan C#/.NET yadrosi.",
+        "Lumidia — AI taqdimot generatorini to'liq stek bo'ylab ishlab chiqaman — sessiya-cookie autentifikatsiya, asinxron generatsiya joblari va to'liq Stripe billingga ega NestJS/Prisma/PostgreSQL backend; React frontendning haqiqiy API integratsiyasi; va deck yaratishni ta'minlaydigan hujjat-generatsiya yadrosi.",
       location: 'Masofaviy',
       link: {
         label: 'lumidia.ai',
@@ -115,8 +113,6 @@ const experiencesByLocale: Record<Locale, ExperienceItem[]> = {
         'Stripe',
         'TypeScript',
         'React',
-        'C#/.NET',
-        'OpenXML',
       ],
       id: 3,
     },
