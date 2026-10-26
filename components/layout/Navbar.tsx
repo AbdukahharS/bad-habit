@@ -181,7 +181,7 @@ const Navbar = ({
 
                 {/* Cirth Link */}
                 <Link
-                  href='https://cirth.uz'
+                  href='https://cirth.app'
                   target='_blank'
                   rel='noopener noreferrer'
                   aria-label={`// ${navLabels.cirth} (${navLabels.external})`}
@@ -344,7 +344,7 @@ const Navbar = ({
 
               {/* Cirth Link */}
               <Link
-                href='https://cirth.uz'
+                href='https://cirth.app'
                 target='_blank'
                 rel='noopener noreferrer'
                 className='group relative p-4 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 hover:border-purple-400/50 transition-all duration-300 hover:scale-105 block'
