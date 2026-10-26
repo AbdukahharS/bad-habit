@@ -30,6 +30,29 @@ type ExperienceItem = {
 const experiencesByLocale: Record<Locale, ExperienceItem[]> = {
   en: [
     {
+      title: 'Software Engineer @ Lumidia AI',
+      description:
+        "Building Lumidia, an AI presentation generator, across the whole stack — a NestJS/Prisma/PostgreSQL backend with session-cookie auth, async generation jobs and full Stripe billing; the React frontend's real API integration; and the core C#/.NET engine that learns any .pptx template and rebuilds pixel-faithful decks with semantic table and chart editing.",
+      location: 'Remote',
+      link: {
+        label: 'lumidia.ai',
+        url: 'https://lumidia.ai',
+      },
+      logo: 'lumidia.svg',
+      duration: 'Sep 2026 - Present',
+      tags: [
+        'NestJS',
+        'Prisma',
+        'PostgreSQL',
+        'Stripe',
+        'TypeScript',
+        'React',
+        'C#/.NET',
+        'OpenXML',
+      ],
+      id: 3,
+    },
+    {
       title: 'Web Developer @ Yarrow',
       description:
         'Leading frontend development for the Yarrow Maps ecosystem — including the consumer-facing Yarrow Map Web app, commercial Web SDK and Flutter SDK, API developer dashboard, interactive map embed service, and comprehensive documentation platform.',
@@ -74,6 +97,29 @@ const experiencesByLocale: Record<Locale, ExperienceItem[]> = {
     },
   ],
   uz: [
+    {
+      title: 'Software Engineer @ Lumidia AI',
+      description:
+        "Lumidia — AI taqdimot generatorini to'liq stek bo'ylab ishlab chiqaman — sessiya-cookie autentifikatsiya, asinxron generatsiya joblari va to'liq Stripe billingga ega NestJS/Prisma/PostgreSQL backend; React frontendning haqiqiy API integratsiyasi; va har qanday .pptx shablonini o'rganib, semantik jadval va diagramma tahrirlash bilan pikselma-piksel decklar qayta yaratadigan C#/.NET yadrosi.",
+      location: 'Masofaviy',
+      link: {
+        label: 'lumidia.ai',
+        url: 'https://lumidia.ai',
+      },
+      logo: 'lumidia.svg',
+      duration: 'Sent 2026 - Hozir',
+      tags: [
+        'NestJS',
+        'Prisma',
+        'PostgreSQL',
+        'Stripe',
+        'TypeScript',
+        'React',
+        'C#/.NET',
+        'OpenXML',
+      ],
+      id: 3,
+    },
     {
       title: 'Web Dasturchi @ Yarrow',
       description:
@@ -134,7 +180,7 @@ const Experience = ({
   locale,
 }: ExperienceProps) => {
   const experiences = experiencesByLocale[locale]
-  const [opens, setOpens] = useState<number[]>([1, 2])
+  const [opens, setOpens] = useState<number[]>([3, 1, 2])
 
   const handleClick = (id: number) => {
     if (opens.includes(id)) {
