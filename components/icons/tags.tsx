@@ -104,6 +104,10 @@ export type TagSlug =
   | 'codemirror'
   | 'polar'
   | 'chromium'
+  | 'bun-ffi'
+  | 'geos'
+  | 'postgis'
+  | 'c'
 
 export type TagMeta = {
   label: string
@@ -144,6 +148,7 @@ export const TAG_REGISTRY: Record<TagSlug, TagMeta> = {
   'bun-package-manager': { label: 'Bun Package Manager', iconFile: 'bun.svg' },
   'bun-runtime': { label: 'Bun Runtime', iconFile: 'bun.svg' },
   'bun-test': { label: 'Bun Test', iconFile: 'bun.svg' },
+  'bun-ffi': { label: 'Bun FFI', iconFile: 'bun.svg' },
   elysia: { label: 'Elysia', iconFile: 'elysia.png' },
   drizzle: { label: 'Drizzle ORM', iconFile: 'drizzle.svg' },
   bullmq: { label: 'BullMQ', iconFile: 'bullmq.ico' },
@@ -163,6 +168,9 @@ export const TAG_REGISTRY: Record<TagSlug, TagMeta> = {
   maplibre: { label: 'MapLibre GL', iconFile: 'maplibre.svg' },
   leaflet: { label: 'Leaflet', iconFile: 'leaflet.ico' },
   openlayers: { label: 'OpenLayers', iconFile: 'openlayers.png' },
+  geos: { label: 'GEOS' },
+  postgis: { label: 'PostGIS' },
+  c: { label: 'C', iconFile: 'c.svg' },
   recharts: { label: 'Recharts' },
   i18n: { label: 'i18n' },
   nuxt: { label: 'Nuxt', iconFile: 'nuxt.svg' },

@@ -876,5 +876,24 @@
     "tags": ["js", "bun-runtime", "chromium", "git"],
     "category": "Dev Tools/Utils",
     "highlighted": true
+  },
+  {
+    "name": "bun-geos",
+    "showOnHome": true,
+    "description": {
+      "en": "Bun-native TypeScript bindings for GEOS 3.14 — the geometry engine inside PostGIS — for complex overlays, topology repair, and coverage algebra at native speed. Zero system dependencies: one of seven platform packages bundles a pinned GEOS build plus a precompiled C shim.",
+      "uz": "GEOS 3.14 — PostGIS ichidagi geometriya dvigateli — uchun Bun-native TypeScript bog'lanmalari: murakkab overlaylar, topologiyani tiklash va coverage algebrasi native tezlikda. Tizim dependensiyalari yo'q: yettita platforma paketidan biri pinlangan GEOS buildi va precompiled C shimini olib keladi."
+    },
+    "longDescription": {
+      "en": "bun-geos is Bun-native TypeScript bindings for GEOS 3.14 — the open-source geometry engine inside PostGIS — exposing complex polygon overlays, topology repair, coverage algebra, and boolean operations at native speed. It is Bun-only by design, a documented decision: the package ships raw TypeScript source that Bun executes natively, so the bundler and typechecker read the same source sitting in node_modules with no build step in between, and every GEOS context is owned explicitly through Symbol.dispose and the using keyword.\n\nInstalling it needs nothing else — no system GEOS, no compiler, no CMake. One of seven platform packages (macOS arm64/x64, Linux glibc and musl arm64/x64, Windows x64) is selected automatically through the os/cpu/libc fields of optionalDependencies, the same model as sharp and esbuild, and each bundles a pinned GEOS 3.14 build plus a tiny precompiled C shim (~5.5 MB per install). On Linux, Bun's installer downloads both libc variants and the loader self-selects at runtime.\n\nVersion 0.2.0 declares the complete api-surface target as implemented, gated by an unusually heavy quality pipeline: 268 tests, an 8,753-operation GEOS/JTS corpus differential gate, ASan and Valgrind shim gates, GeoArrow golden-byte conformance, and a PostGIS oracle, alongside benchmark suites that measure it against competing geometry libraries.\n\nThe library is documented end to end at bun-geos.cirth.app — guide, API reference, changelog, design and decision records, and benchmarks — and published on npm as @shzd/bun-geos under the MIT license.",
+      "uz": "bun-geos — PostGIS ichidagi ochiq kodli GEOS 3.14 geometriya dvigatelining Bun-native TypeScript bog'lanmalari: murakkab poligon overlaylari, topologiyani tiklash, coverage algebrasi va mantiqiy (boolean) amallarni native tezlikda ochib beradi. U faqat Bun uchun, va bu hujjatlashtirilgan qasddan qilingan qaror: paket Bun native bajaradigan xom TypeScript manbasini tarqatadi, shuning uchun bundler va typechecker node_modules-dagi aynan o'sha manbani o'qiydi — orada build bosqichi yo'q; har bir GEOS konteksti Symbol.dispose va using kalit so'zi orqali aniq boshqariladi.\n\nO'rnatish uchun boshqa hech narsa kerak emas — tizim GEOS'i, kompilyator, CMake yo'q. Yettita platforma paketidan biri (macOS arm64/x64, Linux glibc va musl arm64/x64, Windows x64) optionalDependencies ning os/cpu/libc maydonlari orqali avtomatik tanlanadi — sharp va esbuild modeli — va har biri pinlangan GEOS 3.14 buildi bilan birga kichik precompiled C shimini olib keladi (har bir o'rnatishga ~5,5 MB). Linux'da Bun installer ikkala libc variantini ham yuklaydi va loader runtime-da o'zi tanlaydi.\n\n0.2.0 versiya to'liq api-surface maqsadi amalga oshirilganini e'lon qiladi va bu odatdan tashqari og'ir sifat pipeline'i bilan qo'riqlanadi: 268 test, 8 753 amaldan iborat GEOS/JTS korpusi differensial darvozasi, ASan va Valgrind shim darvozalari, GeoArrow golden-byte konformligi va PostGIS orakuli — shuningdek, raqobatdosh geometriya kutubxonalari bilan solishtiruvchi benchmark to'plamlari.\n\nKutubxona bun-geos.cirth.app saytida to'liq hujjatlashtirilgan — qo'llanma, API ma'lumotnomasi, changelog, dizayn va qaror yozuvlari hamda benchmarklar; MIT litsenziyasi ostida npm'da @shzd/bun-geos sifatida chop etilgan."
+    },
+    "image": "bun-geos.png",
+    "live": "https://bun-geos.cirth.app",
+    "source": "https://github.com/AbdukahharS/bun-geos",
+    "packageRegistry": "https://www.npmjs.com/package/@shzd/bun-geos",
+    "tags": ["typescript", "bun-runtime", "bun-ffi", "c", "geos", "geojson", "postgis", "bun-test", "biome", "git"],
+    "category": "Dev Tools/Utils",
+    "highlighted": true
   }
 ]
