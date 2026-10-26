@@ -33,7 +33,7 @@ Depth plus breadth backed by shippable evidence: enterprise systems, a real-esta
 
 ## Capabilities and Constraints
 
-- **Confirmed content:** hero, expertise, projects (masonry highlights + full gallery with tag filtering), experience, footer/contact; nav also references `blog` and `cirth`.
+- **Confirmed content:** hero, expertise, projects (masonry highlights + full gallery with tag filtering), experience, footer/contact; nav also references `cirth`.
 - **Locales:** `uz` and `en` only; `uz` is the default locale and root metadata default.
 - **Copy is factual:** project descriptions, employer, and testimonials are real and must never be replaced with invented claims, metrics, or clients.
 - **Dark theme is a style choice, not a binding commitment** (user did not pin it).

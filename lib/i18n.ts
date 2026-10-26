@@ -30,7 +30,6 @@ type Dictionary = {
     projects: string
     experience: string
     contact: string
-    blog: string
     cirth: string
     language: string
     openMenu: string
@@ -112,7 +111,6 @@ const dictionaries: Record<Locale, Dictionary> = {
       projects: 'projects',
       experience: 'experience',
       contact: 'contact',
-      blog: 'blog',
       cirth: 'cirth',
       language: 'language',
       openMenu: 'Open menu',
@@ -185,7 +183,6 @@ const dictionaries: Record<Locale, Dictionary> = {
       projects: 'loyihalar',
       experience: 'tajriba',
       contact: 'aloqa',
-      blog: 'blog',
       cirth: 'cirth',
       language: 'til',
       openMenu: 'Menyuni ochish',

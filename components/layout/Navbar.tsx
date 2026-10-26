@@ -21,7 +21,6 @@ type Links =
   | 'projects'
   | 'experience'
   | 'contact'
-  | 'blog'
   | 'cirth'
 
 type NavbarProps = {
@@ -33,7 +32,6 @@ type NavbarProps = {
     projects: string
     experience: string
     contact: string
-    blog: string
     cirth: string
     language: string
     openMenu: string
@@ -181,27 +179,6 @@ const Navbar = ({
                   </Link>
                 ))}
 
-                {/* Blog Link */}
-                <Link
-                  href='https://blog.abdukahhar.uz'
-                  target='_blank'
-                  rel='noopener noreferrer'
-                  aria-label={`// ${navLabels.blog} (${navLabels.external})`}
-                  className={`group relative px-3 xl:px-4 py-2 font-bold transition-all duration-300 hover:scale-105 ${
-                    hovered && hovered !== 'blog' ? 'opacity-50' : 'opacity-100'
-                  }`}
-                  onMouseEnter={() => setHovered('blog')}
-                  onMouseLeave={() => setHovered(null)}
-                >
-                  <span className='relative z-10 inline-flex items-center gap-1 text-white group-hover:text-green-400 transition-colors duration-300'>
-                    {`// ${navLabels.blog}`}
-                    <IconArrowUpRight className='w-3.5 h-3.5 opacity-70' />
-                  </span>
-                  <small className='absolute -top-1 -right-1 xl:right-0 text-xs opacity-70 text-green-300 font-normal group-hover:opacity-100 transition-opacity duration-300'>
-                    05
-                  </small>
-                </Link>
-
                 {/* Cirth Link */}
                 <Link
                   href='https://cirth.uz'
@@ -221,7 +198,7 @@ const Navbar = ({
                     <IconArrowUpRight className='w-3.5 h-3.5 opacity-70' />
                   </span>
                   <small className='absolute -top-1 -right-1 xl:right-0 text-xs opacity-70 text-purple-300 font-normal group-hover:opacity-100 transition-opacity duration-300'>
-                    06
+                    05
                   </small>
                 </Link>
 
@@ -365,22 +342,6 @@ const Navbar = ({
                 </Link>
               ))}
 
-              {/* Blog Link */}
-              <Link
-                href='https://blog.abdukahhar.uz'
-                target='_blank'
-                rel='noopener noreferrer'
-                className='group relative p-4 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 hover:border-green-400/50 transition-all duration-300 hover:scale-105 block'
-                onClick={() => setActive(false)}
-              >
-                <div className='font-bold text-white group-hover:text-green-400 transition-colors duration-300 text-lg'>
-                  {`// ${navLabels.blog}`}
-                </div>
-                <small className='absolute top-2 right-4 text-xs opacity-70 text-green-300 font-normal group-hover:opacity-100 transition-opacity duration-300'>
-                  05
-                </small>
-              </Link>
-
               {/* Cirth Link */}
               <Link
                 href='https://cirth.uz'
@@ -393,7 +354,7 @@ const Navbar = ({
                   {`// ${navLabels.cirth}`}
                 </div>
                 <small className='absolute top-2 right-4 text-xs opacity-70 text-purple-300 font-normal group-hover:opacity-100 transition-opacity duration-300'>
-                  06
+                  05
                 </small>
               </Link>
 

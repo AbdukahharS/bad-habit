@@ -106,7 +106,7 @@ A near-monochrome dark base lit by one neon gradient engine; supporting hues app
 
 ### Secondary
 - **Cyan Glow** (`#22d3ee`): Role-coded for language and enterprise — the language switcher's active state, the Enterprise Applications category chip.
-- **Terminal Green** (`#22c55e`): Role-coded for external writing and backend — the `// blog` nav link, the Backend expertise tile, WhatsApp and Mobile Apps accents.
+- **Terminal Green** (`#22c55e`): Role-coded for backend — the Backend expertise tile, WhatsApp and Mobile Apps accents.
 - **Amber Star** (`#fbbf24`): Exactly one job — the "SaaS ★" badge on highlighted project cards. Never reuse it elsewhere.
 
 ### Neutral
@@ -183,7 +183,7 @@ Soft, friendly geometry at three scales: small controls at `8px` (rounded-lg), s
 
 ### Navigation
 - **Style:** A floating glass bar — `16px` radius, `white/5` fill, `white/10` border, backdrop blur — inset from viewport edges. On scroll it compacts (`py-3 → py-2`), darkens to `black/40`, and gains a soft black shadow.
-- **Links:** Bold white `// label` mono-grammar links with a small colored superscript index (`01`–`06`). Hover tints the label in its role hue (azure for sections, green for blog, orchid for cirth), scales `1.05`, and dims siblings to 50% opacity.
+- **Links:** Bold white `// label` mono-grammar links with a small colored superscript index (`01`–`05`). Hover tints the label in its role hue (azure for sections, orchid for cirth), scales `1.05`, and dims siblings to 50% opacity.
 - **Mobile:** A slide-in glass drawer (`320px`, gradient black fill) stacking the same `//` links as `12px`-radius glass rows; backdrop dims the page.
 
 ### Filter Buttons

@@ -611,7 +611,7 @@
       "uz": "Shahzod's Blog — veb-ilovalar ishlab chiqish, zamonaviy JavaScript frameworklari va dasturlash ish amaliyotlariga qaratilgan shaxsiy texnik blog. Blogda Blocknote bilan boy matn tahriri, Clerk orqali foydalanuvchi autentifikatsiyasi, ShadCN UI komponentlari bilan toza o'qish tajribasi va Firebase ma'lumotlar saqlash mavjud."
     },
     "image": "blog.png",
-    "live": "https://blog.abdukahhar.uz",
+    "live": null,
     "source": "https://github.com/AbdukahharS/blog",
     "tags": [
       "nextjs",
